@@ -24,9 +24,15 @@ export const championIsClicked = id => ({
 });
 
 const fetchChampions = () => {
-    return dispatch => {
+    return (dispatch, getState) => {
+        const authToken = getState().loginReducer.authToken;
         dispatch(championFetchRequest);
-        fetch(`${lolImproverUrl}/champions`)
+        fetch(`${lolImproverUrl}/champions`, {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${authToken}`
+            }
+        })
           .then(response => response.json())
           .then(champions => dispatch(championFetchSuccess(champions)))
           .catch(error => dispatch(championFetchError(error)))
