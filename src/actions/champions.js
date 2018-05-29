@@ -1,3 +1,5 @@
+import lolImproverUrl from '../config';
+
 export const CHAMPION_FETCH_REQUEST = 'CHAMPION_FETCH_REQUEST';
 const championFetchRequest = () => ({
     type: CHAMPION_FETCH_REQUEST
@@ -24,7 +26,7 @@ export const championIsClicked = id => ({
 const fetchChampions = () => {
     return dispatch => {
         dispatch(championFetchRequest);
-        fetch('http://localhost:8080/api/champions')
+        fetch(`${lolImproverUrl}/champions`)
           .then(response => response.json())
           .then(champions => dispatch(championFetchSuccess(champions)))
           .catch(error => dispatch(championFetchError(error)))
