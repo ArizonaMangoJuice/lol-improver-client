@@ -2,13 +2,15 @@ import {
     SET_AUTH_TOKEN,
     AUTH_SUCCESS,
     AUTH_ERROR,
-    CLEAR_AUTH
+    CLEAR_AUTH, 
+    SIGNED_UP
 } from '../actions/auth';
 
 const initialState = {
     authToken: null,
     currentUser: null,
-    error: null
+    error: null,
+    signedUp: null,
 };
 
 const loginReducer = (state = initialState, action) => {
@@ -27,12 +29,18 @@ const loginReducer = (state = initialState, action) => {
         case AUTH_SUCCESS: 
             return {
                 ...state,
-                currentUser: action.currentUser
+                currentUser: action.currentUser,
+                signedUp: false
             }
         case AUTH_ERROR: 
             return {
                 ...state,
                 error: action.error
+            }
+        case SIGNED_UP: 
+            return {
+                ...state,
+                signedUp: true
             }
         default: 
             return state

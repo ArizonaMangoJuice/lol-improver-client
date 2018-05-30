@@ -2,13 +2,15 @@ import {
     CHAMPION_FETCH_REQUEST,
     CHAMPION_FETCH_SUCCESS,
     CHAMPION_FETCH_ERROR,
-    CHAMPION_IS_CLICKED
+    CHAMPION_IS_CLICKED,
+    SEARCH_CHAMPION
 } from '../actions/champions';
 
 const initalState = {
     loading: false,
     champions: [],
     clickedChampions: [],
+    filteredChampions: [],
     error: null
 }
 
@@ -31,6 +33,14 @@ const championReducer = (state=initalState, action) => {
                 ...state,
                 loading: false,
                 error: action.error
+            }
+        case SEARCH_CHAMPION:
+            return {
+                ...state,
+                filteredChampions: 
+                state.champions.filter(champ => (
+                    champ.name.toLowerCase().includes(action.value.toLowerCase())
+                ))
             }
         default: 
             return state;

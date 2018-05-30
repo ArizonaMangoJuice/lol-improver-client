@@ -26,6 +26,11 @@ export const clearAuth = () => ({
     type: CLEAR_AUTH
 })
 
+export const SIGNED_UP = 'SIGNED_ UP';
+export const signedUp = () => ({
+    type: SIGNED_UP
+})
+
 const storeAuthInfo = (authToken, dispatch) => {
     const decodedToken = jwtDecode(authToken);
     dispatch(setAuthToken(authToken));

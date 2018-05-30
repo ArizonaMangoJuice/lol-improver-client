@@ -1,5 +1,11 @@
 import lolImproverUrl from '../config';
 
+export const SEARCH_CHAMPION = 'SEARCH_CHAMPION';
+export const searchChampion = (value) => ({
+    type: SEARCH_CHAMPION,
+    value
+})
+
 export const CHAMPION_FETCH_REQUEST = 'CHAMPION_FETCH_REQUEST';
 const championFetchRequest = () => ({
     type: CHAMPION_FETCH_REQUEST

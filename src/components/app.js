@@ -4,6 +4,7 @@ import {Route, withRouter, Redirect} from 'react-router-dom';
 import Dashboard from './dashboard';
 import LandingPage from './landingPage';
 import Header from './header';
+import RegisterPage from './registerPage';
 
 export class App extends React.Component{
     componentDidUpdate(prevProps){
@@ -17,6 +18,7 @@ export class App extends React.Component{
                 <Header />
                 <Route exact path='/' component={LandingPage} />
                 <Route exact path='/dashboard' component={Dashboard} />
+                <Route exact path='/register' component={RegisterPage}/>
             </div>
         );
     }

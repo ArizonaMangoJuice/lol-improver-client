@@ -17,7 +17,7 @@ class Header extends React.Component{
         }
         return (
             <div>
-                hello your'e not logged in.
+                hello 
                 {logout}
             </div>
         );
