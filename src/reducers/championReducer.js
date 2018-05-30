@@ -11,6 +11,7 @@ const initalState = {
     champions: [],
     clickedChampions: [],
     filteredChampions: [],
+    note: 'e',
     error: null
 }
 
@@ -34,6 +35,13 @@ const championReducer = (state=initalState, action) => {
                 loading: false,
                 error: action.error
             }
+        case CHAMPION_IS_CLICKED: 
+            const champion = state.champions.filter(champ => champ.id === action.id)
+            console.log(champion[0].content);
+            return {
+                ...state,
+                note: champion[0].content
+            };
         case SEARCH_CHAMPION:
             return {
                 ...state,

@@ -2,22 +2,26 @@ import React from 'react';
 import {connect} from 'react-redux';
 import fetchChampions from '../actions/champions';
 import SearchBar from './searchBar';
-class ChampionInfo extends React.Component{
-    
+import ChampionCard from './championCard';
 
+class ChampionInfo extends React.Component{
     championList(arr){
         return arr.map((champion, i) => {
+            // console.log(champion);
             const imageString = champion.image.full;
             return (
-                <li key={i}>
-                    <img src={`http://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/${imageString}`} />
-                    <h2>{champion.name}</h2>
-                    <h3>{champion.title}</h3>
-                </li>
+                <ChampionCard 
+                    key={i} 
+                    src={`http://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/${imageString}`}
+                    name={champion.name}
+                    title={champion.title}
+                    userId={champion.userId}
+                    id={champion.id} 
+                    />
             );
         })
     }
-
+    //connect the note to a component
     render(){
         // console.log(this.props.champions.length);
         let champs;
@@ -26,16 +30,16 @@ class ChampionInfo extends React.Component{
                 champs = this.championList(this.props.filteredChampions);
             }else{
                 champs = this.championList(this.props.champions);
-                console.log(this.props.champions);
+                // console.log(this.props.champions);
             }
         }
-        // console.log(champs);
         return (
             <div>
                 <SearchBar />
-                <ul>
+                <div>
                     {this.props.champions.length > 0 ? champs : ''}
-                </ul>
+                </div>
+                
             </div>
         )
     }
@@ -47,3 +51,4 @@ const mapStateToProps = state => ({
 })
 
 export default connect(mapStateToProps)(ChampionInfo);
+//gotta add the notes schema and add error validation
