@@ -3,7 +3,8 @@ import {
     CHAMPION_FETCH_SUCCESS,
     CHAMPION_FETCH_ERROR,
     CHAMPION_IS_CLICKED,
-    SEARCH_CHAMPION
+    SEARCH_CHAMPION,
+    UPDATE_CHAMPION_NOTE
 } from '../actions/champions';
 
 const initalState = {
@@ -12,7 +13,8 @@ const initalState = {
     clickedChampions: [],
     filteredChampions: [],
     note: 'e',
-    error: null
+    error: null,
+    championId: null,
 }
 
 const championReducer = (state=initalState, action) => {
@@ -37,10 +39,11 @@ const championReducer = (state=initalState, action) => {
             }
         case CHAMPION_IS_CLICKED: 
             const champion = state.champions.filter(champ => champ.id === action.id)
-            console.log(champion[0].content);
+            // console.log(champion[0].content);
             return {
                 ...state,
-                note: champion[0].content
+                note: champion[0].content,
+                championId: action.id
             };
         case SEARCH_CHAMPION:
             return {
@@ -49,6 +52,11 @@ const championReducer = (state=initalState, action) => {
                 state.champions.filter(champ => (
                     champ.name.toLowerCase().includes(action.value.toLowerCase())
                 ))
+            }
+        case UPDATE_CHAMPION_NOTE: 
+            return {
+                ...state,
+                note: action.value
             }
         default: 
             return state;

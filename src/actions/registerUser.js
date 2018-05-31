@@ -1,5 +1,6 @@
 import lolImproverUrl from '../config';
 import {signedUp} from './auth';
+import {SubmissionError} from 'redux-form';
 
 export const registerUser = user => dispatch => {
     // console.log(user);
@@ -15,7 +16,15 @@ export const registerUser = user => dispatch => {
         dispatch(signedUp());
     })
     .catch(err => {
-        console.log(err)
+        const {reason, message, location} = err;
+            if (reason === 'ValidationError') {
+                // Convert ValidationErrors into SubmissionErrors for Redux Form
+                return Promise.reject(
+                    new SubmissionError({
+                        [location]: message
+                    })
+                );
+            }
     })
 }
 

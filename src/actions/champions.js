@@ -29,6 +29,45 @@ export const championIsClicked = id => ({
     id
 });
 
+export const UPDATE_CHAMPION_NOTE = 'UPDATE_CHAMPION_NOTE';
+export const updateChampionNote = value => ({
+    type: UPDATE_CHAMPION_NOTE,
+    value
+})
+
+export const updateBackEndChampionNote = () => {
+    return (dispatch, getState) => {
+        const authToken = getState().loginReducer.authToken;
+        const id = getState().loginReducer.currentUser.id;
+        const championId = getState().championReducer.championId;
+        const note = getState().championReducer.note;
+
+        const body = {
+            userId: id, 
+            id: championId,
+            note
+        }
+
+        console.log(JSON.stringify(body));
+
+        fetch(`${lolImproverUrl}/champions/${championId}`,{
+            method: 'PUT',
+            headers:{
+                'content-type': 'application/json',
+                'Authorization': `Bearer ${authToken}`
+            },
+            body: JSON.stringify(body)
+        })
+        .then(response => response.json())
+        .then(response => {
+            dispatch(fetchChampions());
+        })
+        .catch(err => {
+            console.log(err);
+        })
+    }
+}
+
 const fetchChampions = () => {
     return (dispatch, getState) => {
         const authToken = getState().loginReducer.authToken;

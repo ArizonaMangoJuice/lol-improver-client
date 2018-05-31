@@ -1,6 +1,6 @@
 import jwtDecode from 'jwt-decode';
 import lolImproverUrl from '../config';
-// import fetchChampions from './champions';
+import {SubmissionError} from 'redux-form';
 import {saveToken, clearToken} from '../localStorage';
 
 export const SET_AUTH_TOKEN = 'SET_AUTH_TOKEN';
@@ -56,7 +56,22 @@ export const login = (username, password) => dispatch => {
             // dispatch(fetchChampions(authToken))
         })
         .catch(err => {
-            console.log(err);
+            const {code} = err;
+            let message;
+
+            if(err.message = 401){
+                message = 'Incorrect username or password'
+            }else{
+                message = 'Unable to login, please try again later';
+            }
+
+            dispatch(authError(err));
+            
+            return Promise.reject(
+                new SubmissionError({
+                    _error: message
+                })
+            )
         })
     )
 }

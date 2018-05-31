@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import fetchChampions from '../actions/champions';
 import LoginWrapper from './loginWrapper';
 import ChampionInfo from './champion-info';
+import NoteArea from './noteArea';
 
 export class Dashboard extends React.Component{
     componentDidMount(){   
@@ -12,6 +13,7 @@ export class Dashboard extends React.Component{
         return (
             <div>
                <ChampionInfo />
+                <NoteArea />
             </div>
         )
     }

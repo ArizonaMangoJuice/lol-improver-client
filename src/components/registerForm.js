@@ -2,6 +2,7 @@ import React from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
 import {registerUser} from '../actions/registerUser';
 import Input from './input';
+import {required, notEmpty, tooBigOrTooSmall} from '../validators';
 
 export class RegisterForm extends React.Component{
     onSubmit(values){
@@ -15,6 +16,7 @@ export class RegisterForm extends React.Component{
     }
 
     render(){
+        // console.log(this.props.meta)
         return (
             <form 
                 onSubmit={this.props.handleSubmit(values => {
@@ -26,14 +28,16 @@ export class RegisterForm extends React.Component{
                     type='text'
                     name='username'
                     id='username'
+                    validate={[required, notEmpty]}
                 />
                 <Field
                     component={Input}
                     type='password'
                     name='password'
                     id='password'
+                    validate={[required, notEmpty, tooBigOrTooSmall]}
                 />
-                <button>
+                <button disabled={this.props.pristine || this.props.submitting}>
                     Sign Up
                 </button>
             </form>
@@ -43,5 +47,5 @@ export class RegisterForm extends React.Component{
 
 export default reduxForm({
     form: 'signUp', 
-    onSubmitFail: (errors, dispatch) => dispatch(focus('login', 'username'))
+    onSubmitFail: (errors, dispatch) => dispatch(focus('signUp', 'username'))
 })(RegisterForm);

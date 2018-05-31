@@ -7,10 +7,22 @@ export default class Input extends React.Component{
         }
     }
     render(){
+        //you validate in the input and you have to do it to the login 
+        //as well you also have to make when there is an error it takes
+        //you to the input as well
+        let error;
+        if(this.props.meta.error && this.props.meta.touched){
+            error = (
+                <label className='formError'>
+                    {this.props.meta.error}
+                </label>
+            )
+        }
         return(
             <div className='form-input'>
                 <label htmlFor={this.props.input.name}>
                     {this.props.label}
+                    {error}
                 </label>
                 <input 
                     {...this.props.input}
