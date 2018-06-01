@@ -3,6 +3,7 @@ import {Field, reduxForm, focus} from 'redux-form';
 import {registerUser} from '../actions/registerUser';
 import Input from './input';
 import {required, notEmpty, tooBigOrTooSmall} from '../validators';
+import {Link} from 'react-router-dom';
 
 export class RegisterForm extends React.Component{
     onSubmit(values){
@@ -14,20 +15,28 @@ export class RegisterForm extends React.Component{
         return this.props.dispatch(
             registerUser(user));
     }
-
-    render(){
+    
+    render(){ 
         // console.log(this.props.meta)
+        let error;
+        if(this.props.error){
+            error = (
+                <label className='validation-error'>
+                    {this.props.error}
+                </label>
+            ) 
+        }
         return (
             <form 
-                onSubmit={this.props.handleSubmit(values => {
-                    this.onSubmit(values)
-                })}
-            >
+                onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}
+            >   
+                {error}
                 <Field 
                     component={Input}
                     type='text'
                     name='username'
                     id='username'
+                    label='Username'
                     validate={[required, notEmpty]}
                 />
                 <Field
@@ -35,11 +44,17 @@ export class RegisterForm extends React.Component{
                     type='password'
                     name='password'
                     id='password'
+                    label='Password'
                     validate={[required, notEmpty, tooBigOrTooSmall]}
                 />
-                <button disabled={this.props.pristine || this.props.submitting}>
-                    Sign Up
-                </button>
+                <div>
+                    <button disabled={this.props.pristine || this.props.submitting}>
+                        Sign Up
+                    </button>
+                    <Link to='/'>
+                        Login
+                    </Link>
+                </div>
             </form>
         );
     }
@@ -47,5 +62,8 @@ export class RegisterForm extends React.Component{
 
 export default reduxForm({
     form: 'signUp', 
-    onSubmitFail: (errors, dispatch) => dispatch(focus('signUp', 'username'))
+    onSubmitFail: (errors, dispatch) => {
+        console.log('on submitFail',errors);
+        return dispatch(focus('signUp', 'username'));
+    },
 })(RegisterForm);

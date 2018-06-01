@@ -11,10 +11,10 @@ export class Dashboard extends React.Component{
     }
     render(){
         return (
-            <div>
+            <main>
                <ChampionInfo />
                 <NoteArea />
-            </div>
+            </main>
         )
     }
 }

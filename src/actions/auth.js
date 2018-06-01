@@ -1,7 +1,7 @@
 import jwtDecode from 'jwt-decode';
 import lolImproverUrl from '../config';
 import {SubmissionError} from 'redux-form';
-import {saveToken, clearToken} from '../localStorage';
+import {saveToken} from '../localStorage';
 
 export const SET_AUTH_TOKEN = 'SET_AUTH_TOKEN';
 export const setAuthToken = authToken => ({
@@ -50,17 +50,23 @@ export const login = (username, password) => dispatch => {
                 password
             })
         })
-        .then(response => response.json())
+        .then(response => {
+            // console.log(response);
+            if(response.status === 401){
+                return response.json().then(err => Promise.reject(err))
+            }
+            return response.json();
+        })
         .then(({authToken}) => {
             storeAuthInfo(authToken, dispatch)
             // dispatch(fetchChampions(authToken))
         })
         .catch(err => {
-            const {code} = err;
-            let message;
-
-            if(err.message = 401){
-                message = 'Incorrect username or password'
+            let {message} = err.error;
+            // let message;
+            //incorrect username or password on server side
+            if(message === 'Unauthorized'){
+                message = 'Invalid username or password';
             }else{
                 message = 'Unable to login, please try again later';
             }

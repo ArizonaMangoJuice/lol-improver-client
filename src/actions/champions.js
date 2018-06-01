@@ -29,6 +29,11 @@ export const championIsClicked = id => ({
     id
 });
 
+export const CLEAR_CHAMPION_CLICKED_SEARCHED = 'CLEAR_CHAMPION_CLICKED_SEARCHED';
+export const clearChampionClickedSearched = () => ({
+    type: CLEAR_CHAMPION_CLICKED_SEARCHED
+});
+
 export const UPDATE_CHAMPION_NOTE = 'UPDATE_CHAMPION_NOTE';
 export const updateChampionNote = value => ({
     type: UPDATE_CHAMPION_NOTE,

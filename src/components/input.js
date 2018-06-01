@@ -12,6 +12,7 @@ export default class Input extends React.Component{
         //you to the input as well
         let error;
         if(this.props.meta.error && this.props.meta.touched){
+            console.log(this.props.meta.error);
             error = (
                 <label className='formError'>
                     {this.props.meta.error}
@@ -20,9 +21,11 @@ export default class Input extends React.Component{
         }
         return(
             <div className='form-input'>
-                <label htmlFor={this.props.input.name}>
-                    {this.props.label}
-                    {error}
+                <label 
+                    htmlFor={this.props.input.name} 
+                    className={error ? 'validation-error' : 'label'}
+                >
+                    {error ? error : this.props.label}
                 </label>
                 <input 
                     {...this.props.input}

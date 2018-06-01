@@ -2,11 +2,13 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {clearAuth} from '../actions/auth';
 import {clearToken} from '../localStorage';
+import { clearChampionClickedSearched } from '../actions/champions';
 
 class Header extends React.Component{
     logout(){
         this.props.dispatch(clearAuth());
         clearToken();
+        this.props.dispatch(clearChampionClickedSearched());
     }
     render(){
         let logout;
@@ -17,7 +19,7 @@ class Header extends React.Component{
         }
         return (
             <div>
-                hello 
+                <h1>LOL Improver</h1>
                 {logout}
             </div>
         );

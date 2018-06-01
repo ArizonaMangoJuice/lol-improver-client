@@ -1,5 +1,5 @@
 import lolImproverUrl from '../config';
-import {signedUp} from './auth';
+import {signedUp, authError} from './auth';
 import {SubmissionError} from 'redux-form';
 
 export const registerUser = user => dispatch => {
@@ -11,20 +11,35 @@ export const registerUser = user => dispatch => {
         },
         body: JSON.stringify(user)
     })
-    .then(response => response.json())
+    .then(response => {
+        console.log(response);
+        if(response.status === 401){
+            return response.json().then(err => Promise.reject(err));
+        }
+        return response.json();
+    })
     .then(response => {
         dispatch(signedUp());
     })
     .catch(err => {
-        const {reason, message, location} = err;
-            if (reason === 'ValidationError') {
-                // Convert ValidationErrors into SubmissionErrors for Redux Form
-                return Promise.reject(
-                    new SubmissionError({
-                        [location]: message
-                    })
-                );
-            }
+        let {message} = err;
+        const {reason} = err.error;
+
+        dispatch(authError(err));
+
+        if(reason !== 'ValidationError'){
+            message = 'Unable to sign up, please try again later';
+        }
+
+        console.log(message);
+        dispatch(authError(message));
+        if(reason === 'ValidationError'){
+            return Promise.reject(
+                new SubmissionError({
+                    _error: message
+                })
+            )
+        }
     })
 }
 

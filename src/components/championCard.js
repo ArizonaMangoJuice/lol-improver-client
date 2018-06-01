@@ -11,19 +11,28 @@ class ChampionCard extends React.Component{
     }
 
     render(){//start seeing if the action works
-        // console.log(this.props)
+        let clicked;
+
+        this.props.css === undefined 
+            ? clicked = '' 
+            : clicked = this.props.css;
+
         return (
-            <div key={this.props.key} onClick={() => this.showNote(this.props.id)}>
-                <img src={this.props.src} />
-                <h2>{this.props.name}</h2>
-                <h3>{this.props.title}</h3>
-            </div>
+            <button 
+                key={this.props.key} 
+                onClick={() => {
+                    this.showNote(this.props.id)
+                }}
+                className={`champion-card ${clicked}`}
+            >
+                <img src={this.props.src} alt={this.props.name}/>
+                <div className={`champion-card-container`}>
+                    <h2>{this.props.name}</h2>
+                    <h3>{this.props.title}</h3>
+                </div>
+            </button>
         )
     }
 }
-
-const mapStateToProps = state => ({
-    champions: state.championReducer.champions
-});
 
 export default connect()(ChampionCard);

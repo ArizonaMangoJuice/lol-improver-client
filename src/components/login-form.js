@@ -3,6 +3,7 @@ import {Field, reduxForm, focus} from 'redux-form';
 import {login} from '../actions/auth';
 import Input from './input';
 import {required, notEmpty} from '../validators';
+import {Link} from 'react-router-dom';
 
 export class LoginForm extends React.Component{
     onSubmit(values){
@@ -12,37 +13,40 @@ export class LoginForm extends React.Component{
         let error;
         if(this.props.error){
             error = (
-                <div>
+                <label className='validation-error'>
                     {this.props.error}
-                </div>
+                </label>
             ) 
         }
         return (
             <form
                 className="login-form"
-                onSubmit={this.props.handleSubmit(values =>
-                    this.onSubmit(values)
-                )}>
+                onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
                 {error}
-                <label htmlFor="username">Username</label>
                 <Field
                     component={Input}
                     type="text"
                     name="username"
                     id="username"
+                    label='Username'
                     validate={[required, notEmpty]}
                 />
-                <label htmlFor="password">Password</label>
                 <Field
                     component={Input}
                     type="password"
                     name="password"
                     id="password"
+                    label='Password'
                     validate={[required, notEmpty]}
                 />
-                <button disabled={this.props.pristine || this.props.submitting}>
-                    Log in
-                </button>
+                <div>
+                    <button disabled={this.props.pristine || this.props.submitting}>
+                        Log in
+                    </button>
+                    <Link to='/register'>
+                        Register
+                    </Link>
+                </div>
             </form>
         );
     }
@@ -50,5 +54,8 @@ export class LoginForm extends React.Component{
 
 export default reduxForm({
     form: 'login',
-    onSubmitFail: (errors, dispatch) => dispatch(focus('login', 'username'))
+    onSubmitFail: (errors, dispatch) => {
+        console.log('onSubmitFail', errors);
+        return dispatch(focus('login', 'username'));
+    },
 })(LoginForm);

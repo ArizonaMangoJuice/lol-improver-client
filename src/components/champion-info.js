@@ -1,14 +1,18 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import fetchChampions from '../actions/champions';
 import SearchBar from './searchBar';
 import ChampionCard from './championCard';
 
 class ChampionInfo extends React.Component{
     championList(arr){
         return arr.map((champion, i) => {
-            // console.log(champion);
             const imageString = champion.image.full;
+            let css;
+            
+            this.props.championId === champion.id
+                ? css = 'clicked'
+                : css = '';
+
             return (
                 <ChampionCard 
                     key={i} 
@@ -17,13 +21,14 @@ class ChampionInfo extends React.Component{
                     title={champion.title}
                     userId={champion.userId}
                     id={champion.id} 
+                    css={css}
                     />
             );
         })
     }
     //connect the note to a component
     render(){
-        // console.log(this.props.champions.length);
+        // console.log(this.props.champions);
         let champs;
         if(this.props.champions.length){
             if(this.props.filteredChampions.length){
@@ -36,10 +41,11 @@ class ChampionInfo extends React.Component{
         return (
             <div>
                 <SearchBar />
-                <div>
-                    {this.props.champions.length > 0 ? champs : ''}
+                <div className='champ-container'>
+                    <div className='champion-card-flex'>
+                        {this.props.champions.length > 0 ? champs : ''}
+                    </div>
                 </div>
-                
             </div>
         )
     }
@@ -47,7 +53,9 @@ class ChampionInfo extends React.Component{
 
 const mapStateToProps = state => ({
     champions: state.championReducer.champions,
-    filteredChampions: state.championReducer.filteredChampions
+    filteredChampions: state.championReducer.filteredChampions,
+    championId: state.championReducer.championId
+
 })
 
 export default connect(mapStateToProps)(ChampionInfo);

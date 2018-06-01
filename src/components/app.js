@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {Route, withRouter, Redirect} from 'react-router-dom';
+import {Route, withRouter} from 'react-router-dom';
 import Dashboard from './dashboard';
 import LandingPage from './landingPage';
 import Header from './header';

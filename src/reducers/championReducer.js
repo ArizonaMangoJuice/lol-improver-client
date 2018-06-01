@@ -4,15 +4,15 @@ import {
     CHAMPION_FETCH_ERROR,
     CHAMPION_IS_CLICKED,
     SEARCH_CHAMPION,
-    UPDATE_CHAMPION_NOTE
+    UPDATE_CHAMPION_NOTE,
+    CLEAR_CHAMPION_CLICKED_SEARCHED
 } from '../actions/champions';
 
 const initalState = {
     loading: false,
     champions: [],
-    clickedChampions: [],
     filteredChampions: [],
-    note: 'e',
+    note: '',
     error: null,
     championId: null,
 }
@@ -45,6 +45,13 @@ const championReducer = (state=initalState, action) => {
                 note: champion[0].content,
                 championId: action.id
             };
+        case CLEAR_CHAMPION_CLICKED_SEARCHED: 
+            return {
+                ...state,
+                note: '',
+                championId: null,
+                filteredChampions: []
+            }
         case SEARCH_CHAMPION:
             return {
                 ...state,
