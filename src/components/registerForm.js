@@ -2,7 +2,7 @@ import React from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
 import {registerUser} from '../actions/registerUser';
 import Input from './input';
-import {required, notEmpty, tooBigOrTooSmall} from '../validators';
+import {required, notEmpty, tooBigOrTooSmall, spacesInUsername} from '../validators';
 import {Link} from 'react-router-dom';
 
 export class RegisterForm extends React.Component{
@@ -37,7 +37,7 @@ export class RegisterForm extends React.Component{
                     name='username'
                     id='username'
                     label='Username'
-                    validate={[required, notEmpty]}
+                    validate={[required, notEmpty, spacesInUsername]}
                 />
                 <Field
                     component={Input}
