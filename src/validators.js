@@ -16,3 +16,5 @@ export const tooBigOrTooSmall = value => {
         return `Can't be smaller than 10 characters`;
     }
 }
+
+export const trimOuterSpaces = value => value.trim() === value ? '' : `Can't have outer spaces`;

@@ -4,6 +4,7 @@ import fetchChampions from '../actions/champions';
 import LoginWrapper from './loginWrapper';
 import ChampionInfo from './champion-info';
 import NoteArea from './noteArea';
+import PlayerSearch from './playerSearch'
 
 export class Dashboard extends React.Component{
     componentDidMount(){   
@@ -12,8 +13,9 @@ export class Dashboard extends React.Component{
     render(){
         return (
             <main>
-               <ChampionInfo />
+                <ChampionInfo/>
                 <NoteArea />
+                <PlayerSearch />
             </main>
         )
     }

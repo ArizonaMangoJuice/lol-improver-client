@@ -14,11 +14,11 @@ class Header extends React.Component{
         let logout;
         if(this.props.loggedIn){
             logout = (
-                <button onClick={() => this.logout()}>Log Out</button>
+                <button className='user-button' onClick={() => this.logout()}>Log Out</button>
             );
         }
         return (
-            <div>
+            <div id='banner'>
                 <h1>LOL Improver</h1>
                 {logout}
             </div>

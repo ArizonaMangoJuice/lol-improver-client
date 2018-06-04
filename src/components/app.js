@@ -7,7 +7,7 @@ import Header from './header';
 import RegisterPage from './registerPage';
 
 export class App extends React.Component{
-    componentDidUpdate(prevProps){
+    componentDidMount(){   
         
     }
 

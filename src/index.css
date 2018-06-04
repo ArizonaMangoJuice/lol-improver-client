@@ -1,6 +1,6 @@
 html{
   height: 100%;
-  background: #f2f2f2;
+  /* background: #f2f2f2; */
 
 }
 body {
@@ -18,22 +18,21 @@ label{
   display: block;
 }
 
-main{
+/* main{
   display: flex;
   align-items: center;
   align-content: center;
   justify-content: center;
   height: 100%;
-}
+} */
 
 .validation-error{
   color: red;
 }
 
 .champ-container{
-  border: 1px solid red;
   display: inline-block;
-  height: 320px;
+  height: 220px;
   overflow: auto;
 }
 .champion-card{
@@ -41,8 +40,16 @@ main{
   transition: 0.3s;
   width: 175px;
   border-radius: 5px;
+  background: #00cdcf;
   margin: 5px;
   vertical-align: top;
+  border: none;
+  color: #fff;
+}
+
+.champion-card img{
+  border-radius: 50%;
+  padding: .2em;
 }
 
 .champion-card-flex{
@@ -57,7 +64,7 @@ main{
 
 .clicked{
    transition: 0.5s;
-   background: red;
+   background: #cc4544;
 }
 
 .search-bar{
@@ -66,5 +73,162 @@ main{
 .note-container {
   height: 450px;
   width: 30%;
-  border: 1px solid red;
 }
+
+.match-card {
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  /* border: 1px solid; */
+  -ms-flex-pack: center;
+  flex-direction: column;
+  box-sizing: border-box;
+  background-color: white;
+  margin-top: 1em;
+}
+
+#banner{
+  background-color: #00cdcf;
+  color: #ffffff;
+  padding: 8em 0 6em 0;
+}
+
+.user-button{
+    background-color: #009a9c;
+    border: none;
+    color: #fff !important;
+}
+
+.login-form{
+  padding: 6em 0;
+  background: #00cdcf;
+  color: #fff;
+  text-align: center;
+}
+.player-champ{
+  margin: auto;
+  text-align: center;
+  color: white;
+}
+
+.kill-stats{
+  display: flex;
+  padding: 1em;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.kill-stats p{
+  padding: .3em;
+  color: white;
+  background: none;
+}
+
+.stats{
+  display: flex;
+  padding: 1em;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.stats p{
+  padding: .3em;
+  color: white;
+  background: none;
+}
+
+.win{
+  background: #00cdcf;
+}
+
+.defeat{
+  background: #cc4544;
+}
+
+@media only screen and (max-width: 480px) {
+  html, body {
+    min-width: 320px;
+  }
+  h1 {
+    width: 100%;
+    border-style: double solid;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-width: 4px 1px;
+    font-size: 2.4em;
+    line-height: 1.35em;
+    margin: 0 auto 1em;
+    padding: 1.1em;
+    font-size: 1.65em;
+    color: #ffffff;
+    background: #00cccd;
+
+  }
+  #banner {
+    text-align: center;
+    padding: 3em 1em 1em 1em;
+  }
+  .user-button{
+    padding: .7em;
+    width: 70%;
+    font-size: 1.5em;
+  }
+  p{
+    padding: 2em 1em 2em 1em;
+    color: #00cdcf;
+    background: white;
+    margin: 0;
+    font-size: 1.65em;
+  }
+  .login-form{
+    padding: 3em 0;
+  }
+
+  .note-container {
+    height: 450px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .note-container label{
+    font-size: 1.5em;
+  }
+
+  .note-container form {
+    height: 100%;
+    background: #00cccd;
+  }
+
+  .note-container form button{
+    display: block;
+    margin: .5em auto;
+    padding: .6em 2em;
+    font-size: 1em;
+    background-color: #009a9c;
+    border: none;
+    color: #fff !important;
+  }
+
+  .note-container form div label {
+    text-align: center;
+    color: white;
+    padding: .8em;
+  }
+
+  #champ-note{
+    width: 80%;
+    display: block;
+    margin: auto;
+    height: 320px;
+  }
+
+  .noNote{
+    display: none;
+  }
+
+}
+
