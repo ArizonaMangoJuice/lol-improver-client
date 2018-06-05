@@ -1,0 +1,215 @@
+#banner {
+    background-color: #00cdcf;
+    color: #ffffff;
+    padding: 8em 0 6em 0;
+    text-align: center;
+}
+
+#banner h1 {
+    border-style: double solid;
+    border-width: 4px 1px;
+    font-size: 2.4em;
+    line-height: 1.35em;
+    margin: 0 auto 1em;
+    padding: 1.1em;
+    width: 40%;
+}
+
+p{
+    padding-bottom: 0.4em;
+    border-bottom-style: double;
+    border-bottom-width: 4px;
+    width: 30%;
+    text-align: center;
+    padding: 1em;
+    margin: 2em auto;
+    font-size: 1.6em;
+    line-height: 1.5em;
+}
+
+.form-input label{
+    text-align: left;
+    padding: 0em 1em;
+}
+
+.login-form{
+    padding: 6em 0;
+    background: #00cdcf;
+    color: #fff;
+    text-align: center;
+    width: 30%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.form-input{
+    padding: 1em 0em;
+    width: 49%;
+}
+
+#username{
+    outline: 0;
+    background: #fff;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: .8em;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+#password{
+    outline: 0;
+    background: #fff;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: .8em;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+#login-form-buttons{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 2em;
+}
+
+#login-form-buttons button{
+    text-transform: uppercase;
+    outline: 0;
+    background: #fff;
+    width: 33%;
+    border: 0;
+    padding: 15px;
+    color: #00cdcf;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#login-form-buttons button:hover{
+    transition: 0.3s;
+    color: #fff;
+    background: #00cdcf;
+}
+
+#login-form-buttons a {
+    text-transform: uppercase;
+    outline: 0;
+    background: #fff;
+    border: 0;
+    padding: 15px;
+    color: #00cdcf;
+    font-size: 14px;
+    text-decoration: none;
+    width: 30%;
+    margin-left: 2em;
+}
+
+#login-form-buttons a:hover{
+    transition: 0.3s;
+    color: #fff;
+    background: #00cdcf;
+}
+
+@media only screen and (max-width: 1366px){
+    .login-form{
+        width: 60%;
+    }
+    p{
+        width: 60%;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    #banner h1 {
+      width: 100%;
+      border-style: double solid;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      border-width: 4px 1px;
+      font-size: 2.4em;
+      line-height: 1.35em;
+      margin: 0 auto 1em;
+      padding: 1.1em;
+      font-size: 1.65em;
+      color: #ffffff;
+      background: #00cccd;
+  
+    }
+
+    p{
+      padding: 2em 1em 2em 1em;
+      color: #00cdcf;
+      background: white;
+      margin: 0;
+      font-size: 1.65em;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .login-form{
+      padding: 3em 0;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    #username{
+      outline: 0;
+      background: #fff;
+      width: 100%;
+      border: 0;
+      margin: 0 0 15px;
+      padding: 15px;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+  
+    #password{
+      outline: 0;
+      background: #fff;
+      width: 100%;
+      border: 0;
+      margin: 0 0 15px;
+      padding: 15px;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+  
+    #login-form-buttons {
+      display: flex;
+      justify-content: center;
+    }
+  
+    #login-form-buttons button{
+      text-transform: uppercase;
+      outline: 0;
+      background: #fff;
+      width: 30%;
+      border: 0;
+      padding: 15px;
+      margin-right: 1em;
+      color: #00cdcf;
+      font-size: 14px;
+    }
+  
+    #login-form-buttons a {
+      text-transform: uppercase;
+      outline: 0;
+      background: #fff;
+      border: 0;
+      padding: 15px;
+      color: #00cdcf;
+      font-size: 14px;
+      text-decoration: none;
+    }
+
+    .form-input{
+        width: 100%;
+    }
+  }
+  

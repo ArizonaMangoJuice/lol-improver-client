@@ -43,7 +43,8 @@ export const login = (username, password) => dispatch => {
         fetch(`${lolImproverUrl}/login`, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': lolImproverUrl
             },
             body: JSON.stringify({
                 username, 
