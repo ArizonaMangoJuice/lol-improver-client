@@ -2,6 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {Redirect} from 'react-router-dom';
 import RegisterForm from '../RegisterForm';
+import './index.css';
 
 function RegisterPage(props){
     if(props.loggedIn){

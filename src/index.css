@@ -193,39 +193,6 @@ label{
 
   
 
-  #register-form{
-    padding: 3em 0;
-    background: #00cdcf;
-    color: #fff;
-    text-align: center;
-  }
-
-  #register-form-buttons  button{
-    text-transform: uppercase;
-    outline: 0;
-    background: #fff;
-    width: 30%;
-    border: 0;
-    padding: 15px;
-    margin-right: 1em;
-    color: #00cdcf;
-    font-size: 14px;
-  }
-
-  #register-form-buttons a {
-    text-transform: uppercase;
-    outline: 0;
-    background: #fff;
-    border: 0;
-    padding: 15px;
-    color: #00cdcf;
-    font-size: 14px;
-    text-decoration: none;
-  }
-
-  #register-title{
-    text-align: center;
-  }
 
   #search-champ-container{
     background: #00cccd;

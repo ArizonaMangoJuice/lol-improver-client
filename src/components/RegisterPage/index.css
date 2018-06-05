@@ -1,0 +1,98 @@
+#register-form{
+    padding: 6em 0;
+    background: #00cdcf;
+    color: #fff;
+    text-align: center;
+    width: 30%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#register-form-buttons{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 2em;
+}
+
+#register-form-buttons button{
+    text-transform: uppercase;
+    outline: 0;
+    background: #fff;
+    width: 33%;
+    border: 0;
+    padding: 15px;
+    color: #00cdcf;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#register-form-buttons button:hover{
+    transition: 0.3s;
+    color: #fff;
+    background: #00cdcf;
+}
+
+#register-form-buttons a {
+    text-transform: uppercase;
+    outline: 0;
+    background: #fff;
+    border: 0;
+    padding: 15px;
+    color: #00cdcf;
+    font-size: 14px;
+    text-decoration: none;
+    width: 30%;
+    margin-left: 2em;
+}
+
+#register-form-buttons a:hover{
+    transition: 0.3s;
+    color: #fff;
+    background: #00cdcf;
+}
+
+@media only screen and (max-width: 1366px){
+    #register-form{
+        width: 60%;
+    }
+}
+
+@media only screen and (max-width: 480px){
+  #register-form{
+    padding: 3em 0;
+    background: #00cdcf;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+  }
+
+  #register-form-buttons  button{
+    text-transform: uppercase;
+    outline: 0;
+    background: #fff;
+    width: 30%;
+    border: 0;
+    padding: 15px;
+    margin-right: 1em;
+    color: #00cdcf;
+    font-size: 14px;
+  }
+
+  #register-form-buttons a {
+    text-transform: uppercase;
+    outline: 0;
+    background: #fff;
+    border: 0;
+    padding: 15px;
+    color: #00cdcf;
+    font-size: 14px;
+    text-decoration: none;
+  }
+
+  #register-title{
+    text-align: center;
+  }
+}
