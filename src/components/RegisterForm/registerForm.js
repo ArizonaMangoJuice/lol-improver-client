@@ -1,8 +1,8 @@
 import React from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
-import {registerUser} from '../actions/registerUser';
-import Input from './input';
-import {required, notEmpty, tooBigOrTooSmall, spacesInUsername} from '../validators';
+import {registerUser} from '../../actions/registerUser';
+import Input from '../Input';
+import {required, notEmpty, tooBigOrTooSmall, spacesInUsername} from '../../validators';
 import {Link} from 'react-router-dom';
 
 export class RegisterForm extends React.Component{

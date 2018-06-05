@@ -1,8 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {clearAuth} from '../actions/auth';
-import {clearToken} from '../localStorage';
-import { clearChampionClickedSearched } from '../actions/champions';
+import {clearAuth} from '../../actions/auth';
+import {clearToken} from '../../localStorage';
+import { clearChampionClickedSearched } from '../../actions/champions';
 
 class Header extends React.Component{
     logout(){

@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {searchChampion} from '../actions/champions';
+import {searchChampion} from '../../actions/champions';
 
 function SearchBar(props){
     return (

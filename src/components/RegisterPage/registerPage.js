@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Redirect} from 'react-router-dom';
-import RegisterForm from './registerForm';
+import RegisterForm from '../RegisterForm';
 
 function RegisterPage(props){
     if(props.loggedIn){

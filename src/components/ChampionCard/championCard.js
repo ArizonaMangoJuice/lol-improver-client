@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {championIsClicked} from '../actions/champions';
+import {championIsClicked} from '../../actions/champions';
 
 class ChampionCard extends React.Component{
     showNote(id){

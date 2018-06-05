@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import SearchBar from './searchBar';
-import ChampionCard from './championCard';
+import SearchBar from '../SearchBar';
+import ChampionCard from '../ChampionCard';
 
 class ChampionInfo extends React.Component{
     championList(arr){

@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {updateChampionNote} from '../actions/champions';
+import {updateChampionNote} from '../../actions/champions';
 
 class NoteForm extends React.Component{
 

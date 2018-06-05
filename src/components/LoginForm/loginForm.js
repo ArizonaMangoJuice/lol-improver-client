@@ -1,8 +1,8 @@
 import React from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
-import {login} from '../actions/auth';
-import Input from './input';
-import {required, notEmpty} from '../validators';
+import {login} from '../../actions/auth';
+import Input from '../Input';
+import {required, notEmpty} from '../../validators';
 import {Link} from 'react-router-dom';
 
 export class LoginForm extends React.Component{

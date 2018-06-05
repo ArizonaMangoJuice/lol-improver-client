@@ -1,5 +1,5 @@
 import React from 'react';
-import { fetchNameDetails } from '../actions/playerInfo';
+import { fetchNameDetails } from '../../actions/playerInfo';
 import {connect} from 'react-redux';
 
 export class MatchInfoCard extends React.Component{

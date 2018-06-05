@@ -1,8 +1,8 @@
 import React from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
-import Input from './input';
-import { findPlayer, clearPlayer } from '../actions/playerInfo';
-import {notEmpty, trimOuterSpaces} from '../validators';
+import Input from '../Input';
+import { findPlayer, clearPlayer } from '../../actions/playerInfo';
+import {notEmpty, trimOuterSpaces} from '../../validators';
 
 export class PlayerSearchForm extends React.Component{
     onSubmit(value){

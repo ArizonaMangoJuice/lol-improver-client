@@ -1,7 +1,7 @@
 import React from 'react';
 import {Field, reduxForm} from 'redux-form';
-import NoteForm from './textAreaInput';
-import {updateBackEndChampionNote} from '../actions/champions';
+import NoteForm from '../NoteForm';
+import {updateBackEndChampionNote} from '../../actions/champions';
 import {connect} from 'react-redux';
 
 class NoteArea extends React.Component{
@@ -9,8 +9,6 @@ class NoteArea extends React.Component{
     onSubmit(){
         return this.props.dispatch(updateBackEndChampionNote())
     }
-
-
 
     render(){
 

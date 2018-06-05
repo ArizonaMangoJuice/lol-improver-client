@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import MatchInfoCard from './matchInfoCard';
+import MatchInfoCard from '../MatchInfoCard';
 
 export class MatchInfo extends React.Component{
 

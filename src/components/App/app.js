@@ -1,10 +1,10 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {Route, withRouter} from 'react-router-dom';
-import Dashboard from './dashboard';
-import LandingPage from './landingPage';
-import Header from './header';
-import RegisterPage from './registerPage';
+import Dashboard from '../Dashboard';
+import LandingPage from '../LandingPage';
+import Header from '../Header';
+import RegisterPage from '../RegisterPage';
 
 export class App extends React.Component{
     componentDidMount(){   

@@ -1,10 +1,10 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import fetchChampions from '../actions/champions';
-import LoginWrapper from './loginWrapper';
-import ChampionInfo from './champion-info';
-import NoteArea from './noteArea';
-import PlayerSearch from './playerSearch'
+import fetchChampions from '../../actions/champions';
+import LoginWrapper from '../LoginWrapper';
+import ChampionInfo from '../ChampionInfo';
+import NoteArea from '../NoteArea';
+import PlayerSearch from '../PlayerSearch'
 
 export class Dashboard extends React.Component{
     componentDidMount(){   

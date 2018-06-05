@@ -1,8 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import PlayerSearchForm  from './playerSearchForm';
-import AccountInfo from './accountInfo';
-import MatchInfo from './matchInfo';
+import PlayerSearchForm  from '../PlayerSearchForm';
+import AccountInfo from '../AccountInfo';
+import MatchInfo from '../MatchInfo';
 
 export class PlayerSearch extends React.Component{
     render(){
