@@ -230,5 +230,146 @@ label{
     display: none;
   }
 
+  #username{
+    outline: 0;
+    background: #fff;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+
+  #password{
+    outline: 0;
+    background: #fff;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+
+  #login-form-buttons {
+    display: flex;
+    justify-content: center;
+  }
+
+  #login-form-buttons button{
+    text-transform: uppercase;
+    outline: 0;
+    background: #fff;
+    width: 30%;
+    border: 0;
+    padding: 15px;
+    margin-right: 1em;
+    color: #00cdcf;
+    font-size: 14px;
+  }
+
+  #login-form-buttons a {
+    text-transform: uppercase;
+    outline: 0;
+    background: #fff;
+    border: 0;
+    padding: 15px;
+    color: #00cdcf;
+    font-size: 14px;
+    text-decoration: none;
+  }
+
+  #register-form{
+    padding: 3em 0;
+    background: #00cdcf;
+    color: #fff;
+    text-align: center;
+  }
+
+  #register-form-buttons  button{
+    text-transform: uppercase;
+    outline: 0;
+    background: #fff;
+    width: 30%;
+    border: 0;
+    padding: 15px;
+    margin-right: 1em;
+    color: #00cdcf;
+    font-size: 14px;
+  }
+
+  #register-form-buttons a {
+    text-transform: uppercase;
+    outline: 0;
+    background: #fff;
+    border: 0;
+    padding: 15px;
+    color: #00cdcf;
+    font-size: 14px;
+    text-decoration: none;
+  }
+
+  #register-title{
+    text-align: center;
+  }
+
+  #search-champ-container{
+    background: #00cccd;
+    text-align: center;
+    padding-bottom: .1em;
+  }
+
+  #search-champ-container label {
+    padding: 1em;
+    padding-bottom: 0.4em;
+    border-bottom-style: double;
+    border-bottom-width: 4px;
+    font-size: 1.5em;
+    line-height: 1.5em;
+    text-transform: uppercase;
+    color: white;
+  }
+
+  #search-bar{
+    outline: 0;
+    background: #fff;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+
+  #player-search-form{
+    background: #00cccd;
+    text-align: center;
+    padding-bottom: .1em;
+  }
+
+  #player-search-form div label{
+    padding: 1em;
+    padding-bottom: 0.4em;
+    border-bottom-style: double;
+    border-bottom-width: 4px;
+    font-size: 1.5em;
+    line-height: 1.5em;
+    text-transform: uppercase;
+    color: white;
+  }
+
+  #playerSearch{
+    outline: 0;
+    background: #fff;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 14px;
+  }
+
 }
 

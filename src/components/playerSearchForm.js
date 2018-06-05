@@ -13,7 +13,7 @@ export class PlayerSearchForm extends React.Component{
     }
     render(){
         return (
-            <form onSubmit={this.props.handleSubmit(value => this.onSubmit(value))}>
+            <form id='player-search-form' onSubmit={this.props.handleSubmit(value => this.onSubmit(value))}>
                 <Field
                     component={Input}
                     type='text'

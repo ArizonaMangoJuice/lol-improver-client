@@ -41,11 +41,11 @@ class ChampionInfo extends React.Component{
         return (
             <div>
                 <SearchBar />
-                <div className='champ-container'>
+                <section role='region' className='champ-container'>
                     <div className='champion-card-flex'>
                         {this.props.champions.length > 0 ? champs : ''}
                     </div>
-                </div>
+                </section>
             </div>
         )
     }

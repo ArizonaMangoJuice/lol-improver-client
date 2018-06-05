@@ -8,7 +8,6 @@ export class PlayerSearch extends React.Component{
     render(){
         return (
             <div>
-                <h1>Search A Player</h1>
                 <PlayerSearchForm/>
                 <AccountInfo/>  
                 <MatchInfo/>     

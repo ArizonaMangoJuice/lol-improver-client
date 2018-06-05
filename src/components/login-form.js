@@ -39,7 +39,7 @@ export class LoginForm extends React.Component{
                     label='Password'
                     validate={[required, notEmpty]}
                 />
-                <div>
+                <div id='login-form-buttons'>
                     <button disabled={this.props.pristine || this.props.submitting}>
                         Log in
                     </button>

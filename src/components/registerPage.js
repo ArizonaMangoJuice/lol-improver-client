@@ -12,6 +12,7 @@ function RegisterPage(props){
     }
     return (
         <div>
+            <p id='register-title'>Sign Up</p>
             <RegisterForm />
         </div>
     );

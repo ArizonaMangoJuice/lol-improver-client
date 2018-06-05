@@ -28,6 +28,7 @@ export class RegisterForm extends React.Component{
         }
         return (
             <form 
+                id='register-form'
                 onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}
             >   
                 {error}
@@ -47,7 +48,7 @@ export class RegisterForm extends React.Component{
                     label='Password'
                     validate={[required, notEmpty, tooBigOrTooSmall]}
                 />
-                <div>
+                <div id='register-form-buttons'>
                     <button disabled={this.props.pristine || this.props.submitting}>
                         Sign Up
                     </button>
