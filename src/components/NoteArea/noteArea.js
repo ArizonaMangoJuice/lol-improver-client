@@ -3,6 +3,7 @@ import {Field, reduxForm} from 'redux-form';
 import NoteForm from '../NoteForm';
 import {updateBackEndChampionNote} from '../../actions/champions';
 import {connect} from 'react-redux';
+import './index.css';
 
 class NoteArea extends React.Component{
     //create action for component and add to reducer 

@@ -19,7 +19,7 @@ export function LandingPage(props){
 
     return (
         <div>
-            <p>
+            <p className='landing-page-p'>
                 LoL Improver lets you take your gaming to a whole new level.
             </p>
             {signedUp}

@@ -2,6 +2,8 @@ import React from 'react';
 import {connect} from 'react-redux';
 import SearchBar from '../SearchBar';
 import ChampionCard from '../ChampionCard';
+import './index.css';
+
 
 class ChampionInfo extends React.Component{
     championList(arr){
@@ -39,14 +41,14 @@ class ChampionInfo extends React.Component{
             }
         }
         return (
-            <div>
+            <section id='champion-search-container'>
                 <SearchBar />
                 <section className='champ-container'>
                     <div className='champion-card-flex'>
                         {this.props.champions.length > 0 ? champs : ''}
                     </div>
                 </section>
-            </div>
+            </section>
         )
     }
 }

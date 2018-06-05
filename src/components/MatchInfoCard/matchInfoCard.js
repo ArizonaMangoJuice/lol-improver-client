@@ -1,7 +1,7 @@
 import React from 'react';
 import { fetchNameDetails } from '../../actions/playerInfo';
 import {connect} from 'react-redux';
-
+import './index.css';
 export class MatchInfoCard extends React.Component{
     killDeathRatio(kills, assists, deaths){
         let kda = (kills + assists) / deaths;

@@ -1,0 +1,80 @@
+.match-card{
+  display: flex;
+    flex-direction: row;
+    height: 250px;
+    align-items: center;
+    background: #00cccd;
+    margin-right: 1.5em;
+    color: white;
+    padding: .4em;
+}
+
+.win{
+    background: #00cdcf;
+}
+  
+.defeat{
+    background: #cc4544;
+}
+
+@media only screen and (max-width: 480px){
+    .match-card {
+        display: -ms-flexbox;
+        display: flex;
+        width: 100%;
+        /* border: 1px solid; */
+        -ms-flex-pack: center;
+        flex-direction: column;
+        box-sizing: border-box;
+        background-color: white;
+        margin-top: 1em;
+      }
+
+      .match-card p {
+        border-bottom-style: none;
+        border-bottom-width: 0;
+      }
+
+      .player-champ{
+        margin: auto;
+        text-align: center;
+        color: white;
+      }
+      
+      .kill-stats{
+        display: flex;
+        padding: 1em;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .kill-stats p{
+        padding: .3em;
+        color: white;
+        background: none;
+      }
+      
+      .stats{
+        display: flex;
+        padding: 1em;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .stats p{
+        padding: .3em;
+        color: white;
+        background: none;
+      }
+      .win{
+        background: #00cdcf;
+    }
+      
+    .defeat{
+        background: #cc4544;
+    }
+}

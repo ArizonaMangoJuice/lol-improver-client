@@ -47,7 +47,7 @@ export class MatchInfo extends React.Component{
             : '';
         
         return (
-            <div>
+            <div className='player-matches'>
                 {matches}
             </div>
         );

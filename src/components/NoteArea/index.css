@@ -1,0 +1,48 @@
+.note-container {
+    height: 450px;
+    width: 30%;
+}
+
+@media only screen and (max-width: 480px){
+    .note-container {
+        height: 450px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+    
+      .note-container label{
+        font-size: 1.5em;
+      }
+    
+      .note-container form {
+        height: 100%;
+        background: #00cccd;
+      }
+    
+      .note-container form button{
+        display: block;
+        margin: .5em auto;
+        padding: .6em 2em;
+        font-size: 1em;
+        background-color: #009a9c;
+        border: none;
+        color: #fff !important;
+      }
+    
+      .note-container form div label {
+        text-align: center;
+        color: white;
+        padding: .8em;
+      }
+    
+      #champ-note{
+        width: 80%;
+        display: block;
+        margin: auto;
+        height: 320px;
+      }
+    
+      .noNote{
+        display: none;
+      }
+}
