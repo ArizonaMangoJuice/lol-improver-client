@@ -1,6 +1,7 @@
 #register-form{
     padding: 6em 0;
     background: #00cdcf;
+    border: 1px solid #00cdcf;
     color: #fff;
     text-align: center;
     width: 30%;
@@ -46,6 +47,18 @@
     text-decoration: none;
     width: 30%;
     margin-left: 2em;
+}
+
+#register-title{
+    padding-bottom: 0.4em;
+    border-bottom-style: double;
+    border-bottom-width: 4px;
+    width: 30%;
+    text-align: center;
+    padding: 1em;
+    margin: 2em auto;
+    font-size: 1.6em;
+    line-height: 1.5em;
 }
 
 #register-form-buttons a:hover{

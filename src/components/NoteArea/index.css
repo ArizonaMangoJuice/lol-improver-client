@@ -3,11 +3,25 @@
     width: 30%;
 }
 
+@media only screen and (max-width: 1366px){
+  .note-container{
+    height: 450px;
+    width: 80%;
+    margin: auto;
+  }
+  #champion-search-container {
+    width: 100%;
+    margin: auto;
+    padding: 2em;
+}
+}
+
 @media only screen and (max-width: 480px){
     .note-container {
         height: 450px;
         width: 100%;
         box-sizing: border-box;
+        margin: 0;
       }
     
       .note-container label{

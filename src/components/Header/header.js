@@ -18,10 +18,10 @@ class Header extends React.Component{
             );
         }
         return (
-            <div id='banner'>
+            <section id='banner'>
                 <h1>LOL Improver</h1>
                 {logout}
-            </div>
+            </section>
         );
     }
 }

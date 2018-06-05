@@ -24,7 +24,7 @@ class NoteArea extends React.Component{
 
         console.log(textArea)
         return (
-            <div className={`note-container ${this.props.championId ? '' : 'noNote'}`}>
+            <div className={`${this.props.championId ? 'note-container' : 'noNote'}`}>
                 {textArea}
             </div>
         )

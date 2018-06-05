@@ -14,7 +14,7 @@ export class App extends React.Component{
     render(){
         
         return (
-            <div>
+            <div className='main-body'>
                 <Header />
                 <Route exact path='/' component={LandingPage} />
                 <Route exact path='/dashboard' component={Dashboard} />

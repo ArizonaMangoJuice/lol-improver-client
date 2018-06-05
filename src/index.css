@@ -18,6 +18,10 @@ label{
   display: block;
 }
 
+.main-body{
+  min-height: 1500px;
+}
+
 main{
   display: flex;
   align-items: center;
