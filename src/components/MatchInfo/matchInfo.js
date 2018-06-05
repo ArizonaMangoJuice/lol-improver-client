@@ -9,7 +9,7 @@ export class MatchInfo extends React.Component{
         let accountId = this.props.accountInfo.accountId;
         let result = [];
         let tempObj = {};
-        // console.log(this.props.matches);
+        console.log(this.props.matches);
         // console.log('accountId',accountId);
         // console.log('matches', this.props.matches[0].participantIdentities.filter(i => i.player.currentAccountId.toString() === accountId));
         // console.log(this.props.matches[0].participantIdentities[6].player.accountId == accountId);

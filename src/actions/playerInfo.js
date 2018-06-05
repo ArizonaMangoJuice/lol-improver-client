@@ -39,6 +39,7 @@ export const fetchNameDetails = championId => dispatch => {
 export const findPlayer = name => dispatch => {
     return fetch(`${lolImproverUrl}/players/${name}`)
         .then(response => {
+            // console.log(response.length);
             if(!response.ok) throw new Error('Player Not Found');
             return response.json()
         })
@@ -46,7 +47,7 @@ export const findPlayer = name => dispatch => {
             // if(response.error){
             //     return Promise.reject(response.response);
             // }
-            // console.log(response);
+            // console.log(response.length);
             let matches = response.matchDetails.map(match => JSON.parse(match))
 
             dispatch(searchPlayer(response.playerInfo));

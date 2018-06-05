@@ -22,7 +22,7 @@ class NoteArea extends React.Component{
                     </form> )
             : ''
 
-        console.log(textArea)
+        // console.log(textArea)
         return (
             <div className={`${this.props.championId ? 'note-container' : 'noNote'}`}>
                 {textArea}

@@ -47,7 +47,13 @@
 }
 .stats{
     padding: 1em;
-  }
+}
+
+.player-search-error{
+    background: #cc4544;
+    color: white;
+    padding: 1em;
+}
 
 @media only screen and (max-width: 1366px){
     .player-matches-container {

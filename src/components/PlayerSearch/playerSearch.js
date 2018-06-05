@@ -7,8 +7,15 @@ import './index.css'
 
 export class PlayerSearch extends React.Component{
     render(){
+        let error = this.props.error 
+            ? (
+                <h2 className='player-search-error'>
+                    {this.props.error}
+                </h2>
+            ) : '';
         return (
             <div className='player-matches-container'>
+                {error}
                 <PlayerSearchForm/>
                 <AccountInfo/>  
                 <MatchInfo/>     
@@ -17,6 +24,10 @@ export class PlayerSearch extends React.Component{
     }
 }
 
-export default connect()(PlayerSearch);
+const mapStateToProps = state => ({
+    error: state.playerReducer.error,
+})
+
+export default connect(mapStateToProps)(PlayerSearch);
 //create component for account user 
 //create component for matches 
