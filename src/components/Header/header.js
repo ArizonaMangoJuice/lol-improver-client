@@ -3,10 +3,12 @@ import {connect} from 'react-redux';
 import {clearAuth} from '../../actions/auth';
 import {clearToken} from '../../localStorage';
 import { clearChampionClickedSearched } from '../../actions/champions';
+import {clearPlayer} from '../../actions/playerInfo';
 
 class Header extends React.Component{
     logout(){
         this.props.dispatch(clearAuth());
+        this.props.dispatch(clearPlayer());
         clearToken();
         this.props.dispatch(clearChampionClickedSearched());
     }

@@ -29,9 +29,6 @@ export class PlayerSearchForm extends React.Component{
 
 export default (reduxForm({
     form: 'test',
-    onSubmitFail: (errors, dispatch) => {
-        return dispatch(focus('SignUp', 'playerSearch'));
-    }
   })(PlayerSearchForm));
 
   //rememeber to save this stuff bro

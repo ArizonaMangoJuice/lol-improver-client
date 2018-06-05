@@ -9,12 +9,18 @@ export class MatchInfo extends React.Component{
         let accountId = this.props.accountInfo.accountId;
         let result = [];
         let tempObj = {};
-        console.log(accountId);
+        // console.log(this.props.matches);
+        // console.log('accountId',accountId);
+        // console.log('matches', this.props.matches[0].participantIdentities.filter(i => i.player.currentAccountId.toString() === accountId));
         // console.log(this.props.matches[0].participantIdentities[6].player.accountId == accountId);
-        let name = this.props.matches[num].participantIdentities.filter(participant => participant.player.accountId.toString() === accountId.toString());
-        console.log('name',name)
+        let name = this.props.matches[num].participantIdentities.filter(i => i.player.currentAccountId.toString() === accountId);
+        // console.log('name',name)
         let participantId = name[0].participantId;
-        let mainPlayerStats = this.props.matches[0].participants.filter(participant => participant.participantId === participantId);
+        // console.log('participant id',participantId);
+
+        let mainPlayerStats = this.props.matches[num].participants.filter(participant => participant.participantId === participantId);
+
+        // console.log('mainplayer stats', mainPlayerStats);
 
         tempObj.mainPlayerStats = mainPlayerStats
 

@@ -12,6 +12,12 @@ export const fetchMatches = matches => ({
     matches
 })
 
+export const MATCHES_ERROR = 'MATCHES_ERROR';
+export const matchesError = error => ({
+    type: MATCHES_ERROR,
+    error
+})
+
 export const FETCH_STATIC_NAME = 'FETCH_STATIC_NAME';
 export const fetchStaticName = championInfo => ({
     type: FETCH_STATIC_NAME,
@@ -33,13 +39,13 @@ export const fetchNameDetails = championId => dispatch => {
 export const findPlayer = name => dispatch => {
     return fetch(`${lolImproverUrl}/players/${name}`)
         .then(response => {
-            // console.log(response);
+            if(!response.ok) throw new Error('Player Not Found');
             return response.json()
         })
         .then(response => {
-            if(response.error){
-                return Promise.reject(response.response);
-            }
+            // if(response.error){
+            //     return Promise.reject(response.response);
+            // }
             // console.log(response);
             let matches = response.matchDetails.map(match => JSON.parse(match))
 
@@ -48,7 +54,7 @@ export const findPlayer = name => dispatch => {
     
             console.log(response.playerInfo, matches)
         })
-        .catch(err => console.log(err))
+        .catch(err => dispatch(matchesError(err.message)))
 }
 
 //create route for players than for matches
