@@ -41,7 +41,7 @@ class ChampionInfo extends React.Component{
         return (
             <div>
                 <SearchBar />
-                <section role='region' className='champ-container'>
+                <section className='champ-container'>
                     <div className='champion-card-flex'>
                         {this.props.champions.length > 0 ? champs : ''}
                     </div>
