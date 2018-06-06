@@ -4,6 +4,7 @@ import {Route, withRouter} from 'react-router-dom';
 import Dashboard from '../Dashboard';
 import LandingPage from '../LandingPage';
 import Header from '../Header';
+import Footer from '../Footer';
 import RegisterPage from '../RegisterPage';
 
 export class App extends React.Component{
@@ -19,6 +20,7 @@ export class App extends React.Component{
                 <Route exact path='/' component={LandingPage} />
                 <Route exact path='/dashboard' component={Dashboard} />
                 <Route exact path='/register' component={RegisterPage}/>
+                <Footer />
             </div>
         );
     }

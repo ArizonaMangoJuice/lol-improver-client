@@ -19,7 +19,10 @@ label{
 }
 
 .main-body{
-  min-height: 1500px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  min-height: 100vh;
 }
 
 main{
