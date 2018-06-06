@@ -32,8 +32,8 @@ export const clearPlayer = () => ({
 export const fetchNameDetails = championId => dispatch => {
     return fetch(`${lolImproverUrl}/static/${championId}`)
         .then(response => response.json())
-        .then(result => dispatch(fetchStaticName(result)))
-        .catch(err => console.log(err));
+        .then(result => dispatch(fetchStaticName(result)));
+        
 } 
 
 export const findPlayer = name => dispatch => {
@@ -53,7 +53,7 @@ export const findPlayer = name => dispatch => {
             dispatch(searchPlayer(response.playerInfo));
             dispatch(fetchMatches(matches))
     
-            console.log(response.playerInfo, matches)
+            // console.log(response.playerInfo, matches)
         })
         .catch(err => dispatch(matchesError(err.message)))
 }
