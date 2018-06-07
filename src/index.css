@@ -37,6 +37,7 @@ label{
 
 .validation-error{
   color: red;
+  width: 100%;
 }
 
 @media only screen and (max-width: 480px) {

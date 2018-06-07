@@ -13,7 +13,7 @@ export function LandingPage(props){
     
     if(props.signedUp){
         signedUp = (
-            <span>Thank You for Registering. Please Login</span>
+            <p className='signed-up'>Thank You for Registering. Please Login</p>
         )
     }
 

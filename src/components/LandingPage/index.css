@@ -108,6 +108,19 @@
     border: 1px solid white;
 }
 
+.signed-up{
+    padding-bottom: .4em;
+    border-bottom-style: double;
+    border-bottom-width: 4px;
+    width: 30%;
+    text-align: center;
+    padding: 1em;
+    margin: 2em auto;
+    font-size: 1.6em;
+    line-height: 1.5em;
+    display: block;
+}
+
 @media only screen and (max-width: 1366px){
     .login-form{
         width: 60%;
@@ -184,6 +197,12 @@
 
     .form-input{
         width: 100%;
+    }
+
+    .signed-up{
+        width: 100%;
+        color: #00cdcf;
+        box-sizing: border-box;
     }
   }
   
