@@ -1,0 +1,52 @@
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });var _playerInfo = require('../actions/playerInfo');
+
+
+
+
+
+
+const initialState = {
+    matches: [],
+    accountInfo: null,
+    playerChampInfo: [],
+    error: null };
+
+
+const playerReducer = (state = initialState, action) => {
+    switch (action.type) {
+        case _playerInfo.MATCHES_ERROR:
+            return Object.assign({},
+            state, {
+                error: action.error });
+
+        case _playerInfo.FETCH_PLAYER:
+            return Object.assign({},
+            state, {
+                accountInfo: action.accountInfo,
+                error: null });
+
+        case _playerInfo.FETCH_MATCHES:
+            return Object.assign({},
+            state, {
+                matches: action.matches,
+                error: null });
+
+        case _playerInfo.CLEAR_PLAYER:
+            return Object.assign({},
+            state, {
+                matches: [],
+                accountInfo: null,
+                playerChampInfo: [],
+                error: null
+
+                // case FETCH_STATIC_NAME:
+                //     return {
+                //         ...state,
+                //         playerChampInfo: [...state.playerChampInfo, action.championInfo]
+                //     }
+            });default:
+            return state;}
+
+};exports.default =
+
+playerReducer;

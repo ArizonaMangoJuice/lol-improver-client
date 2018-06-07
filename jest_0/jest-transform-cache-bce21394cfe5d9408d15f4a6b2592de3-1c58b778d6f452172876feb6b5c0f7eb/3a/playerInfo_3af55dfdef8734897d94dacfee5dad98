@@ -1,0 +1,65 @@
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });exports.findPlayer = exports.fetchNameDetails = exports.clearPlayer = exports.CLEAR_PLAYER = exports.fetchStaticChampName = exports.FETCH_STATIC_CHAMP_NAME = exports.matchesError = exports.MATCHES_ERROR = exports.fetchMatches = exports.FETCH_MATCHES = exports.searchPlayer = exports.FETCH_PLAYER = undefined;var _config = require('../config');var _config2 = _interopRequireDefault(_config);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+const FETCH_PLAYER = exports.FETCH_PLAYER = 'SEARCH_PLAYER';
+const searchPlayer = exports.searchPlayer = accountInfo => ({
+    type: FETCH_PLAYER,
+    accountInfo });
+
+
+const FETCH_MATCHES = exports.FETCH_MATCHES = 'FETCH_MATCHES';
+const fetchMatches = exports.fetchMatches = matches => ({
+    type: FETCH_MATCHES,
+    matches });
+
+
+const MATCHES_ERROR = exports.MATCHES_ERROR = 'MATCHES_ERROR';
+const matchesError = exports.matchesError = error => ({
+    type: MATCHES_ERROR,
+    error });
+
+
+const FETCH_STATIC_CHAMP_NAME = exports.FETCH_STATIC_CHAMP_NAME = 'FETCH_STATIC_NAME';
+const fetchStaticChampName = exports.fetchStaticChampName = championInfo => ({
+    type: FETCH_STATIC_CHAMP_NAME,
+    championInfo });
+
+
+const CLEAR_PLAYER = exports.CLEAR_PLAYER = 'CLEAR_PLAYER';
+const clearPlayer = exports.clearPlayer = () => ({
+    type: CLEAR_PLAYER });
+
+
+const fetchNameDetails = exports.fetchNameDetails = championId => dispatch => {
+    return fetch(`${_config2.default}/static/${championId}`).
+    then(response => response.json()).
+    then(result => dispatch(fetchStaticChampName(result)));
+
+};
+
+const findPlayer = exports.findPlayer = name => dispatch => {
+    return fetch(`${_config2.default}/players/${name}`).
+    then(response => {
+        // console.log(response.length);
+        if (!response.ok) throw new Error('Player Not Found');
+        return response.json();
+    }).
+    then(response => {
+        // if(response.error){
+        //     return Promise.reject(response.response);
+        // }
+        // console.log(response.length);
+        let matches = response.matchDetails.map(match => JSON.parse(match));
+
+        dispatch(searchPlayer(response.playerInfo));
+        dispatch(fetchMatches(matches));
+
+        // console.log(response.playerInfo, matches)
+    }).
+    catch(err => dispatch(matchesError(err.message)));
+};
+
+//create route for players than for matches
+//make a test call to them
+// now create a schema for them 
+//use the api 
+//console.log(err.body, err.statusCode)

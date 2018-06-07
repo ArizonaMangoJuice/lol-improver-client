@@ -1,0 +1,98 @@
+'use strict';var _playerInfo = require('../actions/playerInfo');
+
+
+
+
+
+
+
+var _playerReducer = require('./playerReducer');var _playerReducer2 = _interopRequireDefault(_playerReducer);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+describe('playerReducer', () => {
+    it('should give the default object if action is not valid', () => {
+        const state = (0, _playerReducer2.default)(undefined, { type: '__UNKNOWN' });
+        expect(state).toEqual({
+            matches: [],
+            accountInfo: null,
+            playerChampInfo: [],
+            error: null });
+
+    });
+
+    describe('searchPlayer', () => {
+        it('add the player info to the state', () => {
+            let accountInfo = 'name';
+
+            let state = {
+                accountInfo: null,
+                error: null };
+
+
+            state = (0, _playerReducer2.default)(state, (0, _playerInfo.searchPlayer)(accountInfo));
+            expect(state).toEqual({
+                accountInfo,
+                error: null });
+
+        });
+    });
+
+    describe('fetchMatches', () => {
+        it('should place matches into the state', () => {
+            let matches = [1, 2, 3, 4];
+
+            let state = {
+                matches: [],
+                error: null };
+
+
+            state = (0, _playerReducer2.default)(state, (0, _playerInfo.fetchMatches)(matches));
+            expect(state).toEqual({
+                matches,
+                error: null });
+
+        });
+    });
+
+    describe('matchesError', () => {
+        it('should place the error to the state', () => {
+            let error = 'error';
+
+            let state = {
+                error: null };
+
+
+            state = (0, _playerReducer2.default)(state, (0, _playerInfo.matchesError)(error));
+            expect(state).toEqual({
+                error });
+
+        });
+    });
+
+    describe('fetchStaticName', () => {
+        it('should set the champion the player played to the state', () => {
+            let playerChampInfo = ['zac'];
+            let championInfo = 'volibear';
+
+            let state = {
+                playerChampInfo };
+
+
+            state = (0, _playerReducer2.default)(state, (0, _playerInfo.fetchStaticChampName)(championInfo));
+            expect(state).toEqual({
+                playerChampInfo: ['zac', 'volibear'] });
+
+        });
+    });
+
+    describe('clearPlayer', () => {
+        let state = {
+            matches: [1, 2, 3, 4],
+            accountInfo: 'username',
+            playerChampInfo: ['zac'],
+            error: null };
+
+
+        state = (0, _playerReducer2.default)(state, (0, _playerInfo.clearPlayer)());
+        console.log(state);
+    });
+});

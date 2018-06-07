@@ -1,4 +1,9 @@
-import {FETCH_PLAYER, FETCH_MATCHES, FETCH_STATIC_NAME, CLEAR_PLAYER, MATCHES_ERROR} from '../actions/playerInfo';
+import {
+    FETCH_PLAYER, 
+    FETCH_MATCHES, 
+    FETCH_STATIC_CHAMP_NAME, 
+    CLEAR_PLAYER, 
+    MATCHES_ERROR} from '../actions/playerInfo';
 
 const initialState = {
     matches: [],
@@ -34,8 +39,7 @@ const playerReducer = (state=initialState, action) => {
             playerChampInfo: [],
             error: null
         }
-        case FETCH_STATIC_NAME:
-            // console.log(action.championInfo);
+        case FETCH_STATIC_CHAMP_NAME:
             return {
                 ...state,
                 playerChampInfo: [...state.playerChampInfo, action.championInfo]

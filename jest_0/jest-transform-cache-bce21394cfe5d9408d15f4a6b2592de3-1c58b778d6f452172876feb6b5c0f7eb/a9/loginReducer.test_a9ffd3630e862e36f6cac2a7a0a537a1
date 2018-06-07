@@ -1,0 +1,16 @@
+'use strict';var _auth = require('../actions/auth');
+
+
+
+
+
+
+
+var _loginReducer = require('./loginReducer');var _loginReducer2 = _interopRequireDefault(_loginReducer);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+describe('loginReducer', () => {
+    it('should return the initial state when nothing is passed', () => {
+        const state = (0, _loginReducer2.default)(undefined, { type: '__UNKNOWN' });
+        console.log(state);
+    });
+});

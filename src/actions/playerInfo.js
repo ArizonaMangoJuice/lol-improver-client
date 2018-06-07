@@ -18,9 +18,9 @@ export const matchesError = error => ({
     error
 })
 
-export const FETCH_STATIC_NAME = 'FETCH_STATIC_NAME';
-export const fetchStaticName = championInfo => ({
-    type: FETCH_STATIC_NAME,
+export const FETCH_STATIC_CHAMP_NAME = 'FETCH_STATIC_NAME';
+export const fetchStaticChampName = championInfo => ({
+    type: FETCH_STATIC_CHAMP_NAME,
     championInfo
 });
 
@@ -32,7 +32,7 @@ export const clearPlayer = () => ({
 export const fetchNameDetails = championId => dispatch => {
     return fetch(`${lolImproverUrl}/static/${championId}`)
         .then(response => response.json())
-        .then(result => dispatch(fetchStaticName(result)));
+        .then(result => dispatch(fetchStaticChampName(result)));
         
 } 
 
