@@ -1,0 +1,21 @@
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });var _jsxFileName = '/home/isael/Desktop/lol-improver/lol-improver-client/src/components/LoginWrapper/loginWrapper.js';var _react = require('react');var _react2 = _interopRequireDefault(_react);
+var _reactRedux = require('react-redux');
+var _reactRouterDom = require('react-router-dom');function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectWithoutProperties(obj, keys) {var target = {};for (var i in obj) {if (keys.indexOf(i) >= 0) continue;if (!Object.prototype.hasOwnProperty.call(obj, i)) continue;target[i] = obj[i];}return target;}
+//create wrapper to redirect if not logged in
+exports.default =
+() => Component => {
+    function LoginWrapper(props) {const
+        loggedIn = props.loggedIn,error = props.error,passThroughProps = _objectWithoutProperties(props, ['loggedIn', 'error']);
+        if (!loggedIn || error) {
+            return _react2.default.createElement(_reactRouterDom.Redirect, { to: '/', __source: { fileName: _jsxFileName, lineNumber: 10 }, __self: this });
+        }
+        return _react2.default.createElement(Component, Object.assign({}, passThroughProps, { __source: { fileName: _jsxFileName, lineNumber: 12 }, __self: this }));
+    }
+
+    const mapStateToProps = (state, props) => ({
+        loggedIn: state.loginReducer.currentUser !== null,
+        error: state.loginReducer.error });
+
+
+    return (0, _reactRedux.connect)(mapStateToProps)(LoginWrapper);
+};

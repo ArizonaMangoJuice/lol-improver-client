@@ -13,7 +13,7 @@ export class Dashboard extends React.Component{
     render(){
         return (
             <main>
-                <ChampionInfo/>
+                <ChampionInfo />
                 <NoteArea />
                 <PlayerSearch />
             </main>

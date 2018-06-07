@@ -1,0 +1,2 @@
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });var _noteArea = require('./noteArea');var _noteArea2 = _interopRequireDefault(_noteArea);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}exports.default =
+_noteArea2.default;

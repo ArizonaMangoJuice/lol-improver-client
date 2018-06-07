@@ -1,0 +1,27 @@
+'use strict';var _championReducer = require('./championReducer');
+
+var _champions = require('../actions/champions');
+
+
+
+
+
+
+
+
+
+describe('championReducer', () => {
+    //dummy data
+    it('should return the initial state when nothing is passed in', () => {
+        const state = (0, _championReducer.championReducer)(undefined, { type: '__UNKOWN' });
+        expect(state).toEqual({
+            loading: false,
+            champions: [],
+            filteredChampions: [],
+            note: '',
+            error: null,
+            championId: null });
+
+    });
+
+});

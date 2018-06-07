@@ -1,0 +1,69 @@
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });exports.MatchInfo = undefined;var _jsxFileName = '/home/isael/Desktop/lol-improver/lol-improver-client/src/components/MatchInfo/matchInfo.js';var _react = require('react');var _react2 = _interopRequireDefault(_react);
+var _reactRedux = require('react-redux');
+var _MatchInfoCard = require('../MatchInfoCard');var _MatchInfoCard2 = _interopRequireDefault(_MatchInfoCard);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+class MatchInfo extends _react2.default.Component {
+
+    findPlayer(num) {
+        //accountId: 28128
+        let accountId = this.props.accountInfo.accountId;
+        let result = [];
+        let tempObj = {};
+        // console.log(this.props.matches);
+        // console.log('accountId',accountId);
+        // console.log('matches', this.props.matches[0].participantIdentities.filter(i => i.player.currentAccountId.toString() === accountId));
+        // console.log(this.props.matches[0].participantIdentities[6].player.accountId == accountId);
+        let name = this.props.matches[num].participantIdentities.filter(i => i.player.currentAccountId.toString() === accountId);
+        // console.log('name',name)
+        let participantId = name[0].participantId;
+        // console.log('participant id',participantId);
+
+        let mainPlayerStats = this.props.matches[num].participants.filter(participant => participant.participantId === participantId);
+
+        // console.log('mainplayer stats', mainPlayerStats);
+
+        tempObj.mainPlayerStats = mainPlayerStats;
+
+        result.push(tempObj);
+
+        return result;
+    }
+
+    matchList() {
+        let matches = this.props.matches;
+
+        matches = matches.map((match, i) => {
+            let playerMatchDetails = this.findPlayer(i);
+
+            return _react2.default.createElement(_MatchInfoCard2.default, Object.assign({
+                key: i },
+            match, {
+                matchDetails: playerMatchDetails
+                // playerChamp={this.props.champions[i]}
+                , __source: { fileName: _jsxFileName, lineNumber: 38 }, __self: this }));
+        });
+
+
+        return matches;
+    }
+
+    render() {
+        let matches = this.props.matches.length && this.props.accountInfo.name ?
+        this.matchList() :
+        '';
+
+        return (
+            _react2.default.createElement('div', { className: 'player-matches', __source: { fileName: _jsxFileName, lineNumber: 56 }, __self: this },
+                matches));
+
+
+    }}exports.MatchInfo = MatchInfo;
+
+
+
+const mapStateToProps = state => ({
+    matches: state.playerReducer.matches,
+    accountInfo: state.playerReducer.accountInfo });exports.default =
+
+
+(0, _reactRedux.connect)(mapStateToProps)(MatchInfo);

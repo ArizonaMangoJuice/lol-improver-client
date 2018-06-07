@@ -1,0 +1,2 @@
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });var _landingPage = require('./landingPage');var _landingPage2 = _interopRequireDefault(_landingPage);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}exports.default =
+_landingPage2.default;

@@ -5,7 +5,7 @@ import {clearToken} from '../../localStorage';
 import { clearChampionClickedSearched } from '../../actions/champions';
 import {clearPlayer} from '../../actions/playerInfo';
 
-class Header extends React.Component{
+export class Header extends React.Component{
     logout(){
         this.props.dispatch(clearAuth());
         this.props.dispatch(clearPlayer());

@@ -31,6 +31,7 @@ export class RegisterForm extends React.Component{
                 id='register-form'
                 onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}
             >   
+                <h2 className='form-title'>Sign Up</h2>
                 {error}
                 <Field 
                     component={Input}

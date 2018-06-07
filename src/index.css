@@ -31,6 +31,10 @@ main{
   flex-flow: wrap;
 }
 
+.form-title{
+  width: 100%;
+}
+
 #champion-search-container{
   width: 60%;
   margin: auto;

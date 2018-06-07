@@ -1,0 +1,52 @@
+'use strict';var _championReducer = require('./championReducer');
+
+var _champions = require('../actions/champions');
+
+
+
+
+
+
+
+
+
+describe('championReducer', () => {
+    //dummy data
+    it('should return the initial state when nothing is passed in', () => {
+        const state = (0, _championReducer.championReducer)(undefined, { type: '__UNKNOWN' });
+        expect(state).toEqual({
+            loading: false,
+            champions: [],
+            filteredChampions: [],
+            note: '',
+            error: null,
+            championId: null });
+
+    });
+
+    it('should return the current state on an unkown action', () => {
+        const currentState = {};
+        const state = (0, _championReducer.championReducer)(currentState, { type: '__UNKNOWN' });
+        expect(state).toBe(currentState);
+    });
+
+    //prob not needed
+    // describe('championFetchRequest', () => {
+    //     it('should ')
+    // })
+
+    describe('searchChampion', () => {
+        it('should search for a champion', () => {
+            let value = 'test';
+
+            let state = {
+                champions: ['test'],
+                filteredChampions: [] };
+
+
+            state = (0, _championReducer.championReducer)(state, (0, _champions.searchChampion)(value));
+            console.log(state);
+        });
+    });
+
+});

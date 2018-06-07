@@ -1,0 +1,46 @@
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });var _jsxFileName = '/home/isael/Desktop/lol-improver/lol-improver-client/src/components/NoteForm/noteForm.js';var _react = require('react');var _react2 = _interopRequireDefault(_react);
+var _reactRedux = require('react-redux');
+var _champions = require('../../actions/champions');function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+class NoteForm extends _react2.default.Component {
+
+    addChampionNote(value) {
+        this.props.dispatch((0, _champions.updateChampionNote)(value));
+    }
+
+    render() {
+        let label = this.props.champions.filter(champ => champ.id === this.props.championId);
+
+        if (label.length) {
+            label =
+            _react2.default.createElement('label', { htmlFor: 'champ-note', __source: { fileName: _jsxFileName, lineNumber: 16 }, __self: this },
+                label[0].name);
+
+
+        }
+
+        let textarea =
+        _react2.default.createElement('textarea', {
+            id: 'champ-note',
+            value: this.props.note,
+            onChange: e => this.addChampionNote(e.target.value), __source: { fileName: _jsxFileName, lineNumber: 23 }, __self: this });
+
+
+
+
+        return (
+            _react2.default.createElement('div', { __source: { fileName: _jsxFileName, lineNumber: 32 }, __self: this },
+                label,
+                textarea));
+
+
+    }}
+
+//nice you got the textarea to work now make actions and add to reducer
+const mapStateToProps = state => ({
+    note: state.championReducer.note,
+    champions: state.championReducer.champions,
+    championId: state.championReducer.championId });exports.default =
+
+
+(0, _reactRedux.connect)(mapStateToProps)(NoteForm);

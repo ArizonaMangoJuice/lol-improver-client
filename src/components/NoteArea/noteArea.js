@@ -5,7 +5,7 @@ import {updateBackEndChampionNote} from '../../actions/champions';
 import {connect} from 'react-redux';
 import './index.css';
 
-class NoteArea extends React.Component{
+export class NoteArea extends React.Component{
     //create action for component and add to reducer 
     onSubmit(){
         return this.props.dispatch(updateBackEndChampionNote())

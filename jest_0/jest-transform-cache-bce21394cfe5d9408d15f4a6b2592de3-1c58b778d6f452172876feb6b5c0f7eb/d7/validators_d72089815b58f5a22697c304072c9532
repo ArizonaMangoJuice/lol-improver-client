@@ -1,0 +1,20 @@
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });const required = exports.required = value => value === undefined ? 'Required' : '';
+
+const notEmpty = exports.notEmpty = value => value.trim() === '' ? `Can't be empty` : '';
+
+const spacesInUsername = exports.spacesInUsername = value =>
+value.replace(/[\s]/g, '') !== value ?
+`Username can't have spaces` :
+'';
+
+const tooBigOrTooSmall = exports.tooBigOrTooSmall = value => {
+    if (value.length > 72) {
+        return `Cant be greater than 72 characters`;
+    }
+
+    if (value.length < 10) {
+        return `Can't be smaller than 10 characters`;
+    }
+};
+
+const trimOuterSpaces = exports.trimOuterSpaces = value => value.trim() === value ? '' : `Can't have outer spaces`;

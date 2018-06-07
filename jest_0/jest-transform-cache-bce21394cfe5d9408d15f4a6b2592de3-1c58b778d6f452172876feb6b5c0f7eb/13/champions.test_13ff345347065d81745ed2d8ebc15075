@@ -1,0 +1,32 @@
+'use strict';var _champions = require('./champions');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+describe('searchChampion', () => {
+    it('should return an action', () => {
+        const champion = 'olaf';
+        const action = (0, _champions.searchChampion)(champion);
+        expect(action.type).toEqual(_champions.SEARCH_CHAMPION);
+        expect(action.value).toEqual(champion);
+    });
+});
+
+describe('championFetchRequest', () => {
+    it('should return an action', () => {
+        const action = (0, _champions.searchChampion)();
+        expect(action.type).toEqual(_champions.championFetchRequest);
+    });
+});

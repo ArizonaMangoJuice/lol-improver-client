@@ -1,0 +1,73 @@
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });exports.championReducer = undefined;var _champions = require('../actions/champions');
+
+
+
+
+
+
+
+
+
+const initalState = {
+    loading: false,
+    champions: [],
+    filteredChampions: [],
+    note: '',
+    error: null,
+    championId: null };
+
+
+const championReducer = exports.championReducer = (state = initalState, action) => {
+    switch (action.type) {
+        case _champions.CHAMPION_FETCH_REQUEST:
+            return Object.assign({},
+            state, {
+                loading: true });
+
+        case _champions.CHAMPION_FETCH_SUCCESS:
+            return Object.assign({},
+            state, {
+                loading: false,
+                champions: action.champions,
+                error: null });
+
+        case _champions.CHAMPION_FETCH_ERROR:
+            return Object.assign({},
+            state, {
+                loading: false,
+                error: action.error });
+
+        case _champions.CHAMPION_IS_CLICKED:
+            const champion = state.champions.filter(champ => champ.id === action.id);
+            // console.log(champion[0].content);
+            return Object.assign({},
+            state, {
+                note: champion[0].content,
+                championId: action.id });
+
+        case _champions.CLEAR_CHAMPION_CLICKED_SEARCHED:
+            return Object.assign({},
+            state, {
+                note: '',
+                championId: null,
+                filteredChampions: [] });
+
+        case _champions.SEARCH_CHAMPION:
+            return Object.assign({},
+            state, {
+                filteredChampions:
+                state.champions.filter(champ =>
+                champ.name.toLowerCase().includes(action.value.toLowerCase())) });
+
+
+        case _champions.UPDATE_CHAMPION_NOTE:
+            return Object.assign({},
+            state, {
+                note: action.value });
+
+        default:
+            return state;}
+
+};exports.default =
+
+championReducer;

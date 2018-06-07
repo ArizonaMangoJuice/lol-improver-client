@@ -1,0 +1,48 @@
+'use strict';var _playerInfo = require('./playerInfo');
+
+
+
+
+
+
+
+
+
+
+
+
+describe('fetchPlayer', () => {
+    it('should return an action', () => {
+        const accountInfo = '321312';
+        const action = (0, _playerInfo.searchPlayer)(accountInfo);
+        expect(action.type).toEqual(_playerInfo.FETCH_PLAYER);
+        expect(action.accountInfo).toEqual(accountInfo);
+    });
+});
+
+describe('fetchMatches', () => {
+    it('should return an action', () => {
+        const matches = ['321312', '232137821'];
+        const action = (0, _playerInfo.fetchMatches)(matches);
+        expect(action.type).toEqual(_playerInfo.FETCH_MATCHES);
+        expect(action.matches).toEqual(matches);
+    });
+});
+
+describe('matchesErrpr', () => {
+    it('should return an action', () => {
+        const error = 'error';
+        const action = (0, _playerInfo.matchesError)(error);
+        expect(action.type).toEqual(_playerInfo.MATCHES_ERROR);
+        expect(action.error).toEqual(error);
+    });
+});
+
+describe('fetchStaticName', () => {
+    it('should return an action', () => {
+        const championInfo = 'info';
+        const action = (0, _playerInfo.fetchStaticName)(championInfo);
+        expect(action.type).toEqual(_playerInfo.FETCH_STATIC_NAME);
+        expect(action.championInfo).toEqual(championInfo);
+    });
+});

@@ -1,0 +1,24 @@
+'use strict';var _auth = require('./auth');
+
+
+
+
+
+
+describe('setAuthToken', () => {
+    it('should return an action', () => {
+        const authToken = 'token';
+        const action = (0, _auth.setAuthToken)(authToken);
+        expect(action.type).toEqual(_auth.SET_AUTH_TOKEN);
+        expect(action.authToken).toEqual(authToken);
+    });
+});
+
+describe('authSuccess', () => {
+    it('should return an action', () => {
+        const currentUser = 'user';
+        const action = (0, _auth.authSuccess)(currentUser);
+        expect(action.type).toEqual(_auth.AUTH_SUCCESS);
+        expect(action.currentUser).toEqual(currentUser);
+    });
+});

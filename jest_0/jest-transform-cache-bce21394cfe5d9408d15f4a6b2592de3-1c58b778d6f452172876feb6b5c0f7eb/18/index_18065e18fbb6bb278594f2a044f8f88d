@@ -1,0 +1,2 @@
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });var _noteForm = require('./noteForm');var _noteForm2 = _interopRequireDefault(_noteForm);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}exports.default =
+_noteForm2.default;

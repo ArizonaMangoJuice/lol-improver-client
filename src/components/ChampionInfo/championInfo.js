@@ -5,7 +5,7 @@ import ChampionCard from '../ChampionCard';
 import './index.css';
 
 
-class ChampionInfo extends React.Component{
+export class ChampionInfo extends React.Component{
     championList(arr){
         return arr.map((champion, i) => {
             const imageString = champion.image.full;

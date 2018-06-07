@@ -1,0 +1,17 @@
+// import React from 'react';
+// import {shallow} from 'enzyme';
+// import {ChampionCard} from './championCard';
+
+// describe('<ChampionCard />', () => {
+//     it('should render without crashing', ()=> {
+//         shallow(<ChampionCard className={'test'}/>);
+//     });
+
+//     it('should render the test', ()=> {
+//         const className = 'test';
+//         const wrapper = shallow(<ChampionCard className={className}/>);
+//         console.log(wrapper.debug());
+//         expect(wrapper.className()).toEqual(className);
+//     });
+// });
+"use strict";

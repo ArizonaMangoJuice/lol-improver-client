@@ -1,0 +1,92 @@
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });exports.updateBackEndChampionNote = exports.updateChampionNote = exports.UPDATE_CHAMPION_NOTE = exports.clearChampionClickedSearched = exports.CLEAR_CHAMPION_CLICKED_SEARCHED = exports.championIsClicked = exports.CHAMPION_IS_CLICKED = exports.championFetchError = exports.CHAMPION_FETCH_ERROR = exports.championFetchSuccess = exports.CHAMPION_FETCH_SUCCESS = exports.championFetchRequest = exports.CHAMPION_FETCH_REQUEST = exports.searchChampion = exports.SEARCH_CHAMPION = undefined;var _config = require('../config');var _config2 = _interopRequireDefault(_config);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+const SEARCH_CHAMPION = exports.SEARCH_CHAMPION = 'SEARCH_CHAMPION';
+const searchChampion = exports.searchChampion = value => ({
+    type: SEARCH_CHAMPION,
+    value });
+
+
+const CHAMPION_FETCH_REQUEST = exports.CHAMPION_FETCH_REQUEST = 'CHAMPION_FETCH_REQUEST';
+const championFetchRequest = exports.championFetchRequest = () => ({
+    type: CHAMPION_FETCH_REQUEST });
+
+
+const CHAMPION_FETCH_SUCCESS = exports.CHAMPION_FETCH_SUCCESS = 'CHAMPION_FETCH_SUCCESS';
+const championFetchSuccess = exports.championFetchSuccess = champions => ({
+    type: CHAMPION_FETCH_SUCCESS,
+    champions });
+
+
+const CHAMPION_FETCH_ERROR = exports.CHAMPION_FETCH_ERROR = 'CHAMPION_FETCH_ERROR';
+const championFetchError = exports.championFetchError = error => ({
+    type: CHAMPION_FETCH_ERROR,
+    error });
+
+
+const CHAMPION_IS_CLICKED = exports.CHAMPION_IS_CLICKED = 'CHAMPION_IS_CLICKED';
+const championIsClicked = exports.championIsClicked = id => ({
+    type: CHAMPION_IS_CLICKED,
+    id });
+
+
+const CLEAR_CHAMPION_CLICKED_SEARCHED = exports.CLEAR_CHAMPION_CLICKED_SEARCHED = 'CLEAR_CHAMPION_CLICKED_SEARCHED';
+const clearChampionClickedSearched = exports.clearChampionClickedSearched = () => ({
+    type: CLEAR_CHAMPION_CLICKED_SEARCHED });
+
+
+const UPDATE_CHAMPION_NOTE = exports.UPDATE_CHAMPION_NOTE = 'UPDATE_CHAMPION_NOTE';
+const updateChampionNote = exports.updateChampionNote = value => ({
+    type: UPDATE_CHAMPION_NOTE,
+    value });
+
+
+const updateBackEndChampionNote = exports.updateBackEndChampionNote = () => {
+    return (dispatch, getState) => {
+        const authToken = getState().loginReducer.authToken;
+        const id = getState().loginReducer.currentUser.id;
+        const championId = getState().championReducer.championId;
+        const note = getState().championReducer.note;
+
+        const body = {
+            userId: id,
+            id: championId,
+            note };
+
+
+        console.log(JSON.stringify(body));
+
+        fetch(`${_config2.default}/champions/${championId}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json',
+                'Authorization': `Bearer ${authToken}` },
+
+            body: JSON.stringify(body) }).
+
+        then(response => response.json()).
+        then(response => {
+            dispatch(fetchChampions());
+        }).
+        catch(err => {
+            console.log(err);
+        });
+    };
+};
+
+const fetchChampions = () => {
+    return (dispatch, getState) => {
+        const authToken = getState().loginReducer.authToken;
+        dispatch(championFetchRequest);
+        fetch(`${_config2.default}/champions`, {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${authToken}` } }).
+
+
+        then(response => response.json()).
+        then(champions => dispatch(championFetchSuccess(champions))).
+        catch(error => dispatch(championFetchError(error)));
+    };
+};exports.default =
+
+fetchChampions;

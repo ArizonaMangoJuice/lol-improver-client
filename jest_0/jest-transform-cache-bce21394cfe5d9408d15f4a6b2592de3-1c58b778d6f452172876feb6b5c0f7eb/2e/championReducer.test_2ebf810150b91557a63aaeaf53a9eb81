@@ -1,0 +1,27 @@
+'use strict';var _championReducer = require('./championReducer');var _championReducer2 = _interopRequireDefault(_championReducer);
+
+var _champions = require('../actions/champions');function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+
+
+
+
+
+
+
+
+describe('championReducer', () => {
+    //dummy data
+    it('should return the initial state when nothing is passed in', () => {
+        const state = (0, _championReducer2.default)(null, { type: '__UNKNOWN' });
+        expect(state).toEqual({
+            loading: false,
+            champions: [],
+            filteredChampions: [],
+            note: '',
+            error: null,
+            championId: null });
+
+    });
+
+});

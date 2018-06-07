@@ -7,18 +7,18 @@ export const searchChampion = (value) => ({
 })
 
 export const CHAMPION_FETCH_REQUEST = 'CHAMPION_FETCH_REQUEST';
-const championFetchRequest = () => ({
+export const championFetchRequest = () => ({
     type: CHAMPION_FETCH_REQUEST
 });
 
 export const CHAMPION_FETCH_SUCCESS = 'CHAMPION_FETCH_SUCCESS';
-const championFetchSuccess = champions => ({
+export const championFetchSuccess = champions => ({
     type: CHAMPION_FETCH_SUCCESS,
     champions
 })
 
 export const CHAMPION_FETCH_ERROR = 'CHAMPION_FETCH_ERROR';
-const championFetchError = error => ({
+export const championFetchError = error => ({
     type: CHAMPION_FETCH_ERROR,
     error
 })

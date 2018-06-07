@@ -1,0 +1,11 @@
+'use strict';var _jsxFileName = '/home/isael/Desktop/lol-improver/lol-improver-client/src/components/Dashboard/dashboard.test.js';
+
+// import sinon from 'sinon';
+var _react = require('react');var _react2 = _interopRequireDefault(_react);var _enzyme = require('enzyme');var _reactRedux = require('react-redux');
+var _dashboard = require('./dashboard');function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+describe('<Dashboard />', () => {
+    // const wrapper = mount(<Dashboard />);
+    const wrapper = (0, _enzyme.shallow)(_react2.default.createElement(ConnectedComponent, { __source: { fileName: _jsxFileName, lineNumber: 9 }, __self: undefined })).dive();
+    console.log(wrapper.debug());
+});

@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {championIsClicked} from '../../actions/champions';
 
-class ChampionCard extends React.Component{
+export class ChampionCard extends React.Component{
     showNote(id){
         //dispatch to store add notes than create component that dispatches
         //every time you type something

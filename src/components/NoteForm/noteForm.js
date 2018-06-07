@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {updateChampionNote} from '../../actions/champions';
 
-class NoteForm extends React.Component{
+export class NoteForm extends React.Component{
 
     addChampionNote(value){
         this.props.dispatch(updateChampionNote(value));

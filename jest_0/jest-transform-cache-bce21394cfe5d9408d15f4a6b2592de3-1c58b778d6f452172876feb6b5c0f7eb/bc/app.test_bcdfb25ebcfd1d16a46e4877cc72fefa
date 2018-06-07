@@ -1,0 +1,12 @@
+'use strict';var _jsxFileName = '/home/isael/Desktop/lol-improver/lol-improver-client/src/components/App/app.test.js';var _react = require('react');var _react2 = _interopRequireDefault(_react);
+var _enzyme = require('enzyme');
+
+var _app = require('./app');var _app2 = _interopRequireDefault(_app);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+describe('<App />', function () {
+    it('renders without crashing', () => {
+        (0, _enzyme.shallow)(_react2.default.createElement(_app2.default, { __source: { fileName: _jsxFileName, lineNumber: 8 }, __self: this }));
+        const wrapper = (0, _enzyme.shallow)(_react2.default.createElement(_app2.default, { __source: { fileName: _jsxFileName, lineNumber: 9 }, __self: this }));
+        console.log(wrapper);
+    });
+});

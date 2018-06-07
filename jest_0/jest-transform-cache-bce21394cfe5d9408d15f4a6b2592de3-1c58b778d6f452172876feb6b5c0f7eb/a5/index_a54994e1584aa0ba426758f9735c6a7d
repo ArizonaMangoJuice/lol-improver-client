@@ -1,0 +1,2 @@
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });var _championCard = require('./championCard');var _championCard2 = _interopRequireDefault(_championCard);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}exports.default =
+_championCard2.default;

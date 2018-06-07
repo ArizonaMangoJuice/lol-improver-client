@@ -1,0 +1,19 @@
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });const loadToken = exports.loadToken = () => {
+    return localStorage.getItem('authToken');
+};
+
+const saveToken = exports.saveToken = authToken => {
+    try {
+        localStorage.setItem('authToken', authToken);
+    } catch (e) {
+        console.log(e);
+    }
+};
+
+const clearToken = exports.clearToken = () => {
+    try {
+        localStorage.removeItem('authToken');
+    } catch (e) {
+        console.log(e);
+    }
+};
