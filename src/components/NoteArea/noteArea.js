@@ -24,9 +24,9 @@ export class NoteArea extends React.Component{
 
         // console.log(textArea)
         return (
-            <div className={`${this.props.championId ? 'note-container' : 'noNote'}`}>
+            <section className={`${this.props.championId ? 'note-container' : 'noNote'}`}>
                 {textArea}
-            </div>
+            </section>
         )
     }
 }

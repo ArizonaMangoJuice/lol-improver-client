@@ -1,0 +1,33 @@
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });exports.PlayerSearch = undefined;var _jsxFileName = '/home/isael/Desktop/lol-improver/lol-improver-client/src/components/PlayerSearch/playerSearch.js';var _react = require('react');var _react2 = _interopRequireDefault(_react);
+var _reactRedux = require('react-redux');
+var _PlayerSearchForm = require('../PlayerSearchForm');var _PlayerSearchForm2 = _interopRequireDefault(_PlayerSearchForm);
+var _AccountInfo = require('../AccountInfo');var _AccountInfo2 = _interopRequireDefault(_AccountInfo);
+var _MatchInfo = require('../MatchInfo');var _MatchInfo2 = _interopRequireDefault(_MatchInfo);
+require('./index.css');function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+class PlayerSearch extends _react2.default.Component {
+    render() {
+        let error = this.props.error ?
+
+        _react2.default.createElement('h2', { className: 'player-search-error', __source: { fileName: _jsxFileName, lineNumber: 12 }, __self: this },
+            this.props.error) :
+
+        '';
+        return (
+            _react2.default.createElement('section', { className: 'player-matches-container', __source: { fileName: _jsxFileName, lineNumber: 17 }, __self: this },
+                error,
+                _react2.default.createElement(_PlayerSearchForm2.default, { __source: { fileName: _jsxFileName, lineNumber: 19 }, __self: this }),
+                _react2.default.createElement(_AccountInfo2.default, { __source: { fileName: _jsxFileName, lineNumber: 20 }, __self: this }),
+                _react2.default.createElement(_MatchInfo2.default, { __source: { fileName: _jsxFileName, lineNumber: 21 }, __self: this })));
+
+
+    }}exports.PlayerSearch = PlayerSearch;
+
+
+const mapStateToProps = state => ({
+    error: state.playerReducer.error });exports.default =
+
+
+(0, _reactRedux.connect)(mapStateToProps)(PlayerSearch);
+//create component for account user 
+//create component for matches

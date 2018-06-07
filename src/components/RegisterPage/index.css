@@ -11,14 +11,11 @@
     flex-wrap: wrap;
 }
 
-#register-form-buttons{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding-top: 2em;
+#register-form button:focus{
+    outline: 2px solid #008889;
 }
 
-#register-form-buttons button{
+#register-form button{
     text-transform: uppercase;
     outline: 0;
     background: #fff;
@@ -30,13 +27,14 @@
     cursor: pointer;
 }
 
-#register-form-buttons button:hover{
+#register-form button:hover{
     transition: 0.3s;
     color: #fff;
     background: #00cdcf;
+    border: 1px solid white;
 }
 
-#register-form-buttons a {
+#register-form a {
     text-transform: uppercase;
     outline: 0;
     background: #fff;
@@ -47,6 +45,7 @@
     text-decoration: none;
     width: 30%;
     margin-left: 2em;
+    border: 1px solid white;
 }
 
 #register-title{
@@ -61,10 +60,15 @@
     line-height: 1.5em;
 }
 
-#register-form-buttons a:hover{
+#register-form a:focus{
+    outline: 2px solid #008889;
+}
+
+#register-form a:hover{
     transition: 0.3s;
     color: #fff;
     background: #00cdcf;
+    border: 1px solid white;
 }
 
 @media only screen and (max-width: 1366px){

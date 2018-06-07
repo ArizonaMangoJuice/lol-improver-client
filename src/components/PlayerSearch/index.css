@@ -3,6 +3,10 @@
     margin: auto;
 }
 
+#playerSearch:focus{
+    outline: 2px solid #008889;
+}
+
 #player-search-form div{
   outline: 0;
   background: #fff;

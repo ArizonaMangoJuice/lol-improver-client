@@ -1,3 +1,39 @@
+#champion-search-container{
+  width: 60%;
+  margin: auto;
+  padding: 2em;
+}
+
+#search-champ-container{
+  outline: 0;
+  background: #fff;
+  border: 0;
+  padding: .2em;
+  box-sizing: border-box;
+  font-size: 14px;
+  background-color: #00cdcf;
+  display: flex;
+}
+
+#search-champ-container label{
+  color: white;
+  padding: 1em;
+  font-size: 1.2em;
+}
+
+#search-bar{
+  outline: 0;
+  background: #fff;
+  border: 0;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+#search-bar:focus{
+  outline: 2px solid #008889;
+}
+
 .champ-container{
     display: inline-block;
     height: 420px;

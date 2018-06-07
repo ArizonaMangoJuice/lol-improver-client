@@ -1,0 +1,62 @@
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });exports.LoginForm = undefined;var _jsxFileName = '/home/isael/Desktop/lol-improver/lol-improver-client/src/components/LoginForm/loginForm.js';var _react = require('react');var _react2 = _interopRequireDefault(_react);
+var _reduxForm = require('redux-form');
+var _auth = require('../../actions/auth');
+var _Input = require('../Input');var _Input2 = _interopRequireDefault(_Input);
+var _validators = require('../../validators');
+var _reactRouterDom = require('react-router-dom');function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+class LoginForm extends _react2.default.Component {
+    onSubmit(values) {
+        return this.props.dispatch((0, _auth.login)(values.username, values.password));
+    }
+    render() {
+        let error;
+        if (this.props.error) {
+            error =
+            _react2.default.createElement('label', { className: 'validation-error', __source: { fileName: _jsxFileName, lineNumber: 16 }, __self: this },
+                this.props.error);
+
+
+        }
+        return (
+            _react2.default.createElement('form', {
+                    className: 'login-form',
+                    onSubmit: this.props.handleSubmit(values => this.onSubmit(values)), __source: { fileName: _jsxFileName, lineNumber: 22 }, __self: this },
+                _react2.default.createElement('h2', { className: 'form-title', __source: { fileName: _jsxFileName, lineNumber: 25 }, __self: this }, 'Login'),
+                error,
+                _react2.default.createElement(_reduxForm.Field, {
+                    component: _Input2.default,
+                    type: 'text',
+                    name: 'username',
+                    id: 'username',
+                    label: 'Username',
+                    validate: [_validators.required, _validators.notEmpty], __source: { fileName: _jsxFileName, lineNumber: 27 }, __self: this }),
+
+                _react2.default.createElement(_reduxForm.Field, {
+                    component: _Input2.default,
+                    type: 'password',
+                    name: 'password',
+                    id: 'password',
+                    label: 'Password',
+                    validate: [_validators.required, _validators.notEmpty], __source: { fileName: _jsxFileName, lineNumber: 35 }, __self: this }),
+
+
+                _react2.default.createElement('button', { disabled: this.props.pristine || this.props.submitting, __source: { fileName: _jsxFileName, lineNumber: 44 }, __self: this }, 'Log in'),
+
+
+                _react2.default.createElement(_reactRouterDom.Link, { role: 'button', to: '/register', __source: { fileName: _jsxFileName, lineNumber: 47 }, __self: this }, 'Register')));
+
+
+
+
+
+    }}exports.LoginForm = LoginForm;exports.default =
+
+
+(0, _reduxForm.reduxForm)({
+    form: 'login',
+    onSubmitFail: (errors, dispatch) => {
+        console.log('onSubmitFail', errors);
+        return dispatch((0, _reduxForm.focus)('login', 'username'));
+    } })(
+LoginForm);

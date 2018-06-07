@@ -1,0 +1,57 @@
+#banner {
+    background-color: #00cdcf;
+    color: #ffffff;
+    padding: 8em 0 6em 0;
+    text-align: center;
+    /* banner goes to header */
+}
+
+#banner h1 {
+    border-style: double solid;
+    border-width: 4px 1px;
+    font-size: 2.4em;
+    line-height: 1.35em;
+    margin: 0 auto 1em;
+    padding: 1.1em;
+    width: 40%;
+}
+
+
+.user-button{
+    background-color: #009a9c;
+    padding: 1em;
+    border: none;
+    color: #fff !important;
+    font-size: 1.2em;
+  }
+  
+.user-button:focus{
+    outline: 2px solid #fff;
+  }
+
+
+@media only screen and (max-width: 480px) {
+    #banner{
+        padding: 8em 0 6em 0;
+    }
+    #banner h1 {
+      width: 100%;
+      border-style: double solid;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      border-width: 4px 1px;
+      font-size: 2.4em;
+      line-height: 1.35em;
+      margin: 0 auto 1em;
+      padding: 1.1em;
+      font-size: 1.65em;
+      color: #ffffff;
+      background: #00cccd;
+  
+    }
+    .user-button{
+      padding: .7em;
+      width: 70%;
+      font-size: 1.5em;
+    }
+  }

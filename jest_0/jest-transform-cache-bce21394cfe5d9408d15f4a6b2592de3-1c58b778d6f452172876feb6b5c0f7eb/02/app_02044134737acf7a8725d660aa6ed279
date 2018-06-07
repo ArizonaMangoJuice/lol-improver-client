@@ -1,0 +1,34 @@
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });exports.App = undefined;var _jsxFileName = '/home/isael/Desktop/lol-improver/lol-improver-client/src/components/App/app.js';var _react = require('react');var _react2 = _interopRequireDefault(_react);
+var _reactRedux = require('react-redux');
+var _reactRouterDom = require('react-router-dom');
+var _Dashboard = require('../Dashboard');var _Dashboard2 = _interopRequireDefault(_Dashboard);
+var _LandingPage = require('../LandingPage');var _LandingPage2 = _interopRequireDefault(_LandingPage);
+var _Header = require('../Header');var _Header2 = _interopRequireDefault(_Header);
+var _Footer = require('../Footer');var _Footer2 = _interopRequireDefault(_Footer);
+var _RegisterPage = require('../RegisterPage');var _RegisterPage2 = _interopRequireDefault(_RegisterPage);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+class App extends _react2.default.Component {
+    componentDidMount() {
+
+    }
+
+    render() {
+
+        return (
+            _react2.default.createElement('main', { className: 'main-body', __source: { fileName: _jsxFileName, lineNumber: 18 }, __self: this },
+                _react2.default.createElement(_Header2.default, { __source: { fileName: _jsxFileName, lineNumber: 19 }, __self: this }),
+                _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _LandingPage2.default, __source: { fileName: _jsxFileName, lineNumber: 20 }, __self: this }),
+                _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/dashboard', component: _Dashboard2.default, __source: { fileName: _jsxFileName, lineNumber: 21 }, __self: this }),
+                _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/register', component: _RegisterPage2.default, __source: { fileName: _jsxFileName, lineNumber: 22 }, __self: this }),
+                _react2.default.createElement(_Footer2.default, { __source: { fileName: _jsxFileName, lineNumber: 23 }, __self: this })));
+
+
+    }}exports.App = App;
+
+
+const mapStateToProps = state => ({
+    hasAuthtoken: state.loginReducer.authToken !== null,
+    loggedIn: state.loginReducer.currentUser !== null });exports.default =
+
+
+(0, _reactRouterDom.withRouter)((0, _reactRedux.connect)(mapStateToProps)(App));

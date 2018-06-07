@@ -1,6 +1,48 @@
+.note-container{
+  height: 450px;
+  width: 20%;
+  margin-right: 5%;
+}
+
+.note-container form{
+  height: 100%;
+  background: #00cccd;
+}
+
+.note-container form div label{
+  text-align: center;
+  color: white;
+  padding: .8em;
+  font-size: 1.2em;
+}
+.note-container form div textarea {
+  width: 80%;
+  display: block;
+  margin: auto;
+  height: 340px;
+}
+.note-container form button {
+  display: block;
+  margin: .5em auto;
+  padding: .6em 2em;
+  font-size: 1em;
+  background-color: #009a9c;
+  border: none;
+  color: #fff !important;
+}
+
+.note-container form button:focus {
+  outline: 2px solid #fff;
+
+}
+
 .note-container {
     height: 450px;
     width: 30%;
+}
+
+#champ-note:focus{
+  outline: 2px solid #008889;
 }
 
 @media only screen and (max-width: 1366px){

@@ -31,7 +31,7 @@ export const signedUp = () => ({
     type: SIGNED_UP
 })
 
-const storeAuthInfo = (authToken, dispatch) => {
+export const storeAuthInfo = (authToken, dispatch) => {
     const decodedToken = jwtDecode(authToken);
     dispatch(setAuthToken(authToken));
     dispatch(authSuccess(decodedToken.user));
@@ -59,6 +59,7 @@ export const login = (username, password) => dispatch => {
             return response.json();
         })
         .then(({authToken}) => {
+            console.log(authToken)
             storeAuthInfo(authToken, dispatch)
             // dispatch(fetchChampions(authToken))
         })

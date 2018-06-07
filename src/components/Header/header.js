@@ -4,6 +4,7 @@ import {clearAuth} from '../../actions/auth';
 import {clearToken} from '../../localStorage';
 import { clearChampionClickedSearched } from '../../actions/champions';
 import {clearPlayer} from '../../actions/playerInfo';
+import './index.css';
 
 export class Header extends React.Component{
     logout(){

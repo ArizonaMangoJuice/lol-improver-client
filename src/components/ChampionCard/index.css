@@ -1,0 +1,34 @@
+.champion-card{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 175px;
+    border-radius: 5px;
+    background: #00cdcf;
+    margin: 5px;
+    vertical-align: top;
+    border: none;
+    color: #fff;
+  }
+  .champion-card:focus{
+    outline: 2px solid #008889;
+  }
+  
+  .champion-card img{
+    border-radius: 50%;
+    padding: .2em;
+  }
+  
+  .champion-card-flex{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+  }
+  
+  .champion-card-container{
+    padding: 5px
+  }
+  
+  .clicked{
+     transition: 0.5s;
+     background: #cc4544;
+  }

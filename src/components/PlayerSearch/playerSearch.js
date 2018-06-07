@@ -14,12 +14,12 @@ export class PlayerSearch extends React.Component{
                 </h2>
             ) : '';
         return (
-            <div className='player-matches-container'>
+            <section className='player-matches-container'>
                 {error}
                 <PlayerSearchForm/>
                 <AccountInfo/>  
                 <MatchInfo/>     
-            </div>
+            </section>
         );
     }
 }
@@ -29,5 +29,4 @@ const mapStateToProps = state => ({
 })
 
 export default connect(mapStateToProps)(PlayerSearch);
-//create component for account user 
-//create component for matches 
+
