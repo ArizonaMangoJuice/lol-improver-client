@@ -29,7 +29,6 @@ export function LandingPage(props){
 }
 
 const mapStateToProps = state => {
-    // console.log(state);
     return {
         loggedIn: state.loginReducer.currentUser !== null,
         signedUp: state.loginReducer.signedUp

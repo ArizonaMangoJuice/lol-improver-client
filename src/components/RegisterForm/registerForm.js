@@ -7,7 +7,6 @@ import {Link} from 'react-router-dom';
 
 export class RegisterForm extends React.Component{
     onSubmit(values){
-        // console.log(JSON.stringify(values.username))
         let user = {
             username: values.username,
             password: values.password
@@ -17,7 +16,6 @@ export class RegisterForm extends React.Component{
     }
     
     render(){ 
-        // console.log(this.props.meta)
         let error;
         if(this.props.error){
             error = (
@@ -63,7 +61,6 @@ export class RegisterForm extends React.Component{
 export default reduxForm({
     form: 'signUp', 
     onSubmitFail: (errors, dispatch) => {
-        console.log('on submitFail',errors);
         return dispatch(focus('signUp', 'username'));
     },
 })(RegisterForm);

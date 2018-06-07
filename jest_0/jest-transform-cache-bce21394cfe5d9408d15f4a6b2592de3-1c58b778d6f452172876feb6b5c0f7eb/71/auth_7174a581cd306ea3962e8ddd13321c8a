@@ -1,0 +1,85 @@
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });exports.login = exports.storeAuthInfo = exports.signedUp = exports.SIGNED_UP = exports.clearAuth = exports.CLEAR_AUTH = exports.authError = exports.AUTH_ERROR = exports.authSuccess = exports.AUTH_SUCCESS = exports.setAuthToken = exports.SET_AUTH_TOKEN = undefined;var _jwtDecode = require('jwt-decode');var _jwtDecode2 = _interopRequireDefault(_jwtDecode);
+var _config = require('../config');var _config2 = _interopRequireDefault(_config);
+var _reduxForm = require('redux-form');
+var _localStorage = require('../localStorage');function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+const SET_AUTH_TOKEN = exports.SET_AUTH_TOKEN = 'SET_AUTH_TOKEN';
+const setAuthToken = exports.setAuthToken = authToken => ({
+    type: SET_AUTH_TOKEN,
+    authToken });
+
+
+const AUTH_SUCCESS = exports.AUTH_SUCCESS = 'AUTH_SUCCESS';
+const authSuccess = exports.authSuccess = currentUser => ({
+    type: AUTH_SUCCESS,
+    currentUser });
+
+
+const AUTH_ERROR = exports.AUTH_ERROR = 'AUTH_ERROR';
+const authError = exports.authError = error => ({
+    type: AUTH_ERROR,
+    error });
+
+
+const CLEAR_AUTH = exports.CLEAR_AUTH = 'CLEAR_AUTH';
+const clearAuth = exports.clearAuth = () => ({
+    type: CLEAR_AUTH });
+
+
+const SIGNED_UP = exports.SIGNED_UP = 'SIGNED_ UP';
+const signedUp = exports.signedUp = () => ({
+    type: SIGNED_UP });
+
+
+const storeAuthInfo = exports.storeAuthInfo = (authToken, dispatch) => {
+    const decodedToken = (0, _jwtDecode2.default)(authToken);
+    dispatch(setAuthToken(authToken));
+    dispatch(authSuccess(decodedToken.user));
+    (0, _localStorage.saveToken)(authToken);
+};
+
+const login = exports.login = (username, password) => dispatch => {
+    return (
+        fetch(`${_config2.default}/login`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': _config2.default },
+
+            body: JSON.stringify({
+                username,
+                password }) }).
+
+
+        then(response => {
+            // console.log(response);
+            if (response.status === 401) {
+                return response.json().then(err => Promise.reject(err));
+            }
+            return response.json();
+        }).
+        then(result => {
+            console.log(result);
+            storeAuthInfo(authToken, dispatch);
+            // dispatch(fetchChampions(authToken))
+        }).
+        catch(err => {let
+            message = err.error.message;
+            // let message;
+            //incorrect username or password on server side
+            if (message === 'Unauthorized') {
+                message = 'Invalid username or password';
+            } else {
+                message = 'Unable to login, please try again later';
+            }
+
+            dispatch(authError(err));
+
+            return Promise.reject(
+            new _reduxForm.SubmissionError({
+                _error: message }));
+
+
+        }));
+
+};

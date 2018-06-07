@@ -21,9 +21,4 @@ export class Dashboard extends React.Component{
     }
 }
 
-const mapStateToProps = state => ({
-    username: state.loginReducer.currentUser.username,
-    authToken: state.loginReducer.authToken,
-});
-
-export default LoginWrapper()(connect(mapStateToProps)(Dashboard));
+export default LoginWrapper()(connect()(Dashboard));

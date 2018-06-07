@@ -8,10 +8,6 @@ import Footer from '../Footer';
 import RegisterPage from '../RegisterPage';
 
 export class App extends React.Component{
-    componentDidMount(){   
-        
-    }
-
     render(){
         
         return (
@@ -26,9 +22,4 @@ export class App extends React.Component{
     }
 }
 
-const mapStateToProps = state => ({
-    hasAuthtoken: state.loginReducer.authToken !== null,
-    loggedIn: state.loginReducer.currentUser !== null
-});
-
-export default withRouter(connect(mapStateToProps)(App));
+export default withRouter(connect()(App));

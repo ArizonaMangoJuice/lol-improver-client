@@ -5,24 +5,14 @@ import MatchInfoCard from '../MatchInfoCard';
 export class MatchInfo extends React.Component{
 
     findPlayer(num){
-        //accountId: 28128
         let accountId = this.props.accountInfo.accountId;
         let result = [];
         let tempObj = {};
-        // console.log(this.props.matches);
-        // console.log('accountId',accountId);
-        // console.log('matches', this.props.matches[0].participantIdentities.filter(i => i.player.currentAccountId.toString() === accountId));
-        // console.log(this.props.matches[0].participantIdentities[6].player.accountId == accountId);
         let name = this.props.matches[num].participantIdentities.filter(i => i.player.currentAccountId.toString() === accountId);
-        // console.log('name',name)
         let participantId = name[0].participantId;
-        // console.log('participant id',participantId);
-
         let mainPlayerStats = this.props.matches[num].participants.filter(participant => participant.participantId === participantId);
 
-        // console.log('mainplayer stats', mainPlayerStats);
-
-        tempObj.mainPlayerStats = mainPlayerStats
+        tempObj.mainPlayerStats = mainPlayerStats;
 
         result.push(tempObj);
 
@@ -39,7 +29,6 @@ export class MatchInfo extends React.Component{
                 key={i} 
                 {...match} 
                 matchDetails={playerMatchDetails}
-                // playerChamp={this.props.champions[i]}
             />
         })
            

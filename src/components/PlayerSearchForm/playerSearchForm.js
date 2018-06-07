@@ -1,15 +1,12 @@
 import React from 'react';
-import {Field, reduxForm, focus} from 'redux-form';
+import {Field, reduxForm} from 'redux-form';
 import Input from '../Input';
 import { findPlayer, clearPlayer } from '../../actions/playerInfo';
-import {notEmpty, trimOuterSpaces} from '../../validators';
 
 export class PlayerSearchForm extends React.Component{
     onSubmit(value){
-        // console.log()
         this.props.dispatch(clearPlayer());
         this.props.dispatch(findPlayer(value.playerSearch));
-        // this.props.dispatch(searchPlayer(value.playerSearch));
     }
     render(){
         return (
@@ -20,7 +17,6 @@ export class PlayerSearchForm extends React.Component{
                     name='playerSearch'
                     id='playerSearch'
                     label='playerSearch'
-                    // validate={[notEmpty, trimOuterSpaces]}
                 />
             </form>
         );

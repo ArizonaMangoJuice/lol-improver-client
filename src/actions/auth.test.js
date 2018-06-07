@@ -57,23 +57,28 @@ describe('signedUp', () => {
 
 describe('login', () => {
     it('should dispatch storeAuthInfo', () => {
-        const authToken = {
-            authToken : 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InVzZXJuYW1lIjoiaXNhZWxsaXphbWEiLCJwYXNzd29yZCI6IiQyYSQxMCRhVGhlUkExdFBYaUpCQmw4aWVjZExPSWMzeFJUTXkzL0RaR3AwRDcyZGZDTlN1QlFSZ25ZYSIsImNyZWF0ZWRBdCI6IjIwMTgtMDYtMDRUMTQ6MDI6MjEuMDU0WiIsInVwZGF0ZWRBdCI6IjIwMTgtMDYtMDRUMTQ6MDI6MjEuMDU0WiIsImlkIjoiNWIxNTQ2NmQ0YTdmOGEyNDExYTE3OGRiIn0sImlhdCI6MTUyODM0MTk0NywiZXhwIjoxNTI4OTQ2NzQ3LCJzdWIiOiJpc2FlbGxpemFtYSJ9.CpI224ccVLn-1fcW_q5nSKimswpwvdDIf_l225tueig'
-        }
+        const authToken = { 
+            authToken: 'dsadsa',
+            message: 'ok'
+        };
         const username = 'user';
         const password = 'password';
         
         global.fetch = jest.fn().mockImplementation(() => 
             Promise.resolve({
-                ok:true,
-                json(){
-                    return authToken
-                }
-            })
+                    ok: true,
+                    message: 'hjello',
+                    json() {
+                        
+                        return authToken;
+                    }
+                })
         );
 
+
+        console.log(fetch);
         const dispatch = jest.fn();
-        return login()(dispatch).then(() => {
+        return login('test','test')(dispatch).then(() => {
             expect(fetch).toHaveBeenCalledWith(`${lolImproverUrl}/login`);
         })
     });

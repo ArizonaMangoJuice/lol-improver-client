@@ -52,7 +52,7 @@ export const login = (username, password) => dispatch => {
             })
         })
         .then(response => {
-            // console.log(response);
+            console.log(response);
             if(response.status === 401){
                 return response.json().then(err => Promise.reject(err))
             }
