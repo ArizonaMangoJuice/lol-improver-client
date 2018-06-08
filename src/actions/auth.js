@@ -31,6 +31,11 @@ export const signedUp = () => ({
     type: SIGNED_UP
 })
 
+export const SIGN_UP_AGAIN = 'SIGN_UP_AGAIN';
+export const signUpAgain = () => ({
+    type: SIGN_UP_AGAIN
+})
+
 export const storeAuthInfo = (authToken, dispatch) => {
     const decodedToken = jwtDecode(authToken);
     dispatch(setAuthToken(authToken));
@@ -52,7 +57,6 @@ export const login = (username, password) => dispatch => {
             })
         })
         .then(response => {
-            // console.log(response);
             if(response.status === 401){
                 return response.json().then(err => Promise.reject(err))
             }

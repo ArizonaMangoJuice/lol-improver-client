@@ -3,7 +3,8 @@ import {
     AUTH_SUCCESS,
     AUTH_ERROR,
     CLEAR_AUTH, 
-    SIGNED_UP
+    SIGNED_UP,
+    SIGN_UP_AGAIN
 } from '../actions/auth';
 
 const initialState = {
@@ -42,6 +43,11 @@ const loginReducer = (state = initialState, action) => {
             return {
                 ...state,
                 signedUp: true
+            }
+        case SIGN_UP_AGAIN:
+            return {
+                ...state,
+                signedUp:false
             }
         default: 
             return state

@@ -16,7 +16,7 @@ export const registerUser = user => dispatch => {
         }
         return response.json();
     })
-    .then(response => {
+    .then(() => {
         dispatch(signedUp());
     })
     .catch(err => {

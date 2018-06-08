@@ -3,6 +3,8 @@ import {connect} from 'react-redux';
 import {Redirect} from 'react-router-dom';
 import './index.css';
 import LoginForm from '../LoginForm';
+import { signUpAgain } from '../../actions/auth';
+
 
 export function LandingPage(props){
     let signedUp;
@@ -11,6 +13,7 @@ export function LandingPage(props){
     }
     
     if(props.signedUp){
+        props.dispatch(signUpAgain());
         signedUp = (
             <p className='signed-up'>Thank You for Registering. Please Login</p>
         )
