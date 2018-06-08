@@ -21,10 +21,10 @@ export class Header extends React.Component{
             );
         }
         return (
-            <section id='banner'>
+            <header id='banner'>
                 <h1>LOL Improver</h1>
                 {logout}
-            </section>
+            </header>
         );
     }
 }

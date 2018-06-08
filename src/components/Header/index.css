@@ -1,5 +1,5 @@
 #banner {
-    background-color: #00cdcf;
+    background-color: #008283;
     color: #ffffff;
     padding: 8em 0 6em 0;
     text-align: center;
@@ -18,11 +18,13 @@
 
 
 .user-button{
-    background-color: #009a9c;
+    background-color: #008283;
     padding: 1em;
     border: none;
     color: #fff !important;
     font-size: 1.2em;
+    border: 1px solid white;
+
   }
   
 .user-button:focus{
@@ -46,7 +48,7 @@
       padding: 1.1em;
       font-size: 1.65em;
       color: #ffffff;
-      background: #00cccd;
+      background: #008283;
   
     }
     .user-button{

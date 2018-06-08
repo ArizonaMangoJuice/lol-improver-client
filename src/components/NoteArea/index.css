@@ -6,7 +6,7 @@
 
 .note-container form{
   height: 100%;
-  background: #00cccd;
+  background: #008283;
 }
 
 .note-container form div label{
@@ -26,8 +26,8 @@
   margin: .5em auto;
   padding: .6em 2em;
   font-size: 1em;
-  background-color: #009a9c;
-  border: none;
+  background-color: #008283;
+  border: 1px solid white;
   color: #fff !important;
 }
 
@@ -72,7 +72,7 @@
     
       .note-container form {
         height: 100%;
-        background: #00cccd;
+        background: #008283;
       }
     
       .note-container form button{
@@ -80,8 +80,8 @@
         margin: .5em auto;
         padding: .6em 2em;
         font-size: 1em;
-        background-color: #009a9c;
-        border: none;
+        background-color: #008283;
+        border: 1px solid white;
         color: #fff !important;
       }
     

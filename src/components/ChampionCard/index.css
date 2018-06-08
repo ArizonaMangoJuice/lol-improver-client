@@ -3,14 +3,14 @@
     transition: 0.3s;
     width: 175px;
     border-radius: 5px;
-    background: #00cdcf;
+    background: #008283;
     margin: 5px;
     vertical-align: top;
     border: none;
     color: #fff;
   }
   .champion-card:focus{
-    outline: 2px solid #008889;
+    outline: 2px solid #003b3c;
   }
   
   .champion-card img{

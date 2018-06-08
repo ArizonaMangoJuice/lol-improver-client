@@ -7,6 +7,7 @@
     padding: 1em;
     margin: 2em auto;
     font-size: 1.6em;
+    color: #008283;
     line-height: 1.5em;
 }
 
@@ -15,9 +16,9 @@
 }
 
 .login-form{
-    border: 1px solid #00cdcf;
+    border: 1px solid #008283;
     padding: 6em 0;
-    background: #00cdcf;
+    background: #008283;
     color: #fff;
     text-align: center;
     width: 30%;
@@ -69,8 +70,9 @@
     width: 33%;
     border: 0;
     padding: 15px;
-    color: #00cdcf;
+    color: #008283;
     font-size: 14px;
+    border: 1px solid white;
     cursor: pointer;
 }
 
@@ -81,7 +83,8 @@
 .login-form button:hover{
     transition: 0.3s;
     color: #fff;
-    background: #00cdcf;
+    border: 1px solid white;
+    background: #008283;
 }
 
 .login-form a {
@@ -90,21 +93,23 @@
     background: #fff;
     border: 0;
     padding: 15px;
-    color: #00cdcf;
+    color: #008283;
     font-size: 14px;
     text-decoration: none;
     width: 30%;
     margin-left: 2em;
+    border: 1px solid white;
+
 }
 
 .login-form a:focus {
     outline: 2px solid #008889;
 }
 
-.login-form-buttons a:hover{
+.login-form a:hover{
     transition: 0.3s;
     color: #fff;
-    background: #00cdcf;
+    background: #008283;
     border: 1px solid white;
 }
 
@@ -130,7 +135,7 @@
 @media only screen and (max-width: 480px) {
     .landing-page-p{
       padding: 2em 1em 2em 1em;
-      color: #00cdcf;
+      color: #008283;
       background: white;
       margin: 0;
       font-size: 1.65em;
@@ -180,7 +185,7 @@
       border: 0;
       padding: 15px;
       margin-right: 1em;
-      color: #00cdcf;
+      color: #008283;
       font-size: 14px;
     }
   
@@ -190,7 +195,7 @@
       background: #fff;
       border: 0;
       padding: 15px;
-      color: #00cdcf;
+      color: #008283;
       font-size: 14px;
       text-decoration: none;
     }
@@ -201,7 +206,7 @@
 
     .signed-up{
         width: 100%;
-        color: #00cdcf;
+        color: #008283;
         box-sizing: border-box;
     }
   }

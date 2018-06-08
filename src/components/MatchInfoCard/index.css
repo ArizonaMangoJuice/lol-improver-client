@@ -10,7 +10,7 @@
 }
 
 .win{
-    background: #00cdcf;
+    background: #008283;
 }
   
 .defeat{
@@ -71,7 +71,7 @@
         background: none;
       }
       .win{
-        background: #00cdcf;
+        background: #008283;
     }
       
     .defeat{

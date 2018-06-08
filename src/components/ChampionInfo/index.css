@@ -11,7 +11,7 @@
   padding: .2em;
   box-sizing: border-box;
   font-size: 14px;
-  background-color: #00cdcf;
+  background-color: #008283;
   display: flex;
 }
 
@@ -31,7 +31,7 @@
 }
 
 #search-bar:focus{
-  outline: 2px solid #008889;
+  outline: 2px solid #00cdcf;
 }
 
 .champ-container{
@@ -46,7 +46,7 @@
 
 @media only screen and (max-width: 480px) {
     #search-champ-container{
-        background: #00cccd;
+        background: #008283;
         text-align: center;
         padding-bottom: .1em;
         display: block;
