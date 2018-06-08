@@ -1,2 +1,0 @@
-'use strict';Object.defineProperty(exports, "__esModule", { value: true });var _dashboard = require('./dashboard');var _dashboard2 = _interopRequireDefault(_dashboard);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}exports.default =
-_dashboard2.default;

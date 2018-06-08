@@ -1,3 +1,0 @@
-'use strict';Object.defineProperty(exports, "__esModule", { value: true });const lolImproverUrl = process.env.REACT_APP_LOL_URL || 'http://localhost:8080/api';exports.default =
-
-lolImproverUrl;

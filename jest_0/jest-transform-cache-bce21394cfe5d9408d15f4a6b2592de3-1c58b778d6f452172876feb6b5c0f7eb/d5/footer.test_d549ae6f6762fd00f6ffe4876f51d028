@@ -1,9 +1,0 @@
-'use strict';var _jsxFileName = '/home/isael/Desktop/lol-improver/lol-improver-client/src/components/Footer/footer.test.js';var _react = require('react');var _react2 = _interopRequireDefault(_react);
-var _enzyme = require('enzyme');
-var _footer = require('./footer');var _footer2 = _interopRequireDefault(_footer);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-
-describe('<Footer />', () => {
-    it('should render without crashing', () => {
-        (0, _enzyme.shallow)(_react2.default.createElement(_footer2.default, { __source: { fileName: _jsxFileName, lineNumber: 7 }, __self: undefined }));
-    });
-});

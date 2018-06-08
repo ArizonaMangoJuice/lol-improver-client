@@ -1,2 +1,0 @@
-'use strict';Object.defineProperty(exports, "__esModule", { value: true });var _matchInfo = require('./matchInfo');var _matchInfo2 = _interopRequireDefault(_matchInfo);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}exports.default =
-_matchInfo2.default;

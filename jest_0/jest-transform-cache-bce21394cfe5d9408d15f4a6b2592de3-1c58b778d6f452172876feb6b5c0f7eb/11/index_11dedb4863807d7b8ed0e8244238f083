@@ -1,2 +1,0 @@
-'use strict';Object.defineProperty(exports, "__esModule", { value: true });var _playerSearchForm = require('./playerSearchForm');var _playerSearchForm2 = _interopRequireDefault(_playerSearchForm);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}exports.default =
-_playerSearchForm2.default;

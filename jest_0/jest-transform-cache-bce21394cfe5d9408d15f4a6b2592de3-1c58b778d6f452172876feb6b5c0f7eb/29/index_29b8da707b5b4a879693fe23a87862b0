@@ -1,2 +1,0 @@
-'use strict';Object.defineProperty(exports, "__esModule", { value: true });var _registerPage = require('./registerPage');var _registerPage2 = _interopRequireDefault(_registerPage);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}exports.default =
-_registerPage2.default;
