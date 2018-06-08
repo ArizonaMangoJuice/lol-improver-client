@@ -35,7 +35,6 @@ describe('<ChampionCard />', () => {
             />);
         const button = wrapper.find('button');
         button.simulate('click');
-        // console.log(wrapper.debug())
         expect(dispatch).toHaveBeenCalledWith(championIsClicked(id))
     });
 });

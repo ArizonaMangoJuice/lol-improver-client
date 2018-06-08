@@ -2,7 +2,6 @@ import championReducer from './championReducer';
 
 import {
     championFetchError,
-    championFetchRequest,
     championFetchSuccess,
     championIsClicked,
     searchChampion,
@@ -29,11 +28,6 @@ describe('championReducer', () => {
         const state = championReducer(currentState, {type: '__UNKNOWN'});
         expect(state).toBe(currentState);
     });
-
-    //prob not needed
-    // describe('championFetchRequest', () => {
-    //     it('should ')
-    // })
 
     describe('searchChampion', () => {
         it('should search for a champion', () => {

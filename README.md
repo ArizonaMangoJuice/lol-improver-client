@@ -10,7 +10,7 @@ I like league of legends. I decided why not just make an app that lets you view 
 First, you create an account. Login with the account created. Start taking notes. Search a player if you want to see there recent stats.
 
 ##Search Players
-Try to search for these player:
+- Try to search for these player:
 - ScrubNoob
 - L 5 22 9
 - Grig1

@@ -10,4 +10,3 @@ describe('</NoteArea>', () => {
     });
 });
 
-//const wrapper = mount
