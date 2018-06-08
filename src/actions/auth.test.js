@@ -1,3 +1,4 @@
+import React from 'react';
 import {
     SET_AUTH_TOKEN, 
     setAuthToken,
@@ -13,6 +14,8 @@ import {
     login
 } from './auth';
 import lolImproverUrl from '../config';
+import {mount} from 'enzyme';
+import {LoginForm} from '../components/LoginForm';
 
 describe('setAuthToken', () => {
     it('should return an action', () => {
@@ -57,29 +60,51 @@ describe('signedUp', () => {
 
 describe('login', () => {
     it('should dispatch storeAuthInfo', () => {
-        const authToken = { 
-            authToken: 'dsadsa',
-            message: 'ok'
-        };
-        const username = 'user';
-        const password = 'password';
-        
+        let username = 'username';
+        let password = 'password';
+        let authToken = {authToken: 'token of auth'};
+
         global.fetch = jest.fn().mockImplementation(() => 
             Promise.resolve({
-                    ok: true,
-                    message: 'hjello',
-                    json() {
-                        
-                        return authToken;
-                    }
-                })
+                ok:true,
+                json() {
+                    return authToken;
+                }
+            })
         );
 
-
-        console.log(fetch);
         const dispatch = jest.fn();
-        return login('test','test')(dispatch).then(() => {
-            expect(fetch).toHaveBeenCalledWith(`${lolImproverUrl}/login`);
-        })
-    });
+
+        return login(username, password)(dispatch).then(() => {
+            expect(fetch).toHaveBeenCalledWith(
+                `${lolImproverUrl}/login`
+            );
+        });
+
+    })
 });
+
+// const authToken = { 
+//     authToken: 'dsadsa',
+//     message: 'ok'
+// };
+// const username = 'user';
+// const password = 'password';
+
+// global.fetch = jest.fn().mockImplementation(() => 
+//     Promise.resolve({
+//             ok: true,
+//             message: 'hjello',
+//             json() {
+                
+//                 return authToken;
+//             }
+//         })
+// );
+
+
+// console.log(fetch);
+// const dispatch = jest.fn();
+// return login('test','test')(dispatch).then(() => {
+//     expect(fetch).toHaveBeenCalledWith(`${lolImproverUrl}/login`);
+// })

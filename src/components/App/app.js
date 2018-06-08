@@ -11,13 +11,13 @@ export class App extends React.Component{
     render(){
         
         return (
-            <main className='main-body'>
+            <section className='main-body'>
                 <Header />
                 <Route exact path='/' component={LandingPage} />
                 <Route exact path='/dashboard' component={Dashboard} />
                 <Route exact path='/register' component={RegisterPage}/>
                 <Footer />
-            </main>
+            </section>
         );
     }
 }

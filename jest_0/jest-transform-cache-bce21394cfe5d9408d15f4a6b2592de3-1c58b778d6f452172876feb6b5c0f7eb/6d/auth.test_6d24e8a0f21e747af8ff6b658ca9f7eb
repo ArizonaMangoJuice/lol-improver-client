@@ -1,0 +1,108 @@
+'use strict';var _react = require('react');var _react2 = _interopRequireDefault(_react);
+var _auth = require('./auth');
+
+
+
+
+
+
+
+
+
+
+
+
+
+var _config = require('../config');var _config2 = _interopRequireDefault(_config);
+var _enzyme = require('enzyme');
+var _LoginForm = require('../components/LoginForm');function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+describe('setAuthToken', () => {
+    it('should return an action', () => {
+        const authToken = 'token';
+        const action = (0, _auth.setAuthToken)(authToken);
+        expect(action.type).toEqual(_auth.SET_AUTH_TOKEN);
+        expect(action.authToken).toEqual(authToken);
+    });
+});
+
+describe('authSuccess', () => {
+    it('should return an action', () => {
+        const currentUser = 'user';
+        const action = (0, _auth.authSuccess)(currentUser);
+        expect(action.type).toEqual(_auth.AUTH_SUCCESS);
+        expect(action.currentUser).toEqual(currentUser);
+    });
+});
+
+describe('authError', () => {
+    it('should return an action', () => {
+        const error = 'error';
+        const action = (0, _auth.authError)(error);
+        expect(action.type).toEqual(_auth.AUTH_ERROR);
+        expect(action.error).toEqual(error);
+    });
+});
+
+describe('clearAuth', () => {
+    it('should return an action', () => {
+        const action = (0, _auth.clearAuth)();
+        expect(action.type).toEqual(_auth.CLEAR_AUTH);
+    });
+});
+
+describe('signedUp', () => {
+    it('should return an action', () => {
+        const action = (0, _auth.signedUp)();
+        expect(action.type).toEqual(_auth.SIGNED_UP);
+    });
+});
+
+describe('login', () => {
+    it('should dispatch storeAuthInfo', () => {
+        let username = 'username';
+        let password = 'password';
+        let authToken = { authToken: 'token of auth' };
+
+        global.fetch = jest.fn().mockImplementation(() =>
+        Promise.resolve({
+            ok: true,
+            json() {
+                return authToken;
+            } }));
+
+
+
+        const dispatch = jest.fn();
+
+        return (0, _auth.login)(username, password)(dispatch).then(() => {
+            expect(dispatch).toHaveBeenCalledWith((0, _auth.storeAuthInfo)());
+        });
+
+    });
+});
+
+// const authToken = { 
+//     authToken: 'dsadsa',
+//     message: 'ok'
+// };
+// const username = 'user';
+// const password = 'password';
+
+// global.fetch = jest.fn().mockImplementation(() => 
+//     Promise.resolve({
+//             ok: true,
+//             message: 'hjello',
+//             json() {
+
+//                 return authToken;
+//             }
+//         })
+// );
+
+
+// console.log(fetch);
+// const dispatch = jest.fn();
+// return login('test','test')(dispatch).then(() => {
+//     expect(fetch).toHaveBeenCalledWith(`${lolImproverUrl}/login`);
+// })

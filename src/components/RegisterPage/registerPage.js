@@ -12,10 +12,10 @@ function RegisterPage(props){
         return <Redirect to='/' />
     }
     return (
-        <div>
+        <main>
             <p id='register-title'>Sign Up</p>
             <RegisterForm />
-        </div>
+        </main>
     );
 }
 

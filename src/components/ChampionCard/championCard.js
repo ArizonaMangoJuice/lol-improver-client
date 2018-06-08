@@ -5,13 +5,10 @@ import './index.css';
 
 export class ChampionCard extends React.Component{
     showNote(id){
-        //dispatch to store add notes than create component that dispatches
-        //every time you type something
         this.props.dispatch(championIsClicked(id));
-        // console.log(id)//create a component for the text to show.
     }
 
-    render(){//start seeing if the action works
+    render(){
         let clicked;
 
         this.props.css === undefined 

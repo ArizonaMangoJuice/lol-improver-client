@@ -1,0 +1,36 @@
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });exports.ChampionCard = undefined;var _jsxFileName = '/home/isael/Desktop/lol-improver/lol-improver-client/src/components/ChampionCard/championCard.js';var _react = require('react');var _react2 = _interopRequireDefault(_react);
+var _reactRedux = require('react-redux');
+var _champions = require('../../actions/champions');
+require('./index.css');function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+class ChampionCard extends _react2.default.Component {
+    showNote(id) {
+        this.props.dispatch((0, _champions.championIsClicked)(id));
+    }
+
+    render() {
+        let clicked;
+
+        this.props.css === undefined ?
+        clicked = '' :
+        clicked = this.props.css;
+
+        return (
+            _react2.default.createElement('button', {
+                    key: this.props.key,
+                    onClick: () => {
+                        this.showNote(this.props.id);
+                    },
+                    className: `champion-card ${clicked}`, __source: { fileName: _jsxFileName, lineNumber: 19 }, __self: this },
+
+                _react2.default.createElement('img', { src: this.props.src, alt: this.props.name, __source: { fileName: _jsxFileName, lineNumber: 26 }, __self: this }),
+                _react2.default.createElement('div', { className: `champion-card-container`, __source: { fileName: _jsxFileName, lineNumber: 27 }, __self: this },
+                    _react2.default.createElement('h2', { __source: { fileName: _jsxFileName, lineNumber: 28 }, __self: this }, this.props.name),
+                    _react2.default.createElement('h3', { __source: { fileName: _jsxFileName, lineNumber: 29 }, __self: this }, this.props.title))));
+
+
+
+    }}exports.ChampionCard = ChampionCard;exports.default =
+
+
+(0, _reactRedux.connect)()(ChampionCard);

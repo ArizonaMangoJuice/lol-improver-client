@@ -5,8 +5,8 @@ import {Dashboard} from './dashboard';
 describe('<Dashboard />', () => {
     
     it('should render without crashing', () => {
-        const test = 'test';    
-        shallow(<Dashboard dispatch={jest.fn()} props={test}/>);
+        const dispatch = jest.fn();  
+        shallow(<Dashboard dispatch={dispatch}/>);
     })
     
 });
