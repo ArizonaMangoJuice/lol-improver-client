@@ -74,3 +74,7 @@ First, you create an account. Login with the account created. Start taking notes
 
 ## Credits
 Props to everyone on thinkful for making me use my brain. Props to hiram helping me out with tests. 
+
+## Future Development
+-Gonna make the player search save the match details , so when newer matches get called it shows from the point of when someone started searching for the player.
+-make the notes also show your accumulated kda and wins
