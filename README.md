@@ -6,9 +6,6 @@ https://focused-nightingale-b297e9.netlify.com/
 ## Motivation
 I like league of legends. I decided why not just make an app that lets you view player stats and take notes on champions you play.
 
-## How to use?
-First, you create an account. Login with the account created. Start taking notes. Search a player if you want to see there recent stats.
-
 ##Search Players
 - Try to search for these player:
 - ScrubNoob
@@ -17,6 +14,9 @@ First, you create an account. Login with the account created. Start taking notes
 - TCLB Robin NA
 - IlIlIllllIIIIIII
 - Tony Top
+
+## How to use?
+First, you create an account. Login with the account created. Start taking notes. Search a player if you want to see there recent stats.
 
 ## Build status
 Build status of continus integration i.e. travis, appveyor etc. Ex. - 
