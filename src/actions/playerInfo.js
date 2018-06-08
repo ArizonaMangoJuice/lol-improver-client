@@ -39,27 +39,17 @@ export const fetchNameDetails = championId => dispatch => {
 export const findPlayer = name => dispatch => {
     return fetch(`${lolImproverUrl}/players/${name}`)
         .then(response => {
-            // console.log(response.length);
             if(!response.ok) throw new Error('Player Not Found');
             return response.json()
         })
         .then(response => {
-            // if(response.error){
-            //     return Promise.reject(response.response);
-            // }
-            // console.log(response.length);
+
             let matches = response.matchDetails.map(match => JSON.parse(match))
 
             dispatch(searchPlayer(response.playerInfo));
             dispatch(fetchMatches(matches))
     
-            // console.log(response.playerInfo, matches)
         })
         .catch(err => dispatch(matchesError(err.message)))
 }
 
-//create route for players than for matches
-//make a test call to them
-// now create a schema for them 
-//use the api 
-//console.log(err.body, err.statusCode)

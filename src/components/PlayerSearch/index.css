@@ -59,6 +59,18 @@
     padding: 1em;
 }
 
+.search-player-button{
+    text-transform: uppercase;
+    outline: 0;
+    background: #fff;
+    padding: 15px;
+    margin-left: 1em;
+    color: #008283;
+    font-size: 14px;
+    border: 1px solid white;
+    cursor: pointer;
+}
+
 @media only screen and (max-width: 1366px){
     .player-matches-container {
         width: 100%;
@@ -135,6 +147,10 @@
         -webkit-box-sizing: border-box;
         box-sizing: border-box;
         font-size: 14px;
+      }
+      .search-player-button{
+          padding: 2em;
+          margin: 1em;
       }
 }
 

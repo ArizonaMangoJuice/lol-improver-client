@@ -53,8 +53,6 @@ export const updateBackEndChampionNote = () => {
             note
         }
 
-        console.log(JSON.stringify(body));
-
         fetch(`${lolImproverUrl}/champions/${championId}`,{
             method: 'PUT',
             headers:{
@@ -64,11 +62,8 @@ export const updateBackEndChampionNote = () => {
             body: JSON.stringify(body)
         })
         .then(response => response.json())
-        .then(response => {
+        .then(() => {
             dispatch(fetchChampions());
-        })
-        .catch(err => {
-            console.log(err);
         })
     }
 }

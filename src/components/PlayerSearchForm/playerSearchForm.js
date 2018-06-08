@@ -17,6 +17,8 @@ export class PlayerSearchForm extends React.Component{
                     name='playerSearch'
                     id='playerSearch'
                     label='playerSearch'
+                    button={true}
+                    buttonClass='search-player-button'
                 />
             </form>
         );

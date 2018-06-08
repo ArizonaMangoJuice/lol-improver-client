@@ -1,0 +1,44 @@
+'use strict';Object.defineProperty(exports, "__esModule", { value: true });var _jsxFileName = '/home/isael/Desktop/lol-improver/lol-improver-client/src/components/LandingPage/landingPage.js';exports.
+
+
+
+
+
+LandingPage = LandingPage;var _react = require('react');var _react2 = _interopRequireDefault(_react);var _reactRedux = require('react-redux');var _reactRouterDom = require('react-router-dom');require('./index.css');var _LoginForm = require('../LoginForm');var _LoginForm2 = _interopRequireDefault(_LoginForm);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function LandingPage(props) {
+    let signedUp;
+    if (props.loggedIn) {
+        return _react2.default.createElement(_reactRouterDom.Redirect, { to: '/dashboard', __source: { fileName: _jsxFileName, lineNumber: 10 }, __self: this });
+    }
+
+    if (props.signedUp) {
+        signedUp =
+        _react2.default.createElement('p', { className: 'signed-up', __source: { fileName: _jsxFileName, lineNumber: 15 }, __self: this }, 'Thank You for Registering. Please Login');
+
+    }
+
+    return (
+        _react2.default.createElement('main', { __source: { fileName: _jsxFileName, lineNumber: 20 }, __self: this },
+            _react2.default.createElement('p', { className: 'landing-page-p', __source: { fileName: _jsxFileName, lineNumber: 21 }, __self: this }, 'LoL Improver lets you take your gaming to a whole new level.'),
+
+
+            _react2.default.createElement('p', { className: 'landing-page-p', __source: { fileName: _jsxFileName, lineNumber: 24 }, __self: this }, 'DemoLogin: testuser'),
+
+
+            _react2.default.createElement('p', { className: 'landing-page-p', __source: { fileName: _jsxFileName, lineNumber: 27 }, __self: this }, 'DemoPassword: alongpassword'),
+
+
+
+            signedUp,
+            _react2.default.createElement(_LoginForm2.default, { __source: { fileName: _jsxFileName, lineNumber: 32 }, __self: this })));
+
+
+}
+
+const mapStateToProps = state => {
+    return {
+        loggedIn: state.loginReducer.currentUser !== null,
+        signedUp: state.loginReducer.signedUp };
+
+};exports.default =
+
+(0, _reactRedux.connect)(mapStateToProps)(LandingPage);

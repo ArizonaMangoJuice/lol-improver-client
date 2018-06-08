@@ -6,7 +6,6 @@ import LoginForm from '../LoginForm';
 
 export function LandingPage(props){
     let signedUp;
-    // console.log(props.loggedIn);
     if(props.loggedIn){
         return <Redirect to='/dashboard'/>
     }
@@ -22,6 +21,13 @@ export function LandingPage(props){
             <p className='landing-page-p'>
                 LoL Improver lets you take your gaming to a whole new level.
             </p>
+            <p className='landing-page-p'>
+                DemoLogin: testuser
+            </p>
+            <p className='landing-page-p'>
+                DemoPassword: alongpassword
+            </p>
+
             {signedUp}
             <LoginForm />
         </main>

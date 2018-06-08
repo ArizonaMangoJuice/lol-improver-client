@@ -12,7 +12,6 @@ export default class Input extends React.Component{
         //you to the input as well
         let error;
         if(this.props.meta.error && this.props.meta.touched){
-            console.log(this.props.meta.error);
             error = (
                 <label className='formError'>
                     {this.props.meta.error}
@@ -33,6 +32,11 @@ export default class Input extends React.Component{
                     type={this.props.type}
                     ref={input => (this.input = input)}
                 />
+                {this.props.button ? (
+                    <button className={this.props.buttonClass}>
+                        Search
+                    </button>
+                ) : ''}
             </div>
         );
     }

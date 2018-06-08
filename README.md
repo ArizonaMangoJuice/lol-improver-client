@@ -39,6 +39,21 @@ Standard/Thinkful-style
 ![alt text](https://lh5.googleusercontent.com/z8kf9TRFW1xMIvQXN0uzDmRRGvEhK4T1vqEbuBD5j08LLZMeix-glgIus1b7Vxnlt2xZ2D1VwAfmuw=w617-h902-rw)
 
 
+## API Documentation
+- https://lol-improver-ci.herokuapp.com/api/static/:champId
+    lets you see any static data based of the champId
+- https://lol-improver-ci.herokuapp.com/api/champions/:id
+    lets you update the note from the champion thats from the user
+- https://lol-improver-ci.herokuapp.com/api/players/:name
+    grabs the user and shows the most recent matches
+- https://lol-improver-ci.herokuapp.com/api/champions/
+    grabs all the champions for a current user
+- https://lol-improver-ci.herokuapp.com/api/users/
+    lets you create a user if it doesnt exist
+- https://lol-improver-ci.herokuapp.com/api/login
+    lets you login if you have the valid credentials
+
+    
 
 ## Tech/framework used
 
@@ -52,10 +67,6 @@ Standard/Thinkful-style
 You can take notes on any champion.
 You can save the notes with a user.
 You can look up player stats.
-
-## Code Example
-Show what the library does as concisely as possible, developers should be able to figure out **how** your project solves their problem by looking at the code example. Make sure the API you are showing off is obvious, and that your code is short and concise.
-
 
 ## How to use?
 First, you create an account. Login with the account created. Start taking notes. Search a player if you want to see there recent stats.
