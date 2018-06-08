@@ -13,12 +13,33 @@ export class Dashboard extends React.Component{
     render(){
         return (
             <main className='main-content'>
-                <section>
+                <section className='demo-players'>
+                    <section>
+                        <p>
+                            Try searching for these players:
+                        </p>
+                        <ul>
+                            <li>
+                                ScrubNoob
+                            </li>
+                            <li>
+                                L 5 22 9
+                            </li>
+                            <li>
+                                Grig1
+                            </li>
+                            <li>
+                                TCLB Robin NA
+                            </li>
+                            <li>
+                                IlIlIllllIIIIIII
+                            </li>
+                            <li>
+                                Tony Top
+                            </li>
+                        </ul>
+                    </section>
                 </section>
-                <p>
-                    Try searching for these players:
-                </p>
-
                 <ChampionInfo />
                 <NoteArea />
                 <PlayerSearch />
