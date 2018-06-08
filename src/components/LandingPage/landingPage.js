@@ -7,16 +7,12 @@ import { signUpAgain } from '../../actions/auth';
 
 
 export function LandingPage(props){
-    let signedUp;
     if(props.loggedIn){
         return <Redirect to='/dashboard'/>
     }
     
     if(props.signedUp){
         props.dispatch(signUpAgain());
-        signedUp = (
-            <p className='signed-up'>Thank You for Registering. Please Login</p>
-        )
     }
 
     return (
@@ -31,7 +27,6 @@ export function LandingPage(props){
                 DemoPassword: alongpassword
             </p>
 
-            {signedUp}
             <LoginForm />
         </main>
     )

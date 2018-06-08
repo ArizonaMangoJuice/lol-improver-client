@@ -20,10 +20,15 @@ export const registerUser = user => dispatch => {
         dispatch(signedUp());
     })
     .catch(err => {
+        // console.log(err);
         let {message} = err;
         const {reason} = err.error;
 
-        dispatch(authError(err));
+        // dispatch(authError(err));
+
+        if(message === 'The username already exists'){
+            message = 'The username already exists';
+        }
 
         if(reason !== 'ValidationError'){
             message = 'Unable to sign up, please try again later';
