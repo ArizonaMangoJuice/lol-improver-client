@@ -18,7 +18,7 @@ export class ChampionInfo extends React.Component{
             return (
                 <ChampionCard 
                     key={i} 
-                    src={`http://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/${imageString}`}
+                    src={`https://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/${imageString}`}
                     name={champion.name}
                     title={champion.title}
                     userId={champion.userId}
