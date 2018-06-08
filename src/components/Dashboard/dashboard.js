@@ -28,3 +28,4 @@ export class Dashboard extends React.Component{
 }
 
 export default LoginWrapper()(connect()(Dashboard));
+
