@@ -1,14 +1,21 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import {Field, reduxForm, focus} from 'redux-form';
 import {login} from '../../actions/auth';
 import Input from '../Input';
 import {required, notEmpty} from '../../validators';
 import {Link} from 'react-router-dom';
+import { signUpAgain } from '../../actions/auth';
 
 export class LoginForm extends React.Component{
     onSubmit(values){
         return this.props.dispatch(login(values.username, values.password));
     }
+
+    removeSignedUp(){
+        return this.props.dispatch(signUpAgain());
+    }
+
     render(){
         let error;
         if(this.props.error){
@@ -43,7 +50,7 @@ export class LoginForm extends React.Component{
                     <button disabled={this.props.pristine || this.props.submitting}>
                         Log in
                     </button>
-                    <Link role='button' to='/register'>
+                    <Link role='button' to='/register' onClick={() => this.removeSignedUp()}>
                         Register
                     </Link>
             </form>
@@ -51,9 +58,15 @@ export class LoginForm extends React.Component{
     }
 }
 
-export default reduxForm({
+const mapStateToProps = state => {
+    return {
+        signedUp: state.loginReducer.signedUp
+    };
+};
+
+export default connect(mapStateToProps)(reduxForm({
     form: 'login',
     onSubmitFail: (errors, dispatch) => {
         return dispatch(focus('login', 'username'));
     },
-})(LoginForm);
+})(LoginForm));

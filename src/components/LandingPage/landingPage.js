@@ -3,16 +3,20 @@ import {connect} from 'react-redux';
 import {Redirect} from 'react-router-dom';
 import './index.css';
 import LoginForm from '../LoginForm';
-import { signUpAgain } from '../../actions/auth';
 
 
 export function LandingPage(props){
+    let signedUp;
     if(props.loggedIn){
         return <Redirect to='/dashboard'/>
     }
     
     if(props.signedUp){
-        props.dispatch(signUpAgain());
+        signedUp = (
+            <p className='signed-up'>
+                Thank you For signing up.
+            </p>
+        );
     }
 
     return (
@@ -26,7 +30,7 @@ export function LandingPage(props){
             <p className='landing-page-p'>
                 DemoPassword: alongpassword
             </p>
-
+            {signedUp}
             <LoginForm />
         </main>
     )

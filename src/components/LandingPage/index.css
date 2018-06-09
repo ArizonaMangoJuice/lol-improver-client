@@ -124,6 +124,7 @@
     font-size: 1.6em;
     line-height: 1.5em;
     display: block;
+    color: #008283;
 }
 
 @media only screen and (max-width: 1366px){
