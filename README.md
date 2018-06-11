@@ -40,13 +40,13 @@ Standard/Thinkful-style
 ![alt text](https://doc-00-28-docs.googleusercontent.com/docs/securesc/ha0ro937gcuc7l7deffksulhg5h7mbp1/b7ok2i1olp5js7rdf8u1245ne4ele9lc/1528725600000/04640128816426817059/*/123dqKRQj8KpKuX6BBFn5E0Hp1pCnNj3e)
 
 ### Desktop Landing Page
-![alt text](https://lh6.googleusercontent.com/mlRHpVgtPeRUzJSLZGSEIyE0uDyye0IaVproNj9LTBWExaWAxnTTlfNxYIlCMMBLv-uj0xk4Azkgpw=w617-h902-rw)
+![alt text](https://doc-0o-28-docs.googleusercontent.com/docs/securesc/ha0ro937gcuc7l7deffksulhg5h7mbp1/jmve1or2dlnt07125s19vtg7kerlohb6/1528725600000/04640128816426817059/*/1tmtqU0UkedJzgEvyHY4okO0ia7a_ckdF)
 
 ### Desktop Register Page
-![alt text](https://lh5.googleusercontent.com/zSajtQpJe6Ftb9fEyIsgw9vvcew2sPKmNjPdNVlPnRKz3vSJLzwrbeqgTFJ0N31omGJ-jF5comIY3w=w617-h902-rw)
+![alt text](https://doc-10-28-docs.googleusercontent.com/docs/securesc/ha0ro937gcuc7l7deffksulhg5h7mbp1/eilhlj5q2jgofguhs80okjdvpavss1dj/1528725600000/04640128816426817059/*/14EbupRvvihLV2AqOuqyR8ucjMmv0i-kr)
 
 ### Desktop Dashboard
-![alt text](https://lh5.googleusercontent.com/z8kf9TRFW1xMIvQXN0uzDmRRGvEhK4T1vqEbuBD5j08LLZMeix-glgIus1b7Vxnlt2xZ2D1VwAfmuw=w617-h902-rw)
+![alt text](https://doc-0c-28-docs.googleusercontent.com/docs/securesc/ha0ro937gcuc7l7deffksulhg5h7mbp1/1gkgrsn9if95ue4sql0urn48jku6dnkq/1528725600000/04640128816426817059/*/1i7yIPdoD50cQYhD5qd6L6yWhGxPw5NRN)
 
 
 ## API Documentation
