@@ -32,12 +32,12 @@ Standard/Thinkful-style
 
 ### Mobile Sign Up
 
-![alt text](https://lh4.googleusercontent.com/Fwh01qKWnBqoOIXBTIVvEcVETmcg70sPFRhJ_R-SsH5ePeBLM4JcFUhZTYymo4WHm7bgoBqvRvJznA=w617-h902-rw)
+![alt text](https://doc-0k-28-docs.googleusercontent.com/docs/securesc/ha0ro937gcuc7l7deffksulhg5h7mbp1/qpa2o35dbbe681k4ammuoksnm34te05t/1528725600000/04640128816426817059/*/1jRutzYyH5SFtFk61JrX9WSzSQwBbBSB4)
 
 ### Mobile Dashboard
 
-![alt text](https://lh3.googleusercontent.com/KmjEJnaZJTDG1uyWoyx7VVpiuEOfDOKovBIUEY_SYDJ7f1KhDLuPz8R1pH7r4KzQJhOA4DH53IYc8w=w617-h902-rw)
-![alt text](https://lh6.googleusercontent.com/r_vYETp-1VzJPnPMi4_NMhDvDCoAyOt_N_ZjojN1ttkV0GVmdy73AXZroWDSVsi3VMkBrXxrbOAqGQ=w617-h902-rw)
+![alt text](https://doc-0g-28-docs.googleusercontent.com/docs/securesc/ha0ro937gcuc7l7deffksulhg5h7mbp1/qi50rfgonh1bdc225gsm7t2utidognlt/1528725600000/04640128816426817059/*/1S2rz5jDjpRKeec4xH4xmwhmkn9LkwFNh)
+![alt text](https://doc-00-28-docs.googleusercontent.com/docs/securesc/ha0ro937gcuc7l7deffksulhg5h7mbp1/b7ok2i1olp5js7rdf8u1245ne4ele9lc/1528725600000/04640128816426817059/*/123dqKRQj8KpKuX6BBFn5E0Hp1pCnNj3e)
 
 ### Desktop Landing Page
 ![alt text](https://lh6.googleusercontent.com/mlRHpVgtPeRUzJSLZGSEIyE0uDyye0IaVproNj9LTBWExaWAxnTTlfNxYIlCMMBLv-uj0xk4Azkgpw=w617-h902-rw)
