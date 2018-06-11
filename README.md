@@ -28,7 +28,7 @@ Standard/Thinkful-style
  
 ## Screenshots
 ### Mobile Login
-![alt text](https://lh6.googleusercontent.com/jNyfOe7bNARAaSjeckh7wIIONNe2bApzvCUQUgxBC5cdYWmYjQ9rz8OnmT96L5e5wDNVisT4CHvPqg=w1920-h955-rw)
+![alt text](https://doc-0c-28-docs.googleusercontent.com/docs/securesc/ha0ro937gcuc7l7deffksulhg5h7mbp1/bam2n6vgf04is595ifgc82jifhi66ofb/1528725600000/04640128816426817059/*/1czbU_3hFrLtshUuxhEn-P_K2ZaOvsFh4)
 
 ### Mobile Sign Up
 
