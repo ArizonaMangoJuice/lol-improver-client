@@ -28,25 +28,25 @@ Standard/Thinkful-style
  
 ## Screenshots
 ### Mobile Login
-![alt text](https://gdurl.com/vp-T)
+![alt text](https://gdurl.com/duFx3)
 
 ### Mobile Sign Up
 
-![alt text](https://doc-0k-28-docs.googleusercontent.com/docs/securesc/ha0ro937gcuc7l7deffksulhg5h7mbp1/qpa2o35dbbe681k4ammuoksnm34te05t/1528725600000/04640128816426817059/*/1jRutzYyH5SFtFk61JrX9WSzSQwBbBSB4)
+![alt text](https://gdurl.com/mQI8)
 
 ### Mobile Dashboard
 
-![alt text](https://doc-0g-28-docs.googleusercontent.com/docs/securesc/ha0ro937gcuc7l7deffksulhg5h7mbp1/qi50rfgonh1bdc225gsm7t2utidognlt/1528725600000/04640128816426817059/*/1S2rz5jDjpRKeec4xH4xmwhmkn9LkwFNh)
-![alt text](https://doc-00-28-docs.googleusercontent.com/docs/securesc/ha0ro937gcuc7l7deffksulhg5h7mbp1/b7ok2i1olp5js7rdf8u1245ne4ele9lc/1528725600000/04640128816426817059/*/123dqKRQj8KpKuX6BBFn5E0Hp1pCnNj3e)
+![alt text](https://gdurl.com/DQPL)
+![alt text](https://gdurl.com/NGWF)
 
 ### Desktop Landing Page
-![alt text](https://doc-0c-28-docs.googleusercontent.com/docs/securesc/ha0ro937gcuc7l7deffksulhg5h7mbp1/1gkgrsn9if95ue4sql0urn48jku6dnkq/1528725600000/04640128816426817059/*/1i7yIPdoD50cQYhD5qd6L6yWhGxPw5NRN)
+![alt text](https://gdurl.com/rgni)
 
 ### Desktop Register Page
-![alt text](https://doc-10-28-docs.googleusercontent.com/docs/securesc/ha0ro937gcuc7l7deffksulhg5h7mbp1/eilhlj5q2jgofguhs80okjdvpavss1dj/1528725600000/04640128816426817059/*/14EbupRvvihLV2AqOuqyR8ucjMmv0i-kr)
+![alt text](https://gdurl.com/iWp7)
 
 ### Desktop Dashboard
-![alt text](https://doc-0o-28-docs.googleusercontent.com/docs/securesc/ha0ro937gcuc7l7deffksulhg5h7mbp1/jmve1or2dlnt07125s19vtg7kerlohb6/1528725600000/04640128816426817059/*/1tmtqU0UkedJzgEvyHY4okO0ia7a_ckdF)
+![alt text](https://gdurl.com/vp-T)
 
 ## API Documentation
 - https://lol-improver-ci.herokuapp.com/api/static/:champId
