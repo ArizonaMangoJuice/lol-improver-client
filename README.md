@@ -3,6 +3,10 @@ Lol-improver let's you take notes of champs you play and look up player latest m
 https://github.com/ArizonaMangoJuice/lol-improver-server
 https://focused-nightingale-b297e9.netlify.com/
 
+# Demo Account
+- username: testuser
+- password: alongpassword
+
 ## Motivation
 I like league of legends. I decided why not just make an app that lets you view player stats and take notes on champions you play.
 
