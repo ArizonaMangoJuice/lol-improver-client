@@ -3,7 +3,7 @@
     border-bottom-style: double;
     border-bottom-width: 4px;
     width: 50%;
-    text-align: center;
+    /* text-align: center; */
     padding: 1em;
     margin: 2em auto;
     font-size: 1.6em;
@@ -135,6 +135,19 @@
     .form-input {
         padding: 1em .5em;
         width: 44%;
+    }
+
+    .landing-page-p{
+        padding-bottom: 0.4em;
+        border-bottom-style: double;
+        border-bottom-width: 4px;
+        width: 50%;
+        text-align: center;
+        padding: 1em;
+        margin: 2em auto;
+        font-size: 1.6em;
+        color: #008283;
+        line-height: 1.5em;
     }
 }
 

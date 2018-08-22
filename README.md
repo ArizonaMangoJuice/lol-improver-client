@@ -1,3 +1,7 @@
+##League Of Legends
+League of Legends is a fast-paced, competitive online game that blends the speed and intensity of an RTS with RPG elements. Two teams of powerful champions, each with a unique design and playstyle, battle head-to-head across multiple battlefields and game modes.
+
+
 ## LoL-Improver
 Lol-improver let's you take notes of champs you play and look up player latest match history.
 https://github.com/ArizonaMangoJuice/lol-improver-server

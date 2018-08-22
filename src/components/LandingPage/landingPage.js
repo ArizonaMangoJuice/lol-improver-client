@@ -18,6 +18,7 @@ export function LandingPage(props){
     return (
         <main>
             <p className='landing-page-p'>
+            League of Legends is a fast-paced, competitive online game that blends the speed and intensity of an RTS with RPG elements. Two teams of powerful champions, each with a unique design and playstyle, battle head-to-head across multiple battlefields and game modes.
                 LoL Improver lets you take your gaming to a whole new level.
             </p>
             <p className='landing-page-p'>
