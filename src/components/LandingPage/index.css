@@ -127,6 +127,14 @@
     color: #008283;
 }
 
+main p:nth-child(2) {
+    text-align: center;
+}
+
+main p:nth-child(3) {
+    text-align: center;
+}
+
 @media only screen and (max-width: 1366px){
     .login-form{
         width: 60%;
@@ -148,7 +156,7 @@
         font-size: 1.6em;
         color: #008283;
         line-height: 1.5em;
-    }
+    } 
 }
 
 @media only screen and (max-width: 480px) {
