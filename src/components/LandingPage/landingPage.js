@@ -4,6 +4,8 @@ import {Redirect} from 'react-router-dom';
 import './index.css';
 import LoginForm from '../LoginForm';
 import { signUpAgain } from '../../actions/auth';
+import Jumbotron from '../Jumbotron';
+import TopCharts from '../TopCharts';
 
 
 export function LandingPage(props){
@@ -17,7 +19,18 @@ export function LandingPage(props){
 
     return (
         <main>
-            <p className='landing-page-p'>
+            <Jumbotron test={
+                {
+                title: 'test',
+                background: null,
+                icon: null,
+                link: null,
+                text: 'lolololdksaoldjiosadjoasi ddjsiao das ijasdjklsd jasiokdjasi odkm asiodasmi odsmd oiasdm iasd smiodsa midoasd iasido ams'
+                }
+            }
+            />
+            <TopCharts />
+            {/* <p className='landing-page-p'>
             League of Legends is a fast-paced, competitive online game that blends the speed and intensity of an RTS with RPG elements. Two teams of powerful champions, each with a unique design and playstyle, battle head-to-head across multiple battlefields and game modes.
                 LoL Improver lets you take your gaming to a whole new level.
             </p>
@@ -26,7 +39,7 @@ export function LandingPage(props){
             </p>
             <p className='landing-page-p'>
                 DemoPassword: alongpassword
-            </p>
+            </p> */}
 
             <LoginForm />
         </main>
