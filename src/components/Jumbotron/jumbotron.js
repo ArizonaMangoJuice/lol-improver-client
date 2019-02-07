@@ -77,7 +77,8 @@ export class Jumbotron extends Component{
             <div
               style={{
                 display: 'flex',
-                flexDirection: 'row'
+                flexDirection: 'row',
+                padding: '5px'
               }}
             >
               {/* <h1>{!info[i-1] ? info[info.length - 1].title : info[i-1].title}</h1> */}
@@ -88,7 +89,8 @@ export class Jumbotron extends Component{
                   color: 'white',
                   margin: 'auto',
                   backgroundPosition: 'center',
-                  position: 'relative'
+                  position: 'relative',
+                  margin: '5px'
                   
               }}>
                 <div style={{
@@ -123,8 +125,8 @@ export class Jumbotron extends Component{
                   color: 'white',
                   margin: 'auto',
                   backgroundPosition: 'center',
-                  position: 'relative'
-                  
+                  position: 'relative',
+                  margin: '5px'    
               }}>
                 <div style={{
                     position: 'absolute',
@@ -159,7 +161,8 @@ export class Jumbotron extends Component{
                   color: 'white',
                   margin: 'auto',
                   backgroundPosition: 'center',
-                  position: 'relative'
+                  position: 'relative',
+                  margin: '5px'
                   
               }}>
                 <div style={{
