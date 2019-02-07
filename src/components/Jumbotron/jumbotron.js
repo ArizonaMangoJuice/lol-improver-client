@@ -80,7 +80,42 @@ export class Jumbotron extends Component{
                 flexDirection: 'row'
               }}
             >
-              <h1>{!info[i-1] ? info[info.length - 1].title : info[i-1].title}</h1>
+              {/* <h1>{!info[i-1] ? info[info.length - 1].title : info[i-1].title}</h1> */}
+              <div style={{
+                  backgroundImage: `url('./${!info[i-1] ? info[info.length - 1].image : info[i-1].image}.jpg')`,
+                  height: '500px',
+                  width: '70%',
+                  color: 'white',
+                  margin: 'auto',
+                  backgroundPosition: 'center',
+                  position: 'relative'
+                  
+              }}>
+                <div style={{
+                    position: 'absolute',
+                    bottom: '40px',
+                    backgroundColor: '#16171b',
+                    left: '25%',
+                    width: '50%',
+                    height: '180px'
+                }}>
+                  <div style={{
+                    width: '100%',
+                    height: '10px'
+                  }}>
+                    {/* <div style={{
+                      height: '10px',
+                      width: '1%',
+                      backgroundColor: '#008283',
+                      animationName: `${!info[i-1] ? info[info.length - 1].title.replace(/ /g, '') : info[i-1].title.replace(/ /g, '')}`,
+                      animationDuration: '6s'
+                    }}>
+                    </div> */}
+                  </div>
+                  <h1>{!info[i-1] ? info[info.length - 1].title : info[i-1].title}</h1>
+                  <p>{!info[i-1] ? info[info.length - 1].paragraph : info[i-1].paragraph}</p>
+                  </div> 
+                </div>
               <div style={{
                   backgroundImage: `url('./${e.image}.jpg')`,
                   height: '500px',
