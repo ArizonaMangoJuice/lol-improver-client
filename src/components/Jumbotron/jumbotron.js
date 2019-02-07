@@ -73,40 +73,50 @@ export class Jumbotron extends Component{
       componentDidMount(){
         let styleSheet = document.styleSheets[0]
 
-        let images = info.map(e => (
-            <div style={{
-                backgroundImage: `url('./${e.image}.jpg')`,
-                height: '500px',
-                width: '70%',
-                color: 'white',
-                margin: 'auto',
-                backgroundPosition: 'center',
-                position: 'relative'
-                
-            }}>
-               <div style={{
-                  position: 'absolute',
-                  bottom: '40px',
-                  backgroundColor: '#16171b',
-                  left: '25%',
-                  width: '50%',
-                  height: '180px'
-               }}>
+        let images = info.map((e, i) => (
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'row'
+              }}
+            >
+              <h1>{!info[i-1] ? info[info.length - 1].title : info[i-1].title}</h1>
+              <div style={{
+                  backgroundImage: `url('./${e.image}.jpg')`,
+                  height: '500px',
+                  width: '70%',
+                  color: 'white',
+                  margin: 'auto',
+                  backgroundPosition: 'center',
+                  position: 'relative'
+                  
+              }}>
                 <div style={{
-                  width: '100%',
-                  height: '10px'
+                    position: 'absolute',
+                    bottom: '40px',
+                    backgroundColor: '#16171b',
+                    left: '25%',
+                    width: '50%',
+                    height: '180px'
                 }}>
                   <div style={{
-                    height: '10px',
-                    width: '1%',
-                    backgroundColor: '#008283',
-                    animationName: `${e.title.replace(/ /g, '')}`,
-                    animationDuration: '6s'
-                  }}></div>
+                    width: '100%',
+                    height: '10px'
+                  }}>
+                    <div style={{
+                      height: '10px',
+                      width: '1%',
+                      backgroundColor: '#008283',
+                      animationName: `${e.title.replace(/ /g, '')}`,
+                      animationDuration: '6s'
+                    }}>
+                    </div>
+                  </div>
+                  <h1>{e.title}</h1>
+                  <p>{e.paragraph}</p>
+                  </div> 
                 </div>
-                <h1>{e.title}</h1>
-                <p>{e.paragraph}</p>
-                </div> 
+              <h1>{!info[i+1] ? info[1].title : info[i+1].title}</h1>                
             </div>
         ))
 
