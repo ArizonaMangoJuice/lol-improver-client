@@ -90,7 +90,8 @@ export class Jumbotron extends Component{
                   margin: 'auto',
                   backgroundPosition: 'center',
                   position: 'relative',
-                  margin: '5px'
+                  margin: '5px',
+                  boxShadow: 'rgba(0, 0, 0, 0.36) 2px 4px 50px 8px'
                   
               }}>
                 <div style={{
@@ -126,7 +127,8 @@ export class Jumbotron extends Component{
                   margin: 'auto',
                   backgroundPosition: 'center',
                   position: 'relative',
-                  margin: '5px'    
+                  margin: '5px',
+                  boxShadow: 'rgba(0, 0, 0, 0.36) 2px 4px 50px 8px'
               }}>
                 <div style={{
                     position: 'absolute',
@@ -162,8 +164,8 @@ export class Jumbotron extends Component{
                   margin: 'auto',
                   backgroundPosition: 'center',
                   position: 'relative',
-                  margin: '5px'
-                  
+                  margin: '5px',
+                  boxShadow: 'rgba(0, 0, 0, 0.36) 2px 4px 50px 8px'
               }}>
                 <div style={{
                     position: 'absolute',
