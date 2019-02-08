@@ -156,6 +156,9 @@ export class Jumbotron extends Component{
                     </div> 
                     <div style={{backgroundImage: `url('./${info[0].image}.jpg')`}} className={`jumbo-card`}>
                       <div className={`text-card`}>
+                        <div className={`loading-bar`}>
+                          <div style={{animationName: `${info[0].title.replace(/ /g, '')}`}} className={`animation-loading-bar`}></div>
+                        </div>
                         <h1>{info[0].title}</h1>
                         <p>{info[0].paragraph}</p>
                       </div>
