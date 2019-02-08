@@ -3,7 +3,8 @@ import './index.css'
 
 //contain everything you want and css as well
 //you can also give a options like slider or other supported formats
-
+//add next or before arrows
+//make the loading bar stop when you hover over the mid card
 //move this to a different file
 let info = [{
     title: 'Warmother',
