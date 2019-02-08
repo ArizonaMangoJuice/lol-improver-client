@@ -1,14 +1,6 @@
 import React, { Component } from 'react'
 import './index.css'
-// import asheWarmother from './asheWarmother.jpg'
-// import Sylas from '../../images/Sylas.jpg'
-// import bloodMoonSivir from '../../images/bloodMoonSivir.jpg'
-// import DemacianHeart from '../../images/DemacianHeart.jpg'
 
-// import {connect} from 'react-redux'
-// import {Redirect} from 'react-router-dom'
-
-//Jumbotron is a generic component you will have to pass the divs you want should 
 //contain everything you want and css as well
 //you can also give a options like slider or other supported formats
 
