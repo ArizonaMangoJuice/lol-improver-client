@@ -145,30 +145,29 @@ export class Jumbotron extends Component{
     render(){
         console.log(this.state)
         return (
-            <div>
+            <React.Fragment>
                 {!this.state.currentCard 
-                ? <div style={{
-                  backgroundImage: `url('./${info[0].image}.jpg')`,
-                  height: '500px',
-                  width: '70%',
-                  color: 'white',
-                  margin: 'auto',
-                  backgroundPosition: 'center',
-                  position: 'relative'
-                  
-              }}>
-                <div style={{
-                  position: 'absolute',
-                  bottom: '40px',
-                  backgroundColor: '#16171b',
-                  left: '25%',
-                  width: '50%',
-                  height: '180px'
-               }}>
-                  <h1>{info[0].title}</h1>
-                  <p>{info[0].paragraph}</p>
-                </div>
-                </div> : this.state.currentCard}</div>
+                ? <div className={`jumbo-container`}>
+                    <div style={{backgroundImage: `url('./${info[info.length-1].image}.jpg')`}} className={`jumbo-card`}>
+                      <div className={`text-card`}>
+                        <h1>{info[info.length-1].title}</h1>
+                        <p>{info[info.length-1].paragraph}</p>
+                      </div>
+                    </div> 
+                    <div style={{backgroundImage: `url('./${info[0].image}.jpg')`}} className={`jumbo-card`}>
+                      <div className={`text-card`}>
+                        <h1>{info[0].title}</h1>
+                        <p>{info[0].paragraph}</p>
+                      </div>
+                    </div> 
+                    <div style={{backgroundImage: `url('./${info[1].image}.jpg')`}} className={`jumbo-card`}>
+                      <div className={`text-card`}>
+                        <h1>{info[1].title}</h1>
+                        <p>{info[1].paragraph}</p>
+                      </div>
+                    </div> 
+                  </div>: this.state.currentCard}
+            </React.Fragment>
         )
     }
 }
