@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './index.css'
 // import asheWarmother from './asheWarmother.jpg'
 // import Sylas from '../../images/Sylas.jpg'
 // import bloodMoonSivir from '../../images/bloodMoonSivir.jpg'
@@ -45,10 +46,6 @@ export class Jumbotron extends Component{
       }
     
       timer(){
-        console.log('hello')
-
-        
-        
         if(this.state.pointer === this.state.images.length - 1){
           this.setState((state) => {
             return {
@@ -64,133 +61,36 @@ export class Jumbotron extends Component{
             }
           })
         }
-    
-    
-    
-        console.log(this.state)
       }
     
       componentDidMount(){
         let styleSheet = document.styleSheets[0]
 
         let images = info.map((e, i) => (
-            <div
-              style={{
-                display: 'flex',
-                flexDirection: 'row',
-                padding: '5px'
-              }}
-            >
-              {/* <h1>{!info[i-1] ? info[info.length - 1].title : info[i-1].title}</h1> */}
-              <div style={{
-                  backgroundImage: `url('./${!info[i-1] ? info[info.length - 1].image : info[i-1].image}.jpg')`,
-                  height: '500px',
-                  width: '70%',
-                  color: 'white',
-                  margin: 'auto',
-                  backgroundPosition: 'center',
-                  position: 'relative',
-                  margin: '5px',
-                  boxShadow: 'rgba(0, 0, 0, 0.36) 2px 4px 50px 8px'
-                  
-              }}>
-                <div style={{
-                    position: 'absolute',
-                    bottom: '40px',
-                    backgroundColor: '#16171b',
-                    left: '25%',
-                    width: '50%',
-                    height: '180px'
-                }}>
-                  <div style={{
-                    width: '100%',
-                    height: '10px'
-                  }}>
-                    {/* <div style={{
-                      height: '10px',
-                      width: '1%',
-                      backgroundColor: '#008283',
-                      animationName: `${!info[i-1] ? info[info.length - 1].title.replace(/ /g, '') : info[i-1].title.replace(/ /g, '')}`,
-                      animationDuration: '6s'
-                    }}>
-                    </div> */}
-                  </div>
+            <div className={`jumbo-container`}>
+            {/* left card */}
+              <div  style={{backgroundImage: `url('./${!info[i-1] ? info[info.length - 1].image : info[i-1].image}.jpg')`}} className={`jumbo-card`}>
+                <div className={`text-card`}>
                   <h1>{!info[i-1] ? info[info.length - 1].title : info[i-1].title}</h1>
                   <p>{!info[i-1] ? info[info.length - 1].paragraph : info[i-1].paragraph}</p>
-                  </div> 
+                </div> 
               </div>
-              <div style={{
-                  backgroundImage: `url('./${e.image}.jpg')`,
-                  height: '500px',
-                  width: '70%',
-                  color: 'white',
-                  margin: 'auto',
-                  backgroundPosition: 'center',
-                  position: 'relative',
-                  margin: '5px',
-                  boxShadow: 'rgba(0, 0, 0, 0.36) 2px 4px 50px 8px'
-              }}>
-                <div style={{
-                    position: 'absolute',
-                    bottom: '40px',
-                    backgroundColor: '#16171b',
-                    left: '25%',
-                    width: '50%',
-                    height: '180px'
-                }}>
-                  <div style={{
-                    width: '100%',
-                    height: '10px'
-                  }}>
-                    <div style={{
-                      height: '10px',
-                      width: '1%',
-                      backgroundColor: '#008283',
-                      animationName: `${e.title.replace(/ /g, '')}`,
-                      animationDuration: '6s'
-                    }}>
-                    </div>
+              {/* middle card */}
+              <div style={{backgroundImage: `url('./${e.image}.jpg')`}} className={`jumbo-card`}>
+                <div className={`text-card`}>
+                  <div className={`loading-bar`}>
+                    <div style={{animationName: `${e.title.replace(/ /g, '')}`}} className={`animation-loading-bar`}></div>
                   </div>
                   <h1>{e.title}</h1>
                   <p>{e.paragraph}</p>
-                  </div> 
-                </div>
-              {/* <h1>{!info[i+1] ? info[1].title : info[i+1].title}</h1>     */}
-              <div style={{
-                  backgroundImage: `url('./${!info[i+1] ? info[1].image : info[i+1].image}.jpg')`,
-                  height: '500px',
-                  width: '70%',
-                  color: 'white',
-                  margin: 'auto',
-                  backgroundPosition: 'center',
-                  position: 'relative',
-                  margin: '5px',
-                  boxShadow: 'rgba(0, 0, 0, 0.36) 2px 4px 50px 8px'
-              }}>
-                <div style={{
-                    position: 'absolute',
-                    bottom: '40px',
-                    backgroundColor: '#16171b',
-                    left: '25%',
-                    width: '50%',
-                    height: '180px'
-                }}>
-                  <div style={{
-                    width: '100%',
-                    height: '10px'
-                  }}>
-                    {/* <div style={{
-                      height: '10px',
-                      width: '1%',
-                      backgroundColor: '#008283',
-                      animationName: `${!info[i-1] ? info[info.length - 1].title.replace(/ /g, '') : info[i-1].title.replace(/ /g, '')}`,
-                      animationDuration: '6s'
-                    }}>
-                    </div> */}
-                  </div>
+                </div> 
+              </div>
+              {/* right card */}
+              <div style={{backgroundImage: `url('./${!info[i+1] ? info[1].image : info[i+1].image}.jpg')`}} className={`jumbo-card`}>
+                <div className={`text-card`}>
                   <h1>{!info[i+1] ? info[1].title : info[i+1].title}</h1>
                   <p>{!info[i+1] ? info[1].paragraph : info[i+1].paragraph}</p>
-                  </div> 
+                </div> 
               </div>            
             </div>
         ))

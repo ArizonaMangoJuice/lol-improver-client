@@ -1,0 +1,34 @@
+.jumbo-container{
+    display: flex;
+    flex-direction: row;
+    padding: '5px';
+}
+.jumbo-card {
+    height: 500px;
+    width: 70%;
+    color: white;
+    margin: auto;
+    background-Position: center;
+    position: relative;
+    margin: 5px;
+    box-shadow: rgba(0, 0, 0, 0.36) 2px 4px 50px 8px;
+}
+.text-card {
+    position: absolute;
+    bottom: 40px;
+    background-color: #16171b;
+    left: 25%;
+    width: 50%;
+    height: 180px;
+    text-align: center;
+} 
+.loading-bar{
+    width: 100%;
+    height: 10px;
+}
+.animation-loading-bar{
+    height: 10px;
+    width: 1%;
+    background-color: #008283;
+    animation-duration: 6s;
+}
