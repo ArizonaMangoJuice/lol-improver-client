@@ -16,26 +16,10 @@ class TopCharts extends Component{
                 <div className='card-container'>
                     {/* this dive will be for the champions */}
                     <div className='left-side-card-container'>
-                        <div className={`left-cards sylas center-image`} >
-                            <div className={`card-info`}>
-
-                            </div>
-                        </div>
-                        <div className={`left-cards lux center-image`}>
-                            <div className={`card-info`}>
-
-                            </div>
-                        </div>
-                        <div className={`left-cards garen center-image`}>
-                            <div className={`card-info`}>
-
-                            </div>
-                        </div>
-                        <div className={`left-cards sylas center-image`}>
-                            <div className={`card-info`}>
-
-                            </div>
-                        </div>
+                        <TopChartsLeftCard styles={`left-cards sylas center-image`} text={'Test'}/>
+                        <TopChartsLeftCard styles={`left-cards lux center-image`} text={'Test'}/>
+                        <TopChartsLeftCard styles={`left-cards garen center-image`} text={'Test'}/>
+                        <TopChartsLeftCard styles={`left-cards garen center-image`} text={'Test'}/>
                     </div>
                     {/* this div will be for any recent changes to the site */}
                     <div className={`right-card center-image`}>
@@ -47,8 +31,20 @@ class TopCharts extends Component{
     }
 }
 
-export default TopCharts
 
-let styles = {
-    
+//this is going into a seperate file
+class TopChartsLeftCard extends Component {
+    render(){
+        console.log(this.props);
+        return (
+            <div className={this.props.styles}>
+                <div className={`card-info`}>
+                    <p className={`title`}>{this.props.text}</p>
+                    <p className={`description`}>dnsja dhskja dskjan asjkdn kjasdn sadasa njk njk</p>
+                </div>
+            </div>
+        )
+    }
 }
+
+export default TopCharts

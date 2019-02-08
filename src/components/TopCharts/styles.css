@@ -10,9 +10,10 @@
     width:  49%;
     /* background-color: red; */
     margin: .5%;
+    position: relative;
 }
 .right-card{
-    height: 100%;
+    height: 98%;
     width: 40%;
     /* background-color: blue; */
     background-image: url('../../images/DemacianHeart.jpg')
@@ -60,4 +61,27 @@
     background-size: 100% 100%;
     background-repeat: no-repeat;
     /* object-fit: contain; */
+}
+
+.card-info{
+    background-color: #101217;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid #6c5532;
+}
+
+.title{
+    padding: 0;
+    margin: 0;
+    padding-top: 15px;
+    padding-bottom: 5px;
+}
+
+.description{
+    font-size: 17px;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 15px;
 }
