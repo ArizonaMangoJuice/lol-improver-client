@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './styles.css'
+import TopChartsLeftCard from '../topChartsLeftCard'
 
 class TopCharts extends Component{
 
@@ -32,25 +33,5 @@ class TopCharts extends Component{
 }
 
 
-//this is going into a seperate file
-class TopChartsLeftCard extends Component {
-    render(){
-        console.log(this.props);
-
-        return (
-            <div className={this.props.styles}>
-                <div className={`card-info`}>
-                    <div className='test-border'>
-                      <div className='icon'>
-                        <img  src={require('../../images/championIcon.png')}/>
-                      </div>
-                    </div>
-                    <p className={`title`}>{this.props.text}</p>
-                    <p className={`description`}>dnsja dhskja dskjan asjkdn kjasdn sadasa njk njk</p>
-                </div>
-            </div>
-        )
-    }
-}
 
 export default TopCharts

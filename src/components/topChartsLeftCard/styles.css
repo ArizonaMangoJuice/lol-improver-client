@@ -1,0 +1,63 @@
+.card-info{
+    background-color: #101217;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid #6c5532;
+}
+
+.title{
+    padding: 0;
+    margin: 0;
+    padding-top: 17px;
+    padding-bottom: 5px;
+}
+
+.description{
+    font-size: 17px;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 15px;
+}
+
+.icon{
+    height: 25px;
+    width: 25px;
+    padding: 9px;
+    top: -0.01px;
+    background-color: #101217;
+    position: absolute;
+    /* top: -35px; */
+    left: 50%;
+    border-radius: 50%;
+    -webkit-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    /* border: 1px solid #6c5532; */
+}
+
+.icon img{
+    max-height: 25px;
+    max-width: 25px;
+}
+
+.test-border{
+    padding: 10px;
+    height: 26px;
+    width: 27px;
+    background-image: linear-gradient(180deg,#3e3310,#806734,#c6b98b,#806734,#3e3310);
+    border-radius: 50%;
+    position: absolute;
+    top: -35px;
+    transform: translate(-50%, 0);
+    left: 50%;
+}
+
+.lol-theme{
+    color: #937341!important;
+}
+
+.lol-theme2{
+    color: #c4b998!important;
+}
