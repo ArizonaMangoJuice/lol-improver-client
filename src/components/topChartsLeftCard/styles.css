@@ -79,7 +79,8 @@
     /* border: 1px solid red; */
     height: 55%;
     width: 55%;
-    transition: 200ms;
+    transition: all .2s ease-in-out;
+    transform: scale(1.1);
     /* transition: height 200ms; */
     z-index: 1;
 
