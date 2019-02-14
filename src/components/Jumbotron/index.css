@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: row;
     padding: '5px';
+    background-color: #101217; 
 }
 .jumbo-card {
     height: 500px;
@@ -29,10 +30,10 @@
 .animation-loading-bar{
     height: 10px;
     width: 1%;
-    background-color: #008283;
+    background-color: #937341!important;
     animation-duration: 6s;
 }
-@keyframes Warmother {
+@keyframes TakeNotes {
     from {width: 1%}
     to {width: 100%}
 }

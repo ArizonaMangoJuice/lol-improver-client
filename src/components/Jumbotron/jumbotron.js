@@ -7,12 +7,12 @@ import './index.css'
 //make the loading bar stop when you hover over the mid card
 //move this to a different file
 let info = [{
-    title: 'Warmother',
-    paragraph: 'Raised in the savage wilds of the north, Ashe is an Iceborn, a warrior gifted with a magical connection to her frozen homeland--and burdened by her mother’s fanatical expectations.',
+    title: 'Take Notes',
+    paragraph: 'Write down what you learned from your matches.',
     image: 'asheWarmother'
   },{
-    title: 'The Unshackled',
-    paragraph: 'As a mage born to a poor Demacian family, Sylas of Dregbourne was perhaps doomed from the start.',
+    title: 'Latest Matches',
+    paragraph: 'See the latest stats from players.',
     image: 'Sylas'
   }, {
     title: 'Trial of the Masks',
@@ -64,8 +64,8 @@ export class Jumbotron extends Component{
             {/* left card */}
               <div  style={{backgroundImage: `url('./${!info[i-1] ? info[info.length - 1].image : info[i-1].image}.jpg')`}} className={`jumbo-card`}>
                 <div className={`text-card`}>
-                  <h1>{!info[i-1] ? info[info.length - 1].title : info[i-1].title}</h1>
-                  <p>{!info[i-1] ? info[info.length - 1].paragraph : info[i-1].paragraph}</p>
+                  <h1 className={'lol-theme'}>{!info[i-1] ? info[info.length - 1].title : info[i-1].title}</h1>
+                  <p className={'lol-theme2'}>{!info[i-1] ? info[info.length - 1].paragraph : info[i-1].paragraph}</p>
                 </div> 
               </div>
               {/* middle card */}
@@ -74,22 +74,22 @@ export class Jumbotron extends Component{
                   <div className={`loading-bar`}>
                     <div style={{animationName: `${e.title.replace(/ /g, '')}`}} className={`animation-loading-bar`}></div>
                   </div>
-                  <h1>{e.title}</h1>
-                  <p>{e.paragraph}</p>
+                  <h1 className={'lol-theme'}>{e.title}</h1>
+                  <p className={'lol-theme2'}>{e.paragraph}</p>
                 </div> 
               </div>
               {/* right card */}
               <div style={{backgroundImage: `url('./${!info[i+1] ? info[1].image : info[i+1].image}.jpg')`}} className={`jumbo-card`}>
                 <div className={`text-card`}>
-                  <h1>{!info[i+1] ? info[1].title : info[i+1].title}</h1>
-                  <p>{!info[i+1] ? info[1].paragraph : info[i+1].paragraph}</p>
+                  <h1 className={'lol-theme'}>{!info[i+1] ? info[1].title : info[i+1].title}</h1>
+                  <p className={'lol-theme2'}>{!info[i+1] ? info[1].paragraph : info[i+1].paragraph}</p>
                 </div> 
               </div>            
             </div>
         ))
 
         let keyframe1 = 
-        `@keyframes Warmother {
+        `@keyframes TakeNotes {
           from {width: 1%}
           to {width: 100%;}
         }
@@ -97,7 +97,7 @@ export class Jumbotron extends Component{
         `
 
         let keyframe2 = `
-        @keyframes TheUnshackled {
+        @keyframes LatestMatches {
           from {width: 1%}
           to {width: 100%}
         }
@@ -143,7 +143,7 @@ export class Jumbotron extends Component{
                 ? <div className={`jumbo-container`}>
                     <div style={{backgroundImage: `url('./${info[info.length-1].image}.jpg')`}} className={`jumbo-card`}>
                       <div className={`text-card`}>
-                        <h1>{info[info.length-1].title}</h1>
+                        <h1 className={'lol-theme'}>{info[info.length-1].title}</h1>
                         <p>{info[info.length-1].paragraph}</p>
                       </div>
                     </div> 
@@ -152,13 +152,13 @@ export class Jumbotron extends Component{
                         <div className={`loading-bar`}>
                           <div style={{animationName: `${info[0].title.replace(/ /g, '')}`}} className={`animation-loading-bar`}></div>
                         </div>
-                        <h1>{info[0].title}</h1>
+                        <h1 className={'lol-theme'}>{info[0].title}</h1>
                         <p>{info[0].paragraph}</p>
                       </div>
                     </div> 
                     <div style={{backgroundImage: `url('./${info[1].image}.jpg')`}} className={`jumbo-card`}>
                       <div className={`text-card`}>
-                        <h1>{info[1].title}</h1>
+                        <h1 className={'lol-theme'}>{info[1].title}</h1>
                         <p>{info[1].paragraph}</p>
                       </div>
                     </div> 
