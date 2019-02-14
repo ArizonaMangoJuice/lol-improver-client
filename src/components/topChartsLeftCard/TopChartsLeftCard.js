@@ -51,9 +51,9 @@ class TopChartsLeftCard extends Component {
                             </div>
                         </div>
                         <p className={`title lol-theme`}>{this.props.text}</p>
-                        <p className={`description lol-theme2`}>dnsja dhskja dskjan asjkdn kjasdn sadasa njk njk</p>
+                        <p className={`description lol-theme2`}>dnsja dhskja dskjan </p>
                         <div className={` explore-base ${this.state.isCardHovered ?  'explore-expanded' : ''}`}>
-                            <button className={`button-test ${this.state.isCardHovered ? 'button-test-expanded' : ''}`} >Explore</button>
+                            <button className={`button-test ${this.state.isCardHovered ? 'button-test-expanded' : ''}`} >EXPLORE</button>
                         </div>
                     </div>
                 </div>

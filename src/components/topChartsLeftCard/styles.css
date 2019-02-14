@@ -125,10 +125,16 @@
     height: 80px;
     transition: all .3s ease-in-out;
     border-top: 1px solid #6c5532;
+    padding: 0;
+    margin-top: 10px;
 }
 
 .button-test{
     opacity: 0;
+    height: 0;
+    border: none;
+    background-color: #101217;
+    margin: 0;
 }
 
 .button-test-expanded{
@@ -136,8 +142,12 @@
     transition: all .5s ease-in-out;
     width: 50%;
     margin: auto;
-    margin-top: 15px;
-    height: 50px;
+    height: 80px;
+    width: 100%;
+    border: none;
+    background-color: #101217;
+    color: #937341;
+    letter-spacing: 2px
 }
 
 .card-info-expanded{
