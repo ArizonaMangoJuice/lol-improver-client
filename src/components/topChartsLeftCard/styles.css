@@ -11,7 +11,7 @@
     height: 48.5%;
     width:  48.5%;
     /* background-color: red; */
-    margin: .5%;
+    /* margin: .5%; */
     position: relative;
     position: absolute;
 }
@@ -80,7 +80,7 @@
     height: 55%;
     width: 55%;
     transition: all .2s ease-in-out;
-    transform: scale(1.1);
+    transform: scale(1.01);
     /* transition: height 200ms; */
     z-index: 1;
 
@@ -115,4 +115,27 @@
 
 .raised{
     z-index: 1;
+}
+
+.explore-base{
+    height: 0;
+}
+
+.explore-expanded{
+    height: 80px;
+    transition: all .3s ease-in-out;
+    border: 1px solid red;
+}
+
+.button-test{
+    opacity: 0;
+}
+
+.button-test-expanded{
+    opacity: 1;
+    transition: all .5s ease-in-out;
+    width: 50%;
+    margin: auto;
+    margin-top: 15px;
+    height: 50px;
 }

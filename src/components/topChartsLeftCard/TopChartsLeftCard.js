@@ -13,18 +13,29 @@ class TopChartsLeftCard extends Component {
     }
 
     animate(){
-        console.log(this.state.cardId)
-        this.setState({hoverClass: 'red'})
+        this.setState((state,props) => {
+            return {
+                hoverClass: 'red',
+                isCardHovered: true
+            }
+        })
+        console.log(this.state)
     }
 
     deanimate(){
-        this.setState({hoverClass: null})
+        this.setState((state,props) => {
+            return {
+                hoverClass: null,
+                isCardHovered: false
+            }
+        })
+        console.log(this.state)
     }
     
     
     render(){
         console.log(this.props);
-        if(!this.state.cardId) this.setState({cardId: Math.random(100)})
+        // if(!this.state.cardId) this.setState({cardId: Math.random(100)})
         return (
             // <div className={`${this.props.side}`}>    
                 <div 
@@ -41,7 +52,9 @@ class TopChartsLeftCard extends Component {
                         </div>
                         <p className={`title lol-theme`}>{this.props.text}</p>
                         <p className={`description lol-theme2`}>dnsja dhskja dskjan asjkdn kjasdn sadasa njk njk</p>
-                        <button className={`hidden`}>Explore</button>
+                        <div className={` explore-base ${this.state.isCardHovered ?  'explore-expanded' : ''}`}>
+                            <button className={`button-test ${this.state.isCardHovered ? 'button-test-expanded' : ''}`} >Explore</button>
+                        </div>
                     </div>
                 </div>
             // </div>
