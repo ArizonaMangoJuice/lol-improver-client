@@ -7,6 +7,15 @@
     border-top: 1px solid #6c5532;
 }
 
+.left-cards{
+    height: 48.5%;
+    width:  48.5%;
+    /* background-color: red; */
+    margin: .5%;
+    position: relative;
+    position: absolute;
+}
+
 .title{
     padding: 0;
     margin: 0;
@@ -60,4 +69,49 @@
 
 .lol-theme2{
     color: #c4b998!important;
+}
+
+.hidden{
+    display: none;
+}
+
+.red{
+    /* border: 1px solid red; */
+    height: 55%;
+    width: 55%;
+    transition: 200ms;
+    /* transition: height 200ms; */
+    z-index: 1;
+
+
+}
+
+.linear{
+    transition-timing-function: ease-in-out;
+}
+
+.top-left{
+    top: 0;
+    left: 0;
+}
+
+
+.top-right{
+    top: 0;
+    right: 0;
+}
+
+.bottom-left{
+    bottom: 0;
+    left: 0;
+}
+
+.bottom-right{
+    bottom: 0;
+    right: 0;
+}
+
+
+.raised{
+    z-index: 1;
 }
