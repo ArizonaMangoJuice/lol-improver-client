@@ -124,7 +124,7 @@
 .explore-expanded{
     height: 80px;
     transition: all .3s ease-in-out;
-    border: 1px solid red;
+    border-top: 1px solid #6c5532;
 }
 
 .button-test{
@@ -138,4 +138,8 @@
     margin: auto;
     margin-top: 15px;
     height: 50px;
+}
+
+.card-info-expanded{
+    border: 1px solid #6c5532;
 }

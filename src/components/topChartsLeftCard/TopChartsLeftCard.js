@@ -44,11 +44,11 @@ class TopChartsLeftCard extends Component {
                     onMouseEnter={() => this.animate()}
                     onMouseLeave={() => this.deanimate()}
                 >
-                    <div className={`card-info`}>
+                    <div className={`card-info ${this.state.isCardHovered ? 'card-info-expanded' : ''}`}>
                         <div className='test-border'>
-                        <div className='icon'>
-                            <img  src={require('../../images/championIcon.png')}/>
-                        </div>
+                            <div className='icon'>
+                                <img  src={require('../../images/championIcon.png')}/>
+                            </div>
                         </div>
                         <p className={`title lol-theme`}>{this.props.text}</p>
                         <p className={`description lol-theme2`}>dnsja dhskja dskjan asjkdn kjasdn sadasa njk njk</p>
