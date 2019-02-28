@@ -7,8 +7,9 @@
 }
 
 .right-card{
-    height: 98%;
+    height: 100%;
     width: 40%;
+    margin-left: 50px;
     /* background-color: blue; */
     background-image: url('../../images/DemacianHeart.jpg')
 }

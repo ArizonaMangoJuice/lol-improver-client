@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './styles.css'
 import TopChartsLeftCard from '../topChartsLeftCard'
+import TopChartRight from '../TopChartsRight';
 
 class TopCharts extends Component{
 
@@ -39,9 +40,7 @@ class TopCharts extends Component{
                             />
                     </div>
                     {/* this div will be for any recent changes to the site */}
-                    <div className={`right-card center-image`}>
-
-                    </div>
+                    <TopChartRight />
                 </div>
             </div>
         )
