@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './styles.css'
 import TopChartsLeftCard from '../topChartsLeftCard'
 import TopChartRight from '../TopChartsRight';
+import PaddingBlock from '../PaddingBlock';
 
 class TopCharts extends Component{
 
@@ -11,10 +12,10 @@ class TopCharts extends Component{
             <div className='wrapper'>
                 {/* icon and the Champions text will go in this div, 
                     this div will also have a background*/}
-                <div> 
-                    icon will go here
-                    <h2>Champions and News</h2>
-                </div>
+                <PaddingBlock 
+                    paddingImage={'trending-background'}
+                    text={'Champions and News'}
+                />
                 <div className='card-container'>
                     {/* this dive will be for the champions */}
                     <div className='left-side-card-container'>

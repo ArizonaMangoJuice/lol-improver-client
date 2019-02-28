@@ -19,7 +19,7 @@ class TopChartsLeftCard extends Component {
                 isCardHovered: true
             }
         })
-        console.log(this.state)
+        // console.log(this.state)
     }
 
     deanimate(){
@@ -29,12 +29,12 @@ class TopChartsLeftCard extends Component {
                 isCardHovered: false
             }
         })
-        console.log(this.state)
+        // console.log(this.state)
     }
     
     
     render(){
-        console.log(this.props);
+        // console.log(this.props);
         // if(!this.state.cardId) this.setState({cardId: Math.random(100)})
         return (
             // <div className={`${this.props.side}`}>    

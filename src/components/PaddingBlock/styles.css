@@ -1,0 +1,48 @@
+.padding-block{
+    height: 500px;
+    width: 100%;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+.padding-shadow{
+    background-image: linear-gradient(180deg,#0a0a0c,rgba(0,0,0,0),#0a0a0c);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;    
+}
+
+.lol-background{
+    background-image: url('../../images/lolBackground.jpg');
+}
+
+
+.trending-background{
+    background-image: url('../../images/trendingBackground.jpg');
+}
+.padding-image{
+    /* background-position:50px -250px; */
+    background-repeat: no-repeat;    
+    opacity: .6;
+    width: 100%;
+    height: 500px;
+    position: absolute;
+    top: 0;
+    left: 0px;
+}
+
+.padding-text{
+    position: absolute;
+
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.text-settings{
+    letter-spacing: 2px;
+}

@@ -46,7 +46,7 @@ class TopChartRight extends Component {
                             </div>
                         </div>
                         <p className={`title lol-theme`}>Site News</p>
-                        <p className={`description lol-theme2`}>dnsja dhskja dskjan </p>
+                        <p className={`description lol-theme2`}>Check out what i'm working on!</p>
                         <div className={` explore-base ${this.state.isCardHovered ?  'explore-expanded' : ''}`}>
                             <button className={`button-test ${this.state.isCardHovered ? 'button-test-expanded' : ''}`} >EXPLORE</button>
                         </div>
