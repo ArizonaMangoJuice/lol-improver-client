@@ -11,7 +11,8 @@
     width: 40%;
     margin-left: 50px;
     /* background-color: blue; */
-    background-image: url('../../images/DemacianHeart.jpg')
+    background-image: url('../../images/DemacianHeart.jpg');
+    position: relative;
 }
 .card-container{
     display: flex;
@@ -53,8 +54,8 @@
 
 .center-image {
     background-repeat:no-repeat;
-    /* background-position: center center; */
-    background-size: 100% 100%;
+    background-position: 10% 40%;
+    /* background-size: 100% 100%; */
     background-repeat: no-repeat;
     /* object-fit: contain; */
 }

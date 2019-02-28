@@ -39,7 +39,18 @@ class TopChartRight extends Component {
                 onMouseEnter={() => this.animate()}
                 onMouseLeave={() => this.deanimate()}
             >
-
+                 <div className={`card-info ${this.state.isCardHovered ? 'card-info-expanded' : ''}`}>
+                        <div className='test-border'>
+                            <div className='icon'>
+                                <img  src={require('../../images/championIcon.png')}/>
+                            </div>
+                        </div>
+                        <p className={`title lol-theme`}>Site News</p>
+                        <p className={`description lol-theme2`}>dnsja dhskja dskjan </p>
+                        <div className={` explore-base ${this.state.isCardHovered ?  'explore-expanded' : ''}`}>
+                            <button className={`button-test ${this.state.isCardHovered ? 'button-test-expanded' : ''}`} >EXPLORE</button>
+                        </div>
+                    </div>
             </div>
         )
     }
