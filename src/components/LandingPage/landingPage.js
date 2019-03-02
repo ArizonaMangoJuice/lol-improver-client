@@ -41,6 +41,20 @@ export function LandingPage(props){
                 DemoPassword: alongpassword
             </p> */}
 
+            <div className='landing-page-login-container'>
+                <div className='left-cover'>
+                    <h2>left cover</h2>
+                </div>
+                <div className='login'>
+                    <h2>login</h2>
+                    <button onClick={() => console.log('hello')}>press</button>
+                </div>
+                <div className='sign-up'>
+                    <h2>sign up</h2>
+                    <button onClick={() => console.log('hello')}>press</button>
+                </div>
+            </div>
+
             <LoginForm />
         </main>
     )

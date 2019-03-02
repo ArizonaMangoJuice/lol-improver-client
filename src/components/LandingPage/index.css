@@ -242,3 +242,43 @@ main p:nth-child(3) {
     }
   }
   
+
+  .landing-page-login-container{
+      color: white;
+      border: 1px solid red;
+      width: 60%;
+      margin: auto;
+      position: relative;
+      height: 450px;
+   }
+
+  .left-cover{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      background-color: #0a0a0c;
+      height: 100%;
+      opacity: .89;
+  }
+
+  .login{
+      position: absolute;
+      top: 5%;
+      right: 0;
+      height: 90%;
+      background: white;
+      color: red;
+      width: 50%;
+  }
+
+  .sign-up{
+    position: absolute;
+    top: 5%;
+    left: 0;
+    height: 90%;
+    background: white;
+    color: red;
+    width: 50%;
+    z-index: -1;  
+  }
