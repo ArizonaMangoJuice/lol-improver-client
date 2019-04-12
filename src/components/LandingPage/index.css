@@ -260,25 +260,88 @@ main p:nth-child(3) {
       background-color: #0a0a0c;
       height: 100%;
       opacity: .89;
+      z-index: 1;
   }
 
   .login{
-      position: absolute;
-      top: 5%;
-      right: 0;
+      /* position: absolute; */
+      /* top: 5%; */
+      /* right: 0; */
       height: 90%;
       background: white;
       color: red;
       width: 50%;
+      margin: 0;
+      display: inline-block;
   }
 
   .sign-up{
-    position: absolute;
-    top: 5%;
-    left: 0;
+    /* position: absolute; */
+    /* top: 5%; */
+    /* left: 0; */
     height: 90%;
     background: white;
     color: red;
     width: 50%;
-    z-index: -1;  
+    /* z-index: -1;   */
+    margin: 0;
+    display: inline-block;
   }
+
+/* test */
+
+.moveLogin {
+    position: relative;
+    animation-timing-function: linear;
+    animation: move-login-keyframes-left 300ms;
+    animation-fill-mode: forwards;  
+}
+
+.moveLoginRight{
+    position: relative;
+    animation-timing-function: linear;
+    animation: move-login-keyframes-right 300ms;
+    animation-fill-mode: forwards;  
+}
+
+.moveSignup {
+    position: relative;
+    animation-timing-function: linear;
+    animation: move-signup-keyframes-left 300ms;
+    animation-fill-mode: forwards;  
+  }
+
+.moveSignupRight {
+    position: relative;
+    animation-timing-function: linear;
+    animation: move-signup-keyframes-right 300ms;
+    animation-fill-mode: forwards;  
+}
+/* @keyframes fade-in-keyframes {
+    from {right: 0}
+    to {left: 0}
+  } */
+
+
+
+  @keyframes move-login-keyframes-left {
+    from { right: 0px}
+    to { right: 572px}
+  }
+
+  @keyframes move-login-keyframes-right {
+    from { right: 572px}
+    to { right: 0px}
+  }
+  
+
+  @keyframes move-signup-keyframes-left {
+    from { left: 0px}
+    to { left: 572px}
+  }
+
+  @keyframes move-signup-keyframes-right {
+    from { left: 572px}
+    to { left: 0px}
+  }
+
