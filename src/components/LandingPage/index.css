@@ -259,8 +259,22 @@ main p:nth-child(3) {
       width: 50%;
       background-color: #0a0a0c;
       height: 100%;
-      opacity: .89;
+      opacity: .69;
       z-index: 1;
+  }
+
+  .left-cover h1{
+      font-size: 4em;
+      text-align: center;
+      margin-bottom: 0;
+      padding-bottom: 0;
+  }
+
+  .left-cover h2{
+      font-size: 1.5em;
+      text-align: center;
+      margin-top: 0;
+      padding-top: 0;
   }
 
   .login{
@@ -273,6 +287,7 @@ main p:nth-child(3) {
       width: 50%;
       margin: 0;
       display: inline-block;
+      vertical-align: top;
   }
 
   .sign-up{
@@ -286,6 +301,64 @@ main p:nth-child(3) {
     /* z-index: -1;   */
     margin: 0;
     display: inline-block;
+    vertical-align: top;
+  }
+
+  .signup-container{
+      width: 99%;
+      height: 80%;
+      margin: 0;
+      padding: 0;
+      /* border: 1px solid salmon; */
+  }
+
+  .signup-container form {
+      margin-top: 5%;
+      height: 100%;
+      /* border: 1px solid #008283; */
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;      
+  }
+
+  .signup-container form label{
+      position: relative;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+  .signup-container form label input {
+    border: none;
+    /* border-bottom: 1px solid; */
+    display: inline-block;
+    position: absolute;
+    left: 15px;
+    top: 0;
+    opacity: .00;
+    width: 80%;
+  }
+
+  .signup-container form label p{
+      /* margin: 0 0 15px 0; */
+      margin: 0;
+      margin-left: 15px;
+      display: inline-block;
+      z-index: 1;
+  }
+
+  .signup-button{
+      width: 30%;
+      margin-left: auto;
+      margin-right: auto;
+  }
+
+  .fake-line{
+    width: 80%;
+    border: 1px solid black;
+    margin: 0;
+    padding: 0;
+    margin-left: 15px;
   }
 
 /* test */
@@ -345,3 +418,4 @@ main p:nth-child(3) {
     to { left: 0px}
   }
 
+  

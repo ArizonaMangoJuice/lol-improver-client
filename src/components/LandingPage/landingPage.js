@@ -54,9 +54,18 @@ export class LandingPage extends React.Component{
 
                 <div className='landing-page-login-container'>
                     <div className='left-cover'>
-                        <h2>left cover</h2>
+                        <h1>LOL IMPROVER</h1>
+                        <h2>Game On</h2>
                     </div>
                     <div className={`${moveLogin ? 'moveSignup sign-up' : moveSignup ? 'moveSignupRight sign-up' : 'sign-up'} `}>
+                    <div className='login-container'>
+                            <form>
+                                <label>
+                                    Full Name:
+                                    <input type='text' name='full Name' />
+                                </label>
+                            </form>
+                        </div>
                         <h2>sign up</h2>
                         <button 
                           onClick={() => this.setState({moveLogin: false, moveSignup: true})}>                          
@@ -66,11 +75,42 @@ export class LandingPage extends React.Component{
                       className={`${moveLogin ? 'moveLogin login' : moveSignup ? 'moveLoginRight login' :'login'}`} 
                       // onAnimationEnd={() => this.setState({fade: false})}
                       >
-                        <h2>login</h2>
-                        <button 
-                          ref='button'
-                          onClick={() => this.setState({moveLogin: true, moveSignup: false})}>
-                          press</button>
+                        <div className='signup-container'>
+                            <form>
+                                <label>
+                                    <p>Full Name:</p>
+                                    <input type='text' name='Name' />
+                                    <div className='fake-line'></div>
+                                </label>
+                                <label>
+                                    <p>Email Adress:</p>
+                                    <input type='text' name='Email' />
+                                    <div className='fake-line'></div>
+                                </label>
+                                <label>
+                                    <p>Phone Number: - optional</p>
+                                    <input type='tel' name='Phone'  pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"/>
+                                    <div className='fake-line'></div>
+                                </label>
+                                <label>
+                                    <p>Password:</p>
+                                    <input type='password' name='Password' />
+                                    <div className='fake-line'></div>
+                                </label>
+                                <label>
+                                    <p>confirm Password:</p>
+                                    <input type='password' name='Password' />
+                                    <div className='fake-line'></div>
+                                </label>
+                                <input className='signup-button' type="submit" value="Submit" />
+                            </form>
+                            {/* <h2>login</h2> */}
+                            <button 
+                                ref='button'
+                                onClick={() => this.setState({moveLogin: true, moveSignup: false})}>
+                            press</button>
+                        </div>
+                        
                     </div>
                 </div>
 
