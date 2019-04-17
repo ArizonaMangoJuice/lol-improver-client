@@ -13,12 +13,20 @@ export class LandingPage extends React.Component{
         super(props)
         this.state = { 
           moveLogin: false,
-          moveSignup: false
+          moveSignup: false,
+          fullName: false,
+          emailAddress: false,
+          phoneNumber: false,
+          password: false,
+          confirmPassword: false,
         };
     }
     render(){
         const moveLogin = this.state.moveLogin;
         const moveSignup = this.state.moveSignup;
+        const fullName = this.state.fullName;
+        const emailAddress = this.state.emailAddress;
+        const phoneNumber = this.state.phoneNumber;
 
         if(this.props.loggedIn){
             return <Redirect to='/dashboard'/>
@@ -78,29 +86,48 @@ export class LandingPage extends React.Component{
                         <div className='signup-container'>
                             <form>
                                 <label>
-                                    <p>Full Name:</p>
-                                    <input type='text' name='Name' />
-                                    <div className='fake-line'></div>
+                                    <p className={`${fullName ? 'signed-up-full-name form-p' : 'form-p'}`}>Full Name:</p>
+                                    <input 
+                                      className={`${fullName ? 'form-inputs fade-line remove-opacity' : 'form-inputs'}`}
+                                      type='text' 
+                                      name='Name' 
+                                      onClick={() => this.setState({fullName: true})}
+                                      />
+                                    <div className={`${fullName ? 'hidden': 'fake-line'} `}></div>
                                 </label>
                                 <label>
-                                    <p>Email Adress:</p>
-                                    <input type='text' name='Email' />
-                                    <div className='fake-line'></div>
+                                    <p className={`${emailAddress ? 'signed-up-email-address form-p' : 'form-p'}`}>Email Adress:</p>
+                                    <input 
+                                    className={`${emailAddress ? 'form-inputs fade-line remove-opacity' : 'form-inputs'}`}
+                                    type='text' 
+                                    name='Email'
+                                    onClick={() => this.setState({emailAddress: true})}
+                                    />
+                                    <div className={`${emailAddress ? 'hidden': 'fake-line'} `}></div>
                                 </label>
                                 <label>
-                                    <p>Phone Number: - optional</p>
-                                    <input type='tel' name='Phone'  pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"/>
-                                    <div className='fake-line'></div>
+                                    <p className={`${phoneNumber ? 'signed-up-phone-number form-p' : 'form-p'}`}>Phone Number: - optional</p>
+                                    <input 
+                                    className={`${phoneNumber ? 'form-inputs fade-line remove-opacity' : 'form-inputs'}`}
+                                    type='tel' name='Phone'  
+                                    pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+                                    onClick={() => this.setState({phoneNumber: true})}
+                                    />
+                                    <div className={`${phoneNumber ? 'hidden': 'fake-line'} `}></div>
                                 </label>
                                 <label>
                                     <p>Password:</p>
-                                    <input type='password' name='Password' />
-                                    <div className='fake-line'></div>
+                                    <input 
+                                    className={`${fullName ? 'form-inputs' : 'form-inputs'}`}
+                                    type='password' name='Password' />
+                                    <div className={`${fullName ? '': 'fake-line'} `}></div>
                                 </label>
                                 <label>
                                     <p>confirm Password:</p>
-                                    <input type='password' name='Password' />
-                                    <div className='fake-line'></div>
+                                    <input 
+                                    className={`${fullName ? 'form-inputs' : 'form-inputs'}`}
+                                    type='password' name='Password' />
+                                    <div className={`${fullName ? '': 'fake-line'} `}></div>
                                 </label>
                                 <input className='signup-button' type="submit" value="Submit" />
                             </form>

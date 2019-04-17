@@ -328,16 +328,9 @@ main p:nth-child(3) {
       margin-right: auto;
   }
 
-  .signup-container form label input {
-    border: none;
-    /* border-bottom: 1px solid; */
-    display: inline-block;
-    position: absolute;
-    left: 15px;
-    top: 0;
-    opacity: .00;
-    width: 80%;
-  }
+  /* .signup-container form label input {
+    
+  } */
 
   .signup-container form label p{
       /* margin: 0 0 15px 0; */
@@ -355,7 +348,7 @@ main p:nth-child(3) {
 
   .fake-line{
     width: 80%;
-    border: 1px solid black;
+    border-bottom: 1px solid black;
     margin: 0;
     padding: 0;
     margin-left: 15px;
@@ -390,12 +383,58 @@ main p:nth-child(3) {
     animation: move-signup-keyframes-right 300ms;
     animation-fill-mode: forwards;  
 }
+
+.form-inputs{
+    border: none;
+    /* border-bottom: 1px solid; */
+    display: inline-block;
+    position: absolute;
+    left: 15px;
+    top: 0;
+    opacity: .00;
+    width: 80%;
+    outline: none;
+    font-size: 
+}
+
+.fade-line{
+    transition: 300ms;
+    border-bottom: 1px solid red !important;
+}
+
+.remove-opacity{
+    opacity: 1;
+}
+
 /* @keyframes fade-in-keyframes {
     from {right: 0}
     to {left: 0}
   } */
 
+  .form-p{
+      width: 250px;
+  }
 
+  .signed-up-full-name{
+    position: relative;
+    animation-timing-function: linear;
+    animation: move-full-name-up 300ms;
+    animation-fill-mode: forwards;  
+  }
+
+  .signed-up-email-address{
+    position: relative;
+    animation-timing-function: linear;
+    animation: move-full-name-up 300ms;
+    animation-fill-mode: forwards;  
+  }
+
+  .signed-up-phone-number{
+    position: relative;
+    animation-timing-function: linear;
+    animation: move-phone-number-up 300ms;
+    animation-fill-mode: forwards;  
+  }
 
   @keyframes move-login-keyframes-left {
     from { right: 0px}
@@ -418,4 +457,22 @@ main p:nth-child(3) {
     to { left: 0px}
   }
 
-  
+  @keyframes move-full-name-up{
+    from { top: 0}
+    to { top: -25px}
+  }
+
+  @keyframes move-email-address-up{
+    from { top: 0}
+    to { top: -25px}
+  }
+
+  @keyframes move-phone-number-up{
+    from { top: 0}
+    to { top: -25px}
+  }
+
+
+.hidden{
+    display: none;
+}
