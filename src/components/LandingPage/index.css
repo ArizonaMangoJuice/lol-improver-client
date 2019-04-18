@@ -436,6 +436,20 @@ main p:nth-child(3) {
     animation-fill-mode: forwards;  
   }
 
+  .signed-up-password{
+    position: relative;
+    animation-timing-function: linear;
+    animation: move-password-up 300ms;
+    animation-fill-mode: forwards;  
+  }
+
+  .signed-up-confirm-password{
+    position: relative;
+    animation-timing-function: linear;
+    animation: move-confirm-password-up 300ms;
+    animation-fill-mode: forwards;  
+  }
+
   @keyframes move-login-keyframes-left {
     from { right: 0px}
     to { right: 572px}
@@ -472,6 +486,15 @@ main p:nth-child(3) {
     to { top: -25px}
   }
 
+  @keyframes move-password-up{
+    from { top: 0}
+    to { top: -25px}
+  }
+
+  @keyframes move-confirm-password-up{
+    from { top: 0}
+    to { top: -25px}
+  }
 
 .hidden{
     display: none;

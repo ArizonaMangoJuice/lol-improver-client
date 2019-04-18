@@ -27,6 +27,8 @@ export class LandingPage extends React.Component{
         const fullName = this.state.fullName;
         const emailAddress = this.state.emailAddress;
         const phoneNumber = this.state.phoneNumber;
+        const password = this.state.password;
+        const confirmPassword = this.state.confirmPassword;
 
         if(this.props.loggedIn){
             return <Redirect to='/dashboard'/>
@@ -116,18 +118,24 @@ export class LandingPage extends React.Component{
                                     <div className={`${phoneNumber ? 'hidden': 'fake-line'} `}></div>
                                 </label>
                                 <label>
-                                    <p>Password:</p>
+                                    <p className={`${password ? 'signed-up-password form-p' : 'form-p'}`}>Password:</p>
                                     <input 
-                                    className={`${fullName ? 'form-inputs' : 'form-inputs'}`}
-                                    type='password' name='Password' />
-                                    <div className={`${fullName ? '': 'fake-line'} `}></div>
+                                    className={`${password ? 'form-inputs fade-line remove-opacity' : 'form-inputs'}`}
+                                    type='password' 
+                                    name='Password' 
+                                    onClick={() => this.setState({password: true})}
+                                    />
+                                    <div className={`${password ? 'hidden': 'fake-line'} `}></div>
                                 </label>
                                 <label>
-                                    <p>confirm Password:</p>
+                                    <p className={`${confirmPassword ? 'signed-up-confirm-password form-p' : 'form-p'}`}>confirm Password:</p>
                                     <input 
-                                    className={`${fullName ? 'form-inputs' : 'form-inputs'}`}
-                                    type='password' name='Password' />
-                                    <div className={`${fullName ? '': 'fake-line'} `}></div>
+                                    className={`${confirmPassword ? 'form-inputs fade-line remove-opacity' : 'form-inputs'}`}
+                                    type='password'
+                                    name='Password' 
+                                    onClick={() => this.setState({confirmPassword: true})}                                    
+                                    />
+                                    <div className={`${confirmPassword ? '': 'fake-line'} `}></div>
                                 </label>
                                 <input className='signup-button' type="submit" value="Submit" />
                             </form>
