@@ -137,7 +137,7 @@ export class LandingPage extends React.Component{
                                     />
                                     <div className={`${confirmPassword ? '': 'fake-line'} `}></div>
                                 </label>
-                                <input className='signup-button' type="submit" value="Submit" />
+                                <input className='signup-button' type="submit" value="Sign Up Now" />
                             </form>
                             {/* <h2>login</h2> */}
                             <button 
