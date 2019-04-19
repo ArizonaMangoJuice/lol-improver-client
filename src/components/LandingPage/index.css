@@ -281,10 +281,10 @@ main p:nth-child(3) {
   .landing-page-login-container{
       color: white;
       border: 1px solid red;
-      width: 60%;
+      width: 750px;
       margin: auto;
       position: relative;
-      height: 450px;
+      height: 550px;
    }
 
   .left-cover{
@@ -323,6 +323,9 @@ main p:nth-child(3) {
       margin: 0;
       display: inline-block;
       vertical-align: top;
+      box-sizing: border-box;
+      padding-top: 20px;
+      padding-bottom: 20px;
   }
 
   .sign-up{
@@ -379,7 +382,7 @@ main p:nth-child(3) {
   }
 
   .signup-button{
-      width: 30%;
+      /* width: 30%; */
       margin-left: auto;
       margin-right: auto;
   }
@@ -490,22 +493,22 @@ main p:nth-child(3) {
 
   @keyframes move-login-keyframes-left {
     from { right: 0px}
-    to { right: 572px}
+    to { right: 375px}
   }
 
   @keyframes move-login-keyframes-right {
-    from { right: 572px}
+    from { right: 375px}
     to { right: 0px}
   }
   
 
   @keyframes move-signup-keyframes-left {
     from { left: 0px}
-    to { left: 572px}
+    to { left: 375px}
   }
 
   @keyframes move-signup-keyframes-right {
-    from { left: 572px}
+    from { left: 375px}
     to { left: 0px}
   }
 
@@ -536,4 +539,27 @@ main p:nth-child(3) {
 
 .hidden{
     display: none;
+}
+
+.form-bottom-buttons{
+  /* width: 50%; */
+  margin-top: 15px;
+  margin-left: 40px;
+  /* margin: auto; */
+}
+
+.form-power-buttons{
+  background-color: red;
+  color: white;
+  border-radius: 15px;
+  border: none;
+  padding: 7px 17px;
+  margin-right: 20px;
+}
+
+.form-other-buttons{
+  border: none;
+  background-color: white;
+  text-decoration: underline;
+  cursor: pointer;
 }

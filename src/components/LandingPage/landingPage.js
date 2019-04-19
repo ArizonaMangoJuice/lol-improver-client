@@ -19,6 +19,8 @@ export class LandingPage extends React.Component{
           phoneNumber: false,
           password: false,
           confirmPassword: false,
+          loginEmail: false,
+          loginPassword: false,
         };
     }
     render(){
@@ -29,6 +31,8 @@ export class LandingPage extends React.Component{
         const phoneNumber = this.state.phoneNumber;
         const password = this.state.password;
         const confirmPassword = this.state.confirmPassword;
+        const loginEmail = this.state.loginEmail;
+        const loginPassword = this.state.loginPassword;  
 
         if(this.props.loggedIn){
             return <Redirect to='/dashboard'/>
@@ -91,10 +95,14 @@ export class LandingPage extends React.Component{
                                     />
                                     <div className={`${password ? 'hidden': 'fake-line'} `}></div>
                                 </label>
-                            </form>
-                            <button 
-                                onClick={() => this.setState({moveLogin: false, moveSignup: true})}>                          
+                                <button 
+                                onClick={(e) => {
+                                  this.setState({moveLogin: false, moveSignup: true});
+                                  e.preventDefault();
+                                  return;
+                                }}>                          
                                 Sign Up</button>
+                            </form>
                             {/* <h2>sign up</h2> */}
                         </div>
                     </div>
@@ -154,13 +162,20 @@ export class LandingPage extends React.Component{
                                     />
                                     <div className={`${confirmPassword ? '': 'fake-line'} `}></div>
                                 </label>
-                                <input className='signup-button' type="submit" value="Sign Up Now" />
+                                <div className='form-bottom-buttons'>
+                                  <input className='signup-button form-power-buttons' type="submit" value="Sign Up Now" />
+                                  <button 
+                                  className='form-other-buttons'
+                                  ref='button'
+                                  onClick={(e) => {
+                                    this.setState({moveLogin: true, moveSignup: false});
+                                    e.preventDefault();
+                                    return;
+                                  }}>
+                                  Log In</button>
+                                </div>
                             </form>
                             {/* <h2>login</h2> */}
-                            <button 
-                                ref='button'
-                                onClick={() => this.setState({moveLogin: true, moveSignup: false})}>
-                            press</button>
                         </div>
                         
                     </div>
