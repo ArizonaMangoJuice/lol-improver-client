@@ -95,13 +95,17 @@ export class LandingPage extends React.Component{
                                     />
                                     <div className={`${password ? 'hidden': 'fake-line'} `}></div>
                                 </label>
-                                <button 
-                                onClick={(e) => {
-                                  this.setState({moveLogin: false, moveSignup: true});
-                                  e.preventDefault();
-                                  return;
-                                }}>                          
-                                Sign Up</button>
+                                <div className='form-bottom-buttons'>
+                                  <input className='signup-button form-power-buttons' type="submit" value="Log In" />
+                                  <button 
+                                  className='form-other-buttons'
+                                  onClick={(e) => {
+                                    this.setState({moveLogin: false, moveSignup: true});
+                                    e.preventDefault();
+                                    return;
+                                  }}>                          
+                                  I'm New</button>
+                                </div>
                             </form>
                             {/* <h2>sign up</h2> */}
                         </div>

@@ -383,8 +383,8 @@ main p:nth-child(3) {
 
   .signup-button{
       /* width: 30%; */
-      margin-left: auto;
-      margin-right: auto;
+      /* margin-left: auto;
+      margin-right: auto; */
   }
 
   .fake-line{
@@ -542,10 +542,15 @@ main p:nth-child(3) {
 }
 
 .form-bottom-buttons{
-  /* width: 50%; */
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   margin-top: 15px;
-  margin-left: 40px;
-  /* margin: auto; */
+  /* margin-left: 40px;
+  margin-right: auto; */
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .form-power-buttons{
@@ -554,7 +559,8 @@ main p:nth-child(3) {
   border-radius: 15px;
   border: none;
   padding: 7px 17px;
-  margin-right: 20px;
+  margin-right: 55px;
+  cursor: pointer;
 }
 
 .form-other-buttons{
