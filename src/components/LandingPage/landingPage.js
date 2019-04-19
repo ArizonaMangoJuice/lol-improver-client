@@ -61,7 +61,8 @@ export class LandingPage extends React.Component{
                 <p className='landing-page-p'>
                     DemoPassword: alongpassword
                 </p> */}
-
+                {/* testing only */}
+                {/* this needs to be in a seperate component, and the form need to be connected with the made form component */}
                 <div className='landing-page-login-container'>
                     <div className='left-cover'>
                         <h1>LOL IMPROVER</h1>
@@ -71,15 +72,31 @@ export class LandingPage extends React.Component{
                     <div className='login-container'>
                             <form>
                                 <label>
-                                    Full Name:
-                                    <input type='text' name='full Name' />
+                                    <p className={`${emailAddress ? 'signed-up-email-address form-p' : 'form-p'}`}>Email Adress:</p>
+                                    <input 
+                                    className={`${emailAddress ? 'form-inputs fade-line remove-opacity' : 'form-inputs'}`}
+                                    type='text' 
+                                    name='Email'
+                                    onClick={() => this.setState({emailAddress: true})}
+                                    />
+                                    <div className={`${emailAddress ? 'hidden': 'fake-line'} `}></div>
+                                </label>
+                                <label>
+                                    <p className={`${password ? 'signed-up-password form-p' : 'form-p'}`}>Password:</p>
+                                    <input 
+                                    className={`${password ? 'form-inputs fade-line remove-opacity' : 'form-inputs'}`}
+                                    type='password' 
+                                    name='Password' 
+                                    onClick={() => this.setState({password: true})}
+                                    />
+                                    <div className={`${password ? 'hidden': 'fake-line'} `}></div>
                                 </label>
                             </form>
+                            <button 
+                                onClick={() => this.setState({moveLogin: false, moveSignup: true})}>                          
+                                Sign Up</button>
+                            {/* <h2>sign up</h2> */}
                         </div>
-                        <h2>sign up</h2>
-                        <button 
-                          onClick={() => this.setState({moveLogin: false, moveSignup: true})}>                          
-                          press</button>
                     </div>
                     <div 
                       className={`${moveLogin ? 'moveLogin login' : moveSignup ? 'moveLoginRight login' :'login'}`} 

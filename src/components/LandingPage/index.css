@@ -28,6 +28,41 @@
     flex-wrap: wrap;
 }
 
+.login-container{
+  width: 100%;
+      height: 80%;
+      margin: 0;
+      padding: 0;
+}
+
+.login-container form{
+  margin-top: 5%;
+  height: 100%;
+  /* border: 1px solid #008283; */
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-pack: distribute;
+  justify-content: center;
+}
+
+.login-container form label{
+  position: relative;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.login-container form label p{
+  margin: 0;
+  /* margin-left: 15px; */
+  display: inline-block;
+  /* z-index: 1; */
+}
+
 .form-input{
     padding: 1em 1em;
     width: 42%;
@@ -259,7 +294,7 @@ main p:nth-child(3) {
       width: 50%;
       background-color: #0a0a0c;
       height: 100%;
-      opacity: .69;
+      opacity: .85;
       z-index: 1;
   }
 
@@ -305,7 +340,7 @@ main p:nth-child(3) {
   }
 
   .signup-container{
-      width: 99%;
+      width: 100%;
       height: 80%;
       margin: 0;
       padding: 0;
@@ -326,6 +361,8 @@ main p:nth-child(3) {
       width: 80%;
       margin-left: auto;
       margin-right: auto;
+      margin-top: 15px;
+      margin-bottom: 15px;
   }
 
   /* .signup-container form label input {
@@ -335,9 +372,10 @@ main p:nth-child(3) {
   .signup-container form label p{
       /* margin: 0 0 15px 0; */
       margin: 0;
-      margin-left: 15px;
+      /* margin-left: 15px; */
       display: inline-block;
-      z-index: 1;
+      
+      /* z-index: 1; */
   }
 
   .signup-button{
@@ -347,11 +385,11 @@ main p:nth-child(3) {
   }
 
   .fake-line{
-    width: 80%;
+    width: 100%;
     border-bottom: 1px solid black;
     margin: 0;
     padding: 0;
-    margin-left: 15px;
+    /* margin-left: 15px; */
   }
 
 /* test */
@@ -388,13 +426,13 @@ main p:nth-child(3) {
     border: none;
     /* border-bottom: 1px solid; */
     display: inline-block;
-    position: absolute;
-    left: 15px;
-    top: 0;
+    /* position: absolute; */
+    /* left: 15px; */
+    /* top: 0; */
     opacity: .00;
-    width: 80%;
+    width: 100%;
     outline: none;
-    font-size: 
+    /* font-size:  */
 }
 
 .fade-line{
@@ -473,27 +511,27 @@ main p:nth-child(3) {
 
   @keyframes move-full-name-up{
     from { top: 0}
-    to { top: -25px}
+    to { top: -20px}
   }
 
   @keyframes move-email-address-up{
     from { top: 0}
-    to { top: -25px}
+    to { top: -20px}
   }
 
   @keyframes move-phone-number-up{
     from { top: 0}
-    to { top: -25px}
+    to { top: -20px}
   }
 
   @keyframes move-password-up{
     from { top: 0}
-    to { top: -25px}
+    to { top: -20px}
   }
 
   @keyframes move-confirm-password-up{
     from { top: 0}
-    to { top: -25px}
+    to { top: -20px}
   }
 
 .hidden{
