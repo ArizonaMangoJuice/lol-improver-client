@@ -1,6 +1,6 @@
 .landing-page-login-container{
   color: white;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   width: 750px;
   margin: auto;
   position: relative;
@@ -12,24 +12,46 @@
   top: 0;
   left: 0;
   width: 50%;
-  background-color: #0a0a0c;
+  background-color: rgba(0, 0, 0, 0.9);
   height: 100%;
-  opacity: .85;
   z-index: 1;
 }
 
+.left-cover:after{
+  
+
+}
+
+
+
+.left-cover-title{
+  height: 60%;
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-logo{
+  margin: 15px;
+  height: 50px;
+  width: 50px;
+}
+
 .left-cover h1{
-  font-size: 4em;
+  font-size: 38px;
   text-align: center;
   margin-bottom: 0;
   padding-bottom: 0;
+  letter-spacing: 2px;
 }
 
 .left-cover h2{
-  font-size: 1.5em;
+  font-size: 16px;
   text-align: center;
-  margin-top: 0;
+  margin-top: 5px;
   padding-top: 0;
+  letter-spacing: 2px;
 }
 
 .login{
@@ -46,6 +68,7 @@
   box-sizing: border-box;
   padding-top: 20px;
   padding-bottom: 20px;
+  margin-top: 28px;
 }
 
 .sign-up{
@@ -60,6 +83,8 @@ width: 50%;
 margin: 0;
 display: inline-block;
 vertical-align: top;
+margin-top: 28px;
+
 }
 
 .signup-container{
@@ -289,3 +314,4 @@ background-color: white;
 text-decoration: underline;
 cursor: pointer;
 }
+

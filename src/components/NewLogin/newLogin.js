@@ -33,9 +33,11 @@ export class NewLogin extends React.Component{
     return (
       <div className='landing-page-login-container'>
                     <div className='left-cover'>
-
-                        <h1>LOL IMPROVER</h1>
-                        <h2>Game On</h2>
+                        <img className='form-logo' src={require('../../images/logo.png')}></img>
+                        <div className='left-cover-title'>
+                          <h1>LOL IMPROVER</h1>
+                          <h2>Game On</h2>
+                        </div>
                     </div>
                     <div className={`${moveLogin ? 'moveSignup sign-up' : moveSignup ? 'moveSignupRight sign-up' : 'sign-up'} `}>
                     <div className='login-container'>
