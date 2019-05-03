@@ -3,7 +3,8 @@ import { connect } from 'react-redux'
 import './index.css'
 import { Field, reduxForm, focus } from 'redux-form'
 import { login } from '../../actions/auth'
-import Input from '../Input';
+import Input from '../Input'
+import { required, notEmpty } from '../../validators'
 
 export class UpdateLogin extends React.Component {
   constructor(props) {
@@ -21,26 +22,32 @@ export class UpdateLogin extends React.Component {
     return (
       <div className='login-container'>
         <form onSubmit={this.props.handleSubmit(values => this.onLoginSubmit(values))}>
-          <label>
-            <p className={`${emailAddress ? 'signed-up-email-address form-p' : 'form-p'}`}>Email Adress:</p>
-            <input
-              className={`${emailAddress ? 'form-inputs fade-line remove-opacity' : 'form-inputs'}`}
-              type='text'
-              name='Email'
-              onClick={() => this.props.raiseEmail()}
-            />
-            <div className={`${emailAddress ? 'hidden' : 'fake-line'} `}></div>
-          </label>
-          <label>
-            <p className={`${password ? 'signed-up-password form-p' : 'form-p'}`}>Password:</p>
-            <input
-              className={`${password ? 'form-inputs fade-line remove-opacity' : 'form-inputs'}`}
-              type='password'
-              name='Password'
-              onClick={() => this.props.raisePassword()}
-            />
-            <div className={`${password ? 'hidden' : 'fake-line'} `}></div>
-          </label>
+          <Field
+            pCss={`${emailAddress ? 'signed-up-email-address form-p' : 'form-p'}`}
+            pName={'Email Adress:'}
+            inputCss={`${emailAddress ? 'form-inputs fade-line remove-opacity' : 'form-inputs'}`}
+            fakeLine={`${emailAddress ? 'hidden' : 'fake-line'}`}
+            component={Input}
+            type="text"
+            name="username"
+            id="username"
+            raisefunction={this.props.raiseEmail}
+            validate={[required, notEmpty]}
+          />
+
+          <Field
+            pCss={`${password ? 'signed-up-password form-p' : 'form-p'}`}
+            pName={'Password:'}
+            inputCss={`${password ? 'form-inputs fade-line remove-opacity' : 'form-inputs'}`}
+            fakeLine={`${password ? 'hidden' : 'fake-line'}`}
+            component={Input}
+            type="password"
+            name="password"
+            id="password"
+            raisefunction={this.props.raisePassword}
+            validate={[required, notEmpty]}
+          />
+
           <div className='form-bottom-buttons'>
             <button className='signup-button form-power-buttons' type="submit" value="Log In">
               Log In

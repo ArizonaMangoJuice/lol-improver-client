@@ -62,11 +62,11 @@
   display: inline-block;
   /* z-index: 1; */
 }
-
+/* 
 .form-input{
     padding: 1em 1em;
     width: 42%;
-}
+} */
 
 #username{
     outline: 0;

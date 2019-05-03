@@ -1,48 +1,66 @@
 import React from 'react';
 
-export default class Input extends React.Component{
-    constructor(props){
-        super(props)
+export default class Input extends React.Component {
+  constructor(props) {
+    super(props)
+  }
+
+  componentDidUpdate(prevProps) {
+    if (!prevProps.meta.active && this.props.meta.active) {
+      this.input.focus();
     }
-    
-    componentDidUpdate(prevProps){
-        if(!prevProps.meta.active && this.props.meta.active){
-            this.input.focus();
-        }
+  }
+  render() {
+    //you validate in the input and you have to do it to the login 
+    //as well you also have to make when there is an error it takes
+    //you to the input as well
+    let error;
+    if (this.props.meta.error && this.props.meta.touched) {
+      error = (
+        <label className='formError'>
+          {this.props.meta.error}
+        </label>
+      )
     }
-    render(){
-        //you validate in the input and you have to do it to the login 
-        //as well you also have to make when there is an error it takes
-        //you to the input as well
-        let error;
-        if(this.props.meta.error && this.props.meta.touched){
-            error = (
-                <label className='formError'>
-                    {this.props.meta.error}
-                </label>
-            )
-        }
-        return(
-            <div className='form-input' onClick={() => console.log(this.props)}>
-                <label 
-                    htmlFor={this.props.input.name} 
-                    className={error ? 'validation-error' : 'label'}
-                >
-                    {error ? error : this.props.label}
-                </label>
-                <input 
-                    className={this.props.css}
-                    {...this.props.input}
-                    id={this.props.input.name}
-                    type={this.props.type}
-                    ref={input => (this.input = input)}
-                />
-                {this.props.button ? (
-                    <button className={this.props.buttonClass}>
-                        Search
-                    </button>
-                ) : ''}
-            </div>
-        );
-    }
+    return (
+      <label htmlFor={this.props.input.name}>
+        <p className={this.props.pCss}>{this.props.pName}</p>
+
+        <input
+          className={this.props.css}
+          {...this.props.input}
+          id={this.props.input.name}
+          type={this.props.type}
+          ref={input => (this.input = input)}
+          onClick={() => this.props.raisefunction()}
+        />
+
+        <div className={this.props.fakeLine}></div>
+
+      </label>
+
+
+      // <div className='form-input' onClick={() => console.log(this.props)}>
+      //     <label 
+      //         htmlFor={this.props.input.name} 
+      //         className={error ? 'validation-error' : 'label'}
+      //     >
+      //         {error ? error : this.props.label}
+      //     </label>
+      //     <input 
+      //         className={this.props.css}
+      //         {...this.props.input}
+      //         id={this.props.input.name}
+      //         type={this.props.type}
+      //         ref={input => (this.input = input)}
+      //         onClick={() => this.props.raisefunction()}
+      //     />
+      //     {this.props.button ? (
+      //         <button className={this.props.buttonClass}>
+      //             Search
+      //         </button>
+      //     ) : ''}
+      // </div>
+    );
+  }
 }
