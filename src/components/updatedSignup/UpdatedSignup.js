@@ -91,7 +91,6 @@ export class UpdateSignUp extends React.Component {
           />
 
           <div className='form-bottom-buttons'>
-            {/* <input className='signup-button form-power-buttons' type="submit" value="Sign Up Now" /> */}
             <button className='signup-button form-power-buttons' disabled={this.props.pristine || this.props.submitting}>
               Sign Up
             </button>

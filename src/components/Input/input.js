@@ -17,14 +17,14 @@ export default class Input extends React.Component {
     let error;
     if (this.props.meta.error && this.props.meta.touched) {
       error = (
-        <label className='formError'>
+        <span className='formError'>
           {this.props.meta.error}
-        </label>
+        </span>
       )
     }
     return (
       <label htmlFor={this.props.input.name}>
-        <p className={this.props.pCss}>{this.props.pName}</p>
+        <p className={this.props.pCss}>{this.props.pName} {error}</p>
         <input
           className={this.props.inputCss}
           {...this.props.input}
