@@ -1,22 +1,22 @@
 import React from 'react';
-import {Field, reduxForm, focus} from 'redux-form';
-import {login} from '../../actions/auth';
+import { Field, reduxForm, focus } from 'redux-form';
+import { login } from '../../actions/auth';
 import Input from '../Input';
-import {required, notEmpty} from '../../validators';
-import {Link} from 'react-router-dom';
+import { required, notEmpty } from '../../validators';
+import { Link } from 'react-router-dom';
 
-export class LoginForm extends React.Component{
-    onSubmit(values){
+export class LoginForm extends React.Component {
+    onSubmit(values) {
         return this.props.dispatch(login(values.username, values.password));
     }
-    render(){
+    render() {
         let error;
-        if(this.props.error){
+        if (this.props.error) {
             error = (
                 <label className='validation-error'>
                     {this.props.error}
                 </label>
-            ) 
+            )
         }
         return (
             <form
@@ -25,6 +25,7 @@ export class LoginForm extends React.Component{
                 <h2 className='form-title'>Login</h2>
                 {error}
                 <Field
+                    css={'form-inputs fade-line remove-opacity'}
                     component={Input}
                     type="text"
                     name="username"
@@ -40,11 +41,11 @@ export class LoginForm extends React.Component{
                     label='Password'
                     validate={[required, notEmpty]}
                 />
-                    <button disabled={this.props.pristine || this.props.submitting}>
-                        Log in
+                <button disabled={this.props.pristine || this.props.submitting}>
+                    Log in
                     </button>
-                    <Link role='button' to='/register'>
-                        Register
+                <Link role='button' to='/register'>
+                    Register
                     </Link>
             </form>
         );

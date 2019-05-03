@@ -1,6 +1,10 @@
 import React from 'react';
 
 export default class Input extends React.Component{
+    constructor(props){
+        super(props)
+    }
+    
     componentDidUpdate(prevProps){
         if(!prevProps.meta.active && this.props.meta.active){
             this.input.focus();
@@ -19,7 +23,7 @@ export default class Input extends React.Component{
             )
         }
         return(
-            <div className='form-input'>
+            <div className='form-input' onClick={() => console.log(this.props)}>
                 <label 
                     htmlFor={this.props.input.name} 
                     className={error ? 'validation-error' : 'label'}
@@ -27,6 +31,7 @@ export default class Input extends React.Component{
                     {error ? error : this.props.label}
                 </label>
                 <input 
+                    className={this.props.css}
                     {...this.props.input}
                     id={this.props.input.name}
                     type={this.props.type}

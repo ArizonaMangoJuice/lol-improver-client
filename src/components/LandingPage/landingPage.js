@@ -47,7 +47,7 @@ export class LandingPage extends React.Component{
                 {/* this needs to be in a seperate component, and the form need to be connected with the made form component */}
                 
                 <NewLogin />
-                <LoginForm />
+                {/* <LoginForm /> */}
             </main>
         )
     }
