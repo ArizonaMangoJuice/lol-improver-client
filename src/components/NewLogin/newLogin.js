@@ -5,7 +5,7 @@ import { Field, reduxForm, focus } from 'redux-form'
 import { login } from '../../actions/auth'
 import Input from '../Input';
 import UpdateLogin from '../updatedLogin';
-import { UpdateSignUp } from '../updatedSignup/UpdatedSignup';
+import UpdateSignUp  from '../updatedSignup/UpdatedSignup';
 
 
 export class NewLogin extends React.Component {
@@ -119,11 +119,13 @@ export class NewLogin extends React.Component {
   }
 }
 
-export default reduxForm({
-  form: 'login',
-  onSubmitFail: (errors, dispatch) => {
-    return dispatch(focus('login', 'username'))
-  }
-})(NewLogin)
+// export default reduxForm({
+//   form: {'login', 'signUp'},
+//   onSubmitFail: (errors, dispatch) => {
+//     return dispatch(focus('login', 'username'))
+//   }
+// })(NewLogin)
+
+export default NewLogin
 
 // export default NewLogin
