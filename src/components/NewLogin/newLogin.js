@@ -5,6 +5,7 @@ import { Field, reduxForm, focus } from 'redux-form'
 import { login } from '../../actions/auth'
 import Input from '../Input';
 import UpdateLogin from '../updatedLogin';
+import { UpdateSignUp } from '../updatedSignup/UpdatedSignup';
 
 
 export class NewLogin extends React.Component {
@@ -14,6 +15,11 @@ export class NewLogin extends React.Component {
     this.changeToNewUser = this.changeToNewUser.bind(this)
     this.raisePassword = this.raisePassword.bind(this)
     this.raiseEmail = this.raiseEmail.bind(this)
+    this.changeToLogin = this.changeToLogin.bind(this)
+    this.raiseFullName = this.raiseFullName.bind(this)
+    this.raisePhoneNumber = this.raisePhoneNumber.bind(this)
+    this.raiseConfirmPassword = this.raiseConfirmPassword.bind(this)
+
 
     this.state = {
       moveLogin: false,
@@ -28,16 +34,34 @@ export class NewLogin extends React.Component {
     }
   }
 
-  raiseEmail(){
+  raiseEmail() {
     this.setState({ emailAddress: true })
   }
 
-  raisePassword(){
-    this.setState({password: true })
+  raisePassword() {
+    this.setState({ password: true })
   }
 
-  changeToNewUser(e){
+  raiseFullName() {
+    this.setState({ fullName: true })
+  }
+
+  raisePhoneNumber() {
+    this.setState({ phoneNumber: true })
+  }
+
+  raiseConfirmPassword() {
+    this.setState({ confirmPassword: true })
+  }
+
+  changeToNewUser(e) {
     this.setState({ moveLogin: false, moveSignup: true });
+    e.preventDefault();
+    return;
+  }
+
+  changeToLogin(e) {
+    this.setState({ moveLogin: true, moveSignup: false });
     e.preventDefault();
     return;
   }
@@ -76,73 +100,19 @@ export class NewLogin extends React.Component {
           />
         </div>
         <div className={`${moveLogin ? 'moveLogin login' : moveSignup ? 'moveLoginRight login' : 'login'}`}>
-          <div className='signup-container'>
-            <form>
-              <label>
-                <p className={`${fullName ? 'signed-up-full-name form-p' : 'form-p'}`}>Full Name:</p>
-                <input
-                  className={`${fullName ? 'form-inputs fade-line remove-opacity' : 'form-inputs'}`}
-                  type='text'
-                  name='Name'
-                  onClick={() => this.setState({ fullName: true })}
-                />
-                <div className={`${fullName ? 'hidden' : 'fake-line'} `}></div>
-              </label>
-              <label>
-                <p className={`${emailAddress ? 'signed-up-email-address form-p' : 'form-p'}`}>Email Adress:</p>
-                <input
-                  className={`${emailAddress ? 'form-inputs fade-line remove-opacity' : 'form-inputs'}`}
-                  type='text'
-                  name='Email'
-                  onClick={() => this.setState({ emailAddress: true })}
-                />
-                <div className={`${emailAddress ? 'hidden' : 'fake-line'} `}></div>
-              </label>
-              <label>
-                <p className={`${phoneNumber ? 'signed-up-phone-number form-p' : 'form-p'}`}>Phone Number: - optional</p>
-                <input
-                  className={`${phoneNumber ? 'form-inputs fade-line remove-opacity' : 'form-inputs'}`}
-                  type='tel' name='Phone'
-                  pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
-                  onClick={() => this.setState({ phoneNumber: true })}
-                />
-                <div className={`${phoneNumber ? 'hidden' : 'fake-line'} `}></div>
-              </label>
-              <label>
-                <p className={`${password ? 'signed-up-password form-p' : 'form-p'}`}>Password:</p>
-                <input
-                  className={`${password ? 'form-inputs fade-line remove-opacity' : 'form-inputs'}`}
-                  type='password'
-                  name='Password'
-                  onClick={() => this.setState({ password: true })}
-                />
-                <div className={`${password ? 'hidden' : 'fake-line'} `}></div>
-              </label>
-              <label>
-                <p className={`${confirmPassword ? 'signed-up-confirm-password form-p' : 'form-p'}`}>confirm Password:</p>
-                <input
-                  className={`${confirmPassword ? 'form-inputs fade-line remove-opacity' : 'form-inputs'}`}
-                  type='password'
-                  name='Password'
-                  onClick={() => this.setState({ confirmPassword: true })}
-                />
-                <div className={`${confirmPassword ? '' : 'fake-line'} `}></div>
-              </label>
-              <div className='form-bottom-buttons'>
-                <input className='signup-button form-power-buttons' type="submit" value="Sign Up Now" />
-                <button
-                  className='form-other-buttons'
-                  ref='button'
-                  onClick={(e) => {
-                    this.setState({ moveLogin: true, moveSignup: false });
-                    e.preventDefault();
-                    return;
-                  }}>
-                  Log In</button>
-              </div>
-            </form>
-            {/* <h2>login</h2> */}
-          </div>
+          <UpdateSignUp
+            emailAddress={emailAddress}
+            password={password}
+            fullName={fullName}
+            phoneNumber={phoneNumber}
+            confirmPassword={confirmPassword}
+            changeToLogin={this.changeToLogin}
+            raiseFullName={this.raiseFullName}
+            raiseEmail={this.raiseEmail}
+            raisePassword={this.raisePassword}
+            raiseConfirmPassword={this.raiseConfirmPassword}
+            raisePhoneNumber={this.raisePhoneNumber}
+          />
         </div>
       </div>
     )

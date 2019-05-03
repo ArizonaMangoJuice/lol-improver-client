@@ -5,21 +5,9 @@ import { Field, reduxForm, focus } from 'redux-form'
 import { login } from '../../actions/auth'
 import Input from '../Input';
 
-export class NewLogin extends React.Component {
+export class UpdateLogin extends React.Component {
   constructor(props) {
     super(props)
-
-    this.state = {
-      // moveLogin: false,
-      // moveSignup: false,
-      // fullName: false,
-      // emailAddress: false,
-      // phoneNumber: false,
-      // password: false,
-      // confirmPassword: false,
-      // loginEmail: false,
-      // loginPassword: false,
-    }
   }
 
   onLoginSubmit(values) {
@@ -27,7 +15,6 @@ export class NewLogin extends React.Component {
   }
 
   render() {
-    // console.log(this.props)
     let password = this.props.password
     let emailAddress = this.props.emailAddress
 
@@ -75,6 +62,6 @@ export default reduxForm({
   onSubmitFail: (errors, dispatch) => {
     return dispatch(focus('login', 'username'))
   }
-})(NewLogin)
+})(UpdateLogin)
 
 // export default NewLogin
