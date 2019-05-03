@@ -27,7 +27,7 @@ export default class Input extends React.Component {
         <p className={this.props.pCss}>{this.props.pName}</p>
 
         <input
-          className={this.props.css}
+          className={this.props.inputCss}
           {...this.props.input}
           id={this.props.input.name}
           type={this.props.type}
