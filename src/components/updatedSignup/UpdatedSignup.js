@@ -11,7 +11,6 @@ export class UpdateSignUp extends React.Component {
   constructor(props) {
     super(props)
 
-    // this.onSignupSubmit = this.onSignupSubmit.bind(this)
   }
 
   onSignupSubmit(values) {
@@ -104,7 +103,6 @@ export class UpdateSignUp extends React.Component {
             </button>
           </div>
         </form>
-        {/* <h2>login</h2> */}
       </div>
     )
   }
@@ -116,5 +114,3 @@ export default reduxForm({
     return dispatch(focus('signUp', 'username'))
   }
 })(UpdateSignUp)
-
-// export default NewLogin

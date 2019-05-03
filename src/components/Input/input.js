@@ -25,7 +25,6 @@ export default class Input extends React.Component {
     return (
       <label htmlFor={this.props.input.name}>
         <p className={this.props.pCss}>{this.props.pName}</p>
-
         <input
           className={this.props.inputCss}
           {...this.props.input}
@@ -34,33 +33,8 @@ export default class Input extends React.Component {
           ref={input => (this.input = input)}
           onClick={() => this.props.raisefunction()}
         />
-
         <div className={this.props.fakeLine}></div>
-
       </label>
-
-
-      // <div className='form-input' onClick={() => console.log(this.props)}>
-      //     <label 
-      //         htmlFor={this.props.input.name} 
-      //         className={error ? 'validation-error' : 'label'}
-      //     >
-      //         {error ? error : this.props.label}
-      //     </label>
-      //     <input 
-      //         className={this.props.css}
-      //         {...this.props.input}
-      //         id={this.props.input.name}
-      //         type={this.props.type}
-      //         ref={input => (this.input = input)}
-      //         onClick={() => this.props.raisefunction()}
-      //     />
-      //     {this.props.button ? (
-      //         <button className={this.props.buttonClass}>
-      //             Search
-      //         </button>
-      //     ) : ''}
-      // </div>
     );
   }
 }

@@ -58,7 +58,6 @@ export class UpdateLogin extends React.Component {
               I'm New</button>
           </div>
         </form>
-        {/* <h2>sign up</h2> */}
       </div>
     )
   }
@@ -70,5 +69,3 @@ export default reduxForm({
     return dispatch(focus('login', 'username'))
   }
 })(UpdateLogin)
-
-// export default NewLogin
