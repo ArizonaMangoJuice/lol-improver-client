@@ -30,8 +30,6 @@ export class UpdateSignUp extends React.Component {
       this.props.redirectTest(this.props.hasEmailValue, this.props.hasPasswordValue);
     }
 
-    console.log(this.props)
-    console.log(this.props.hasPasswordValue)
     let password = this.props.password
     let emailAddress = this.props.emailAddress
     let phoneNumber = this.props.phoneNumber
@@ -117,14 +115,8 @@ export class UpdateSignUp extends React.Component {
   }
 }
 
-// export default reduxForm({
-//   form: 'signUp',
-//   onSubmitFail: (errors, dispatch) => {
-//     return dispatch(focus('signUp', 'username'))
-//   }
-// })(UpdateSignUp)
 
-
+// normal wrapper  for reduxform
 let UpdatedSignUp = reduxForm({
   form: 'signUp',
   onSubmitFail: (errors, dispatch) => {
@@ -132,43 +124,25 @@ let UpdatedSignUp = reduxForm({
   }
 })(UpdateSignUp)
 
-
+//use the selector to get the values of the form
 const selector = formValueSelector('signUp')
 
-// const mapStateToProps = state => {
-//   return {
-//       loggedIn: state.loginReducer.currentUser !== null,
-//       signedUp: state.loginReducer.signedUp
-//   };
-// };
 
+// use the wrapper of connect to use information from state
+//will have to refactor to include this in the state
 UpdatedSignUp = connect(
   state => {
-    // can select values individually
     const hasEmailValue = selector(state, 'username')
     const hasPasswordValue = selector(state, 'password')
     
-    // or together as a group
-    // const { firstName, lastName } = selector(state, 'firstName', 'lastName')
     return {
       hasEmailValue,
       hasPasswordValue,
       signedUp: state.loginReducer.signedUp
-      // fullName: `${firstName || ''} ${lastName || ''}`
     }
   }
 )(UpdatedSignUp)
 
-// UpdatedSignUp = connect (
-//   state => {
-//     const {username, password}  = selector(state, 'username', 'password')
-  
-//     return {
-//       username: username,
-//       password: password,
-//     }
-//   }
-// )(UpdateSignUp)
 
 
 export default UpdatedSignUp
