@@ -1,7 +1,7 @@
 import React from 'react';
 import {Field, reduxForm} from 'redux-form';
-import Input from '../Input';
 import { findPlayer, clearPlayer } from '../../actions/playerInfo';
+import playerSearchInput from '../PlayerSearchInput';
 
 export class PlayerSearchForm extends React.Component{
     onSubmit(value){
@@ -12,7 +12,7 @@ export class PlayerSearchForm extends React.Component{
         return (
             <form id='player-search-form' onSubmit={this.props.handleSubmit(value => this.onSubmit(value))}>
                 <Field
-                    component={Input}
+                    component={playerSearchInput}
                     type='text'
                     name='playerSearch'
                     id='playerSearch'
