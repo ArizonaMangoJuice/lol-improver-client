@@ -1,5 +1,5 @@
 import React from 'react'
-import { connect } from 'react-redux'
+// import { connect } from 'react-redux'
 import './index.css'
 import { Field, reduxForm, focus } from 'redux-form'
 import { login } from '../../actions/auth'
@@ -7,9 +7,9 @@ import Input from '../Input'
 import { required, notEmpty } from '../../validators'
 
 export class UpdateLogin extends React.Component {
-  constructor(props) {
-    super(props)
-  }
+  // constructor(props) {
+  //   super(props)
+  // }
 
   onLoginSubmit(values) {
     return this.props.dispatch(login(values.username, values.password))
@@ -43,7 +43,7 @@ export class UpdateLogin extends React.Component {
             component={Input}
             type="password"
             name="password"
-            id="password"
+            // id="password"
             raisefunction={this.props.raisePassword}
             validate={[required, notEmpty]}
           />

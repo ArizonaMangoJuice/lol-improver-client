@@ -1,9 +1,9 @@
 import React from 'react';
 
 export default class Input extends React.Component {
-  constructor(props) {
-    super(props)
-  }
+  // constructor(props) {
+  //   super(props)
+  // }
 
   componentDidUpdate(prevProps) {
     if (!prevProps.meta.active && this.props.meta.active) {
@@ -28,7 +28,7 @@ export default class Input extends React.Component {
         <input
           className={this.props.inputCss}
           {...this.props.input}
-          id={this.props.input.name}
+          // id={this.props.input.name}
           type={this.props.type}
           ref={input => (this.input = input)}
           onClick={() => this.props.raisefunction()}

@@ -1,9 +1,9 @@
 import React from 'react'
-import { connect } from 'react-redux'
+// import { connect } from 'react-redux'
 import './index.css'
-import { Field, reduxForm, focus } from 'redux-form'
+// import { Field, reduxForm, focus } from 'redux-form'
 import { login } from '../../actions/auth'
-import Input from '../Input';
+// import Input from '../Input';
 import UpdateLogin from '../updatedLogin';
 import UpdateSignUp from '../updatedSignup/UpdatedSignup';
 
@@ -81,13 +81,13 @@ export class NewLogin extends React.Component {
     const phoneNumber = this.state.phoneNumber
     const password = this.state.password
     const confirmPassword = this.state.confirmPassword
-    const loginEmail = this.state.loginEmail
-    const loginPassword = this.state.loginPassword
+    // const loginEmail = this.state.loginEmail
+    // const loginPassword = this.state.loginPassword
 
     return (
       <div className='landing-page-login-container'>
         <div className='left-cover'>
-          <img className='form-logo' src={require('../../images/logo.png')}></img>
+          <img alt='Statue made from cement' className='form-logo' src={require('../../images/logo.png')}></img>
           <div className='left-cover-title'>
             <h1>LOL IMPROVER</h1>
             <h2>Game On</h2>

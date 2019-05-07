@@ -47,7 +47,7 @@ class TopChartsLeftCard extends Component {
                     <div className={`card-info ${this.state.isCardHovered ? 'card-info-expanded' : ''}`}>
                         <div className='test-border'>
                             <div className='icon'>
-                                <img  src={require('../../images/championIcon.png')}/>
+                                <img alt='In game characters' src={require('../../images/championIcon.png')}/>
                             </div>
                         </div>
                         <p className={`title lol-theme`}>{this.props.text}</p>

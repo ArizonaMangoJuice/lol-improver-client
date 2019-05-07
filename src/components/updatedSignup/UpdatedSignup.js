@@ -5,16 +5,16 @@ import { Field, reduxForm, focus } from 'redux-form'
 import Input from '../Input'
 import { registerUser } from '../../actions/registerUser'
 import { required, notEmpty, tooBigOrTooSmall, spacesInUsername } from '../../validators'
-import { formValues } from 'redux-form'
+// import { formValues } from 'redux-form'
 import { formValueSelector } from 'redux-form'
 
 
 
 export class UpdateSignUp extends React.Component {
-  constructor(props) {
-    super(props)
+  // constructor(props) {
+  //   super(props)
 
-  }
+  // }
 
   onSignupSubmit(values) {
     let user = {
@@ -31,10 +31,10 @@ export class UpdateSignUp extends React.Component {
     }
 
     let password = this.props.password
-    let emailAddress = this.props.emailAddress
-    let phoneNumber = this.props.phoneNumber
+    // let emailAddress = this.props.emailAddress
+    // let phoneNumber = this.props.phoneNumber
     let fullName = this.props.fullName
-    let confirmPassword = this.props.confirmPassword
+    // let confirmPassword = this.props.confirmPassword
 
     return (
       <div className='signup-container'>
@@ -93,7 +93,7 @@ export class UpdateSignUp extends React.Component {
             component={Input}
             type="password"
             name="password"
-            id="password"
+            // id="password"
             raisefunction={this.props.raisePassword}
             validate={[required, notEmpty, tooBigOrTooSmall]}
           />

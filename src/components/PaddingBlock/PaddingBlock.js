@@ -3,16 +3,16 @@ import './styles.css'
 
 
 class PaddingBlock extends Component {
-    constructor(props){
-        super(props)
+    // constructor(props){
+    //     super(props)
 
 
-    }
+    // }
 
     render(){
         let paddingImage = this.props.paddingImage;
         
-        console.log(paddingImage)
+        // console.log(paddingImage)
         return (
             <div className='padding-block'>
                 <div className={`${paddingImage} padding-image`}> 
