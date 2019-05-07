@@ -4,7 +4,10 @@ import './index.css'
 import { Field, reduxForm, focus } from 'redux-form'
 import Input from '../Input'
 import { registerUser } from '../../actions/registerUser'
-import { required, notEmpty, tooBigOrTooSmall, spacesInUsername } from '../../validators';
+import { required, notEmpty, tooBigOrTooSmall, spacesInUsername } from '../../validators'
+import { formValues } from 'redux-form'
+import { formValueSelector } from 'redux-form'
+
 
 
 export class UpdateSignUp extends React.Component {
@@ -22,6 +25,13 @@ export class UpdateSignUp extends React.Component {
   }
 
   render() {
+
+    if(this.props.signedUp){
+      this.props.redirectTest(this.props.hasEmailValue, this.props.hasPasswordValue);
+    }
+
+    console.log(this.props)
+    console.log(this.props.hasPasswordValue)
     let password = this.props.password
     let emailAddress = this.props.emailAddress
     let phoneNumber = this.props.phoneNumber
@@ -107,9 +117,58 @@ export class UpdateSignUp extends React.Component {
   }
 }
 
-export default reduxForm({
+// export default reduxForm({
+//   form: 'signUp',
+//   onSubmitFail: (errors, dispatch) => {
+//     return dispatch(focus('signUp', 'username'))
+//   }
+// })(UpdateSignUp)
+
+
+let UpdatedSignUp = reduxForm({
   form: 'signUp',
   onSubmitFail: (errors, dispatch) => {
     return dispatch(focus('signUp', 'username'))
   }
 })(UpdateSignUp)
+
+
+const selector = formValueSelector('signUp')
+
+// const mapStateToProps = state => {
+//   return {
+//       loggedIn: state.loginReducer.currentUser !== null,
+//       signedUp: state.loginReducer.signedUp
+//   };
+// };
+
+UpdatedSignUp = connect(
+  state => {
+    // can select values individually
+    const hasEmailValue = selector(state, 'username')
+    const hasPasswordValue = selector(state, 'password')
+    
+    // or together as a group
+    // const { firstName, lastName } = selector(state, 'firstName', 'lastName')
+    return {
+      hasEmailValue,
+      hasPasswordValue,
+      signedUp: state.loginReducer.signedUp
+      // fullName: `${firstName || ''} ${lastName || ''}`
+    }
+  }
+)(UpdatedSignUp)
+
+// UpdatedSignUp = connect (
+//   state => {
+//     const {username, password}  = selector(state, 'username', 'password')
+  
+//     return {
+//       username: username,
+//       password: password,
+//     }
+//   }
+// )(UpdateSignUp)
+
+
+export default UpdatedSignUp

@@ -34,6 +34,9 @@ export class NewLogin extends React.Component {
     }
   }
 
+
+
+
   raiseEmail() {
     this.setState({ emailAddress: true })
   }
@@ -112,6 +115,7 @@ export class NewLogin extends React.Component {
             raisePassword={this.raisePassword}
             raiseConfirmPassword={this.raiseConfirmPassword}
             raisePhoneNumber={this.raisePhoneNumber}
+            redirectTest={this.props.redirectTest}
           />
         </div>
       </div>

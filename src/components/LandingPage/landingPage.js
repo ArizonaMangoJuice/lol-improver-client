@@ -7,18 +7,30 @@ import { signUpAgain } from '../../actions/auth'
 import Jumbotron from '../Jumbotron'
 import TopCharts from '../TopCharts'
 import NewLogin from '../NewLogin'
+import { login } from '../../actions/auth'
+
+
 
 
 export class LandingPage extends React.Component{
+    constructor(props){
+        super(props)
+
+        this.redirectTest = this.redirectTest.bind(this)
+    }
+
+
+    redirectTest(username, password){
+        return this.props.dispatch(login(username, password))
+    }
+    
     render(){
 
         if(this.props.loggedIn){
             return <Redirect to='/dashboard'/>
         }
         
-        if(this.props.signedUp){
-            this.props.dispatch(signUpAgain());
-        }
+        
 
         return (
             <main>
@@ -46,7 +58,7 @@ export class LandingPage extends React.Component{
                 {/* testing only */}
                 {/* this needs to be in a seperate component, and the form need to be connected with the made form component */}
                 
-                <NewLogin />
+                <NewLogin  redirectTest={this.redirectTest}/>
                 {/* <LoginForm /> */}
             </main>
         )
