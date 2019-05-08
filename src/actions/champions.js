@@ -43,7 +43,7 @@ export const updateChampionNote = value => ({
 export const updateBackEndChampionNote = () => {
     return (dispatch, getState) => {
         const authToken = getState().loginReducer.authToken;
-        const id = getState().loginReducer.currentUser.id;
+        const id = getState().loginReducer.currentUser._id;
         const championId = getState().championReducer.championId;
         const note = getState().championReducer.note;
 

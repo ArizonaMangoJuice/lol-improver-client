@@ -36,5 +36,7 @@ export default class Input extends React.Component {
         <div className={this.props.fakeLine}></div>
       </label>
     );
+    // 
   }
 }
+
