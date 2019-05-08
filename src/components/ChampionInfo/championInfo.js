@@ -30,7 +30,7 @@ export class ChampionInfo extends React.Component{
     }
     //connect the note to a component
     render(){
-        console.log(this.props.champions);
+        // console.log(this.props.champions);
         let champs;
         if(this.props.champions.length){
             if(this.props.filteredChampions.length){
