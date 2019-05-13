@@ -1,10 +1,13 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import MatchInfoCard from '../MatchInfoCard';
+// import {moment} from 'moment'
+
 
 export class MatchInfo extends React.Component{
 
     findPlayer(num){
+        // console.log(this.props.matches[num]);
         let accountId = this.props.accountInfo.accountId;
         let result = [];
         let tempObj = {};
@@ -37,6 +40,8 @@ export class MatchInfo extends React.Component{
     }
 
     render(){
+        // moment().format();
+
         let matches = this.props.matches.length && this.props.accountInfo.name
             ? this.matchList() 
             : '';

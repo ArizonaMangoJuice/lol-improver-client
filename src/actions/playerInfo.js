@@ -43,7 +43,7 @@ export const findPlayer = name => dispatch => {
             return response.json()
         })
         .then(response => {
-
+            console.log(response);
             let matches = response.matchDetails.map(match => JSON.parse(match))
 
             dispatch(searchPlayer(response.playerInfo));

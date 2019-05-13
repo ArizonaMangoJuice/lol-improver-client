@@ -19,7 +19,9 @@ export class MatchInfoCard extends React.Component{
     }
 
     render(){
-    // console.log(this.props);
+    console.log(this.props);
+    console.log(this.props.champions)
+    let gameMode = this.props.gameMode;
     let time = this.dateString(this.props.gameCreation);
     let kills = this.props.matchDetails[0].mainPlayerStats[0].stats.kills;
     let deaths = this.props.matchDetails[0].mainPlayerStats[0].stats.deaths;
@@ -30,7 +32,12 @@ export class MatchInfoCard extends React.Component{
     let neutralMinions = this.props.matchDetails[0].mainPlayerStats[0].stats.neutralMinionsKilled;
     let matchOutcome = this.props.matchDetails[0].mainPlayerStats[0].stats.win ? 'Victory': 'Defeat';
     let championId = this.props.matchDetails[0].mainPlayerStats[0].championId;
+    let gameMinutes = Math.floor(this.props.gameDuration / 60);
+    let gameSeconds = Math.ceil((this.props.gameDuration / 60 -gameMinutes) * 60);
+    let gameDuration = `${gameMinutes}m:${gameSeconds}s`;
     let playerChampArr;
+    let timeLeft = (new Date()).getTime() - this.props.gameCreation;
+    let days = Math.round((((timeLeft / 1000) / 60) / 60) / 24);
 
     if(this.props.champions.length === 0){
         this.props.dispatch(fetchNameDetails(championId))
@@ -48,9 +55,19 @@ export class MatchInfoCard extends React.Component{
     
     let matchOutcomeCss = matchOutcome === 'Victory' ? 'win' : 'defeat';
 
+    
+
     //clean code up and make the input run the dispatch than clean the server side dawg..
     return (
         <div className={`match-card ${matchOutcomeCss}`}>
+            <div className='match-meta-info'>
+                <p>{gameMode}</p>
+                <p>{days} days ago</p>
+                <div className='small-line'>
+                </div>
+                <p>{matchOutcome}</p>
+                <p>{gameDuration}</p>
+            </div>
             <div className='player-champ'>
                 <h2>{playerChampName}</h2>
                 <div className='player-image'>
@@ -65,7 +82,6 @@ export class MatchInfoCard extends React.Component{
             <div className='stats'>
                 <p>level {level}</p>
                 <p>{minions + neutralMinions} cs</p>
-                <p>{matchOutcome}</p>
             </div>
         </div>
     )}
