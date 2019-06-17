@@ -41,7 +41,7 @@ export class MatchInfoCard extends React.Component{
     let spellId1 = this.props.matchDetails[0].mainPlayerStats[0].spell1Id;
     let spellId2 = this.props.matchDetails[0].mainPlayerStats[0].spell2Id;
 
-    // console.log(spellId1, spellId2)
+    console.log(spellId1, spellId2)
 
 
     if(this.props.champions.length === 0){

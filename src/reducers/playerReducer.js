@@ -47,27 +47,22 @@ const playerReducer = (state=initialState, action) => {
                 playerChampInfo: [...state.playerChampInfo, action.championInfo]
             }
         case FETCH_STATIC_SUMMONER_SPELL:
-            let spellInfo;
-            let summonerSpells;
-            let test;
-            // console.log(state.summonerSpells, 'test')
-            if( state.summonerSpells ){
-                test = state.summonerSpells.filter(x => x[0].timestamp === action.spellInfo.timestamp)
-                console.log(test.length)
-                if (test.length <= 2) {
-                    console.log('lestt tahn 2 ')
-                  spellInfo = action.spellInfo; 
-                  summonerSpells = [...state.summonerSpells, spellInfo]
-                } 
-                // if (test.length >= 2 ) {
-                //     console.log('greater than 2')
-                //   summonerSpells = [...state.summonerSpells]
-                // }
+            console.log(action.spellInfo[0].key)
+
+            let isInSummonerSpells = state.summonerSpells.find((e) => e.key === action.spellInfo[0].key);
+
+            console.log(isInSummonerSpells);
+
+            if(!isInSummonerSpells){
+                return {
+                    ...state,
+                    summonerSpells: [...state.summonerSpells, action.spellInfo[0]]
+                }
             }
+
             return {
-                ...state,
-                summonerSpells
-            }
+                ...state
+            }    
         default: 
             return state
     }
