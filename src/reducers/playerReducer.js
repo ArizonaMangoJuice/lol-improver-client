@@ -47,11 +47,11 @@ const playerReducer = (state=initialState, action) => {
                 playerChampInfo: [...state.playerChampInfo, action.championInfo]
             }
         case FETCH_STATIC_SUMMONER_SPELL:
-            console.log(action.spellInfo[0].key)
+            // console.log(action.spellInfo[0].key)
 
             let isInSummonerSpells = state.summonerSpells.find((e) => e.key === action.spellInfo[0].key);
 
-            console.log(isInSummonerSpells);
+            // console.log(isInSummonerSpells);
 
             if(!isInSummonerSpells){
                 return {

@@ -41,7 +41,7 @@ export class MatchInfoCard extends React.Component{
     let spellId1 = this.props.matchDetails[0].mainPlayerStats[0].spell1Id;
     let spellId2 = this.props.matchDetails[0].mainPlayerStats[0].spell2Id;
 
-    console.log(spellId1, spellId2)
+    // console.log(spellId1, spellId2)
 
 
     if(this.props.champions.length === 0){
@@ -50,7 +50,13 @@ export class MatchInfoCard extends React.Component{
         this.props.dispatch(fetchSummonerSpell(spellId1, this.props.gameCreation))
     }
 
-    // console.log(this.props.summonerSpells)
+    // console.log(this.props.summonerSpells ,'hello')
+
+    let spell1IdInfo = this.props.summonerSpells.find(e => e.key === spellId1.toString());
+
+    let spell2IdInfo = this.props.summonerSpells.find(e => e.key === spellId2.toString());
+    
+    console.log(spell1IdInfo, spell2IdInfo)
 
     // let test= Promise.resolve(this.props.dispatch(fetchSummonerSpell(spellId1)));
 
@@ -67,6 +73,14 @@ export class MatchInfoCard extends React.Component{
         playerChampArr = this.props.champions.filter(champ => champ[0].champId === championId.toString());
     }
     
+    let summonerSpell1Image =  spell1IdInfo 
+        ? `http://ddragon.leagueoflegends.com/cdn/9.12.1/img/spell/${spell1IdInfo.image.full}`
+        : '';
+
+    let summonerSpell2Image = spell2IdInfo
+        ? `http://ddragon.leagueoflegends.com/cdn/9.12.1/img/spell/${spell2IdInfo.image.full}`
+        : '';
+
     let playerChampSrc = playerChampArr 
         ? `http://ddragon.leagueoflegends.com/cdn/9.10.1/img/champion/${playerChampArr[0][0].key}.png` 
         : '';
@@ -92,6 +106,10 @@ export class MatchInfoCard extends React.Component{
                 <h2>{playerChampName}</h2>
                 <div className='player-image'>
                     <img src={playerChampSrc} alt={playerChampName}/>
+                    <div className='summonerSpells'>
+                        <img src={summonerSpell1Image} alt={'test'}/>
+                        <img src={summonerSpell2Image} alt={'test'}/>                        
+                    </div>
                 </div>
                 <div>
                     {}
