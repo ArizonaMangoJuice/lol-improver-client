@@ -41,7 +41,7 @@ export class MatchInfoCard extends React.Component{
     let spellId1 = this.props.matchDetails[0].mainPlayerStats[0].spell1Id;
     let spellId2 = this.props.matchDetails[0].mainPlayerStats[0].spell2Id;
 
-    // console.log(spellId1, spellId2)
+    console.log(this.props.matchDetails[0].mainPlayerStats[0])
 
 
     if(this.props.champions.length === 0){
@@ -56,7 +56,7 @@ export class MatchInfoCard extends React.Component{
 
     let spell2IdInfo = this.props.summonerSpells.find(e => e.key === spellId2.toString());
     
-    console.log(spell1IdInfo, spell2IdInfo)
+    // console.log(spell1IdInfo, spell2IdInfo)
 
     // let test= Promise.resolve(this.props.dispatch(fetchSummonerSpell(spellId1)));
 
@@ -67,7 +67,7 @@ export class MatchInfoCard extends React.Component{
     // console.log(spellId1);
 
     
-
+    // have to automate getting the newest version of the api so it can give the newest summoner spells
 
     if(this.props.champions.length === 3){
         playerChampArr = this.props.champions.filter(champ => champ[0].champId === championId.toString());
@@ -82,7 +82,7 @@ export class MatchInfoCard extends React.Component{
         : '';
 
     let playerChampSrc = playerChampArr 
-        ? `http://ddragon.leagueoflegends.com/cdn/9.10.1/img/champion/${playerChampArr[0][0].key}.png` 
+        ? `http://ddragon.leagueoflegends.com/cdn/9.12.1/img/champion/${playerChampArr[0][0].key}.png` 
         : '';
 
     let playerChampName = playerChampArr ? playerChampArr[0][0].name : '';
