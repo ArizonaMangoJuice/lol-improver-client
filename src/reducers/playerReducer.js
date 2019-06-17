@@ -3,12 +3,14 @@ import {
     FETCH_MATCHES, 
     FETCH_STATIC_CHAMP_NAME, 
     CLEAR_PLAYER, 
-    MATCHES_ERROR} from '../actions/playerInfo';
+    MATCHES_ERROR,
+    FETCH_STATIC_SUMMONER_SPELL} from '../actions/playerInfo';
 
 const initialState = {
     matches: [],
     accountInfo: null,
     playerChampInfo: [],
+    summonerSpells: [],
     error: null
 }
 
@@ -43,6 +45,28 @@ const playerReducer = (state=initialState, action) => {
             return {
                 ...state,
                 playerChampInfo: [...state.playerChampInfo, action.championInfo]
+            }
+        case FETCH_STATIC_SUMMONER_SPELL:
+            let spellInfo;
+            let summonerSpells;
+            let test;
+            // console.log(state.summonerSpells, 'test')
+            if( state.summonerSpells ){
+                test = state.summonerSpells.filter(x => x[0].timestamp === action.spellInfo.timestamp)
+                console.log(test.length)
+                if (test.length <= 2) {
+                    console.log('lestt tahn 2 ')
+                  spellInfo = action.spellInfo; 
+                  summonerSpells = [...state.summonerSpells, spellInfo]
+                } 
+                // if (test.length >= 2 ) {
+                //     console.log('greater than 2')
+                //   summonerSpells = [...state.summonerSpells]
+                // }
+            }
+            return {
+                ...state,
+                summonerSpells
             }
         default: 
             return state

@@ -1,5 +1,5 @@
 import React from 'react';
-import { fetchNameDetails } from '../../actions/playerInfo';
+import { fetchNameDetails, fetchSummonerSpell } from '../../actions/playerInfo';
 import {connect} from 'react-redux';
 import './index.css';
 
@@ -19,8 +19,8 @@ export class MatchInfoCard extends React.Component{
     }
 
     render(){
-    console.log(this.props);
-    console.log(this.props.champions)
+    // console.log(this.props);
+    // console.log(this.props.champions)
     let gameMode = this.props.gameMode;
     let time = this.dateString(this.props.gameCreation);
     let kills = this.props.matchDetails[0].mainPlayerStats[0].stats.kills;
@@ -38,17 +38,37 @@ export class MatchInfoCard extends React.Component{
     let playerChampArr;
     let timeLeft = (new Date()).getTime() - this.props.gameCreation;
     let days = Math.round((((timeLeft / 1000) / 60) / 60) / 24);
+    let spellId1 = this.props.matchDetails[0].mainPlayerStats[0].spell1Id;
+    let spellId2 = this.props.matchDetails[0].mainPlayerStats[0].spell2Id;
+
+    // console.log(spellId1, spellId2)
+
 
     if(this.props.champions.length === 0){
         this.props.dispatch(fetchNameDetails(championId))
+        this.props.dispatch(fetchSummonerSpell(spellId2, this.props.gameCreation))
+        this.props.dispatch(fetchSummonerSpell(spellId1, this.props.gameCreation))
     }
+
+    // console.log(this.props.summonerSpells)
+
+    // let test= Promise.resolve(this.props.dispatch(fetchSummonerSpell(spellId1)));
+
+    // let test2 = Promise.resolve(test);
+
+    // test.then(value => spellId1 = value.spellInfo[0])
+
+    // console.log(spellId1);
+
+    
+
 
     if(this.props.champions.length === 3){
         playerChampArr = this.props.champions.filter(champ => champ[0].champId === championId.toString());
     }
     
     let playerChampSrc = playerChampArr 
-        ? `http://ddragon.leagueoflegends.com/cdn/8.11.1/img/champion/${playerChampArr[0][0].key}.png` 
+        ? `http://ddragon.leagueoflegends.com/cdn/9.10.1/img/champion/${playerChampArr[0][0].key}.png` 
         : '';
 
     let playerChampName = playerChampArr ? playerChampArr[0][0].name : '';
@@ -73,6 +93,9 @@ export class MatchInfoCard extends React.Component{
                 <div className='player-image'>
                     <img src={playerChampSrc} alt={playerChampName}/>
                 </div>
+                <div>
+                    {}
+                </div>
             </div>
             <div className='kill-stats'>
                 <p>{kills}/{deaths}/{assists}</p>
@@ -88,7 +111,8 @@ export class MatchInfoCard extends React.Component{
 }
 
 const mapStateToProps = state => ({
-    champions: state.playerReducer.playerChampInfo
+    champions: state.playerReducer.playerChampInfo,
+    summonerSpells: state.playerReducer.summonerSpells,
 })
 
 export default connect(mapStateToProps)(MatchInfoCard);
