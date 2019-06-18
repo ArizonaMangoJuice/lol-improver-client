@@ -30,6 +30,12 @@ export const fetchStaticSummonerSpell = spellInfo => ({
     spellInfo
 });
 
+export const FETCH_STATIC_ITEM = 'FETCH_STATIC_ITEM';
+export const fetchStaticItem = item => ({
+    type: FETCH_STATIC_ITEM,
+    item
+});
+
 
 export const CLEAR_PLAYER = 'CLEAR_PLAYER';
 export const clearPlayer = () => ({
@@ -52,6 +58,12 @@ export const fetchSummonerSpell = (key, timestamp) => dispatch => {
 
             return dispatch(fetchStaticSummonerSpell(result));
         });
+}
+
+export const fetchItemDetails = (key) => dispatch => {
+    return fetch(`${lolImproverUrl}/static/item/${key}`)
+    .then(response => response.json())
+    .then(result => dispatch(fetchStaticItem(result)))
 }
 
 export const findPlayer = name => dispatch => {

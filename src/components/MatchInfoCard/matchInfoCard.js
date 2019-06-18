@@ -1,5 +1,5 @@
 import React from 'react';
-import { fetchNameDetails, fetchSummonerSpell } from '../../actions/playerInfo';
+import { fetchNameDetails, fetchSummonerSpell, fetchItemDetails } from '../../actions/playerInfo';
 import {connect} from 'react-redux';
 import './index.css';
 
@@ -41,13 +41,30 @@ export class MatchInfoCard extends React.Component{
     let spellId1 = this.props.matchDetails[0].mainPlayerStats[0].spell1Id;
     let spellId2 = this.props.matchDetails[0].mainPlayerStats[0].spell2Id;
 
-    console.log(this.props.matchDetails[0].mainPlayerStats[0])
+    let item0 = this.props.matchDetails[0].mainPlayerStats[0].stats.item0;    
+    let item1 = this.props.matchDetails[0].mainPlayerStats[0].stats.item1;
+    let item2 = this.props.matchDetails[0].mainPlayerStats[0].stats.item2;
+    let item3 = this.props.matchDetails[0].mainPlayerStats[0].stats.item3;
+    let item4 = this.props.matchDetails[0].mainPlayerStats[0].stats.item4;
+    let item5 = this.props.matchDetails[0].mainPlayerStats[0].stats.item5;
+    let item6 = this.props.matchDetails[0].mainPlayerStats[0].stats.item6;
+
+    console.log(item0,item1,item2,item3,item4,item5,item6)
 
 
     if(this.props.champions.length === 0){
         this.props.dispatch(fetchNameDetails(championId))
         this.props.dispatch(fetchSummonerSpell(spellId2, this.props.gameCreation))
         this.props.dispatch(fetchSummonerSpell(spellId1, this.props.gameCreation))
+        
+        item0 === 0 ? '' : this.props.dispatch(fetchItemDetails(item0))
+        item1 === 0 ? '' : this.props.dispatch(fetchItemDetails(item1))
+        item2 === 0 ? '' : this.props.dispatch(fetchItemDetails(item2))
+        item3 === 0 ? '' : this.props.dispatch(fetchItemDetails(item3))
+        item4 === 0 ? '' : this.props.dispatch(fetchItemDetails(item4))
+        item5 === 0 ? '' : this.props.dispatch(fetchItemDetails(item5))
+        item6 === 0 ? '' : this.props.dispatch(fetchItemDetails(item6))
+
     }
 
     // console.log(this.props.summonerSpells ,'hello')

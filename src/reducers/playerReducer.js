@@ -4,13 +4,15 @@ import {
     FETCH_STATIC_CHAMP_NAME, 
     CLEAR_PLAYER, 
     MATCHES_ERROR,
-    FETCH_STATIC_SUMMONER_SPELL} from '../actions/playerInfo';
+    FETCH_STATIC_SUMMONER_SPELL,
+    FETCH_STATIC_ITEM} from '../actions/playerInfo';
 
 const initialState = {
     matches: [],
     accountInfo: null,
     playerChampInfo: [],
     summonerSpells: [],
+    items:[],
     error: null
 }
 
@@ -47,22 +49,28 @@ const playerReducer = (state=initialState, action) => {
                 playerChampInfo: [...state.playerChampInfo, action.championInfo]
             }
         case FETCH_STATIC_SUMMONER_SPELL:
-            // console.log(action.spellInfo[0].key)
 
             let isInSummonerSpells = state.summonerSpells.find((e) => e.key === action.spellInfo[0].key);
 
-            // console.log(isInSummonerSpells);
-
-            if(!isInSummonerSpells){
-                return {
+            return !isInSummonerSpells
+                ? {
                     ...state,
                     summonerSpells: [...state.summonerSpells, action.spellInfo[0]]
                 }
-            }
-
-            return {
+                : {
+                    ...state
+                }  
+        case FETCH_STATIC_ITEM:
+            let isInItems = state.items.find((e) => e.idName === action.item.toString());            
+            
+            return !isInItems
+              ? {
+                ...state,
+                items: [...state.items, action.item]
+              }
+              : {
                 ...state
-            }    
+              }  
         default: 
             return state
     }
