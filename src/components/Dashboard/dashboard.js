@@ -7,6 +7,7 @@ import NoteArea from '../NoteArea';
 import PlayerSearch from '../PlayerSearch'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faBell} from '@fortawesome/free-regular-svg-icons'
+import {faChevronDown} from '@fortawesome/free-solid-svg-icons'
 
 export class Dashboard extends React.Component{
     // componentDidMount(){   
@@ -55,8 +56,8 @@ export class Dashboard extends React.Component{
                             <p className='user-name'>Isael Lizama</p>
                             <p className='rank'>GOLD 2</p>
                         </div>
-                        <div className='carrot-cotainer'>
-                            <p className='carrot'>^</p>
+                        <div className='carrot-container'>
+                            <FontAwesomeIcon icon={faChevronDown} />
                         </div>
                     </div>
                 </header>

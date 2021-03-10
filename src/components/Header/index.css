@@ -1,6 +1,7 @@
 /* new Header css */
 .svg-inline--fa{
   color: white;
+  font-size: 2.1vh;
 }
 
 header{
@@ -50,6 +51,7 @@ header{
 .dashboard-title{
   color: white;
   margin-left: .5vh;
+  font-size: 2.1vh;
 }
 
 .new-nav{
@@ -67,6 +69,7 @@ header{
   border: transparent;
   color: white;
   background: transparent;
+  font-size: 1.8vh;
 }
 
 .nav-button-selected{
@@ -86,6 +89,8 @@ header{
 
 .notification{
   /* padding-right: 2%; */
+  height: 100%;
+  display: flex;
 }
 
 .user-image-container{
@@ -95,7 +100,7 @@ header{
   border: .1vh solid white;
   background: white;
   margin-left: 2vh;
-
+  display: flex;
 }
 
 .user-name-container{
@@ -113,11 +118,13 @@ header{
 .user-name{
   margin-bottom: .5vh;
   font-weight: bold;
+  font-size: 1.5vh;
 }
 
 .rank{
   color: rgba(255,255,255,0.7);
   text-align: left !important; 
+  font-size: 1.5vh;
 }
 
 .user-image{
@@ -127,8 +134,9 @@ header{
 }
 
 .carrot-container{
+  margin-left: 6%;
   height: 100%;
-  margin-left: 3%;
+  display: flex;
 }
 
 .carrot{
