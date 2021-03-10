@@ -47,7 +47,16 @@ export class Dashboard extends React.Component{
                             <FontAwesomeIcon icon={faBell} className='white'/>    
                         </div>
                         <div className='user-profile'>
-                            
+                            <div className='user-image-container'>
+                                <img className='user-image' src='https://avatars.githubusercontent.com/u/21373845?s=460&u=06623bc214c716a3ba9b90f0beea147d7b9cf6e1&v=4' />
+                            </div>
+                        </div>
+                        <div className='user-name-container'>
+                            <p className='user-name'>Isael Lizama</p>
+                            <p className='rank'>GOLD 2</p>
+                        </div>
+                        <div className='carrot-cotainer'>
+                            <p className='carrot'>^</p>
                         </div>
                     </div>
                 </header>

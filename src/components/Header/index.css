@@ -11,6 +11,7 @@ header{
   flex-direction: row;
   align-items: center;
   height: 7vh;
+  justify-content: space-between;
 }
 
 .glass-background{
@@ -73,6 +74,69 @@ header{
   border-top: .4vh solid rgba(255,202,88,1);
 }
 
+/* user profile */
+.user-container{
+  flex-basis: 20%;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  flex-direction: row;
+  box-sizing: border-box;
+}
+
+.notification{
+  /* padding-right: 2%; */
+}
+
+.user-image-container{
+  height: 4vh;
+  width: 4vh;
+  border-radius: 50%;
+  border: .1vh solid white;
+  background: white;
+  margin-left: 2vh;
+
+}
+
+.user-name-container{
+  color: white;
+  font-size: 1.5vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+  text-align: left;
+  margin-left: 3%;
+}
+
+.user-name{
+  margin-bottom: .5vh;
+  font-weight: bold;
+}
+
+.rank{
+  color: rgba(255,255,255,0.7);
+  text-align: left !important; 
+}
+
+.user-image{
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+
+.carrot-container{
+  height: 100%;
+  margin-left: 3%;
+}
+
+.carrot{
+  font-size: 3vh;
+  text-align: left;
+  color: white;
+  transform: rotate(180deg);
+}
 
 /* bento menu  */
 
