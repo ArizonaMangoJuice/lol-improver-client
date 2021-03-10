@@ -22,8 +22,8 @@ export class Header extends React.Component{
         }
         return (
             <header id='banner'>
-                <h1>LOL Improver</h1>
-                {logout}
+                {/* <h1>LOL Improver</h1>
+                {logout} */}
             </header>
         );
     }

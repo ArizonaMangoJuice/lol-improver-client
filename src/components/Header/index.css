@@ -1,21 +1,79 @@
-#banner {
-    background-color: #101217;
-    color: #937341;
-    /* padding: 8em 0 6em 0; */
-    text-align: center;
-    /* banner goes to header */
+/* new Header css */
+
+header{
+  display: flex;
+  flex-direction: row;
+  /* border: .1vh solid black;   */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 7vh;
 }
 
-/* #banner h1 {
-    border-style: double solid;
-    border-width: 4px 1px;
-    font-size: 2.4em;
-    line-height: 1.35em;
-    margin: 0 auto 1em;
-    padding: 1.1em;
-    width: 40%;
+.glass-background{
+  background: rgba(255, 255, 255, .1);
+  backdrop-filter: blur(1.5vh);
+}
+
+.darker-glass-background{
+  background: rgba(64, 63, 63, 0.3);
+  backdrop-filter: blur(1.5vh);
+
+}
+
+.header-menu{
+  width: 7vh;
+  font-size: 2vh;
+  padding: 0;
+  border: none;
+  height: 100%;
+  color: white;  
+}
+
+.dashboard-logo-container{
+  margin-left: 2vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-basis: 27%;
+  /* border: 1px solid; */
+}
+
+.dashboard-logo{
+  height: 4vh;
+}
+
+.dashboard-title{
+  color: white;
+  margin-left: .5vh;
+}
+
+.new-nav{
+  /* border: 1px solid ; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+  flex-basis: 37%;
+}
+
+.new-nav-button{
+  height: 100%;
+  flex-basis: 25%;
+  border: transparent;
+  color: white;
+  background: transparent;
+}
+
+/* .dashboard-logo{
 } */
 
+
+/* #banner {
+    background-color: #101217;
+    color: #937341;
+    text-align: center;
+}
 
 .user-button{
     background-color: #008283;
@@ -56,4 +114,4 @@
       width: 70%;
       font-size: 1.5em;
     }
-  }
+  } */
