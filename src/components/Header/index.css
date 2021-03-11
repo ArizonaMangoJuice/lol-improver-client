@@ -13,6 +13,7 @@ header{
   align-items: center;
   height: 7vh;
   justify-content: space-between;
+  background: rgba(139,73,255,1);
 }
 
 .glass-background{

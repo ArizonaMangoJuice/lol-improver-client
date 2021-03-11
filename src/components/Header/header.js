@@ -25,7 +25,7 @@ export class Header extends React.Component{
             );
         }
         return (
-        <header className='newHeader darker-glass-background'>
+        <header className='newHeader'>
             {/* this will be changed to a dot menu */}
             <div className='menu-container'>
                 <div className='bento-menu'>
