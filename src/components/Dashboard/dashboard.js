@@ -42,7 +42,7 @@ export class Dashboard extends React.Component{
                                 <div className='half-border'></div>
                             </button>
                             <div className='left-container-search-input'>
-                                <FontAwesomeIcon icon={faSearch} className='icon-margin-right search-icon'/>
+                                <FontAwesomeIcon icon={faSearch} className=' search-icon'/>
                                 <input type='text' placeholder='Search' className='left-container-search-input-text' />
                             </div>
                         </div>

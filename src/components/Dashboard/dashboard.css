@@ -116,6 +116,7 @@
     border: none;
     background-color: transparent;
     color: white;
+    padding-top: .8vh;
     padding-bottom: .5vh;
     transition: .3s;
 }
