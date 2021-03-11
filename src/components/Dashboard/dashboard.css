@@ -93,6 +93,7 @@
     height: 7vh;
     margin-top: 0;
     display: flex;
+    border-radius: 1.5vh;
 }
 
 .half-border{

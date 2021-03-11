@@ -1,10 +1,10 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import fetchChampions from '../../actions/champions';
+// import fetchChampions from '../../actions/champions';
 import LoginWrapper from '../LoginWrapper';
-import ChampionInfo from '../ChampionInfo';
-import NoteArea from '../NoteArea';
-import PlayerSearch from '../PlayerSearch';
+// import ChampionInfo from '../ChampionInfo';
+// import NoteArea from '../NoteArea';
+// import PlayerSearch from '../PlayerSearch';
 import Header from '../Header';
 import './dashboard.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

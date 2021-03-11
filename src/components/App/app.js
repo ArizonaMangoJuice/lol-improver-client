@@ -2,10 +2,10 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {Route, withRouter} from 'react-router-dom';
 import Dashboard from '../Dashboard';
-import LandingPage from '../LandingPage';
-import Header from '../Header';
-import Footer from '../Footer';
-import RegisterPage from '../RegisterPage';
+// import LandingPage from '../LandingPage';
+// import Header from '../Header';
+// import Footer from '../Footer';
+// import RegisterPage from '../RegisterPage';
 
 export class App extends React.Component{
     render(){

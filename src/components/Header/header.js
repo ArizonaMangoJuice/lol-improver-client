@@ -18,12 +18,12 @@ export class Header extends React.Component{
         this.props.dispatch(clearChampionClickedSearched());
     }
     render(){
-        let logout;
-        if(this.props.loggedIn){
-            logout = (
-                <button className='user-button' onClick={() => this.logout()}>Log Out</button>
-            );
-        }
+            // let logout = null;
+            // if(this.props.loggedIn){
+            //     logout = (
+            //         <button className='user-button' onClick={() => this.logout()}>Log Out</button>
+            //     );
+            // }
         return (
         <header className='newHeader'>
             {/* this will be changed to a dot menu */}
@@ -42,7 +42,7 @@ export class Header extends React.Component{
             </div>
             {/* <button className='header-menu darker-glass-background'></button> */}
             <div className='dashboard-logo-container'>
-                <img className='dashboard-logo' src={require('../../images/logo.png')} />
+                <img alt='lolImprover logo' className='dashboard-logo' src={require('../../images/logo.png')} />
                 <p className='dashboard-title'>lol Improver</p>
             </div>
             <nav className='new-nav'>
@@ -58,7 +58,7 @@ export class Header extends React.Component{
                 </div>
                 <div className='user-profile'>
                     <div className='user-image-container'>
-                        <img className='user-image' src='https://avatars.githubusercontent.com/u/21373845?s=460&u=06623bc214c716a3ba9b90f0beea147d7b9cf6e1&v=4' />
+                        <img alt='how the user sees themselves' className='user-image' src='https://avatars.githubusercontent.com/u/21373845?s=460&u=06623bc214c716a3ba9b90f0beea147d7b9cf6e1&v=4' />
                     </div>
                 </div>
                 <div className='user-name-container'>
