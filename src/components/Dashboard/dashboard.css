@@ -72,3 +72,71 @@
     color: white;
     border: none;
 }
+
+.left-container-search{
+    color: white;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 1vh 0vh 1vh 3vh;
+    background-color: transparent;
+    border: none;
+    flex-basis: 20%;
+}
+
+.left-container-search-text{
+    font-size: 1.3vh;
+}
+
+.left-container-search-bar{
+    height: 7vh;
+    margin-top: 0;
+    display: flex;
+}
+
+.half-border{
+    height: 50%;
+    border-right: .1vh solid rgba(255, 255, 255, 0.6);
+    margin-left: 2vh;
+}
+
+.left-container-search-input{
+    display: flex;
+    align-items: center;
+    flex-basis: 50%;
+    /* border: 1px solid white; */
+}
+
+.left-container-search-input-text{
+    flex-basis: 90%;    
+    font-size: 1.8vh;
+    padding: 1.3vh;
+    border-width: .2vh;
+    border: none;
+    background-color: transparent;
+    color: white;
+    padding-bottom: .5vh;
+    transition: .3s;
+}
+
+.left-container-search-input-text::placeholder{
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.left-container-search-input-text:focus{
+    outline-width: 0;
+    border-bottom: .1vh solid rgba(255,202,88,1);
+    /* outline-style: solid; */
+    padding-left: 2.5vh;
+}
+
+.search-icon{
+    font-size: 3vh;
+    transition: .4s;
+}
+
+/* this will be used in react component */
+.search-icon:hover{
+    font-size: 2vh;
+}

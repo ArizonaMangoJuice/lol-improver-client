@@ -7,6 +7,9 @@ import NoteArea from '../NoteArea';
 import PlayerSearch from '../PlayerSearch';
 import Header from '../Header';
 import './dashboard.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faChevronDown, faFilter, faSearch} from '@fortawesome/free-solid-svg-icons';
+
 export class Dashboard extends React.Component{
     // componentDidMount(){   
     //     this.props.dispatch(fetchChampions())
@@ -28,6 +31,19 @@ export class Dashboard extends React.Component{
                                     <div className='dot'></div>
                                     <div className='dot'></div>
                                 </div>
+                            </div>
+                        </div>
+
+                        <div className='left-container-width main-bg left-container-search-bar'>
+                            <button  className='left-container-search'>
+                                <FontAwesomeIcon icon={faFilter} className='white icon-margin-right'/>
+                                <p className='left-container-search-text'>Quick Filters</p>
+                                <FontAwesomeIcon icon={faChevronDown} className='white icon-margin-left small-icon-size'/>
+                                <div className='half-border'></div>
+                            </button>
+                            <div className='left-container-search-input'>
+                                <FontAwesomeIcon icon={faSearch} className='icon-margin-right search-icon'/>
+                                <input type='text' placeholder='Search' className='left-container-search-input-text' />
                             </div>
                         </div>
                     </div>
