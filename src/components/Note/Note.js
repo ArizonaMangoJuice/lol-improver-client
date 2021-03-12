@@ -5,9 +5,9 @@ const Note = ({img}) => {
     img = 'https://firebasestorage.googleapis.com/v0/b/isael-blogs.appspot.com/o/images%2FglasshmorphismMain.jpg?alt=media';
     return (
         <div className='note '>
-            <p className='note-title'>Sign In Flow</p>
+            <p className='note-title'>Learning To Side Step</p>
             <div className='notes-container'>
-                <p className='notes'>Show Email, password, Password Recovery...</p>
+                <p className='notes'>Playing any role, it's important to learn...</p>
             </div>
             {img ? <img alt='visual note taken by user' className='note-image' src={img}/> : null}
             <div className='note-progress-container'>
