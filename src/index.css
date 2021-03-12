@@ -15,6 +15,10 @@ html{
   background-color: rgba(139,73,255,1);
 }
 
+.not-important-color{
+  color: rgba(255, 255, 255, 0.7);
+}
+
 p{
   padding: 0;
   margin: 0;
