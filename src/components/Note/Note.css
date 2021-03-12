@@ -20,7 +20,7 @@
 
 .note:hover{
     transform: scale(1.1);  
-    filter: drop-shadow(0 0 2.3vh rgba(0,0,0,.3)); 
+    filter: drop-shadow(0 0 1.5vh rgba(54, 52, 52, 0.7)); 
     /* filter: drop-shadow(0 0 2vh rgba(255,202,88,.6));  */
 
 }
