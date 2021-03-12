@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import { withRouter} from 'react-router-dom';
+// import { withRouter} from 'react-router-dom';
 import Dashboard from '../Dashboard';
 // import LandingPage from '../LandingPage';
 // import Header from '../Header';
@@ -23,4 +23,5 @@ export class App extends React.Component{
     }
 }
 
-export default withRouter(connect()(App));
+// export default withRouter(connect()(App));
+export default connect()(App);
