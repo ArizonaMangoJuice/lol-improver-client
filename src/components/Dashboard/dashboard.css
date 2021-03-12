@@ -4,7 +4,7 @@
     flex-direction: row;
     min-height: 93vh;
     background: rgba(0,0,0,.2);
-    backdrop-filter: blur(1.5vh);
+    backdrop-filter: blur(.8vh);
 }
 
 .backdrop-wrapper-orange{

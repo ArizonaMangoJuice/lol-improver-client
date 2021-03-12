@@ -6,6 +6,7 @@ import React from 'react';
 // import NoteArea from '../NoteArea';
 // import PlayerSearch from '../PlayerSearch';
 import Header from '../Header';
+import Note from '../Note';
 import './dashboard.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faChevronDown, faFilter, faSearch, faPlus} from '@fortawesome/free-solid-svg-icons';
@@ -63,6 +64,10 @@ export class Dashboard extends React.Component{
                                 </div>
                                 <p className='player-followers'><span className='not-important-color'>and</span> 24 followers</p>
                             </div>
+                        </div>
+
+                        <div className='notes-container left-container-width'>
+                            <Note />
                         </div>
                     </div>
                     <div className='dashboard-right-side'>

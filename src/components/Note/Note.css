@@ -1,0 +1,91 @@
+.notes-container{
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.note{
+    box-sizing: border-box;
+    flex-basis: 22%;
+    border: .1vh solid rgba(255, 255, 255, .2);
+    padding: 1.8vh;
+    color: white;
+    background-color: rgba(146, 102, 184, 0.5);
+    backdrop-filter: blur(1vh);
+    border-radius: 2vh;
+}
+
+.note-title{
+    font-size: 2vh;
+    margin-bottom: 2vh;
+}
+
+
+.note-image{
+    width: 100%;
+    border-radius: 1.5vh;
+    margin-bottom: 2vh;
+}
+
+.note-progress-container{
+    width: 100%;
+    margin: 0 auto;
+    height: 1vh;
+    background-color: rgb(65,20,102);
+    border-radius: 1vh;
+    margin-bottom: 2vh;
+}
+
+.note-progress-bar{
+    height: 1vh;
+    width: 80%;
+    border-radius: 1vh;
+    background-color: rgba(255,202,88,1);
+}
+
+.note-update-progress{
+    background-color: rgba(139,73,255,1);
+    color: white;
+    border: none;
+    font-size: 2vh;
+    padding: .8vh 1.2vh;
+    border-radius: .5vh;
+    margin-bottom: 2vh;
+}
+
+.notes-container{
+    margin-bottom: 2vh;
+}
+
+.notes{
+    font-size: 1.6vh;
+}
+
+
+.note-footer{
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.user-note-image{
+    margin: 0;
+}
+
+.note-options{
+    background-color: transparent;
+    /* width: 1vh; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    transition: .3s;
+}
+
+.note-options:focus{
+    transform: rotate(90deg);
+}
+
+.card-dot{
+    margin: .2vh 0 !important;
+}
