@@ -22,7 +22,8 @@ export class Dashboard extends React.Component{
                 <div className='dashboard'>
                     <div className='dashboard-left-side'>
                         <div className='left-container-width'>
-                            <h1 className='left-container-title'>Level up your skill</h1>
+                            {/* <h1 className='left-container-title'>Level up your skill</h1> */}
+                            <h1 className='left-container-title'>This Site is under Construction!</h1>
                             <div className='left-container-buttons'>
                                 <div className='backdrop-wrapper-orange flex'>
                                     <button className='left-container-button'>Create Note</button>
