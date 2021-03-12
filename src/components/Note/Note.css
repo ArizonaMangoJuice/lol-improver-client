@@ -1,19 +1,26 @@
 .notes-container{
     display: flex;
     flex-wrap: wrap;
-
+    
 }
 
 .note{
+    transition: .3s;
     box-sizing: border-box;
     flex-basis: 22%;
-    border: .1vh solid rgba(255, 255, 255, .2);
+    border: .1vh solid rgba(255, 255, 255, .5);
     padding: 1.8vh;
     color: white;
     background-color: rgba(146, 102, 184, 0.5);
     backdrop-filter: blur(1vh);
     border-radius: 2vh;
     background: rgba(139,73,255, 1);
+    margin: 2vh 1.5%;
+}
+
+.note:hover{
+    transform: scale(1.1);  
+    filter: drop-shadow(0 0 2vh rgba(255,202,88,.6)); 
 }
 
 .note-title{

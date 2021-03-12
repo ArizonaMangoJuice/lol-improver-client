@@ -69,6 +69,13 @@ export class Dashboard extends React.Component{
 
                         <div className='notes-container left-container-width'>
                             <Note />
+                            <Note />
+                            <Note />
+                            <Note />
+                            <Note />
+                            <Note />
+                            <Note />
+
                         </div>
                     </div>
                     <div className='dashboard-right-side'>
