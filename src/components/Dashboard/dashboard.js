@@ -52,6 +52,12 @@ export class Dashboard extends React.Component {
                     <div className='dashboard-right-side'>
                         <h2 className='dashboard-match-history-title'>Match History</h2>
                         <UserMatchHistory />
+                        <UserMatchHistory />
+                        <UserMatchHistory />
+                        <UserMatchHistory />
+                        <UserMatchHistory />
+                        <UserMatchHistory />
+
                     </div>
                 </div>
                 {/* <ChampionInfo /> */}
