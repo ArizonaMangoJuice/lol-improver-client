@@ -1,4 +1,5 @@
 import React from 'react';
+import UserProfileImage from '../UserProfileImage';
 import './Note.css';
 
 const Note = ({img}) => {
@@ -17,9 +18,7 @@ const Note = ({img}) => {
                 Update
             </button>
             <div className='note-footer'>
-                <div className='user-image-container user-note-image'>
-                    <img alt='how the user sees themselves' src='https://avatars.githubusercontent.com/u/21373845?s=460&u=06623bc214c716a3ba9b90f0beea147d7b9cf6e1&v=4' className='user-image ' />
-                </div>
+                <UserProfileImage src='https://avatars.githubusercontent.com/u/21373845?s=460&u=06623bc214c716a3ba9b90f0beea147d7b9cf6e1&v=4'/>
                 <button className='note-options'>
                     <div className='three-dots-container'>
                         <div className='dot card-dot'></div>
