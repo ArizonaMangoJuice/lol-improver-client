@@ -15,7 +15,7 @@
     backdrop-filter: blur(1vh);
     border-radius: 2vh;
     background: rgba(139,73,255, 1);
-    margin: 2vh 1.5%;
+    margin: 1vh;
 }
 
 .note:hover{
