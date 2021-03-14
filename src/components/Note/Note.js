@@ -3,7 +3,9 @@ import UserProfileImage from '../UserProfileImage';
 import './Note.css';
 
 const Note = ({img}) => {
-    img = 'https://firebasestorage.googleapis.com/v0/b/isael-blogs.appspot.com/o/images%2FglasshmorphismMain.jpg?alt=media';
+    img = img 
+        ? 'https://firebasestorage.googleapis.com/v0/b/isael-blogs.appspot.com/o/images%2FglasshmorphismMain.jpg?alt=media'
+        : false;
     return (
         <div className='note '>
             <p className='note-title'>Learning To Side Step</p>

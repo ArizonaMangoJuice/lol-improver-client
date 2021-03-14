@@ -10,19 +10,18 @@ import Note from '../Note';
 import './dashboard.css';
 import DashBoardSearchBar from '../DashboardSearchBar';
 import DashboardCreateNote from '../DashboardCreateNote';
+import Masonry from 'react-responsive-masonry';
+
+// I will use a masonry package but will look at source code to make my own.
 
 // i need to account for the margins and padding so flex basis wont freak out
 export class Dashboard extends React.Component {
     // componentDidMount(){   
     //     this.props.dispatch(fetchChampions())
     // }
-<<<<<<< HEAD
 
     // will add masonry package but will read source code to create my own
-    render(){
-=======
     render() {
->>>>>>> a04f38198df19a14b05441fb72b20b6831645bda
         return (
             <main className='main-content'>
                 <Header />
@@ -31,17 +30,19 @@ export class Dashboard extends React.Component {
                         <DashboardCreateNote />
                         <DashBoardSearchBar />
                         <div className='notes-container left-container-width'>
-                            <Note img={true}/>
-                            <Note />
-                            <Note />
-                            <Note />
-                            <Note />
-                            <Note img={true}/>
-                            <Note />
+                            <Masonry columnsCount={4}>
+                                <Note img={true} />
+                                <Note />
+                                <Note />
+                                <Note />
+                                <Note />
+                                <Note img={true} />
+                                <Note />
+                            </Masonry>
                         </div>
                     </div>
                     <div className='dashboard-right-side'>
-                        
+
                     </div>
                 </div>
                 {/* <ChampionInfo /> */}
