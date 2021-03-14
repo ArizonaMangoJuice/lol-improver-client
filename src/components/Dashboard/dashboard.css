@@ -23,6 +23,9 @@
 
 .dashboard-right-side{
     flex-basis: 25%;
+    display: flex;
+    flex-direction: column;
+
     /* border: 1px solid green; */
 }
 
@@ -189,5 +192,12 @@
 .player-followers{
     font-size: 1.8vh;
     font-weight: bold;
+    color: white;
+}
+
+.dashboard-match-history-title{
+    font-size: 3vh;
+    width: 90%;
+    margin-left: 2.4vh;
     color: white;
 }
