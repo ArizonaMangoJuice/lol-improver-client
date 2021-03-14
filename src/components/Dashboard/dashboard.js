@@ -15,6 +15,8 @@ export class Dashboard extends React.Component{
     // componentDidMount(){   
     //     this.props.dispatch(fetchChampions())
     // }
+
+    // will add masonry package but will read source code to create my own
     render(){
         return (
             <main className='main-content'>
@@ -68,12 +70,12 @@ export class Dashboard extends React.Component{
                         </div>
 
                         <div className='notes-container left-container-width'>
+                            <Note img={true}/>
                             <Note />
                             <Note />
                             <Note />
                             <Note />
-                            <Note />
-                            <Note />
+                            <Note img={true}/>
                             <Note />
 
                         </div>
