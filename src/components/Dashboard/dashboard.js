@@ -12,11 +12,11 @@ import DashBoardSearchBar from '../DashboardSearchBar';
 import DashboardCreateNote from '../DashboardCreateNote';
 
 // i need to account for the margins and padding so flex basis wont freak out
-export class Dashboard extends React.Component{
+export class Dashboard extends React.Component {
     // componentDidMount(){   
     //     this.props.dispatch(fetchChampions())
     // }
-    render(){
+    render() {
         return (
             <main className='main-content'>
                 <Header />
@@ -32,7 +32,6 @@ export class Dashboard extends React.Component{
                             <Note />
                             <Note />
                             <Note />
-
                         </div>
                     </div>
                     <div className='dashboard-right-side'>
