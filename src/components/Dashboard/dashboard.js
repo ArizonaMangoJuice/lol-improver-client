@@ -23,9 +23,7 @@ export class Dashboard extends React.Component{
                 <div className='dashboard'>
                     <div className='dashboard-left-side'>
                         <DashboardCreateNote />
-
                         <DashBoardSearchBar />
-
                         <div className='notes-container left-container-width'>
                             <Note />
                             <Note />
@@ -51,5 +49,3 @@ export class Dashboard extends React.Component{
 
 // export default LoginWrapper()(connect()(Dashboard));
 export default Dashboard;
-
-

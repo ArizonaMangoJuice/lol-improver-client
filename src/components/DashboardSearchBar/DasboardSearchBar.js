@@ -3,6 +3,8 @@ import UserProfileImage from '../UserProfileImage';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faChevronDown, faFilter, faSearch, faPlus} from '@fortawesome/free-solid-svg-icons';
 
+const userLink = 'https://avatars.githubusercontent.com/u/21373845?s=460&u=06623bc214c716a3ba9b90f0beea147d7b9cf6e1&v=4';
+
 const DashBoardSearchBar = () => {
     return (
         <div className='left-container-width main-bg left-container-search-bar'>
@@ -19,10 +21,10 @@ const DashBoardSearchBar = () => {
             <div className='left-container-search-people'>
                 <button className='add-button'><FontAwesomeIcon icon={faPlus} className='default-button-size' /></button>
                 <div className='players'>
-                    <UserProfileImage src={'https://avatars.githubusercontent.com/u/21373845?s=460&u=06623bc214c716a3ba9b90f0beea147d7b9cf6e1&v=4'} />
-                    <UserProfileImage src={'https://avatars.githubusercontent.com/u/21373845?s=460&u=06623bc214c716a3ba9b90f0beea147d7b9cf6e1&v=4'} />
-                    <UserProfileImage src={'https://avatars.githubusercontent.com/u/21373845?s=460&u=06623bc214c716a3ba9b90f0beea147d7b9cf6e1&v=4'} />
-                    <UserProfileImage src={'https://avatars.githubusercontent.com/u/21373845?s=460&u=06623bc214c716a3ba9b90f0beea147d7b9cf6e1&v=4'} />
+                    <UserProfileImage src={userLink} />
+                    <UserProfileImage src={userLink} />
+                    <UserProfileImage src={userLink} />
+                    <UserProfileImage src={userLink} />
                 </div>
                 <p className='player-followers'><span className='not-important-color'>and</span> 24 followers</p>
             </div>
