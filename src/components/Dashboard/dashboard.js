@@ -35,7 +35,7 @@ export class Dashboard extends React.Component {
                         </div>
                     </div>
                     <div className='dashboard-right-side'>
-
+                        
                     </div>
                 </div>
                 {/* <ChampionInfo /> */}
