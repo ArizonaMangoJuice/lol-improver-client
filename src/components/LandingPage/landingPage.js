@@ -26,25 +26,16 @@ export class LandingPage extends React.Component{
     
     render(){
 
-        if(this.props.loggedIn){
-            return <Redirect to='/dashboard'/>
-        }
+        // if(this.props.loggedIn){
+        //     return <Redirect to='/dashboard'/>
+        // }
         
         
 
         return (
-            <main>
-                <Jumbotron test={
-                    {
-                    title: 'test',
-                    background: null,
-                    icon: null,
-                    link: null,
-                    text: 'lolololdksaoldjiosadjoasi ddjsiao das ijasdjklsd jasiokdjasi odkm asiodasmi odsmd oiasdm iasd smiodsa midoasd iasido ams'
-                    }
-                }
-                />
-                <TopCharts />
+            <main className='landing-page-container'>
+                {/* <Jumbotron /> */}
+                {/* <TopCharts /> */}
                 {/* <p className='landing-page-p'>
                 League of Legends is a fast-paced, competitive online game that blends the speed and intensity of an RTS with RPG elements. Two teams of powerful champions, each with a unique design and playstyle, battle head-to-head across multiple battlefields and game modes.
                     LoL Improver lets you take your gaming to a whole new level.
@@ -58,7 +49,7 @@ export class LandingPage extends React.Component{
                 {/* testing only */}
                 {/* this needs to be in a seperate component, and the form need to be connected with the made form component */}
                 
-                <NewLogin  redirectTest={this.redirectTest}/>
+                {/* <NewLogin  redirectTest={this.redirectTest}/> */}
                 {/* <LoginForm /> */}
             </main>
         )
