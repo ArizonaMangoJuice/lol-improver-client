@@ -4,9 +4,9 @@ import {Redirect} from 'react-router-dom'
 import './index.css'
 // import LoginForm from '../LoginForm'
 // import { signUpAgain } from '../../actions/auth'
-import Jumbotron from '../Jumbotron'
-import TopCharts from '../TopCharts'
-import NewLogin from '../NewLogin'
+// import Jumbotron from '../Jumbotron'
+// import TopCharts from '../TopCharts'
+// import NewLogin from '../NewLogin'
 import { login } from '../../actions/auth'
 
 
@@ -34,6 +34,31 @@ export class LandingPage extends React.Component{
 
         return (
             <main className='landing-page-container'>
+                <header className='landing-page-header'>
+                    <h3 className='landing-page-title'>lol Improver</h3>
+                    <nav className='landing-page-nav'>
+                        <button className='landing-links'>Features</button>
+                        <button className='landing-links'>Search</button>
+                        <button className='landing-links'>Sign In</button>
+                        {/* <button className='landing-links'></button> */}
+                    </nav>
+                </header>
+                <section className='landing-page-hero'>
+                    <h1 className='landing-page-header'>
+                        Grow Your Skill For Free!
+                    </h1>
+                    <button className='landing-page-sign-up'>
+                         SIGN UP!
+                    </button>
+                    <div className='landing-page-features'>
+                        <div className='landing-page-inner-container'>
+                            <p>Take notes of your matches</p>
+                        </div>
+                    </div>
+                    <div>
+                        hello
+                    </div>
+                </section>
                 {/* <Jumbotron /> */}
                 {/* <TopCharts /> */}
                 {/* <p className='landing-page-p'>

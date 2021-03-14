@@ -1,9 +1,10 @@
+/* 
+
 .landing-page-p{
     padding-bottom: 0.4em;
     border-bottom-style: double;
     border-bottom-width: 4px;
     width: 50%;
-    /* text-align: center; */
     padding: 1em;
     margin: 2em auto;
     font-size: 1.6em;
@@ -38,7 +39,6 @@
 .login-container form{
   margin-top: 5%;
   height: 100%;
-  /* border: 1px solid #008283; */
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: column;
@@ -58,29 +58,20 @@
 
 .login-container form label p{
   margin: 0;
-  /* margin-left: 15px; */
   display: inline-block;
-  /* z-index: 1; */
 }
-/* 
-.form-input{
-    padding: 1em 1em;
-    width: 42%;
-} */
+
 
 #username{
     outline: 0;
     background: #fff;
     width: 100%;
     border: 0;
-    /* margin: 0 0 15px; */
     padding: .8em;
-    /* box-sizing: border-box; */
     font-size: 14px;
 }
 
 #username:focus {
-    /* outline: 2px solid #008889; */
 }
 
 #password{
@@ -88,14 +79,11 @@
     background: #fff;
     width: 100%;
     border: 0;
-    /* margin: 0 0 15px; */
     padding: .8em;
-    /* box-sizing: border-box; */
     font-size: 14px;
 }
 
 #password:focus {
-    /* outline: 2px solid #008889; */
 }
 
 .login-form button{
@@ -211,7 +199,7 @@ main p:nth-child(3) {
         padding: 3em 0;
         display: -ms-flexbox;
         display: flex;
-        /* flex-direction: column; */
+         
         width: 80%;
         margin-top: 2em;
     }
@@ -278,4 +266,101 @@ main p:nth-child(3) {
   }
   
 
-  
+  */
+
+.landing-page-container{
+    background-color: rgba(139,73,255,.5);
+    min-height: 100vh;
+    backdrop-filter: blur(1vh);
+    display: flex;
+    flex-direction: column;
+}
+
+.landing-page-header{
+    background-color: transparent;      
+    display: flex;
+    justify-content: flex-start;
+    color: white;
+    align-items: center;
+}
+
+.landing-page-title{
+    font-size: 2.3vh;
+    margin-left: 3%;
+}
+
+.landing-page-nav{
+    margin-left: 2%;
+    display: flex;
+    flex-basis: 30%;
+}
+
+.landing-links{
+    font-size: 1.5vh;
+    color: white;
+    background-color: transparent;
+    border: none;
+    border-bottom: .1vh solid transparent;
+    margin: .8vh 3vh 0 3vh ;
+    transition: .3s;
+    width: max-content;
+    cursor: pointer;
+}
+
+.landing-links:hover{
+    transition: .3s;
+    border-bottom: .2vh solid white;
+}
+
+.landing-links:focus{
+    transition: .3s;
+    border-bottom: .2vh solid white;
+    outline: none;
+}
+
+.landing-page-hero{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    height: 93vh;
+}
+
+.landing-page-header{
+    grid-column-start: 3;
+    grid-column-end: 6;
+    grid-row-start: 4;
+    grid-row-end: 9;
+    font-size: 7vh;
+}
+
+.landing-page-sign-up{
+    grid-column-start: 3;
+    grid-column-end: 5;
+    grid-row-start: 8;
+    grid-row-end: 8;
+    font-size: 3vh;
+    border-radius: 5vh;
+    border: none;
+    background-color: #ffca58;
+    color: white;
+    letter-spacing: .5vh;
+    transition: .3s;
+}
+
+.landing-page-sign-up:hover{
+    transition: .3s;
+    transform: scale(1.1);
+    box-shadow: 0 0 1vh #ffca58;
+}
+
+.landing-page-sign-up:focus{
+    outline: none;
+    transition: .3s;
+    transform: scale(1.1);
+    box-shadow: 0 0 1vh #ffca58;
+}
+
+.landing-page-inner-container{
+    background-color: #8b49ff;
+    color: white;
+}
