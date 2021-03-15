@@ -293,7 +293,7 @@ main p:nth-child(3) {
     margin-left: 2%;
     display: flex;
     flex-basis: 30%;
-    
+
 }
 
 .landing-links{
@@ -301,7 +301,7 @@ main p:nth-child(3) {
     color: white;
     background-color: transparent;
     border: none;
-    border-bottom: .1vh solid transparent;
+    border-bottom: .2vh solid transparent;
     margin: .8vh 3vh 0 3vh ;
     transition: .3s;
     width: max-content;

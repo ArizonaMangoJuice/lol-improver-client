@@ -6,7 +6,7 @@ import {BrowserRouter as Router} from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './store';
 // import App from './components/App';
-import Dashboard from './components/Dashboard';
+// import Dashboard from './components/Dashboard';
 import { App } from './components/App/app';
 
 ReactDOM.render(
