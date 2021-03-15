@@ -1,5 +1,5 @@
 import React from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 // import {Redirect} from 'react-router-dom';
 import './index.css';
 
@@ -10,29 +10,29 @@ import './index.css';
 // import NewLogin from '../NewLogin'
 import { login } from '../../actions/auth';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faStickyNote, faSearch, faUser} from '@fortawesome/free-solid-svg-icons';
-import {Link} from 'react-router-dom';
+import { faStickyNote, faSearch, faUser } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'react-router-dom';
 
 
-export class LandingPage extends React.Component{
-    constructor(props){
+export class LandingPage extends React.Component {
+    constructor(props) {
         super(props)
 
         this.redirectTest = this.redirectTest.bind(this)
     }
 
 
-    redirectTest(username, password){
+    redirectTest(username, password) {
         return this.props.dispatch(login(username, password))
     }
-    
-    render(){
+
+    render() {
 
         // if(this.props.loggedIn){
         //     return <Redirect to='/dashboard'/>
         // }
-        
-        
+
+
 
         return (
             <main className='landing-page-container'>
@@ -50,24 +50,24 @@ export class LandingPage extends React.Component{
                         Grow Your Skill For Free!
                     </h1>
                     <button className='landing-page-sign-up'>
-                         SIGN UP!
-                    </button>
+                        SIGN UP!
+                        </button>
                     {/* <div className='landing-page-features'> */}
-                        <section className='landing-page-inner-container feature-notes'>
-                            <FontAwesomeIcon icon={faStickyNote} className='landing-page-features-icon'/>
-                            <p className='landing-page-features-text'>Take notes of your matches</p>
-                        </section>
-                        <div className='line note-line note-color'></div>
-                        <section className='landing-page-inner-container player-search'>
-                            <FontAwesomeIcon icon={faSearch} className='landing-page-features-icon'/>
-                            <p className='landing-page-features-text'>Search for players</p>
-                        </section>
-                        <div className='line user-account-line user-account-color'></div>
-                        <section className='landing-page-inner-container user-account'>
-                            <FontAwesomeIcon icon={faUser} className='landing-page-features-icon'/>
-                            <p className='landing-page-features-text'>Track your stats with an account</p>
-                        </section>
-                        <div className='line player-search-line player-search-color'></div>
+                    <section className='landing-page-inner-container feature-notes'>
+                        <FontAwesomeIcon icon={faStickyNote} className='landing-page-features-icon' />
+                        <p className='landing-page-features-text'>Take notes of your matches</p>
+                    </section>
+                    <div className='line note-line note-color'></div>
+                    <section className='landing-page-inner-container player-search'>
+                        <FontAwesomeIcon icon={faSearch} className='landing-page-features-icon' />
+                        <p className='landing-page-features-text'>Search for players</p>
+                    </section>
+                    <div className='line user-account-line user-account-color'></div>
+                    <section className='landing-page-inner-container user-account'>
+                        <FontAwesomeIcon icon={faUser} className='landing-page-features-icon' />
+                        <p className='landing-page-features-text'>Track your stats with an account</p>
+                    </section>
+                    <div className='line player-search-line player-search-color'></div>
                     {/* </div> */}
                     <div className='landing-page-line'>
                     </div>
@@ -86,7 +86,7 @@ export class LandingPage extends React.Component{
                 </p> */}
                 {/* testing only */}
                 {/* this needs to be in a seperate component, and the form need to be connected with the made form component */}
-                
+
                 {/* <NewLogin  redirectTest={this.redirectTest}/> */}
                 {/* <LoginForm /> */}
             </main>
