@@ -271,7 +271,7 @@ main p:nth-child(3) {
 .landing-page-container{
     background-color: rgba(139,73,255,.5);
     min-height: 100vh;
-    backdrop-filter: blur(1vh);
+    backdrop-filter: blur(.1vh);
     display: flex;
     flex-direction: column;
 }
