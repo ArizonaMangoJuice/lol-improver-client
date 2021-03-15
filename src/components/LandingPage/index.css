@@ -342,7 +342,7 @@ main p:nth-child(3) {
     grid-column-end: 5;
     grid-row-start: 8;
     grid-row-end: 8;
-    font-size: 2vw;
+    font-size: 1.7vw;
     border-radius: 5vh;
     border: none;
     background-color: #ffca58;
