@@ -53,20 +53,20 @@ export class LandingPage extends React.Component{
                          SIGN UP!
                     </button>
                     {/* <div className='landing-page-features'> */}
-                        <div className='landing-page-inner-container feature-notes'>
+                        <section className='landing-page-inner-container feature-notes'>
                             <FontAwesomeIcon icon={faStickyNote} className='landing-page-features-icon'/>
                             <p className='landing-page-features-text'>Take notes of your matches</p>
-                        </div>
+                        </section>
                         <div className='line note-line note-color'></div>
-                        <div className='landing-page-inner-container player-search'>
+                        <section className='landing-page-inner-container player-search'>
                             <FontAwesomeIcon icon={faSearch} className='landing-page-features-icon'/>
                             <p className='landing-page-features-text'>Search for players</p>
-                        </div>
+                        </section>
                         <div className='line user-account-line user-account-color'></div>
-                        <div className='landing-page-inner-container user-account'>
+                        <section className='landing-page-inner-container user-account'>
                             <FontAwesomeIcon icon={faUser} className='landing-page-features-icon'/>
                             <p className='landing-page-features-text'>Track your stats with an account</p>
-                        </div>
+                        </section>
                         <div className='line player-search-line player-search-color'></div>
                     {/* </div> */}
                     <div className='landing-page-line'>
