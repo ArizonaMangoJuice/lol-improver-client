@@ -24,7 +24,8 @@
     grid-column-start: 10;
     grid-column-end: 16;
     grid-row-start: 8;
-    grid-row-end: 19;
+    grid-row-end: auto;
+    padding: 3vh 0;
     background: white;
     z-index: 99;
     border-radius: 1.5vh;
