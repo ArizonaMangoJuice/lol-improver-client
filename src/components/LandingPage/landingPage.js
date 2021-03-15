@@ -10,7 +10,7 @@ import './index.css';
 // import NewLogin from '../NewLogin'
 import { login } from '../../actions/auth';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faStickyNote, faSearch} from '@fortawesome/free-solid-svg-icons';
+import {faStickyNote, faSearch, faUser} from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -61,9 +61,12 @@ export class LandingPage extends React.Component{
                             <FontAwesomeIcon icon={faSearch} className='landing-page-features-icon'/>
                             <p className='landing-page-features-text'>Search for players</p>
                         </div>
+                        <div className='landing-page-inner-container user-account'>
+                            <FontAwesomeIcon icon={faUser} className='landing-page-features-icon'/>
+                            <p className='landing-page-features-text'>Track your stats with an account</p>
+                        </div>
                     {/* </div> */}
-                    <div>
-                        hello
+                    <div className='landing-page-line'>
                     </div>
                 </section>
                 {/* <Jumbotron /> */}
