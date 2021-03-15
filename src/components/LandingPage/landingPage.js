@@ -37,7 +37,7 @@ export class LandingPage extends React.Component{
         return (
             <main className='landing-page-container'>
                 <header className='landing-page-header'>
-                    <h3 className='landing-page-title'>lol Improver</h3>
+                    <h3 className='landing-page-title'>lol Improver Site Under Construction</h3>
                     <nav className='landing-page-nav'>
                         <Link className='landing-links' to='/dashboard'>Features</Link>
                         <Link className='landing-links' to='/dashboard'>Search</Link>
