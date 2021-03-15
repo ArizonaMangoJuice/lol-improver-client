@@ -1,0 +1,159 @@
+.sign-up-container{
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: grid;
+    grid-template-rows: repeat(24, 1fr);
+    grid-template-rows: repeat(24, 1fr);
+
+}
+
+.sign-up-bg{
+    grid-column-start: 1;
+    grid-column-end: 25;
+    grid-row-start: 1;
+    grid-row-end: 25;
+    background: rgba(0, 0,0, .5);
+    backdrop-filter: blur(.5vh);
+    z-index: 1;
+}
+
+.sign-up{
+    grid-column-start: 10;
+    grid-column-end: 16;
+    grid-row-start: 8;
+    grid-row-end: 19;
+    background: white;
+    z-index: 99;
+    border-radius: 1.5vh;
+    transition: .3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation-name: growSignUp ;
+    animation-duration: .3s;
+}
+
+.sign-up-h1{
+    font-size: 2vw;
+    margin: 0;
+    margin-top: 2vh;
+    vertical-align: bottom;
+    /* flex-basis: 20%; */
+    margin-bottom: .8vh;
+}
+
+.sign-up-sign-in{
+    font-size: 1vw;
+    margin-bottom: 1.5vh;
+}
+
+.sign-up-form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sign-up-input{
+    padding: 1vh;
+    font-size: 1vw;
+    width: 70%;
+    border-radius: 1.3vh;
+    border: .1vh solid rgba(139, 73, 255, .3);
+    /* margin: 0 auto; */
+    transition: .3s;
+    margin: 1vh 0 ;
+}
+
+.sign-up-label{
+    border: none;
+    padding: 0;
+    margin: 1.5vh 0 0 0 ;
+}
+
+.sign-up-input:focus{
+    outline: none;
+    transition: .3s;
+    border: .1vh solid rgba(139, 73, 255, .5);
+    box-shadow: 0 0 1vh rgba(139, 73, 255, .5);
+}
+
+.sign-up-button{
+    width: 73.3%;
+    font-size: 1vw;
+    margin: 1vh;
+    padding: 1vh;
+    border-radius: 1.3vh;
+    background-color: rgba(139, 73, 255, .5);
+    color: white;
+    border: none;
+    transition: .3s;
+}
+
+
+
+input[type="checkbox" i] {
+    background-color: initial;
+    cursor: pointer;
+    appearance: auto;
+    display: inline-block;
+    box-sizing: border-box;
+    margin: -1vh 1vh 0 1vh;
+    /* padding-right: 1vh; */
+    padding: initial;
+    border: initial;
+}
+
+.checkmark a {
+    text-decoration: none;
+}
+
+.sign-up-button:hover{
+    transition: .3s;
+    background-color: rgba(139, 73, 255, 1);
+}
+
+.sign-up-button:focus{
+    transition: .3s;
+    background-color: rgba(139, 73, 255, 1);
+    outline: none;
+}
+
+.sign-up-away{
+    animation-name: signUpAway;
+    animation-duration: .3s;
+}
+
+.hidden{
+    display: none;
+}
+
+
+@keyframes growSignUp {
+    0% {
+        transform: scale(0);
+    }
+    60% {
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+@keyframes signUpAway{
+    0% {
+        transform: scale(1);
+    }
+    60% {
+        transform: scale(.5);
+    }
+    100%{
+        transform: scale(0);
+        display: none;
+    }
+}

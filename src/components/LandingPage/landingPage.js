@@ -7,11 +7,11 @@ import './index.css';
 // import Jumbotron from '../Jumbotron'
 // import TopCharts from '../TopCharts'
 // import NewLogin from '../NewLogin'
-import { login } from '../../actions/auth';
+// import { login } from '../../actions/auth';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStickyNote, faSearch, faUser } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
-import SignUp from '../updatedSignup';
+import SignUp from '../SignUp';
 
 export const LandingPage = (props) => {
     // const redirect = (username, password) => {
@@ -24,7 +24,7 @@ export const LandingPage = (props) => {
 
     return (
         <main className='landing-page-container'>
-            {signUp ? <SignUp setSignUp={setSignUp} /> : undefined}
+            {signUp ? <SignUp setSignUp={setSignUp} signUp={signUp} /> : undefined}
             <header className='landing-page-header'>
                 <h3 className='landing-page-title'>lol Improver Site Under Construction</h3>
                 <nav className='landing-page-nav'>
