@@ -399,7 +399,8 @@ main p:nth-child(3) {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: .5vh;
+    height: 100%;
+    padding: 1.4vh;
 }
 
 .landing-page-inner-container:hover{
