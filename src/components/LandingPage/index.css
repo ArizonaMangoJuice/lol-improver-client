@@ -328,9 +328,11 @@ main p:nth-child(3) {
 .landing-page-header{
     grid-column-start: 3;
     grid-column-end: 6;
-    grid-row-start: 4;
-    grid-row-end: 9;
-    font-size: 7vh;
+    grid-row-start: 6;
+    grid-row-end: 7;
+    font-size: 3.5vw;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 .landing-page-sign-up{
@@ -338,7 +340,7 @@ main p:nth-child(3) {
     grid-column-end: 5;
     grid-row-start: 8;
     grid-row-end: 8;
-    font-size: 3vh;
+    font-size: 2vw;
     border-radius: 5vh;
     border: none;
     background-color: #ffca58;
