@@ -1,14 +1,16 @@
-import React from 'react'
-import {connect} from 'react-redux'
-import {Redirect} from 'react-router-dom'
-import './index.css'
+import React from 'react';
+import {connect} from 'react-redux';
+import {Redirect} from 'react-router-dom';
+import './index.css';
+
 // import LoginForm from '../LoginForm'
 // import { signUpAgain } from '../../actions/auth'
 // import Jumbotron from '../Jumbotron'
 // import TopCharts from '../TopCharts'
 // import NewLogin from '../NewLogin'
-import { login } from '../../actions/auth'
-
+import { login } from '../../actions/auth';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faStickyNote, faSearch} from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -50,11 +52,16 @@ export class LandingPage extends React.Component{
                     <button className='landing-page-sign-up'>
                          SIGN UP!
                     </button>
-                    <div className='landing-page-features'>
-                        <div className='landing-page-inner-container'>
-                            <p>Take notes of your matches</p>
+                    {/* <div className='landing-page-features'> */}
+                        <div className='landing-page-inner-container feature-notes'>
+                            <FontAwesomeIcon icon={faStickyNote} className='landing-page-features-icon'/>
+                            <p className='landing-page-features-text'>Take notes of your matches</p>
                         </div>
-                    </div>
+                        <div className='landing-page-inner-container player-search'>
+                            <FontAwesomeIcon icon={faSearch} className='landing-page-features-icon'/>
+                            <p className='landing-page-features-text'>Search for players</p>
+                        </div>
+                    {/* </div> */}
                     <div>
                         hello
                     </div>
