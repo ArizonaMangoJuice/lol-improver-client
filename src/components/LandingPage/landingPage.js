@@ -11,7 +11,7 @@ import './index.css';
 import { login } from '../../actions/auth';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faStickyNote, faSearch, faUser} from '@fortawesome/free-solid-svg-icons';
-
+import {Link} from 'react-router-dom';
 
 
 export class LandingPage extends React.Component{
@@ -39,9 +39,9 @@ export class LandingPage extends React.Component{
                 <header className='landing-page-header'>
                     <h3 className='landing-page-title'>lol Improver</h3>
                     <nav className='landing-page-nav'>
-                        <button className='landing-links'>Features</button>
-                        <button className='landing-links'>Search</button>
-                        <button className='landing-links'>Sign In</button>
+                        <Link className='landing-links' to='/dashboard'>Features</Link>
+                        <Link className='landing-links' to='/dashboard'>Search</Link>
+                        <Link className='landing-links' to='/dashboard'>Dashboard</Link>
                         {/* <button className='landing-links'></button> */}
                     </nav>
                 </header>

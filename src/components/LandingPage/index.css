@@ -293,6 +293,7 @@ main p:nth-child(3) {
     margin-left: 2%;
     display: flex;
     flex-basis: 30%;
+    
 }
 
 .landing-links{
@@ -305,6 +306,7 @@ main p:nth-child(3) {
     transition: .3s;
     width: max-content;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .landing-links:hover{

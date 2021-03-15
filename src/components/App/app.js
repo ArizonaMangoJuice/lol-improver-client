@@ -15,7 +15,7 @@ export class App extends React.Component{
             <section className='main-body'>
                 {/* <Header /> */}
                 <Route exact path='/' component={LandingPage} />
-                {/* <Route exact path='/' component={Dashboard} /> */}
+                <Route exact path='/dashboard' component={Dashboard} />
                 {/* <Dashboard /> */}
                 {/* <Route exact path='/register' component={RegisterPage}/> */}
                 {/* <Footer /> */}
