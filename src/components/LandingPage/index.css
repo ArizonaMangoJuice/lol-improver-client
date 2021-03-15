@@ -410,10 +410,11 @@ main p:nth-child(3) {
 
 .landing-page-features-icon{
     flex-basis: 30%;
+    font-size: 1.2vw;
 }
 
 .landing-page-features-text{
-    font-size: 1.2vh;
+    font-size: .8vw;
     flex-basis: 70%;
 }
 
