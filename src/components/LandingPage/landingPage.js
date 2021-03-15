@@ -57,14 +57,17 @@ export class LandingPage extends React.Component{
                             <FontAwesomeIcon icon={faStickyNote} className='landing-page-features-icon'/>
                             <p className='landing-page-features-text'>Take notes of your matches</p>
                         </div>
+                        <div className='line note-line note-color'></div>
                         <div className='landing-page-inner-container player-search'>
                             <FontAwesomeIcon icon={faSearch} className='landing-page-features-icon'/>
                             <p className='landing-page-features-text'>Search for players</p>
                         </div>
+                        <div className='line user-account-line user-account-color'></div>
                         <div className='landing-page-inner-container user-account'>
                             <FontAwesomeIcon icon={faUser} className='landing-page-features-icon'/>
                             <p className='landing-page-features-text'>Track your stats with an account</p>
                         </div>
+                        <div className='line player-search-line player-search-color'></div>
                     {/* </div> */}
                     <div className='landing-page-line'>
                     </div>

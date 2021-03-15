@@ -427,6 +427,48 @@ main p:nth-child(3) {
     transition: .3s;
 }
 
+.note-line{
+    grid-column-start: 9;
+    grid-column-end: 11;
+    grid-row-start: 5;
+    grid-row-end: 6;
+    width: 80%;
+}
+
+.user-account-line{
+    grid-column-start: 10;
+    grid-column-end: 11;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    width: 40%;
+}
+
+.player-search-line{
+    grid-column-start: 10;
+    grid-column-end: 11;
+    grid-row-start: 7;
+    grid-row-end: 8;
+    width: 40%;
+} 
+
+.line{
+    height: .8vh;
+    align-self: center;
+}
+
+.player-search-color{
+    background: rgb(186,125,187);
+}
+
+
+.note-color{
+    background-color: rgb(203,144,163);
+}
+
+.user-account-color{
+    background: rgb(220,163,139);
+}
+
 /* .landin-page-line:hover{
     transition: .3s;
     background-image: linear-gradient(68.2deg, rgba(255,202,88,1)0%, rgba(139,73,255,1)  102.2% );
