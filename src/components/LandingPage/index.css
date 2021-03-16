@@ -1,3 +1,6 @@
+.landing-page-header{
+    color: white;
+}
 
 .landing-page-container{
     background-color: rgba(139,73,255,.5);
@@ -247,6 +250,20 @@
     .player-search{
         grid-column-start: 8;
     }
+
+    .landing-page-sign-up{
+        grid-column-end: 6;
+        font-size: 1.8vh;
+    }
+
+    .landing-page-features-text{
+        font-size: 1.3vw;
+    }
+
+    .landing-page-features-icon{
+        font-size: 1.9vw;
+    }
+
 }
 
 @media screen and (max-width: 600px){

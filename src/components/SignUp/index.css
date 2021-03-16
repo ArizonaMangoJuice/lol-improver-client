@@ -159,6 +159,24 @@ input[type="checkbox" i] {
     }
 }
 
+@media screen and (max-width: 1024px){
+    .sign-up-input{
+        font-size: initial;
+    }
+
+    .sign-up-button{
+        font-size: initial;
+    }
+
+    .sign-up-h1{
+        font-size: 4vh;
+    }
+
+    .sign-up-sign-in{
+        font-size: 1.9vh;
+    }
+}
+
 @media screen and (max-width: 600px){
     .sign-up{
         grid-column-start: 6;
