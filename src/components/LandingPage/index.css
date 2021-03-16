@@ -435,6 +435,7 @@ main p:nth-child(3) {
     transition: .3s;
     background: linear-gradient(68.2deg, #8b49ff, #ffca58);
     background-size: 200% 200%;
+    z-index: -1;
 
     -webkit-animation: landingPageLine 4s ease infinite;
     -moz-animation: landingPageLine 4s ease infinite;
@@ -596,5 +597,22 @@ main p:nth-child(3) {
 
     .landing-page-features-icon{
         font-size: 2.3vh;
+    }
+
+    .landing-page-h1{
+        grid-column-start: 4;
+        grid-column-end: 10;
+        grid-row-start: 9;
+        grid-row-end: 8;
+        font-size: 4vh;
+        text-align: center;
+    }
+
+    .landing-page-sign-up{
+        grid-column-start: 3;
+        grid-column-end: 11;
+        grid-row-start: 11;
+        grid-row-end: 10;
+        font-size: 2.5vh;
     }
 }
