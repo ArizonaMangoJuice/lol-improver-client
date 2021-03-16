@@ -207,3 +207,17 @@
     margin-left: 2.4vh;
     color: white;
 }
+
+@media screen and (max-width: 600px){
+    .dashboard{
+        flex-direction: column;
+    }
+
+    .left-container-search-bar{
+        flex-wrap: wrap;
+    }
+
+    header{
+        flex-wrap: wrap;
+    }
+}
