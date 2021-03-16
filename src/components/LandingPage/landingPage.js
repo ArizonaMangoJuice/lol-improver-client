@@ -41,7 +41,7 @@ export const LandingPage = (props) => {
                 </nav>
             </header>
             <section className='landing-page-hero'>
-                <h1 className='landing-page-header'>
+                <h1 className='landing-page-h1'>
                     Grow Your Skill For Free!
                     </h1>
                 <button onClick={() => setSignUp(true)} className='landing-page-sign-up'>
