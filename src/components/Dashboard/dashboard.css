@@ -114,6 +114,11 @@
     /* border: 1px solid white; */
 }
 
+.searc-input-icon{
+    
+}
+
+
 .left-container-search-input-text{
     flex-basis: 90%;    
     font-size: 1.8vh;
@@ -139,13 +144,14 @@
 }
 
 .search-icon{
-    font-size: 3vh;
+    font-size: 2vh;
     transition: .4s;
+    cursor: pointer;
 }
 
 /* this will be used in react component */
 .search-icon:hover{
-    font-size: 2vh;
+    font-size: 2.5vh;
 }
 
 .left-container-search-people{

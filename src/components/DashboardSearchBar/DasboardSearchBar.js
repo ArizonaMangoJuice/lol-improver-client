@@ -14,10 +14,10 @@ const DashBoardSearchBar = () => {
                 <FontAwesomeIcon icon={faChevronDown} className='white icon-margin-left small-icon-size' />
                 <div className='half-border'></div>
             </button>
-            <div className='left-container-search-input'>
-                <FontAwesomeIcon icon={faSearch} className=' search-icon' />
+            <label className='left-container-search-input'>
+                <FontAwesomeIcon icon={faSearch} className='search-icon'  />
                 <input type='text' placeholder='Search' className='left-container-search-input-text' />
-            </div>
+            </label>
             <div className='left-container-search-people'>
                 <button className='add-button'><FontAwesomeIcon icon={faPlus} className='default-button-size' /></button>
                 <div className='players'>
