@@ -215,9 +215,78 @@
 
     .left-container-search-bar{
         flex-wrap: wrap;
+        justify-content: space-evenly;
     }
 
     header{
         flex-wrap: wrap;
     }
+
+    .dashboard-logo-container{
+        display: none;
+    }
+
+    .user-name-container{
+        display: none;
+    }
+
+    .user-image-container{
+        margin: .2vh .2vh .2vh .6vh;
+    }
+
+    .left-container-search-people{
+        flex-basis: 5%;
+    }
+
+    .left-container-button{
+        font-size: initial;
+    }
+
+    .left-container-search{
+        padding: 1vh 0vh 1vh 1.5vh;
+    }
+
+    .left-container-search-input{
+        box-sizing: border-box;
+    }
+    
+
+    .left-container-search-input-text{
+        padding: 0;
+        padding-top: .8vh;
+        padding-bottom: .5vh;
+    }
+
+    .left-container-search-input-text:focus {
+        padding-left: 0;
+    }
+
+    .icon-margin-right{
+        margin-right: .5vh;
+    }
+
+    .icon-margin-left{
+        margin-left: .5vh;
+    }
+
+    .half-border{
+        margin-left: .7vh;
+    }
+
+    .search-icon{
+        display: none;
+    }
+
+    .players{
+        display: none;
+    }
+
+    .player-followers{
+        display: none;
+    }
+
+    .test > .note{
+        display: block;
+    }
+    /* .input-wrap! > input[type=text] */
 }
