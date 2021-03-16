@@ -100,3 +100,9 @@
 .card-dot{
     margin: .2vh 0 !important;
 }
+
+@media screen and (max-width: 600px){
+    .note{
+        margin: 3vh 0;
+    }
+}

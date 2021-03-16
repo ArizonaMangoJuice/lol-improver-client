@@ -39,7 +39,6 @@ useEffect(() => {
     }
 })
 
-console.log(windowWidth)
 
 // will add masonry package but will read source code to create my own
 return (
