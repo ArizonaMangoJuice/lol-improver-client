@@ -162,8 +162,7 @@
     transition: .3s;
     background: linear-gradient(68.2deg, #8b49ff, #ffca58);
     background-size: 200% 200%;
-    z-index: -1;git 
-
+    z-index: -1;
     -webkit-animation: landingPageLine 4s ease infinite;
     -moz-animation: landingPageLine 4s ease infinite;
     -o-animation: landingPageLine 4s ease infinite;
@@ -336,25 +335,5 @@
         font-size: 2.5vh;
     }
 
-    .sign-up{
-        grid-column-start: 6;
-        grid-column-end: 21;
-        grid-row-start: 12;
-    }
-
-    .sign-up-h1{
-        font-size: 4vh;
-    }
-
-    .sign-up-sign-in{
-        font-size: 1.9vh;
-    }
-
-    .sign-up-input{
-        font-size: 1 !important;
-    }
-
-    .sign-up-button{
-        font-size: 1 !important;
-    }
+    
 }

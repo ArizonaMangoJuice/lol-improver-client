@@ -158,3 +158,28 @@ input[type="checkbox" i] {
         display: none;
     }
 }
+
+@media screen and (max-width: 600px){
+    .sign-up{
+        grid-column-start: 6;
+        grid-column-end: 21;
+        grid-row-start: 12;
+    }
+
+    .sign-up-h1{
+        font-size: 4vh;
+    }
+
+    .sign-up-sign-in{
+        font-size: 1.9vh;
+    }
+
+    .sign-up-input{
+        font-size: initial;
+    }
+
+    .sign-up-button{
+        font-size: initial;
+    }
+}
+
