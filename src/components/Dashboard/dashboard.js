@@ -22,88 +22,69 @@ export const Dashboard = (props) => {
     // }
     const [windowWidth, setWidth] = useState(window.innerWidth);
 
-useEffect(() => {
-   
-    let timeoutId = null;
-    const resizeListener = () => {
-      // prevent execution of previous setTimeout
-      clearTimeout(timeoutId);
-      // change width from the state object after 150 milliseconds
-      timeoutId = setTimeout(() => setWidth(window.innerWidth), 150);
-    };
+    useEffect(() => {
 
-    window.addEventListener("resize", resizeListener);
+        let timeoutId = null;
+        const resizeListener = () => {
+            // prevent execution of previous setTimeout
+            clearTimeout(timeoutId);
+            // change width from the state object after 150 milliseconds
+            timeoutId = setTimeout(() => setWidth(window.innerWidth), 150);
+        };
 
-    return () => {
         window.addEventListener("resize", resizeListener);
-    }
-})
 
+        return () => {
+            window.addEventListener("resize", resizeListener);
+        }
+    })
+    let columns = 4;
+    if(windowWidth <= 1070) columns = 2;
+    if(windowWidth < 600) columns = 1;
 
-// will add masonry package but will read source code to create my own
-return (
-    <main className='main-content'>
-        <Header />
-        <div className='dashboard'>
-            <div className='dashboard-left-side'>
-                <DashboardCreateNote />
-                <DashBoardSearchBar />
-                <div className='notes-container left-container-width'>
-                    {windowWidth < 600
-                        ? (
-                            <div>
-                                <Note img={true} />
-                                <Note />
-                                <Note />
-                                <Note />
-                                <Note />
-                                <Note img={true} />
-                                <Note />
-                                <Note img={true} />
-                                <Note />
-                                <Note />
-                                <Note />
-                                <Note />
-                                <Note img={true} />
-                                <Note />
-                            </div>
-                        )
-                        : (
-                            <Masonry columnsCount={2} className='test'>
-                                <Note img={true} />
-                                <Note />
-                                <Note />
-                                <Note />
-                                <Note />
-                                <Note img={true} />
-                                <Note />
-                                <Note img={true} />
-                                <Note />
-                                <Note />
-                                <Note />
-                                <Note />
-                                <Note img={true} />
-                                <Note />
-                            </Masonry>
-                        )}
+    // will add masonry package but will read source code to create my own
+    return (
+        <main className='main-content'>
+            <Header />
+            <div className='dashboard'>
+                <div className='dashboard-left-side'>
+                    <DashboardCreateNote />
+                    <DashBoardSearchBar />
+                    <div className='notes-container left-container-width'>
+                        <Masonry columnsCount={columns} className='test'>
+                            <Note img={true} />
+                            <Note />
+                            <Note />
+                            <Note />
+                            <Note />
+                            <Note img={true} />
+                            <Note />
+                            <Note img={true} />
+                            <Note />
+                            <Note />
+                            <Note />
+                            <Note />
+                            <Note img={true} />
+                            <Note />
+                        </Masonry>
+                    </div>
+                </div>
+                <div className='dashboard-right-side'>
+                    <h2 className='dashboard-match-history-title'>Match History</h2>
+                    <UserMatchHistory />
+                    <UserMatchHistory />
+                    <UserMatchHistory />
+                    <UserMatchHistory />
+                    <UserMatchHistory />
+                    <UserMatchHistory />
+
                 </div>
             </div>
-            <div className='dashboard-right-side'>
-                <h2 className='dashboard-match-history-title'>Match History</h2>
-                <UserMatchHistory />
-                <UserMatchHistory />
-                <UserMatchHistory />
-                <UserMatchHistory />
-                <UserMatchHistory />
-                <UserMatchHistory />
-
-            </div>
-        </div>
-        {/* <ChampionInfo /> */}
-        {/* <NoteArea /> */}
-        {/* <PlayerSearch /> */}
-    </main>
-)
+            {/* <ChampionInfo /> */}
+            {/* <NoteArea /> */}
+            {/* <PlayerSearch /> */}
+        </main>
+    )
 }
 
 // export default LoginWrapper()(connect()(Dashboard));
