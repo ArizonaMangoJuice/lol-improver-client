@@ -1,6 +1,9 @@
 import lolImproverUrl from '../config';
 import {signedUp, authError} from './auth';
-import {SubmissionError} from 'redux-form';
+// import {SubmissionError} from 'redux-form';
+
+//convert this to async so it could be more readable and manageable
+
 
 export const registerUser = user => dispatch => {
     return fetch(`${lolImproverUrl}/api/users`, {
@@ -13,8 +16,9 @@ export const registerUser = user => dispatch => {
     .then(response => {
         if(response.status === 401){
             //this will be sent to error state of sign up
-            return response.json()
+            // dispatch(authError(response.json()));
             // .then(err => Promise.reject(err));
+            return Promise.reject();
         }
         return response.json();
     })
@@ -22,25 +26,8 @@ export const registerUser = user => dispatch => {
         dispatch(signedUp());
     })
     .catch(err => {
-        let {message} = err;
-        const {reason} = err.error;
-
-        if(message === 'The username already exists'){
-            message = 'The username already exists';
-        }
-
-        if(reason !== 'ValidationError'){
-            message = 'Unable to sign up, please try again later';
-        }
-
+        let message = 'The username already exists';
         dispatch(authError(message));
-        if(reason === 'ValidationError'){
-            return Promise.reject(
-                new SubmissionError({
-                    _error: message
-                })
-            )
-        }
     })
 }
 

@@ -1,25 +1,38 @@
 import React, { useState } from 'react';
 import './index.css';
 import { registerUser } from '../../actions/registerUser';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
+import { Redirect } from 'react-router';
+import { login } from '../../actions/auth';
 
 // use context becuase 
+//needs form validation for the username and
+const mapStateToProps = state => ({
+    signedUp: state.loginReducer.signedUp 
+});
 
-const SignUp = ({ setSignUp, ...props}) => {
+
+const SignUp = ({ setSignUp, ...props }) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPass, setConfirmPass] = useState('');
     const [agree, setAgree] = useState(false);
 
-
+    // console.log(props)
     const createUser = (e) => {
         e.preventDefault();
-        props.dispatch(registerUser({username, password}));
+        if (agree) {
+            props.dispatch(registerUser({ username, password }));
+        }
     }
 
-    console.log('this is the props for the sign up', props)
+    if(props.signedUp){
+        props.dispatch(login(username, password));
+    }
+
     return (
-        <section className='sign-up-container'>
+        <section className={`sign-up-container ${props.hidden ? 'hidden' : ''}`} >
+            {props.signedUp ? <Redirect to='/dashboard' /> : undefined}
             <section className='sign-up-bg' onClick={() => setSignUp(false)} />
             <div className='sign-up '>
                 <h1 className='sign-up-h1'>Create account</h1>
@@ -42,7 +55,7 @@ const SignUp = ({ setSignUp, ...props}) => {
                     />
                     <button
                         onClick={(e) => createUser(e)}
-                        disabled={username === '' || password === '' || confirmPass === ''}
+                        disabled={agree && (username === '' || password === '' || confirmPass === '')}
                         className='sign-up-button'
                     >
                         <p className='sign-up-button-p'>Sign Up</p>
@@ -57,4 +70,4 @@ const SignUp = ({ setSignUp, ...props}) => {
     )
 }
 
-export default connect()(SignUp);
+export default connect(mapStateToProps)(SignUp);

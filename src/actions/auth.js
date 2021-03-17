@@ -29,7 +29,12 @@ export const clearAuth = () => ({
 export const SIGNED_UP = 'SIGNED_ UP';
 export const signedUp = () => ({
     type: SIGNED_UP
-})
+});
+
+export const CLEAR_SIGN_UP = 'CLEAR_SIGNED_ UP';
+export const clearSignedUp = () => ({
+    type: CLEAR_SIGN_UP
+});
 
 export const SIGN_UP_AGAIN = 'SIGN_UP_AGAIN';
 export const signUpAgain = () => ({
@@ -45,7 +50,7 @@ export const storeAuthInfo = (authToken, dispatch) => {
 
 export const login = (username, password) => dispatch => {
     return (
-        fetch(`${lolImproverUrl}/login`, {
+        fetch(`${lolImproverUrl}/api/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -65,6 +70,7 @@ export const login = (username, password) => dispatch => {
         .then(({authToken}) => {
             // console.log(authToken)
             storeAuthInfo(authToken, dispatch)
+            clearSignedUp();
             // dispatch(fetchChampions(authToken))
         })
         .catch(err => {

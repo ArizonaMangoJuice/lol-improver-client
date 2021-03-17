@@ -4,7 +4,7 @@ import {
     AUTH_ERROR,
     CLEAR_AUTH, 
     SIGNED_UP,
-    SIGN_UP_AGAIN
+    CLEAR_SIGN_UP
 } from '../actions/auth';
 
 const initialState = {
@@ -44,7 +44,7 @@ const loginReducer = (state = initialState, action) => {
                 ...state,
                 signedUp: true
             }
-        case SIGN_UP_AGAIN:
+        case CLEAR_SIGN_UP:
             return {
                 ...state,
                 signedUp:false

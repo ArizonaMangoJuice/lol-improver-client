@@ -10,7 +10,7 @@ import './index.css';
 // import { login } from '../../actions/auth';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStickyNote, faSearch, faUser } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import SignUp from '../SignUp';
 import SignIn from '../SignIn';
 
@@ -28,8 +28,9 @@ export const LandingPage = (props) => {
 
     return (
         <main className='landing-page-container'>
-            {signUp ? <SignUp setSignUp={setSignUp} signUp={signUp} /> : undefined}
-            {signIn ? <SignIn setSignIn={setSignIn} signIn={signIn} /> : undefined}
+            {props.authToken ? <Redirect to='/dashboard' /> : undefined}
+            {signUp ? <SignUp setSignUp={setSignUp} signUp={signUp} /> : <SignUp hidden={true} />}
+            {signIn ? <SignIn setSignIn={setSignIn} signIn={signIn} /> : <SignIn hidden={true} />}
             <header className='landing-page-header'>
                 <h3 className='landing-page-title'>lol Improver Site Under Construction</h3>
                 <nav className='landing-page-nav'>
@@ -90,8 +91,7 @@ export const LandingPage = (props) => {
 
 const mapStateToProps = state => {
     return {
-        loggedIn: state.loginReducer.currentUser !== null,
-        signedUp: state.loginReducer.signedUp
+        authToken: state.loginReducer.authToken,
     };
 };
 

@@ -1,8 +1,8 @@
 import React from 'react';
 // 
-const SignIn = ({setSignIn, signIn}) => {
+const SignIn = ({setSignIn, signIn, ...props}) => {
     return (
-        <section className='sign-up-container'>
+        <section className={`sign-up-container ${props.hidden ? 'hidden' : ''}`}>
             <section className='sign-up-bg'  onClick={() => setSignIn(false)}/>
             <div className='sign-up '>
                 <h1 className='sign-up-h1'>Sign In</h1>
@@ -12,7 +12,6 @@ const SignIn = ({setSignIn, signIn}) => {
                         <button className='sign-up-button'>
                             <p className='sign-up-button-p'>Sign Up</p>
                         </button>
-                        
                 </form>
             </div>
         </section>
