@@ -50,7 +50,7 @@ export const Dashboard = (props) => {
                 <div className='dashboard-left-side'>
                     <DashboardCreateNote />
                     <DashBoardSearchBar />
-                    <div className='notes-container left-container-width'>
+                    <div className='notes-container left-container-width notes-flex-container'>
                         <Masonry columnsCount={columns} className='test'>
                             <Note img={true} />
                             <Note />

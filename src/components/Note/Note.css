@@ -4,6 +4,17 @@
     
 }
 
+.notes-flex-container{
+    height: 65vh;
+    overflow: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.notes-flex-container::-webkit-scrollbar{
+    display: none;
+}
+
 .note{
     transition: .3s;
     box-sizing: border-box;
