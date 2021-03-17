@@ -14,7 +14,7 @@ export const App = (props) => {
 
     useEffect(() => {
         async function fetchTest() {
-            let response = await fetch(`${lolImproverUrl}/static/test`);
+            let response = await fetch(`${lolImproverUrl}/api/static/test`);
             response = await response.json();
             setData(response)
         }
