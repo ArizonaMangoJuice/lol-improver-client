@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
 // import { withRouter} from 'react-router-dom';
 import { Route } from 'react-router-dom';
 import lolImproverUrl from '../../config';
@@ -36,4 +36,4 @@ export const App = (props) => {
 }
 
 // export default withRouter(connect()(App));
-export default connect()(App);
+export default App;
