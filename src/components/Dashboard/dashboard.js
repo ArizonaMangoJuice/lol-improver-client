@@ -69,7 +69,7 @@ return (
                             </div>
                         )
                         : (
-                            <Masonry columnsCount={4} className='test'>
+                            <Masonry columnsCount={2} className='test'>
                                 <Note img={true} />
                                 <Note />
                                 <Note />
