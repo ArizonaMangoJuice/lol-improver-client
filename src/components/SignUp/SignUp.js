@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './index.css';
 import { registerUser } from '../../actions/registerUser';
 import {connect} from 'react-redux';
