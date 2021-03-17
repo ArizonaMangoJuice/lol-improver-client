@@ -3,7 +3,7 @@ import {signedUp, authError} from './auth';
 import {SubmissionError} from 'redux-form';
 
 export const registerUser = user => dispatch => {
-    return fetch(`${lolImproverUrl}/users`, {
+    return fetch(`${lolImproverUrl}/api/users`, {
         method: 'POST', 
         headers: {
             'content-type': 'application/json'
@@ -12,7 +12,9 @@ export const registerUser = user => dispatch => {
     })
     .then(response => {
         if(response.status === 401){
-            return response.json().then(err => Promise.reject(err));
+            //this will be sent to error state of sign up
+            return response.json()
+            // .then(err => Promise.reject(err));
         }
         return response.json();
     })
