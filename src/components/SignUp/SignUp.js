@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './index.css';
 // import { registerUser } from '../../actions/registerUser';
 import { connect } from 'react-redux';
@@ -14,33 +14,33 @@ const mapStateToProps = state => ({
 
 
 function userNameValidation(string, error) {
-    if(string.includes(' ')) return error('Username can\'t have spaces');
-    if(string.length === 0) return error('Username can\'t be empty');
-    if(string.length < 7) return error('Username can\'t be less than 7 characters long');
-    return error('')
+    if (string.includes(' ')) return error('Username can\'t have spaces');
+    if (string.length === 0) return error('Username can\'t be empty');
+    if (string.length < 7) return error('Username can\'t be less than 7 characters long');
+    return error('');
 }
 
 
-const SignUp = ({setSignUp,...props}) => {
-    
+const SignUp = ({ setSignUp, ...props }) => {
+
     const [error, setError] = useState('');
     const [agree, setAgree] = useState(false);
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPass, setConfirmPass] = useState('');
 
-    async function test(user){
+    async function userSignUp(user) {
         let response = await fetch(`${lolImproverUrl}/api/users`, {
-            method: 'POST', 
+            method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
             body: JSON.stringify(user)
         });
         response = await response.json();
-        
+
         props.dispatch(login({
-            username: response.username, 
+            username: response.username,
             password: user.password
         }));
     }
@@ -48,9 +48,10 @@ const SignUp = ({setSignUp,...props}) => {
     // console.log(props)
     const createUser = (e) => {
         e.preventDefault();
-
+        if(!agree) return setError('You haven\'t agreed the terms of service');
         if (agree && !error) {
-            test({ username, password })
+            userSignUp({ username, password });
+            
             // props.dispatch(registerUser());
             // setUsername('');
             // setPassword('');
@@ -58,7 +59,12 @@ const SignUp = ({setSignUp,...props}) => {
         }
     }
 
-    
+    useEffect(() => {
+        if (confirmPass === password) setError('');
+        if (confirmPass !== password) setError('passwords do not match');
+        if(agree) setError('');
+    }, [confirmPass, password, agree])
+
 
     return (
         <section className={`sign-up-container ${props.hidden ? 'hidden' : ''}`} >
