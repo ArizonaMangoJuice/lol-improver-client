@@ -83,6 +83,20 @@
     box-shadow: 0 0 1vh rgba(139, 73, 255, .5);
 }
 
+.disabled-sign-up-button{
+    width: 73.3%;
+    font-size: 1vw;
+    margin: 1vh;
+    padding: 1vh;
+    border-radius: 1.3vh;
+    background-color: rgba(139, 73, 255, .5);
+    color: white;
+    border: none;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+}
+
 .sign-up-button{
     width: 73.3%;
     font-size: 1vw;

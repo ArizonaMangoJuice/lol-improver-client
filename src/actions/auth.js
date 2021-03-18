@@ -48,7 +48,8 @@ export const storeAuthInfo = (authToken, dispatch) => {
     saveToken(authToken);
 }
 
-export const login = (username, password) => dispatch => {
+export const login = (user) => dispatch => {
+    // console.log('this is the user',username, password);
     return (
         fetch(`${lolImproverUrl}/api/login`, {
             method: 'POST',
@@ -56,10 +57,7 @@ export const login = (username, password) => dispatch => {
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Origin': lolImproverUrl
             },
-            body: JSON.stringify({
-                username, 
-                password
-            })
+            body: JSON.stringify(user)
         })
         .then(response => {
             if(response.status === 401){
@@ -68,28 +66,28 @@ export const login = (username, password) => dispatch => {
             return response.json();
         })
         .then(({authToken}) => {
-            // console.log(authToken)
+            console.log(authToken)
             storeAuthInfo(authToken, dispatch)
             clearSignedUp();
             // dispatch(fetchChampions(authToken))
         })
         .catch(err => {
-            let {message} = err.error;
+            // let {message} = err.error;
             // let message;
             //incorrect username or password on server side
-            if(message === 'Unauthorized'){
-                message = 'Invalid username or password';
-            }else{
-                message = 'Unable to login, please try again later';
-            }
+            // if(message === 'Unauthorized'){
+            //     message = 'Invalid username or password';
+            // }else{
+            //     message = 'Unable to login, please try again later';
+            // }
 
             dispatch(authError(err));
             
-            return Promise.reject(
-                new SubmissionError({
-                    _error: message
-                })
-            )
+            // return Promise.reject(
+            //     new SubmissionError({
+            //         _error: message
+            //     })
+            // )
         })
     )
 }

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 // import {Redirect} from 'react-router-dom';
 import './index.css';
@@ -12,24 +12,40 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStickyNote, faSearch, faUser } from '@fortawesome/free-solid-svg-icons';
 import { Link, Redirect } from 'react-router-dom';
 import SignUp from '../SignUp';
+import { login } from '../../actions/auth';
 import SignIn from '../SignIn';
 
-export const LandingPage = (props) => {
+export const LandingPage = ({signedUp, authToken, ...props}) => {
     // const redirect = (username, password) => {
     //     return props.dispatch(login(username, password))
     // }
     // convert to use reducer 
     const [signUp, setSignUp] = useState(false);
     const [signIn, setSignIn] = useState(false);
-
+    
     // if(this.props.loggedIn){
     //     return <Redirect to='/dashboard'/>
     // }
+    // let signedUp = props.signedUp;
+    // useEffect(() => {
+    //     if (signedUp) {
+    //         props.dispatch(login(username, password));
+    //     }
+        
+    // }, [])
+
+    console.log('landingpage')
 
     return (
-        <main className='landing-page-container'>
-            {props.authToken ? <Redirect to='/dashboard' /> : undefined}
-            {signUp ? <SignUp setSignUp={setSignUp} signUp={signUp} /> : <SignUp hidden={true} />}
+            
+            <main className='landing-page-container'>
+                {authToken ? <Redirect to='/dashboard' /> : undefined}
+            <SignUp
+                setSignUp={setSignUp} hidden={!signUp} //signUp={signUp}
+                // setUsername={setUsername} username={username}
+                // setPassword={setPassword} password={password}
+                // setConfirmPass={setConfirmPass} confirmPass={confirmPass}
+            />
             {signIn ? <SignIn setSignIn={setSignIn} signIn={signIn} /> : <SignIn hidden={true} />}
             <header className='landing-page-header'>
                 <h3 className='landing-page-title'>lol Improver Site Under Construction</h3>
@@ -68,30 +84,15 @@ export const LandingPage = (props) => {
                 <div className='landing-page-line'>
                 </div>
             </section>
-            {/* <Jumbotron /> */}
-            {/* <TopCharts /> */}
-            {/* <p className='landing-page-p'>
-                League of Legends is a fast-paced, competitive online game that blends the speed and intensity of an RTS with RPG elements. Two teams of powerful champions, each with a unique design and playstyle, battle head-to-head across multiple battlefields and game modes.
-                    LoL Improver lets you take your gaming to a whole new level.
-                </p>
-                <p className='landing-page-p'>
-                    DemoLogin: testuser
-                </p>
-                <p className='landing-page-p'>
-                    DemoPassword: alongpassword
-                </p> */}
-            {/* testing only */}
-            {/* this needs to be in a seperate component, and the form need to be connected with the made form component */}
-
-            {/* <NewLogin  redirectTest={this.redirectTest}/> */}
-            {/* <LoginForm /> */}
         </main>
+  
     )
 }
 
 const mapStateToProps = state => {
     return {
         authToken: state.loginReducer.authToken,
+        signedUp: state.loginReducer.signedUp
     };
 };
 

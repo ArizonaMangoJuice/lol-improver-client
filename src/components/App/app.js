@@ -12,17 +12,17 @@ import LandingPage from '../LandingPage';
 export const App = (props) => {
     const [data, setData] = useState();
 
-    useEffect(() => {
-         async function fetchTest() {
-            let response = await fetch(`${lolImproverUrl}/api/static/test`);
-            response = await response.json();
-            setData(response)
-        }
+    // useEffect(() => {
+    //      async function fetchTest() {
+    //         let response = await fetch(`${lolImproverUrl}/api/static/test`);
+    //         response = await response.json();
+    //         setData(response)
+    //     }
 
-        fetchTest();
-    }, [])
+    //     fetchTest();
+    // }, [])
 
-    if (data) console.log(data);
+    // if (data) console.log(data);
     return (
         <section className='main-body'>
             {/* <Header /> */}

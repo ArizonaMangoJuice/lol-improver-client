@@ -47,10 +47,10 @@ export const Dashboard = (props) => {
     if(windowWidth <= 1070) columns = 2;
     if(windowWidth < 600) columns = 1;
     
+    if(!props.authToken) return (<Redirect to='/' />);
     // will add masonry package but will read source code to create my own
     return (
         <main className='main-content'>
-            {!props.authToken ? <Redirect to='/' /> : undefined}
             <Header />
             <div className='dashboard'>
                 <div className='dashboard-left-side'>
