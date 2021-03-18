@@ -30,19 +30,18 @@ const SignUp = ({ setSignUp, ...props }) => {
     const [confirmPass, setConfirmPass] = useState('');
 
     async function userSignUp(user) {
-        let response = await fetch(`${lolImproverUrl}/api/users`, {
+        await fetch(`${lolImproverUrl}/api/users`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
             body: JSON.stringify(user)
-        });
-        response = await response.json();
-
-        props.dispatch(login({
-            username: response.username,
-            password: user.password
-        }));
+        }).then(response => {
+            if (response.status >= 401 && response.status < 600) {
+               return setError("Username is taken");
+            }
+            props.dispatch(login(user));
+        })
     }
 
     // console.log(props)
