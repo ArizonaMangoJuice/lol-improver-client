@@ -22,11 +22,9 @@ const mapStateToProps = state => ({
 });
 
 export const Dashboard = (props) => {
-    // componentDidMount(){   
-    //     this.props.dispatch(fetchChampions())
-    // }
+    
     const [windowWidth, setWidth] = useState(window.innerWidth);
-
+    //need to move this to its seperate hook files
     useEffect(() => {
 
         let timeoutId = null;
@@ -43,6 +41,7 @@ export const Dashboard = (props) => {
             window.addEventListener("resize", resizeListener);
         }
     })
+    
     let columns = 4;
     if(windowWidth <= 1070) columns = 2;
     if(windowWidth < 600) columns = 1;
