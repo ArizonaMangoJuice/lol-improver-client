@@ -1,5 +1,5 @@
 import lolImproverUrl from '../config';
-import {signedUp, authError, login} from './auth';
+import {signedUp, authError} from './auth';
 // import {SubmissionError} from 'redux-form';
 
 //convert this to async so it could be more readable and manageable

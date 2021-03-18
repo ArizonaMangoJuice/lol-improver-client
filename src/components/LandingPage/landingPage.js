@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState} from 'react';
 import { connect } from 'react-redux';
-// import {Redirect} from 'react-router-dom';
+import {Redirect} from 'react-router-dom';
 import './index.css';
 // import LoginForm from '../LoginForm'
 // import { signUpAgain } from '../../actions/auth'
@@ -10,43 +10,26 @@ import './index.css';
 // import { login } from '../../actions/auth';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStickyNote, faSearch, faUser } from '@fortawesome/free-solid-svg-icons';
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import SignUp from '../SignUp';
-import { login } from '../../actions/auth';
 import SignIn from '../SignIn';
 
-export const LandingPage = ({signedUp, authToken, ...props}) => {
+export const LandingPage = (props) => {
     // const redirect = (username, password) => {
     //     return props.dispatch(login(username, password))
     // }
     // convert to use reducer 
     const [signUp, setSignUp] = useState(false);
     const [signIn, setSignIn] = useState(false);
-    
-    // if(this.props.loggedIn){
-    //     return <Redirect to='/dashboard'/>
-    // }
-    // let signedUp = props.signedUp;
-    // useEffect(() => {
-    //     if (signedUp) {
-    //         props.dispatch(login(username, password));
-    //     }
-        
-    // }, [])
-
-    console.log('landingpage')
+    console.log('this is the auth token', props.authToken)
+    if(props.authToken){
+        return <Redirect to='/dashboard'/>
+    }
 
     return (
-            
-            <main className='landing-page-container'>
-                {authToken ? <Redirect to='/dashboard' /> : undefined}
-            <SignUp
-                setSignUp={setSignUp} hidden={!signUp} //signUp={signUp}
-                // setUsername={setUsername} username={username}
-                // setPassword={setPassword} password={password}
-                // setConfirmPass={setConfirmPass} confirmPass={confirmPass}
-            />
-            {signIn ? <SignIn setSignIn={setSignIn} signIn={signIn} /> : <SignIn hidden={true} />}
+        <main className='landing-page-container'>
+            {signUp ? <SignUp setSignUp={setSignUp} signUp={signUp} /> : undefined}
+            {signIn ? <SignIn setSignIn={setSignIn} signIn={signIn} /> : undefined}
             <header className='landing-page-header'>
                 <h3 className='landing-page-title'>lol Improver Site Under Construction</h3>
                 <nav className='landing-page-nav'>
@@ -84,15 +67,16 @@ export const LandingPage = ({signedUp, authToken, ...props}) => {
                 <div className='landing-page-line'>
                 </div>
             </section>
+           
         </main>
-  
     )
 }
 
 const mapStateToProps = state => {
     return {
-        authToken: state.loginReducer.authToken,
-        signedUp: state.loginReducer.signedUp
+        loggedIn: state.loginReducer.currentUser !== null,
+        signedUp: state.loginReducer.signedUp,
+        authToken: state.loginReducer.authToken
     };
 };
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './index.css';
-import { registerUser } from '../../actions/registerUser';
+// import { registerUser } from '../../actions/registerUser';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router';
 import lolImproverUrl from '../../config';
@@ -38,7 +38,11 @@ const SignUp = ({setSignUp,...props}) => {
             body: JSON.stringify(user)
         });
         response = await response.json();
-        props.dispatch(login(user));
+        
+        props.dispatch(login({
+            username: response.username, 
+            password: user.password
+        }));
     }
 
     // console.log(props)

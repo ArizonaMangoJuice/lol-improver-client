@@ -1,6 +1,6 @@
 import jwtDecode from 'jwt-decode';
 import lolImproverUrl from '../config';
-import {SubmissionError} from 'redux-form';
+// import {SubmissionError} from 'redux-form';
 import {saveToken} from '../localStorage';
 
 export const SET_AUTH_TOKEN = 'SET_AUTH_TOKEN';
