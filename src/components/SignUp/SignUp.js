@@ -26,8 +26,8 @@ const SignUp = ({ setSignUp, ...props }) => {
     const [error, setError] = useState('');
     const [agree, setAgree] = useState(false);
     const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-    const [confirmPass, setConfirmPass] = useState('');
+    const [password, setPassword] = useState();
+    const [confirmPass, setConfirmPass] = useState();
 
     async function userSignUp(user) {
         await fetch(`${lolImproverUrl}/api/users`, {
@@ -61,7 +61,7 @@ const SignUp = ({ setSignUp, ...props }) => {
     useEffect(() => {
         if (confirmPass === password) setError('');
         if (confirmPass !== password) setError('passwords do not match');
-        if (password.length < 5) setError('password is too short');
+        if (typeof password === "string" &&  password.length < 5 ) setError('password is too short');
         if(agree) setError('');
     }, [confirmPass, password, agree])
 
@@ -71,7 +71,7 @@ const SignUp = ({ setSignUp, ...props }) => {
             {props.signedUp ? <Redirect to='/dashboard' /> : undefined}
             <section className='sign-up-bg' onClick={() => setSignUp(false)} />
             <div className='sign-up '>
-                {error ? <p className='sign-up-sign-in'>{error}</p> : undefined}
+                {error ? <p className='sign-up-sign-in validation-error'>{error}</p> : undefined}
                 <h1 className='sign-up-h1'>Create account</h1>
                 <p className='sign-up-sign-in'>Already have an account? <a href='sing-in-link'>Sign in</a></p>
                 <form className='sign-up-form'>

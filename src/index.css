@@ -73,7 +73,7 @@ label{
 
 .validation-error{
   color: red;
-  width: 100%;
+  /* width: 100%; */
 }
 
 .demo-players{
