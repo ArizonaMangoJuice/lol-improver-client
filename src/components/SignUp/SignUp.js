@@ -16,7 +16,7 @@ const mapStateToProps = state => ({
 function userNameValidation(string, error) {
     if (string.includes(' ')) return error('Username can\'t have spaces');
     if (string.length === 0) return error('Username can\'t be empty');
-    if (string.length < 7) return error('Username can\'t be less than 7 characters long');
+    if (string.length < 5) return error('Username can\'t be less than 7 characters long');
     return error('');
 }
 
@@ -62,6 +62,7 @@ const SignUp = ({ setSignUp, ...props }) => {
     useEffect(() => {
         if (confirmPass === password) setError('');
         if (confirmPass !== password) setError('passwords do not match');
+        if (password.length < 5) setError('password is too short');
         if(agree) setError('');
     }, [confirmPass, password, agree])
 
