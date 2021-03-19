@@ -14,10 +14,11 @@ import Masonry from 'react-responsive-masonry';
 import UserMatchHistory from '../UserMatchHistory';
 import { Redirect } from 'react-router';
 import jwt_decode from 'jwt-decode';
+import lolImproverUrl from '../../config';
 
 // I will use a masonry package but will look at source code to make my own.
 // i need to account for the margins and padding so flex basis wont freak out
-
+// usereducer will help here 
 const mapStateToProps = state => ({
     authToken: state.loginReducer.authToken
 });
@@ -25,6 +26,7 @@ const mapStateToProps = state => ({
 export const Dashboard = ({ authToken, ...props}) => {
     
     const [windowWidth, setWidth] = useState(window.innerWidth);
+    const[notes, setNotes] = useState([]);
     //need to move this to its seperate hook files
     useEffect(() => {
 
@@ -42,16 +44,39 @@ export const Dashboard = ({ authToken, ...props}) => {
             window.addEventListener("resize", resizeListener);
         }
     }, [windowWidth])
+
+    useEffect(() => {
+        let isMounted = true
+        async function getNotes(){
+            let notes = await fetch(`${lolImproverUrl}/api/notes`, {
+                method: 'GET',
+                headers:{
+                    'content-type': 'application/json',
+                    'Authorization': `Bearer ${authToken}`
+                }
+            });
+            notes = await notes.json();
+
+            if(isMounted) setNotes(notes.result);
+        }
+
+        getNotes();
+        return () => {
+            isMounted = false;
+        }
+    }, [])
     
     let columns = 4;
     if(windowWidth <= 1070) columns = 2;
     if(windowWidth < 600) columns = 1;
     if(!authToken) return (<Redirect to='/' />);
 
-    console.log('this is the authtoken ', authToken)
+    console.log('this is the authtoken ', authToken, notes)
     if(authToken){
         console.log(jwt_decode(authToken))
     }
+
+    let dashboardNotes = notes.map(e => (<Note key={e._id} />))
     // will add masonry package but will read source code to create my own
     return (
         <main className='main-content'>
@@ -62,20 +87,7 @@ export const Dashboard = ({ authToken, ...props}) => {
                     <DashBoardSearchBar />
                     <div className='notes-container left-container-width notes-flex-container'>
                         <Masonry columnsCount={columns} className='test'>
-                            <Note img={true} />
-                            <Note />
-                            <Note />
-                            <Note />
-                            <Note />
-                            <Note img={true} />
-                            <Note />
-                            <Note img={true} />
-                            <Note />
-                            <Note />
-                            <Note />
-                            <Note />
-                            <Note img={true} />
-                            <Note />
+                            {dashboardNotes}
                         </Masonry>
                     </div>
                 </div>
