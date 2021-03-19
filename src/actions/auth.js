@@ -41,6 +41,16 @@ export const signUpAgain = () => ({
     type: SIGN_UP_AGAIN
 })
 
+export const LOADING = 'LOADING';
+export const loading = () => ({
+    type: LOADING
+});
+
+export const STOP_LOADING = 'STOP_LOADING';
+export const stopLoading = () => ({
+    type: STOP_LOADING
+})
+
 export const storeAuthInfo = (authToken, dispatch) => {
     const decodedToken = jwtDecode(authToken);
     dispatch(setAuthToken(authToken));
@@ -50,6 +60,7 @@ export const storeAuthInfo = (authToken, dispatch) => {
 
 export const login = (user) => dispatch => {
     // console.log('this is the user',username, password);
+    dispatch(loading());
     return (
         fetch(`${lolImproverUrl}/api/login`, {
             method: 'POST',
@@ -60,14 +71,16 @@ export const login = (user) => dispatch => {
             body: JSON.stringify(user)
         })
         .then(response => {
-            if(response.status === 401){
+            if(response.status === 401 || response.status === 400){
+                dispatch(stopLoading());
                 return response.json().then(err => Promise.reject(err))
             }
             return response.json();
         })
         .then(({authToken}) => {
             console.log(authToken)
-            storeAuthInfo(authToken, dispatch)
+            dispatch(stopLoading());
+            storeAuthInfo(authToken, dispatch);
             clearSignedUp();
             // dispatch(fetchChampions(authToken))
         })
@@ -80,7 +93,7 @@ export const login = (user) => dispatch => {
             // }else{
             //     message = 'Unable to login, please try again later';
             // }
-
+            dispatch(stopLoading());
             dispatch(authError(err));
             
             // return Promise.reject(

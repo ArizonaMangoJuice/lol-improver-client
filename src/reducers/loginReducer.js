@@ -4,7 +4,9 @@ import {
     AUTH_ERROR,
     CLEAR_AUTH, 
     SIGNED_UP,
-    CLEAR_SIGN_UP
+    CLEAR_SIGN_UP, 
+    LOADING, 
+    STOP_LOADING,
 } from '../actions/auth';
 
 const initialState = {
@@ -12,6 +14,7 @@ const initialState = {
     currentUser: null,
     error: null,
     signedUp: null,
+    loading: false,
 };
 
 const loginReducer = (state = initialState, action) => {
@@ -48,6 +51,16 @@ const loginReducer = (state = initialState, action) => {
             return {
                 ...state,
                 signedUp:false
+            }
+        case LOADING: 
+            return {
+                ...state,
+                loading: true
+            }
+        case STOP_LOADING: 
+            return {
+                ...state, 
+                loading: false
             }
         default: 
             return state
