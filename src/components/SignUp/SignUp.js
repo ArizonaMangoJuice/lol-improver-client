@@ -50,11 +50,6 @@ const SignUp = ({ setSignUp, ...props }) => {
         if(!agree) return setError('You haven\'t agreed the terms of service');
         if (agree && !error) {
             userSignUp({ username, password });
-            
-            // props.dispatch(registerUser());
-            // setUsername('');
-            // setPassword('');
-            // setConfirmPass('');
         }
     }
 

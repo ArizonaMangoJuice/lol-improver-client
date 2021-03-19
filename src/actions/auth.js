@@ -85,22 +85,8 @@ export const login = (user) => dispatch => {
             // dispatch(fetchChampions(authToken))
         })
         .catch(err => {
-            // let {message} = err.error;
-            // let message;
-            //incorrect username or password on server side
-            // if(message === 'Unauthorized'){
-            //     message = 'Invalid username or password';
-            // }else{
-            //     message = 'Unable to login, please try again later';
-            // }
             dispatch(stopLoading());
             dispatch(authError(err));
-            
-            // return Promise.reject(
-            //     new SubmissionError({
-            //         _error: message
-            //     })
-            // )
         })
     )
 }
