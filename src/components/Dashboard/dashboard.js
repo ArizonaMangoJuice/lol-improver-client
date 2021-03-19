@@ -13,6 +13,7 @@ import DashboardCreateNote from '../DashboardCreateNote';
 import Masonry from 'react-responsive-masonry';
 import UserMatchHistory from '../UserMatchHistory';
 import { Redirect } from 'react-router';
+import jwt_decode from 'jwt-decode';
 
 // I will use a masonry package but will look at source code to make my own.
 // i need to account for the margins and padding so flex basis wont freak out
@@ -21,7 +22,7 @@ const mapStateToProps = state => ({
     authToken: state.loginReducer.authToken
 });
 
-export const Dashboard = (props) => {
+export const Dashboard = ({ authToken, ...props}) => {
     
     const [windowWidth, setWidth] = useState(window.innerWidth);
     //need to move this to its seperate hook files
@@ -32,7 +33,7 @@ export const Dashboard = (props) => {
             // prevent execution of previous setTimeout
             clearTimeout(timeoutId);
             // change width from the state object after 150 milliseconds
-            timeoutId = setTimeout(() => setWidth(window.innerWidth), 150);
+            timeoutId = setTimeout(() => setWidth(window.innerWidth), 0);
         };
 
         window.addEventListener("resize", resizeListener);
@@ -40,13 +41,17 @@ export const Dashboard = (props) => {
         return () => {
             window.addEventListener("resize", resizeListener);
         }
-    })
+    }, [windowWidth])
     
     let columns = 4;
     if(windowWidth <= 1070) columns = 2;
     if(windowWidth < 600) columns = 1;
-    
-    if(!props.authToken) return (<Redirect to='/' />);
+    if(!authToken) return (<Redirect to='/' />);
+
+    console.log('this is the authtoken ', authToken)
+    if(authToken){
+        console.log(jwt_decode(authToken))
+    }
     // will add masonry package but will read source code to create my own
     return (
         <main className='main-content'>

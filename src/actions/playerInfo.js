@@ -42,6 +42,11 @@ export const clearPlayer = () => ({
     type: CLEAR_PLAYER
 });
 
+export const DECODE_AUTH_TOKEN = 'DECODE_AUTH_TOKEN';
+export const decodeAuthToken = () => ({
+
+});
+
 export const fetchNameDetails = championId => dispatch => {
     return fetch(`${lolImproverUrl}/static/${championId}`)
         .then(response => response.json())

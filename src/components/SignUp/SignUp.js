@@ -84,7 +84,7 @@ const SignUp = ({ setSignUp, ...props }) => {
                         className='sign-up-input' type='text' placeholder='Username'
                     />
                     <input
-                        value={password}
+                        value={!password ? '' : password}
                         onChange={e => setPassword(e.currentTarget.value)}
                         className='sign-up-input' type='password' placeholder='Password'
                     />
