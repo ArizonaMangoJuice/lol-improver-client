@@ -38,7 +38,7 @@ const SignUp = ({ setSignUp, ...props }) => {
             body: JSON.stringify(user)
         }).then(response => {
             if (response.status >= 401 && response.status < 600) {
-               return setError("Username is taken");
+               return setError("Username is taken or password is too short");
             }
             props.dispatch(login(user));
         })
