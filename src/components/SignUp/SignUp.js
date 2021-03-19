@@ -8,6 +8,9 @@ import { login } from '../../actions/auth';
 
 // use context becuase 
 //needs form validation for the username and
+//move the useEffect to be an action for signing the user up 
+// move other useEffects to a seperate file
+//move userNameValidation to a utils folder
 const mapStateToProps = state => ({
     signedUp: state.loginReducer.signedUp
 });
