@@ -13,7 +13,8 @@ import { registerUser } from '../../actions/registerUser';
 // move other useEffects to a seperate file
 //move userNameValidation to a utils folder
 const mapStateToProps = state => ({
-    signedUp: state.loginReducer.signedUp
+    signedUp: state.loginReducer.signedUp,
+    error: state.loginReducer.error
 });
 
 
@@ -62,7 +63,10 @@ const SignUp = ({ setSignUp, ...props }) => {
         if (confirmPass !== password) setError('passwords do not match');
         if (typeof password === "string" && password.length < 5) setError('password is too short');
         if (agree) setError('');
+        if (props.error) setError(props.error);
     }, [confirmPass, password, agree])
+
+    // let serverError = props.error ? <p className='sign-up-sign-in validation-error'>{props.error}</p> : undefined;
 
 
     return (

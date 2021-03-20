@@ -1,5 +1,5 @@
 import lolImproverUrl from '../config';
-import { signedUp, authError, addUser } from './auth';
+import { signedUp, authError, addUser, clearError } from './auth';
 // import {SubmissionError} from 'redux-form';
 
 //convert this to async so it could be more readable and manageable
@@ -8,7 +8,7 @@ import { signedUp, authError, addUser } from './auth';
 // }
 
 export const registerUser = user => dispatch => {
-
+    dispatch(clearError());
     return fetch(`${lolImproverUrl}/api/users`, {
         method: 'POST',
         headers: {
@@ -17,8 +17,8 @@ export const registerUser = user => dispatch => {
         body: JSON.stringify(user)
     })
         .then(response => {
-            if (response.status === 401) {
-                dispatch(authError(response.json()));
+            if (response.status >= 401 && response.status < 600) {
+                dispatch(authError('Username is taken or password is too short'));
             }
             return response.json();
         })

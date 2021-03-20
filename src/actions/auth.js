@@ -21,6 +21,11 @@ export const authError = error => ({
     error
 });
 
+export const CLEAR_ERROR = 'CLEAR_ERROR';
+export const clearError = () => ({
+    type: CLEAR_ERROR
+});
+
 export const CLEAR_AUTH = 'CLEAR_AUTH';
 export const clearAuth = () => ({
     type: CLEAR_AUTH
