@@ -49,7 +49,18 @@ export const loading = () => ({
 export const STOP_LOADING = 'STOP_LOADING';
 export const stopLoading = () => ({
     type: STOP_LOADING
-})
+});
+
+export const SIGNED_UP_USER = 'SIGNED_UP_USER';
+export const addUser = user => ({
+    type: SIGNED_UP_USER,
+    user
+});
+
+export const CLEAR_SIGNED_UP_USER = 'CLEAR_SIGNED_UP_USER';
+export const clearSignedUpUser = () => ({
+    type: CLEAR_SIGNED_UP_USER,
+});
 
 export const storeAuthInfo = (authToken, dispatch) => {
     const decodedToken = jwtDecode(authToken);
@@ -60,6 +71,7 @@ export const storeAuthInfo = (authToken, dispatch) => {
 
 export const login = (user) => dispatch => {
     // console.log('this is the user',username, password);
+    clearSignedUpUser();
     dispatch(loading());
     return (
         fetch(`${lolImproverUrl}/api/login`, {

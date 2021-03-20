@@ -3,8 +3,8 @@ import {
     AUTH_SUCCESS,
     AUTH_ERROR,
     CLEAR_AUTH, 
-    SIGNED_UP,
-    CLEAR_SIGN_UP, 
+    SIGNED_UP_USER,
+    CLEAR_SIGNED_UP_USER, 
     LOADING, 
     STOP_LOADING,
 } from '../actions/auth';
@@ -13,7 +13,7 @@ const initialState = {
     authToken: null,
     currentUser: null,
     error: null,
-    signedUp: null,
+    signedUpUser: null,
     loading: false,
 };
 
@@ -42,15 +42,15 @@ const loginReducer = (state = initialState, action) => {
                 ...state,
                 error: action.error
             }
-        case SIGNED_UP: 
+        case SIGNED_UP_USER: 
             return {
                 ...state,
-                signedUp: true
+                signedUp: action.user
             }
-        case CLEAR_SIGN_UP:
+        case CLEAR_SIGNED_UP_USER:
             return {
                 ...state,
-                signedUp:false
+                signedUpUser: null
             }
         case LOADING: 
             return {

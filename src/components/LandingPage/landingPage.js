@@ -13,6 +13,7 @@ import { faStickyNote, faSearch, faUser } from '@fortawesome/free-solid-svg-icon
 import { Link } from 'react-router-dom';
 import SignUp from '../SignUp';
 import SignIn from '../SignIn';
+import { login } from '../../actions/auth';
 
 export const LandingPage = (props) => {
     // const redirect = (username, password) => {
@@ -21,7 +22,11 @@ export const LandingPage = (props) => {
     // convert to use reducer 
     const [signUp, setSignUp] = useState(false);
     const [signIn, setSignIn] = useState(false);
-    console.log('this is the auth token', props.authToken)
+    
+    if(props.signedUpUser){
+        props.dispatch(login(props.signedUpUser))
+    }
+
     if(props.authToken){
         return <Redirect to='/dashboard'/>
     }
@@ -75,7 +80,7 @@ export const LandingPage = (props) => {
 const mapStateToProps = state => {
     return {
         loggedIn: state.loginReducer.currentUser !== null,
-        signedUp: state.loginReducer.signedUp,
+        signedUpUser: state.loginReducer.signedUp,
         authToken: state.loginReducer.authToken
     };
 };

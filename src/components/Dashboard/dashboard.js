@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 // import fetchChampions from '../../actions/champions';
 // import LoginWrapper from '../LoginWrapper';
 // import ChampionInfo from '../ChampionInfo';
@@ -23,10 +23,10 @@ const mapStateToProps = state => ({
     authToken: state.loginReducer.authToken
 });
 
-export const Dashboard = ({ authToken, ...props}) => {
-    
+export const Dashboard = ({ authToken, ...props }) => {
+
     const [windowWidth, setWidth] = useState(window.innerWidth);
-    const[notes, setNotes] = useState([]);
+    const [notes, setNotes] = useState([]);
     //need to move this to its seperate hook files
     useEffect(() => {
 
@@ -47,17 +47,17 @@ export const Dashboard = ({ authToken, ...props}) => {
 
     useEffect(() => {
         let isMounted = true
-        async function getNotes(){
+        async function getNotes() {
             let notes = await fetch(`${lolImproverUrl}/api/notes`, {
                 method: 'GET',
-                headers:{
+                headers: {
                     'content-type': 'application/json',
                     'Authorization': `Bearer ${authToken}`
                 }
             });
             notes = await notes.json();
 
-            if(isMounted) setNotes(notes.result);
+            if (isMounted) setNotes(notes.result);
         }
 
         getNotes();
@@ -65,18 +65,21 @@ export const Dashboard = ({ authToken, ...props}) => {
             isMounted = false;
         }
     }, [])
-    
+
     let columns = 4;
-    if(windowWidth <= 1070) columns = 2;
-    if(windowWidth < 600) columns = 1;
-    if(!authToken) return (<Redirect to='/' />);
+    if (windowWidth <= 1070) columns = 2;
+    if (windowWidth < 600) columns = 1;
+    if (!authToken) return (<Redirect to='/' />);
+    let dashboardNotes;
 
     console.log('this is the authtoken ', authToken, notes)
-    if(authToken){
+    if (authToken) {
         console.log(jwt_decode(authToken))
     }
 
-    let dashboardNotes = notes.map(e => (<Note key={e._id} />))
+    dashboardNotes = notes && notes.length !== 0
+        ? notes.map(e => (<Note key={e._id} title={e.title} text={e.text}/>))
+        : undefined;
     // will add masonry package but will read source code to create my own
     return (
         <main className='main-content'>

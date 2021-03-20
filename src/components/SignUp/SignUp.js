@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router';
 import lolImproverUrl from '../../config';
 import { login } from '../../actions/auth';
+import { registerUser } from '../../actions/registerUser';
 
 // use context becuase 
 //needs form validation for the username and
@@ -32,35 +33,35 @@ const SignUp = ({ setSignUp, ...props }) => {
     const [password, setPassword] = useState();
     const [confirmPass, setConfirmPass] = useState();
 
-    async function userSignUp(user) {
-        await fetch(`${lolImproverUrl}/api/users`, {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(user)
-        }).then(response => {
-            if (response.status >= 401 && response.status < 600) {
-               return setError("Username is taken or password is too short");
-            }
-            props.dispatch(login(user));
-        })
-    }
+    // async function userSignUp(user) {
+    //     await fetch(`${lolImproverUrl}/api/users`, {
+    //         method: 'POST',
+    //         headers: {
+    //             'content-type': 'application/json'
+    //         },
+    //         body: JSON.stringify(user)
+    //     }).then(response => {
+    //         if (response.status >= 401 && response.status < 600) {
+    //             return setError("Username is taken or password is too short");
+    //         }
+    //         props.dispatch(login(user));
+    //     })
+    // }
 
     // console.log(props)
     const createUser = (e) => {
         e.preventDefault();
-        if(!agree) return setError('You haven\'t agreed the terms of service');
+        if (!agree) return setError('You haven\'t agreed the terms of service');
         if (agree && !error) {
-            userSignUp({ username, password });
+            props.dispatch(registerUser({ username, password }));
         }
     }
 
     useEffect(() => {
         if (confirmPass === password) setError('');
         if (confirmPass !== password) setError('passwords do not match');
-        if (typeof password === "string" &&  password.length < 5 ) setError('password is too short');
-        if(agree) setError('');
+        if (typeof password === "string" && password.length < 5) setError('password is too short');
+        if (agree) setError('');
     }, [confirmPass, password, agree])
 
 
