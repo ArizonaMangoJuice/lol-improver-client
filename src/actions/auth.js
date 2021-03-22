@@ -75,7 +75,6 @@ export const storeAuthInfo = (authToken, dispatch) => {
 }
 
 export const login = (user) => dispatch => {
-    // console.log('this is the user',username, password);
     clearSignedUpUser();
     dispatch(loading());
     return (
@@ -95,11 +94,9 @@ export const login = (user) => dispatch => {
                 return response.json();
             })
             .then(({ authToken }) => {
-                console.log(authToken)
                 dispatch(stopLoading());
                 storeAuthInfo(authToken, dispatch);
                 clearSignedUp();
-                // dispatch(fetchChampions(authToken))
             })
             .catch(err => {
                 dispatch(stopLoading());
