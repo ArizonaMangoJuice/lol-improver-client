@@ -2,10 +2,10 @@ import {
     SET_AUTH_TOKEN,
     AUTH_SUCCESS,
     AUTH_ERROR,
-    CLEAR_AUTH, 
+    CLEAR_AUTH,
     SIGNED_UP_USER,
-    CLEAR_SIGNED_UP_USER, 
-    LOADING, 
+    CLEAR_SIGNED_UP_USER,
+    LOADING,
     STOP_LOADING,
 } from '../actions/auth';
 
@@ -18,31 +18,31 @@ const initialState = {
 };
 
 const loginReducer = (state = initialState, action) => {
-    switch(action.type){
-        case SET_AUTH_TOKEN: 
+    switch (action.type) {
+        case SET_AUTH_TOKEN:
             return {
                 ...state,
-                authToken : action.authToken
+                authToken: action.authToken
             }
-        case CLEAR_AUTH: 
+        case CLEAR_AUTH:
             return {
                 ...state,
                 authToken: null,
                 currentUser: null
             }
-        case AUTH_SUCCESS: 
+        case AUTH_SUCCESS:
             return {
                 ...state,
                 currentUser: action.currentUser,
                 signedUp: false,
                 error: null
             }
-        case AUTH_ERROR: 
+        case AUTH_ERROR:
             return {
                 ...state,
                 error: action.error
             }
-        case SIGNED_UP_USER: 
+        case SIGNED_UP_USER:
             return {
                 ...state,
                 signedUp: action.user
@@ -52,19 +52,19 @@ const loginReducer = (state = initialState, action) => {
                 ...state,
                 signedUpUser: null
             }
-        case LOADING: 
+        case LOADING:
             return {
                 ...state,
                 loading: true
             }
-        case STOP_LOADING: 
+        case STOP_LOADING:
             return {
-                ...state, 
+                ...state,
                 loading: false
             }
-        default: 
+        default:
             return state
     }
-}  
+}
 
 export default loginReducer;

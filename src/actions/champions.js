@@ -48,23 +48,23 @@ export const updateBackEndChampionNote = () => {
         const note = getState().championReducer.note;
 
         const body = {
-            userId: id, 
+            userId: id,
             id: championId,
             note
         }
 
-        fetch(`${lolImproverUrl}/champions/${championId}`,{
+        fetch(`${lolImproverUrl}/champions/${championId}`, {
             method: 'PUT',
-            headers:{
+            headers: {
                 'content-type': 'application/json',
                 'Authorization': `Bearer ${authToken}`
             },
             body: JSON.stringify(body)
         })
-        .then(response => response.json())
-        .then(() => {
-            dispatch(fetchChampions());
-        })
+            .then(response => response.json())
+            .then(() => {
+                dispatch(fetchChampions());
+            })
     }
 }
 
@@ -78,9 +78,9 @@ const fetchChampions = () => {
                 'Authorization': `Bearer ${authToken}`
             }
         })
-          .then(response => response.json())
-          .then(champions => dispatch(championFetchSuccess(champions)))
-          .catch(error => dispatch(championFetchError(error)))
+            .then(response => response.json())
+            .then(champions => dispatch(championFetchSuccess(champions)))
+            .catch(error => dispatch(championFetchError(error)))
     }
 }
 

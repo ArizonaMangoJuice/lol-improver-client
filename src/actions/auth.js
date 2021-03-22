@@ -1,7 +1,7 @@
 import jwtDecode from 'jwt-decode';
 import lolImproverUrl from '../config';
 // import {SubmissionError} from 'redux-form';
-import {saveToken} from '../localStorage';
+import { saveToken } from '../localStorage';
 
 export const SET_AUTH_TOKEN = 'SET_AUTH_TOKEN';
 export const setAuthToken = authToken => ({
@@ -87,23 +87,23 @@ export const login = (user) => dispatch => {
             },
             body: JSON.stringify(user)
         })
-        .then(response => {
-            if(response.status === 401 || response.status === 400){
+            .then(response => {
+                if (response.status === 401 || response.status === 400) {
+                    dispatch(stopLoading());
+                    return response.json().then(err => Promise.reject(err))
+                }
+                return response.json();
+            })
+            .then(({ authToken }) => {
+                console.log(authToken)
                 dispatch(stopLoading());
-                return response.json().then(err => Promise.reject(err))
-            }
-            return response.json();
-        })
-        .then(({authToken}) => {
-            console.log(authToken)
-            dispatch(stopLoading());
-            storeAuthInfo(authToken, dispatch);
-            clearSignedUp();
-            // dispatch(fetchChampions(authToken))
-        })
-        .catch(err => {
-            dispatch(stopLoading());
-            dispatch(authError(err));
-        })
+                storeAuthInfo(authToken, dispatch);
+                clearSignedUp();
+                // dispatch(fetchChampions(authToken))
+            })
+            .catch(err => {
+                dispatch(stopLoading());
+                dispatch(authError(err));
+            })
     )
 }
