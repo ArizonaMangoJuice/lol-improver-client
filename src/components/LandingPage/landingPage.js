@@ -23,7 +23,7 @@ export const LandingPage = (props) => {
     const [signUp, setSignUp] = useState(false);
     const [signIn, setSignIn] = useState(false);
     
-    if(props.signedUpUser){
+    if(props.signedUpUser && !props.error){
         props.dispatch(login(props.signedUpUser))
     }
 

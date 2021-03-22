@@ -3,8 +3,8 @@ import './index.css';
 // import { registerUser } from '../../actions/registerUser';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router';
-import lolImproverUrl from '../../config';
-import { login } from '../../actions/auth';
+// import lolImproverUrl from '../../config';
+// import { login } from '../../actions/auth';
 import { registerUser } from '../../actions/registerUser';
 
 // use context becuase 
@@ -64,7 +64,7 @@ const SignUp = ({ setSignUp, ...props }) => {
         if (typeof password === "string" && password.length < 5) setError('password is too short');
         if (agree) setError('');
         if (props.error) setError(props.error);
-    }, [confirmPass, password, agree])
+    }, [confirmPass, password, agree, props.error])
 
     // let serverError = props.error ? <p className='sign-up-sign-in validation-error'>{props.error}</p> : undefined;
 
