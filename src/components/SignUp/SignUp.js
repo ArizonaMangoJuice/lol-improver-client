@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import './index.css';
-// import { registerUser } from '../../actions/registerUser';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router';
-// import lolImproverUrl from '../../config';
-// import { login } from '../../actions/auth';
 import { registerUser } from '../../actions/registerUser';
 
-// use context becuase 
+// use useReducer to reduce some of the useState over usage becuase 
 //needs form validation for the username and
 //move the useEffect to be an action for signing the user up 
 // move other useEffects to a seperate file
@@ -25,31 +22,13 @@ function userNameValidation(string, error) {
     return error('');
 }
 
-
 const SignUp = ({ setSignUp, ...props }) => {
-
     const [error, setError] = useState('');
     const [agree, setAgree] = useState(false);
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState();
     const [confirmPass, setConfirmPass] = useState();
 
-    // async function userSignUp(user) {
-    //     await fetch(`${lolImproverUrl}/api/users`, {
-    //         method: 'POST',
-    //         headers: {
-    //             'content-type': 'application/json'
-    //         },
-    //         body: JSON.stringify(user)
-    //     }).then(response => {
-    //         if (response.status >= 401 && response.status < 600) {
-    //             return setError("Username is taken or password is too short");
-    //         }
-    //         props.dispatch(login(user));
-    //     })
-    // }
-
-    // console.log(props)
     const createUser = (e) => {
         e.preventDefault();
         if (!agree) return setError('You haven\'t agreed the terms of service');
@@ -65,9 +44,6 @@ const SignUp = ({ setSignUp, ...props }) => {
         if (agree) setError('');
         if (props.error) setError(props.error);
     }, [confirmPass, password, agree, props.error])
-
-    // let serverError = props.error ? <p className='sign-up-sign-in validation-error'>{props.error}</p> : undefined;
-
 
     return (
         <section className={`sign-up-container ${props.hidden ? 'hidden' : ''}`} >
