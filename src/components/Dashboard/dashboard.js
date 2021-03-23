@@ -73,16 +73,19 @@ export const Dashboard = ({ authToken, notes, ...props }) => {
                     <DashBoardSearchBar />
                     {props.createNote
                         ? <div className='sign-up-container'>
-                            <section className='sign-up-bg'  onClick={() => props.dispatch(closeCreateNote())}/>
+                            <section className='sign-up-bg' onClick={() => props.dispatch(closeCreateNote())} />
                             <div className='create-note sign-up'>
                                 <h1 className='sign-up-h1'>Create Note</h1>
                                 <form className='sign-up-form'>
                                     <input
                                         // onChange={e => setUsername(e.currentTarget.value)}
                                         className='sign-up-input' type='text' placeholder='title' />
-                                    
+                                    <textarea className='sign-up-input' rows='8' placeholder='write here' />
+                                    <p>upload images coming Soon !</p>
+                                    <button className='sign-up-button' >
+                                        <p className='sign-up-button-p'>Create Note!</p>
+                                    </button>
                                 </form>
-                                <p>hello</p>
                             </div>
                         </div> : null}
                     <div className='notes-container left-container-width notes-flex-container'>
