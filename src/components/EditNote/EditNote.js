@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
-import { closeUpdateNote } from '../../actions/notes';
+import { closeUpdateNote, updateNoteServer } from '../../actions/notes';
 
 const mapStateToProps = state => ({
-    note: state.notesReducer.currentNote
+    note: state.notesReducer.currentNote,
+    authToken: state.loginReducer.authToken
 });
 
-const EditNote = ({ dispatch, note, ...props }) => {
+const EditNote = ({ dispatch, authToken, note, ...props }) => {
     const [title, setTitle] = useState('');
     const [text, setText] = useState('');
 
@@ -39,11 +40,12 @@ const EditNote = ({ dispatch, note, ...props }) => {
                         // disabled={loading}
                         onClick={(e) => {
                             e.preventDefault();
-                            // dispatch(createNoteServer(authToken, {
-                            //     title,
-                            //     text,
-                            //     progress: 0
-                            // }))
+
+                            dispatch(updateNoteServer(authToken, {
+                                ...note,
+                                title,
+                                text
+                            }));
                         }}
                         className='sign-up-button'>
                         <p className='sign-up-button-p'>Update</p>

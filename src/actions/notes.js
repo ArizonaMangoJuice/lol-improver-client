@@ -74,7 +74,29 @@ export const loadCurrentNote = (id) => ({
     id
 });
 
+export const updateNoteServer = (authToken, body) => async dispatch => {
+    console.log('before updating', body);
 
+    let note = await fetch(`${lolImproverUrl}/api/notes`, {
+        method: 'PUT',
+        headers: {
+            'content-type': 'application/json',
+            'Authorization': `Bearer ${authToken}`
+        },
+        body: JSON.stringify(body)
+    });
+
+    note = await note.json();
+    console.log('after updating', note);
+    dispatch(updateNote(note));
+    dispatch(closeUpdateNote());
+}
+
+export const UPDATE_NOTE = 'UPDATE_NOTE';
+export const updateNote = body => ({
+    type: UPDATE_NOTE,
+    body
+});
 
 export const CLEAR_CURRENT_NOTE = 'CLEAR_CURRENT_NOTE';
 export const clearCurrentNote = () => ({
