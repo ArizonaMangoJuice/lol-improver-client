@@ -13,8 +13,6 @@ import DashboardCreateNote from '../DashboardCreateNote';
 import Masonry from 'react-responsive-masonry';
 import UserMatchHistory from '../UserMatchHistory';
 import { Redirect } from 'react-router';
-import jwt_decode from 'jwt-decode';
-import lolImproverUrl from '../../config';
 import { getNotes } from '../../actions/notes';
 
 // I will use a masonry package but will look at source code to make my own.
@@ -48,10 +46,10 @@ export const Dashboard = ({ authToken, notes,  ...props }) => {
     }, [windowWidth])
 
     useEffect(() => {
-        let isMounted = true
+        // let isMounted = true
         props.dispatch(getNotes(authToken))
         return () => {
-            isMounted = false;
+            // isMounted = false;
         }
     }, [])
 
@@ -61,10 +59,6 @@ export const Dashboard = ({ authToken, notes,  ...props }) => {
     if (!authToken) return (<Redirect to='/' />);
     let dashboardNotes;
 
-    console.log('this is the authtoken ', authToken, notes)
-    if (authToken) {
-        console.log(jwt_decode(authToken))
-    }
 
     dashboardNotes = notes && notes.length !== 0
         ? notes.map(e => (<Note key={e._id} title={e.title} text={e.text}/>))
