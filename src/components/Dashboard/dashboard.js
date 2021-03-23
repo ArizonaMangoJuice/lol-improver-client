@@ -21,13 +21,13 @@ import { getNotes } from '../../actions/notes';
 // usereducer will help here 
 const mapStateToProps = state => ({
     authToken: state.loginReducer.authToken,
-    notes: state.notesReducer.notes
+    notes: state.notesReducer.notes,
+    createNote: state.notesReducer.createNote
 });
 
-export const Dashboard = ({ authToken, notes,  ...props }) => {
-
-    const [windowWidth, setWidth] = useState(window.innerWidth);
+export const Dashboard = ({ authToken, notes, ...props }) => {
     //need to move this to its seperate hook files
+    const [windowWidth, setWidth] = useState(window.innerWidth);
     useEffect(() => {
 
         let timeoutId = null;
@@ -61,7 +61,7 @@ export const Dashboard = ({ authToken, notes,  ...props }) => {
 
 
     dashboardNotes = notes && notes.length !== 0
-        ? notes.map(e => (<Note key={e._id} title={e.title} text={e.text}/>))
+        ? notes.map(e => (<Note key={e._id} title={e.title} text={e.text} />))
         : undefined;
     // will add masonry package but will read source code to create my own
     return (
@@ -71,6 +71,25 @@ export const Dashboard = ({ authToken, notes,  ...props }) => {
                 <div className='dashboard-left-side'>
                     <DashboardCreateNote />
                     <DashBoardSearchBar />
+                    {props.createNote
+                        ? <div className='sign-up-container'>
+                            <section className='sign-up-bg' />
+                            <div className='create-note sign-up'>
+                                <h1 className='sign-up-h1'>Sign In</h1>
+                                <form className='sign-up-form'>
+                                    <input
+                                        // onChange={e => setUsername(e.currentTarget.value)}
+                                        className='sign-up-input' type='text' placeholder='Username' />
+                                    <input
+                                        // onChange={e => setPassword(e.currentTarget.value)}
+                                        className='sign-up-input' type='password' placeholder='Password' />
+                                    {/* {!props.loading ? (<button className='sign-up-button' onClick={(e) => buttonSignIn(e, { username, password })}>
+                                        <p className='sign-up-button-p'>Sign Up</p>
+                                    </button>) : <h3>loading</h3>} */}
+                                </form>
+                                <p>hello</p>
+                            </div>
+                        </div> : null}
                     <div className='notes-container left-container-width notes-flex-container'>
                         <Masonry columnsCount={columns} className='test'>
                             {dashboardNotes}
@@ -88,12 +107,8 @@ export const Dashboard = ({ authToken, notes,  ...props }) => {
 
                 </div>
             </div>
-            {/* <ChampionInfo /> */}
-            {/* <NoteArea /> */}
-            {/* <PlayerSearch /> */}
         </main>
     )
 }
 
-// export default LoginWrapper()(connect()(Dashboard));
 export default connect(mapStateToProps)(Dashboard);

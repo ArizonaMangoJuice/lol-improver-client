@@ -1,13 +1,17 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { createNote } from '../../actions/notes';
 
-const DashboardCreateNote = () => {
+const DashboardCreateNote = ({ dispatch }) => {
     return (
         <div className='left-container-width'>
             {/* <h1 className='left-container-title'>Level up your skill</h1> */}
             <h1 className='left-container-title'>This Site is under Construction!</h1>
             <div className='left-container-buttons'>
                 <div className='backdrop-wrapper-orange flex'>
-                    <button className='left-container-button'>Create Note</button>
+                    <button
+                        onClick={() => dispatch(createNote())}
+                        className='left-container-button'>Create Note</button>
                 </div>
                 <div className='three-dots-container'>
                     <div className='dot'></div>
@@ -19,4 +23,4 @@ const DashboardCreateNote = () => {
     )
 }
 
-export default DashboardCreateNote;
+export default connect()(DashboardCreateNote);
