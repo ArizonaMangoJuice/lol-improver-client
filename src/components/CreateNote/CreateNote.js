@@ -1,15 +1,20 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { closeCreateNote } from '../../actions/notes';
+import { closeCreateNote, createNoteLoading, createNoteServer } from '../../actions/notes';
 
 
-export const CreateNote = props => {
+const mapStateToProps = state => ({
+    loading: state.notesReducer.loading,
+    authToken: state.loginReducer.authToken
+})
+
+export const CreateNote = ({ authToken, dispatch, loading, ...props }) => {
     const [title, setTitle] = useState('');
-    const [body, setBody] = useState('');
-    
+    const [text, setText] = useState('');
+
     return (
         <div className='sign-up-container'>
-            <section className='sign-up-bg' onClick={() => props.dispatch(closeCreateNote())} />
+            <section className='sign-up-bg' onClick={() => dispatch(closeCreateNote())} />
             <div className='create-note sign-up'>
                 <h1 className='sign-up-h1'>Create Note</h1>
                 <form className='sign-up-form'>
@@ -18,15 +23,25 @@ export const CreateNote = props => {
                         onChange={e => setTitle(e.currentTarget.value)}
                         className='sign-up-input' type='text' placeholder='title' />
                     <textarea
-                        onChange={e => setBody(e.currentTarget.value)}
-                        val={body}
+                        onChange={e => setText(e.currentTarget.value)}
+                        val={text}
                         className='sign-up-input'
                         rows='8'
                         placeholder='write here'
                     />
                     <p>upload images coming Soon !</p>
-                    <button className='sign-up-button' >
-                        <p className='sign-up-button-p'>Create Note!</p>
+                    <button
+                        disabled={loading}
+                        onClick={(e) => {
+                            e.preventDefault();
+                            dispatch(createNoteServer(authToken, {
+                                title,
+                                text,
+                                progress: 0
+                            }))
+                        }}
+                        className='sign-up-button'>
+                        <p className='sign-up-button-p'>{loading ? 'loading' : 'Create Note!'}</p>
                     </button>
                 </form>
             </div>
@@ -34,4 +49,4 @@ export const CreateNote = props => {
     )
 }
 
-export default connect()(CreateNote);
+export default connect(mapStateToProps)(CreateNote);

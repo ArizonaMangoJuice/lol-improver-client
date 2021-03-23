@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { createNote } from '../../actions/notes';
+import { openCreateNote } from '../../actions/notes';
 
 const DashboardCreateNote = ({ dispatch }) => {
     return (
@@ -10,7 +10,7 @@ const DashboardCreateNote = ({ dispatch }) => {
             <div className='left-container-buttons'>
                 <div className='backdrop-wrapper-orange flex'>
                     <button
-                        onClick={() => dispatch(createNote())}
+                        onClick={() => dispatch(openCreateNote())}
                         className='left-container-button'>Create Note</button>
                 </div>
                 <div className='three-dots-container'>
