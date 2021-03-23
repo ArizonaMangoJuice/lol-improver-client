@@ -54,15 +54,31 @@ export const editNote = (id) => ({
 });
 
 export const OPEN_UPDATE_NOTE = 'OPEN_UPDATE_NOTE';
-export const updateNote = (id, content) => ({
+export const openUpdateNote = () => ({
     type: OPEN_UPDATE_NOTE,
-    id,
-    content
 });
+
+export const openAndLoadNote = id => dispatch => {
+    dispatch(openUpdateNote());
+    dispatch(loadCurrentNote(id));
+};
 
 export const CLOSE_UPDATE_NOTE = 'CLOSE_UPDATE_NOTE';
 export const closeUpdateNote = () => ({
     type: CLOSE_UPDATE_NOTE
+});
+
+export const LOAD_CURRENT_NOTE = 'LOAD_CURRENT_NOTE';
+export const loadCurrentNote = (id) => ({
+    type: LOAD_CURRENT_NOTE,
+    id
+});
+
+
+
+export const CLEAR_CURRENT_NOTE = 'CLEAR_CURRENT_NOTE';
+export const clearCurrentNote = () => ({
+    type: CLEAR_CURRENT_NOTE
 });
 
 // add error handling to these but for now they work

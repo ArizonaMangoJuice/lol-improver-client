@@ -1,44 +1,52 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
+import { closeUpdateNote } from '../../actions/notes';
 
 const mapStateToProps = state => ({
-    authToken: state.loginReducer.authToken
+    note: state.notesReducer.currentNote
 });
 
-export const EditNote = (props) => {
+const EditNote = ({ dispatch, note, ...props }) => {
     const [title, setTitle] = useState('');
     const [text, setText] = useState('');
 
+    useEffect(() => {
+        if (note.title) {
+            setTitle(note.title);
+            setText(note.text);
+        }
+    }, [note])
+
     return (
         <div className='sign-up-container'>
-            <section className='sign-up-bg' onClick={() => dispatch(closeCreateNote())} />
+            <section className='sign-up-bg' onClick={() => dispatch(closeUpdateNote())} />
             <div className='create-note sign-up'>
-                <h1 className='sign-up-h1'>Update Note</h1>
+                <h1 className='sign-up-h1'>Edit Note {note.title}</h1>
                 <form className='sign-up-form'>
                     <input
-                        val={title}
+                        value={title}
                         onChange={e => setTitle(e.currentTarget.value)}
                         className='sign-up-input' type='text' placeholder='title' />
                     <textarea
                         onChange={e => setText(e.currentTarget.value)}
-                        val={text}
+                        value={text}
                         className='sign-up-input'
                         rows='8'
                         placeholder='write here'
                     />
-                    <p>upload images coming Soon !</p>
+                    <p>update image coming Soon !</p>
                     <button
-                        disabled={loading}
+                        // disabled={loading}
                         onClick={(e) => {
                             e.preventDefault();
-                            dispatch(createNoteServer(authToken, {
-                                title,
-                                text,
-                                progress: 0
-                            }))
+                            // dispatch(createNoteServer(authToken, {
+                            //     title,
+                            //     text,
+                            //     progress: 0
+                            // }))
                         }}
                         className='sign-up-button'>
-                        <p className='sign-up-button-p'>{loading ? 'loading' : 'Create Note!'}</p>
+                        <p className='sign-up-button-p'>Update</p>
                     </button>
                 </form>
             </div>

@@ -1,13 +1,20 @@
 import React from 'react';
 import UserProfileImage from '../UserProfileImage';
 import './Note.css';
+import { connect } from 'react-redux';
+import { openAndLoadNote } from '../../actions/notes';
 
-const Note = ({ title, img, text }) => {
+const mapStateToProps = state => ({
+    noteIsClicked: state.notesReducer.openUpdateNote
+});
+
+const Note = ({ title, img, text, id, dispatch, noteIsClicked }) => {
     img = img
         ? 'https://firebasestorage.googleapis.com/v0/b/isael-blogs.appspot.com/o/images%2FglasshmorphismMain.jpg?alt=media'
         : false;
     return (
         <div className='note '>
+            {/* {noteIsClicked ? <EditNote /> : undefined} */}
             <p className='note-title'>{title}</p>
             <div className='notes-container'>
                 <p className='notes'>{text}</p>
@@ -16,7 +23,9 @@ const Note = ({ title, img, text }) => {
             <div className='note-progress-container'>
                 <div className='note-progress-bar'></div>
             </div>
-            <button className='note-update-progress'>
+            <button
+                onClick={() => dispatch(openAndLoadNote(id))}
+                className='note-update-progress'>
                 Update
             </button>
             <div className='note-footer'>
@@ -33,4 +42,4 @@ const Note = ({ title, img, text }) => {
     )
 }
 
-export default Note;
+export default connect(mapStateToProps)(Note);

@@ -15,6 +15,7 @@ import UserMatchHistory from '../UserMatchHistory';
 import { Redirect } from 'react-router';
 import { getNotes } from '../../actions/notes';
 import CreateNote from '../CreateNote';
+import EditNote from '../EditNote';
 
 // I will use a masonry package but will look at source code to make my own.
 // i need to account for the margins and padding so flex basis wont freak out
@@ -26,7 +27,8 @@ const mapStateToProps = state => ({
     authToken: state.loginReducer.authToken,
     notes: state.notesReducer.notes,
     openCreateNote: state.notesReducer.openCreateNote,
-    currentNote: state.notesReducer.currentNote
+    currentNote: state.notesReducer.currentNote,
+    noteIsClicked: state.notesReducer.openUpdateNote
 });
 
 export const Dashboard = ({ authToken, notes, ...props }) => {
@@ -65,13 +67,14 @@ export const Dashboard = ({ authToken, notes, ...props }) => {
 
 
     dashboardNotes = notes && notes.length !== 0
-        ? notes.map(e => (<Note key={e._id} title={e.title} text={e.text} />))
+        ? notes.map(e => (<Note key={e._id} title={e.title} text={e.text} id={e._id} />))
         : undefined;
     // will add masonry package but will read source code to create my own
     return (
         <main className='main-content'>
             <Header />
             <div className='dashboard'>
+                {props.noteIsClicked ? <EditNote /> : undefined}
                 <div className='dashboard-left-side'>
                     <DashboardCreateNote />
                     <DashBoardSearchBar />
@@ -91,7 +94,6 @@ export const Dashboard = ({ authToken, notes, ...props }) => {
                     <UserMatchHistory />
                     <UserMatchHistory />
                     <UserMatchHistory />
-
                 </div>
             </div>
         </main>
