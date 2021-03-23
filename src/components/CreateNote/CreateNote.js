@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { closeCreateNote, createNoteLoading, createNoteServer } from '../../actions/notes';
+import { closeCreateNote, createNoteServer } from '../../actions/notes';
 
 
 const mapStateToProps = state => ({

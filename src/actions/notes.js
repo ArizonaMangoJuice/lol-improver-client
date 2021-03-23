@@ -93,5 +93,6 @@ export const createNoteServer = (authToken, body) => async dispatch => {
     console.log('success ', note)
 
     dispatch(createNote(note));
+    dispatch(closeCreateNote());
     dispatch(createNoteStopLoading());
 };
