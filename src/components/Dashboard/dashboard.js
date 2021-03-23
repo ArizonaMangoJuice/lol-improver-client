@@ -75,11 +75,11 @@ export const Dashboard = ({ authToken, notes, ...props }) => {
                         ? <div className='sign-up-container'>
                             <section className='sign-up-bg' />
                             <div className='create-note sign-up'>
-                                <h1 className='sign-up-h1'>Sign In</h1>
+                                <h1 className='sign-up-h1'>Create Note</h1>
                                 <form className='sign-up-form'>
                                     <input
                                         // onChange={e => setUsername(e.currentTarget.value)}
-                                        className='sign-up-input' type='text' placeholder='Username' />
+                                        className='sign-up-input' type='text' placeholder='title' />
                                     <input
                                         // onChange={e => setPassword(e.currentTarget.value)}
                                         className='sign-up-input' type='password' placeholder='Password' />
