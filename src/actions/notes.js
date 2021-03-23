@@ -18,6 +18,12 @@ export const closeCreateNote = () => ({
     type: CLOSE_CREATE_NOTE
 });
 
+export const CREATE_NOTE_TITLE = 'CREATE_NOTE_TITLE';
+export const createNoteTitle = (title) => ({
+    type: CREATE_NOTE_TITLE,
+    title
+});
+
 
 export const DELETE_NOTE = 'DELETE_NOTE';
 export const deleteNote = (id) => ({

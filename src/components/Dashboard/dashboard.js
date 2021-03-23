@@ -13,16 +13,20 @@ import DashboardCreateNote from '../DashboardCreateNote';
 import Masonry from 'react-responsive-masonry';
 import UserMatchHistory from '../UserMatchHistory';
 import { Redirect } from 'react-router';
-import { closeCreateNote, getNotes } from '../../actions/notes';
+import { getNotes } from '../../actions/notes';
+import CreateNote from '../CreateNote';
 
 // I will use a masonry package but will look at source code to make my own.
 // i need to account for the margins and padding so flex basis wont freak out
 // move parts to notes actions
 // usereducer will help here 
+//move the createNote to own Component
+
 const mapStateToProps = state => ({
     authToken: state.loginReducer.authToken,
     notes: state.notesReducer.notes,
-    createNote: state.notesReducer.createNote
+    openCreateNote: state.notesReducer.openCreateNote,
+    currentNote: state.notesReducer.currentNote
 });
 
 export const Dashboard = ({ authToken, notes, ...props }) => {
@@ -71,23 +75,8 @@ export const Dashboard = ({ authToken, notes, ...props }) => {
                 <div className='dashboard-left-side'>
                     <DashboardCreateNote />
                     <DashBoardSearchBar />
-                    {props.createNote
-                        ? <div className='sign-up-container'>
-                            <section className='sign-up-bg' onClick={() => props.dispatch(closeCreateNote())} />
-                            <div className='create-note sign-up'>
-                                <h1 className='sign-up-h1'>Create Note</h1>
-                                <form className='sign-up-form'>
-                                    <input
-                                        // onChange={e => setUsername(e.currentTarget.value)}
-                                        className='sign-up-input' type='text' placeholder='title' />
-                                    <textarea className='sign-up-input' rows='8' placeholder='write here' />
-                                    <p>upload images coming Soon !</p>
-                                    <button className='sign-up-button' >
-                                        <p className='sign-up-button-p'>Create Note!</p>
-                                    </button>
-                                </form>
-                            </div>
-                        </div> : null}
+                    {props.openCreateNote
+                        ? <CreateNote /> : null}
                     <div className='notes-container left-container-width notes-flex-container'>
                         <Masonry columnsCount={columns} className='test'>
                             {dashboardNotes}

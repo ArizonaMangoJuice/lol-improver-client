@@ -1,11 +1,11 @@
-import { CLOSE_CREATE_NOTE, OPEN_CREATE_NOTE, LOAD_NOTES } from "../actions/notes";
+import { CLOSE_CREATE_NOTE, OPEN_CREATE_NOTE, LOAD_NOTES, CREATE_NOTE_TITLE } from "../actions/notes";
 
 
 const initialState = {
     notes: [],
-    currentNote: null,
+    currentNote: {},
     error: null,
-    createNote: false,
+    openCreateNote: false,
 }
 
 const notesReducer = (state = initialState, action) => {
@@ -15,15 +15,20 @@ const notesReducer = (state = initialState, action) => {
                 ...state,
                 notes: action.notes
             }
+        case CREATE_NOTE_TITLE:
+            return {
+                ...state,
+                title: action.title
+            }
         case CLOSE_CREATE_NOTE:
             return {
                 ...state,
-                createNote: false
+                openCreateNote: false
             }
         case OPEN_CREATE_NOTE:
             return {
                 ...state,
-                createNote: true
+                openCreateNote: true
             }
         default:
             return state
