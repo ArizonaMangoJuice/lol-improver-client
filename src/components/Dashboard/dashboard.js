@@ -15,18 +15,20 @@ import UserMatchHistory from '../UserMatchHistory';
 import { Redirect } from 'react-router';
 import jwt_decode from 'jwt-decode';
 import lolImproverUrl from '../../config';
+import { getNotes } from '../../actions/notes';
 
 // I will use a masonry package but will look at source code to make my own.
 // i need to account for the margins and padding so flex basis wont freak out
+// move parts to notes actions
 // usereducer will help here 
 const mapStateToProps = state => ({
-    authToken: state.loginReducer.authToken
+    authToken: state.loginReducer.authToken,
+    notes: state.notesReducer.notes
 });
 
-export const Dashboard = ({ authToken, ...props }) => {
+export const Dashboard = ({ authToken, notes,  ...props }) => {
 
     const [windowWidth, setWidth] = useState(window.innerWidth);
-    const [notes, setNotes] = useState([]);
     //need to move this to its seperate hook files
     useEffect(() => {
 
@@ -47,20 +49,7 @@ export const Dashboard = ({ authToken, ...props }) => {
 
     useEffect(() => {
         let isMounted = true
-        async function getNotes() {
-            let notes = await fetch(`${lolImproverUrl}/api/notes`, {
-                method: 'GET',
-                headers: {
-                    'content-type': 'application/json',
-                    'Authorization': `Bearer ${authToken}`
-                }
-            });
-            notes = await notes.json();
-
-            if (isMounted) setNotes(notes.result);
-        }
-
-        getNotes();
+        props.dispatch(getNotes(authToken))
         return () => {
             isMounted = false;
         }
