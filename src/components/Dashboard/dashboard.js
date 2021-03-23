@@ -13,7 +13,7 @@ import DashboardCreateNote from '../DashboardCreateNote';
 import Masonry from 'react-responsive-masonry';
 import UserMatchHistory from '../UserMatchHistory';
 import { Redirect } from 'react-router';
-import { getNotes } from '../../actions/notes';
+import { closeCreateNote, getNotes } from '../../actions/notes';
 
 // I will use a masonry package but will look at source code to make my own.
 // i need to account for the margins and padding so flex basis wont freak out
@@ -73,19 +73,14 @@ export const Dashboard = ({ authToken, notes, ...props }) => {
                     <DashBoardSearchBar />
                     {props.createNote
                         ? <div className='sign-up-container'>
-                            <section className='sign-up-bg' />
+                            <section className='sign-up-bg'  onClick={() => props.dispatch(closeCreateNote())}/>
                             <div className='create-note sign-up'>
                                 <h1 className='sign-up-h1'>Create Note</h1>
                                 <form className='sign-up-form'>
                                     <input
                                         // onChange={e => setUsername(e.currentTarget.value)}
                                         className='sign-up-input' type='text' placeholder='title' />
-                                    <input
-                                        // onChange={e => setPassword(e.currentTarget.value)}
-                                        className='sign-up-input' type='password' placeholder='Password' />
-                                    {/* {!props.loading ? (<button className='sign-up-button' onClick={(e) => buttonSignIn(e, { username, password })}>
-                                        <p className='sign-up-button-p'>Sign Up</p>
-                                    </button>) : <h3>loading</h3>} */}
+                                    
                                 </form>
                                 <p>hello</p>
                             </div>

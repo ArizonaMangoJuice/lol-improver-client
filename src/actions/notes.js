@@ -8,10 +8,16 @@ export const loadNotes = (notes) => ({
     notes
 });
 
-export const CREATE_NOTE = 'CREATE_NOTE';
+export const OPEN_CREATE_NOTE = 'OPEN_CREATE_NOTE';
 export const createNote = () => ({
-    type: CREATE_NOTE
+    type: OPEN_CREATE_NOTE
 });
+
+export const CLOSE_CREATE_NOTE = 'CLOSE_CREATE_NOTE';
+export const closeCreateNote = () => ({
+    type: CLOSE_CREATE_NOTE
+});
+
 
 export const DELETE_NOTE = 'DELETE_NOTE';
 export const deleteNote = (id) => ({
