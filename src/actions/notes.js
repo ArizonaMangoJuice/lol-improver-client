@@ -53,11 +53,16 @@ export const editNote = (id) => ({
     id
 });
 
-export const UPDATE_NOTE = 'UPDATE_NOTE';
+export const OPEN_UPDATE_NOTE = 'OPEN_UPDATE_NOTE';
 export const updateNote = (id, content) => ({
-    type: UPDATE_NOTE,
+    type: OPEN_UPDATE_NOTE,
     id,
     content
+});
+
+export const CLOSE_UPDATE_NOTE = 'CLOSE_UPDATE_NOTE';
+export const closeUpdateNote = () => ({
+    type: CLOSE_UPDATE_NOTE
 });
 
 // add error handling to these but for now they work

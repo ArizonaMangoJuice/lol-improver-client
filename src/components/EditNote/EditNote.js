@@ -1,14 +1,11 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { closeCreateNote, createNoteServer } from '../../actions/notes';
-
 
 const mapStateToProps = state => ({
-    loading: state.notesReducer.loading,
     authToken: state.loginReducer.authToken
 });
 
-export const CreateNote = ({ authToken, dispatch, loading, ...props }) => {
+export const EditNote = (props) => {
     const [title, setTitle] = useState('');
     const [text, setText] = useState('');
 
@@ -16,7 +13,7 @@ export const CreateNote = ({ authToken, dispatch, loading, ...props }) => {
         <div className='sign-up-container'>
             <section className='sign-up-bg' onClick={() => dispatch(closeCreateNote())} />
             <div className='create-note sign-up'>
-                <h1 className='sign-up-h1'>Create Note</h1>
+                <h1 className='sign-up-h1'>Update Note</h1>
                 <form className='sign-up-form'>
                     <input
                         val={title}
@@ -46,7 +43,7 @@ export const CreateNote = ({ authToken, dispatch, loading, ...props }) => {
                 </form>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default connect(mapStateToProps)(CreateNote);
+export default connect(mapStateToProps)(EditNote);
