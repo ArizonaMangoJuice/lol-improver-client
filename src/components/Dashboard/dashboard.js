@@ -13,7 +13,7 @@ import DashboardCreateNote from '../DashboardCreateNote';
 import Masonry from 'react-responsive-masonry';
 import UserMatchHistory from '../UserMatchHistory';
 import { Redirect } from 'react-router';
-import { deleteNote, getNotes } from '../../actions/notes';
+import { getNotes } from '../../actions/notes';
 import CreateNote from '../CreateNote';
 import EditNote from '../EditNote';
 
