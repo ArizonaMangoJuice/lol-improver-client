@@ -13,7 +13,7 @@ import DashboardCreateNote from '../DashboardCreateNote';
 import Masonry from 'react-responsive-masonry';
 import UserMatchHistory from '../UserMatchHistory';
 import { Redirect } from 'react-router';
-import { getNotes } from '../../actions/notes';
+import { deleteNote, getNotes } from '../../actions/notes';
 import CreateNote from '../CreateNote';
 import EditNote from '../EditNote';
 
@@ -28,10 +28,11 @@ const mapStateToProps = state => ({
     notes: state.notesReducer.notes,
     openCreateNote: state.notesReducer.openCreateNote,
     currentNote: state.notesReducer.currentNote,
-    noteIsClicked: state.notesReducer.openUpdateNote
+    noteIsClicked: state.notesReducer.openUpdateNote,
+    deleteNote: state.notesReducer.deleteNote
 });
 
-export const Dashboard = ({ authToken, notes, ...props }) => {
+export const Dashboard = ({ authToken, notes, deleteNote, ...props }) => {
     //need to move this to its seperate hook files
     const [windowWidth, setWidth] = useState(window.innerWidth);
     useEffect(() => {
@@ -57,7 +58,7 @@ export const Dashboard = ({ authToken, notes, ...props }) => {
         return () => {
             // isMounted = false;
         }
-    }, [])
+    }, [deleteNote])
 
     let columns = 4;
     if (windowWidth <= 1070) columns = 2;

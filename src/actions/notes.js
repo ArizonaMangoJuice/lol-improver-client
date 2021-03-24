@@ -40,12 +40,32 @@ export const createNoteStopLoading = () => ({
     type: CREATE_NOTE_STOP_LOADING
 });
 
-
 export const DELETE_NOTE = 'DELETE_NOTE';
 export const deleteNote = (id) => ({
     type: DELETE_NOTE,
     id
 });
+
+export const CLEAR_DELETE_NOTE = 'CLEAR_DELETE_NOTE';
+export const clearDeleteNote = () => ({
+    type: CLEAR_DELETE_NOTE
+});
+
+export const deleteNoteAndClear = (authToken, id) => async dispatch => {
+    dispatch(deleteNote(id));
+    let deletedNote = await fetch(`${lolImproverUrl}/api/notes`, {
+        method: 'DELETE',
+        headers: {
+            'content-type': 'application/json',
+            'Authorization': `Bearer ${authToken}`
+        },
+        body: JSON.stringify({id})
+    });
+
+    deletedNote = deletedNote.json();
+    dispatch(clearDeleteNote(deletedNote))
+
+}
 
 export const EDIT_NOTE = 'EDIT_NOTE';
 export const editNote = (id) => ({
@@ -75,7 +95,6 @@ export const loadCurrentNote = (id) => ({
 });
 
 export const updateNoteServer = (authToken, body) => async dispatch => {
-    console.log('before updating', body);
 
     let note = await fetch(`${lolImproverUrl}/api/notes`, {
         method: 'PUT',
@@ -87,7 +106,6 @@ export const updateNoteServer = (authToken, body) => async dispatch => {
     });
 
     note = await note.json();
-    console.log('after updating', note);
     dispatch(updateNote(note));
     dispatch(closeUpdateNote());
 }
