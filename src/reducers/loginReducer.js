@@ -7,6 +7,7 @@ import {
     CLEAR_SIGNED_UP_USER,
     LOADING,
     STOP_LOADING,
+    CLEAR_ERROR,
 } from '../actions/auth';
 
 const initialState = {
@@ -61,6 +62,11 @@ const loginReducer = (state = initialState, action) => {
             return {
                 ...state,
                 loading: false
+            }
+        case CLEAR_ERROR: 
+            return {
+                ...state,
+                error: null
             }
         default:
             return state

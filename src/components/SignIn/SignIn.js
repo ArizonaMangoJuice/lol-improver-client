@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {connect} from 'react-redux';
 import { login } from '../../actions/auth';
+import SimpleLoader from '../SimpleLoader';
 
 const mapStateToProps = state => ({
     error: state.loginReducer.error,
@@ -31,7 +32,7 @@ const SignIn = ({setSignIn, signIn, ...props}) => {
                             className='sign-up-input' type='password' placeholder='Password'/>
                         {!props.loading ?(<button className='sign-up-button' onClick={(e) => buttonSignIn(e, {username, password})}>
                             <p className='sign-up-button-p'>Sign Up</p>
-                        </button>) : <h3>loading</h3>}
+                        </button>) : <SimpleLoader/>}
                 </form>
             </div>
         </section>

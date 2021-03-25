@@ -20,7 +20,6 @@ export const registerUser = user => dispatch => {
         .then(response => {
             if (response.status >= 401 && response.status < 600) {
                 dispatch(authError('Username is taken or password is too short'));
-                dispatch(stopLoading());
                 throw new Error('The username already exists');
             }
             return response.json();
@@ -35,6 +34,7 @@ export const registerUser = user => dispatch => {
         })
         .catch(err => {
             let message = 'The username already exists';
+            dispatch(stopLoading());
             dispatch(authError(message));
         })
 }

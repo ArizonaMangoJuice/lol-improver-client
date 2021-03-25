@@ -103,6 +103,9 @@
     font-size: 1vw;
     margin: 1vh;
     padding: 1vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 1.3vh;
     background-color: rgba(139, 73, 255, .5);
     color: white;

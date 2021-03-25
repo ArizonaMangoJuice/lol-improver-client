@@ -3,6 +3,7 @@ import './index.css';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router';
 import { registerUser } from '../../actions/registerUser';
+import SimpleLoader from '../SimpleLoader';
 
 // use useReducer to reduce some of the useState over usage becuase 
 //needs form validation for the username and
@@ -33,7 +34,7 @@ const SignUp = ({ setSignUp, ...props }) => {
     const createUser = (e) => {
         e.preventDefault();
         if (!agree) return setError('You haven\'t agreed the terms of service');
-        if (agree && !error) {
+        if (agree) {
             props.dispatch(registerUser({ username, password }));
         }
     }
@@ -79,7 +80,7 @@ const SignUp = ({ setSignUp, ...props }) => {
                         // sign up button will have to have a diffrent class that wont let it hover
                         className={`${agree && (username === '' || password === '' || confirmPass === '') ? 'disabled-sign-up-button' : 'sign-up-button'}`}
                     >
-                        { props.loading ? <p className='sign-up-button'>Loading</p> : <p className='sign-up-button-p'>Sign Up</p>}
+                        { props.loading ? <SimpleLoader /> : <p className='sign-up-button-p'>Sign Up</p>}
                     </button>
                     <label onChange={() => setAgree(!agree)} className='sign-up-input sign-up-label'>
                         <input onChange={() => setAgree(!agree)} className='sign-up-checkbox' checked={agree} type='checkbox' />

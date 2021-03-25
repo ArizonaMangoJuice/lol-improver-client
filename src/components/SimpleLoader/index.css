@@ -1,0 +1,30 @@
+.simple-loader{
+    height: 3.7vh;
+    width: 3.7vh;
+    background: transparent;
+    border-top: .5vh solid #ffca58;
+    border-right: .5vh solid transparent;
+    border-radius: 50%;
+    animation: test 1s linear infinite;
+    -webkit-animation: test 1s linear infinite; 
+    /* margin-top: 1.2vh; */
+  }
+  
+  @-webkit-keyframes test{
+    0% {
+      transform: rotate(0deg);
+    }
+    
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes test{
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
