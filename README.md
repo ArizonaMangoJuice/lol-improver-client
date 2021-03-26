@@ -4,8 +4,8 @@ League of Legends is a fast-paced, competitive online game that blends the speed
 
 ## LoL-Improver
 Lol-improver let's you take notes of champs you play and look up player latest match history.
-https://github.com/ArizonaMangoJuice/lol-improver-server
-https://focused-nightingale-b297e9.netlify.com/
+
+https://zealous-babbage-0a29dc.netlify.app/
 
 # Demo Account
 - username: testuser
