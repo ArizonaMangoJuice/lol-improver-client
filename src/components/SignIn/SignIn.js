@@ -31,7 +31,7 @@ const SignIn = ({setSignIn, signIn, ...props}) => {
                             onChange={e => setPassword(e.currentTarget.value)}
                             className='sign-up-input' type='password' placeholder='Password'/>
                         {!props.loading ?(<button className='sign-up-button' onClick={(e) => buttonSignIn(e, {username, password})}>
-                            <p className='sign-up-button-p'>Sign Up</p>
+                            <p className='sign-up-button-p'>Sign In</p>
                         </button>) : <SimpleLoader/>}
                 </form>
             </div>
