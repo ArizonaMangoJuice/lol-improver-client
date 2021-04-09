@@ -95,7 +95,6 @@ export const loadCurrentNote = (id) => ({
 });
 
 export const updateNoteServer = (authToken, body) => async dispatch => {
-
     let note = await fetch(`${lolImproverUrl}/api/notes`, {
         method: 'PUT',
         headers: {

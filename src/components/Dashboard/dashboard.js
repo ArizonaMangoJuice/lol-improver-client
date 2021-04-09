@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 // import fetchChampions from '../../actions/champions';
 // import LoginWrapper from '../LoginWrapper';
@@ -16,6 +16,7 @@ import { Redirect } from 'react-router';
 import { getNotes } from '../../actions/notes';
 import CreateNote from '../CreateNote';
 import EditNote from '../EditNote';
+import { useWindowsWidth } from '../../hooks/useWindowsWidth';
 
 // I will use a masonry package but will look at source code to make my own.
 // i need to account for the margins and padding so flex basis wont freak out
@@ -33,24 +34,7 @@ const mapStateToProps = state => ({
 });
 
 export const Dashboard = ({ authToken, notes, deleteNote, ...props }) => {
-    //need to move this to its seperate hook files
-    const [windowWidth, setWidth] = useState(window.innerWidth);
-    useEffect(() => {
-
-        let timeoutId = null;
-        const resizeListener = () => {
-            // prevent execution of previous setTimeout
-            clearTimeout(timeoutId);
-            // change width from the state object after 150 milliseconds
-            timeoutId = setTimeout(() => setWidth(window.innerWidth), 0);
-        };
-
-        window.addEventListener("resize", resizeListener);
-
-        return () => {
-            window.addEventListener("resize", resizeListener);
-        }
-    }, [windowWidth])
+    const windowWidth = useWindowsWidth();
 
     useEffect(() => {
         // let isMounted = true
@@ -65,7 +49,6 @@ export const Dashboard = ({ authToken, notes, deleteNote, ...props }) => {
     if (windowWidth < 600) columns = 1;
     if (!authToken) return (<Redirect to='/' />);
     let dashboardNotes;
-
 
     dashboardNotes = notes && notes.length !== 0
         ? notes.map(e => (<Note key={e._id} title={e.title} text={e.text} id={e._id} />))
