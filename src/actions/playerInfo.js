@@ -1,5 +1,10 @@
 import lolImproverUrl from '../config';
 
+export const SORT_MATCHES = 'SORT_MATCHES';
+export const sortMatches = () => ({
+    type: SORT_MATCHES
+});
+
 export const ADD_MATCH = 'ADD_MATCH';
 export const addMatch = match => ({
     type: ADD_MATCH,
@@ -129,14 +134,17 @@ export const fetchMatchlist = accountId => dispatch => {
 };
 
 
-export const fetchMatch = matchId => dispatch => {
+export const fetchMatch = (matchId, matchListObj) => dispatch => {
+    const {champion, timestamp} = matchListObj;
+
     return fetch(`${lolImproverUrl}/api/players/match/${matchId}`)
         .then(response => {
             if(!response.ok) throw new Error('Match not found');
             return response.json();
         })
         .then( response => {
-            dispatch(addMatch(response))
+            dispatch(addMatch({...response, champion, timestamp}));
+            dispatch(sortMatches());
         })
         .catch(err => dispatch(matchesError(err.message)))
 }

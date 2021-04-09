@@ -9,6 +9,7 @@ import {
     UPDATE_MATCH_LIST,
     FETCH_STATIC_ITEM,
     ADD_MATCH,
+    SORT_MATCHES,
     CLEAR_MATCHES} from '../actions/playerInfo';
 
 const initialState = {
@@ -24,6 +25,13 @@ const initialState = {
 
 const playerReducer = (state=initialState, action) => {
     switch(action.type){
+        case SORT_MATCHES: 
+            const sorted = state.matches.slice(0).sort((a,b) => parseInt(a.timestamp, 10) < parseInt(b.timestamp, 10));
+            console.log('sorted', sorted)
+            return {
+                ...state,
+                matches: sorted
+            }
         case CLEAR_MATCHES: 
             return {
                 ...state,

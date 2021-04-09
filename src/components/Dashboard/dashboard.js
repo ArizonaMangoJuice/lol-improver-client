@@ -27,20 +27,21 @@ const mapStateToProps = state => ({
     currentNote: state.notesReducer.currentNote,
     noteIsClicked: state.notesReducer.openUpdateNote,
     deleteNote: state.notesReducer.deleteNote,
-    matchList: state.playerReducer.matchList
+    matchList: state.playerReducer.matchList,
+    matches: state.playerReducer.matches
 });
 
-export const Dashboard = ({ authToken, notes, deleteNote, matchList, ...props }) => {
+export const Dashboard = ({ authToken, notes, deleteNote, matchList, matches, ...props }) => {
     const windowWidth = useWindowsWidth();
 
     useEffect(() => {
         props.dispatch(getNotes(authToken))
     }, [deleteNote])
-// move this to its own match list hook
+    // move this to its own match list hook
     useEffect(() => {
-        if(matchList.length > 0) {
-            for(const match in matchList){
-                props.dispatch(fetchMatch(matchList[match].gameId))
+        if (matchList.length > 0) {
+            for (const match in matchList) {
+                props.dispatch(fetchMatch(matchList[match].gameId, matchList[match]));
             }
         }
     }, [matchList])
@@ -50,11 +51,15 @@ export const Dashboard = ({ authToken, notes, deleteNote, matchList, ...props })
     if (windowWidth < 600) columns = 1;
     if (!authToken) return (<Redirect to='/' />);
     let dashboardNotes;
+    let matchesComponent;
 
     dashboardNotes = notes && notes.length !== 0
         ? notes.map(e => (<Note key={e._id} title={e.title} text={e.text} id={e._id} />))
         : undefined;
 
+    matchesComponent = matches && matches.length > 0
+        ? matches.map(match => (<UserMatchHistory key={match.gameId} match={match} />))
+        : undefined
     // will add masonry package but will read source code to create my own
     return (
         <main className='main-content'>
@@ -74,12 +79,7 @@ export const Dashboard = ({ authToken, notes, deleteNote, matchList, ...props })
                 </div>
                 <div className='dashboard-right-side'>
                     <h2 className='dashboard-match-history-title'>Match History</h2>
-                    <UserMatchHistory />
-                    <UserMatchHistory />
-                    <UserMatchHistory />
-                    <UserMatchHistory />
-                    <UserMatchHistory />
-                    <UserMatchHistory />
+                    {matchesComponent}
                 </div>
             </div>
         </main>
