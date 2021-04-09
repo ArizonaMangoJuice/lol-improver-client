@@ -1,11 +1,29 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import UserProfileImage from '../UserProfileImage';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faChevronDown, faFilter, faSearch, faPlus} from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown, faFilter, faSearch, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { connect } from 'react-redux';
+import { fetchMatchlist, findPlayer, updatePlayerSearch } from '../../actions/playerInfo';
 
 const userLink = 'https://avatars.githubusercontent.com/u/21373845?s=460&u=06623bc214c716a3ba9b90f0beea147d7b9cf6e1&v=4';
 
-const DashBoardSearchBar = () => {
+const mapStateToProps = state => ({
+    playerSearch: state.playerReducer.playerSearch,
+    accountInfo: state.playerReducer.accountInfo
+});
+
+const formPlayerSearch = (e, dispatch, playerSearch) => {
+    e.preventDefault();
+    const urlString = encodeURI(playerSearch.toLowerCase());
+    dispatch(findPlayer(urlString));
+    console.log('hello');
+}
+
+const DashBoardSearchBar = ({ dispatch, playerSearch, accountInfo, ...props }) => {
+    useEffect(() => {
+        if(accountInfo) dispatch(fetchMatchlist(accountInfo.accountId));
+    }, [accountInfo])
+
     return (
         <div className='left-container-width main-bg left-container-search-bar'>
             <button className='left-container-search'>
@@ -14,10 +32,11 @@ const DashBoardSearchBar = () => {
                 <FontAwesomeIcon icon={faChevronDown} className='white icon-margin-left small-icon-size' />
                 <div className='half-border'></div>
             </button>
-            <label className='left-container-search-input'>
-                <FontAwesomeIcon icon={faSearch} className='search-icon'  />
-                <input type='text' placeholder='Search' className='left-container-search-input-text' />
-            </label>
+            <form onSubmit={(e) => formPlayerSearch(e, dispatch, playerSearch)} className='left-container-search-input'>
+                <FontAwesomeIcon icon={faSearch} className='search-icon' />
+                <input onChange={(e) => dispatch(updatePlayerSearch(e.target.value))} type='text' placeholder='Search Player' className='left-container-search-input-text' />
+                <button >Find Player</button>
+            </form>
             <div className='left-container-search-people'>
                 <button className='add-button'><FontAwesomeIcon icon={faPlus} className='default-button-size' /></button>
                 <div className='players'>
@@ -32,4 +51,4 @@ const DashBoardSearchBar = () => {
     )
 }
 
-export default DashBoardSearchBar;
+export default connect(mapStateToProps)(DashBoardSearchBar);

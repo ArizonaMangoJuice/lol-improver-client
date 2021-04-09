@@ -5,25 +5,52 @@ import {
     CLEAR_PLAYER, 
     MATCHES_ERROR,
     FETCH_STATIC_SUMMONER_SPELL,
-    FETCH_STATIC_ITEM} from '../actions/playerInfo';
+    UPDATE_PLAYER_SEARCH,
+    UPDATE_MATCH_LIST,
+    FETCH_STATIC_ITEM,
+    ADD_MATCH,
+    CLEAR_MATCHES} from '../actions/playerInfo';
 
 const initialState = {
     matches: [],
     accountInfo: null,
+    matchList: [],
     playerChampInfo: [],
     summonerSpells: [],
     items:[],
+    playerSearch: '',
     error: null
 }
 
 const playerReducer = (state=initialState, action) => {
     switch(action.type){
+        case CLEAR_MATCHES: 
+            return {
+                ...state,
+                matches: []
+            }
+        case ADD_MATCH: 
+            return {
+                ...state,
+                matches: [...state.matches, action.match]
+            }
+        case UPDATE_PLAYER_SEARCH: 
+            return {
+                ...state,
+                playerSearch: action.player
+            }
+        case UPDATE_MATCH_LIST: 
+            return {
+                ...state,
+                matchList: action.matchList
+            }
         case MATCHES_ERROR:
             return {
                 ...state,
                 error: action.error
             }
         case FETCH_PLAYER: 
+            console.log('inside the fetch', action.accountInfo)
             return {
                 ...state,
                 accountInfo: action.accountInfo,

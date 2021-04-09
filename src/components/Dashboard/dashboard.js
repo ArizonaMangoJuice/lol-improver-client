@@ -1,10 +1,5 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-// import fetchChampions from '../../actions/champions';
-// import LoginWrapper from '../LoginWrapper';
-// import ChampionInfo from '../ChampionInfo';
-// import NoteArea from '../NoteArea';
-// import PlayerSearch from '../PlayerSearch';
 import Header from '../Header';
 import Note from '../Note';
 import './dashboard.css';
@@ -17,6 +12,7 @@ import { getNotes } from '../../actions/notes';
 import CreateNote from '../CreateNote';
 import EditNote from '../EditNote';
 import { useWindowsWidth } from '../../hooks/useWindowsWidth';
+import { fetchMatch } from '../../actions/playerInfo';
 
 // I will use a masonry package but will look at source code to make my own.
 // i need to account for the margins and padding so flex basis wont freak out
@@ -30,19 +26,24 @@ const mapStateToProps = state => ({
     openCreateNote: state.notesReducer.openCreateNote,
     currentNote: state.notesReducer.currentNote,
     noteIsClicked: state.notesReducer.openUpdateNote,
-    deleteNote: state.notesReducer.deleteNote
+    deleteNote: state.notesReducer.deleteNote,
+    matchList: state.playerReducer.matchList
 });
 
-export const Dashboard = ({ authToken, notes, deleteNote, ...props }) => {
+export const Dashboard = ({ authToken, notes, deleteNote, matchList, ...props }) => {
     const windowWidth = useWindowsWidth();
 
     useEffect(() => {
-        // let isMounted = true
         props.dispatch(getNotes(authToken))
-        return () => {
-            // isMounted = false;
-        }
     }, [deleteNote])
+// move this to its own match list hook
+    useEffect(() => {
+        if(matchList.length > 0) {
+            for(const match in matchList){
+                props.dispatch(fetchMatch(matchList[match].gameId))
+            }
+        }
+    }, [matchList])
 
     let columns = 4;
     if (windowWidth <= 1070) columns = 2;
@@ -53,6 +54,7 @@ export const Dashboard = ({ authToken, notes, deleteNote, ...props }) => {
     dashboardNotes = notes && notes.length !== 0
         ? notes.map(e => (<Note key={e._id} title={e.title} text={e.text} id={e._id} />))
         : undefined;
+
     // will add masonry package but will read source code to create my own
     return (
         <main className='main-content'>
