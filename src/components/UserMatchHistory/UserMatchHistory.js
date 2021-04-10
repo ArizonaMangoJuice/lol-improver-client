@@ -62,7 +62,7 @@ const UserMatchHistory = ({ match }) => {
                 <div className='user-match-history-right-side'>
                     <UserProfileImage 
                         divStyles='user-match-history-img-container' imgStyles='user-match-history-img' 
-                        src={`http://ddragon.leagueoflegends.com/cdn/11.7.1/img/champion/${champ.name}.png`} />
+                        src={`http://ddragon.leagueoflegends.com/cdn/11.7.1/img/champion/${champ && champ.name ? champ.name.replace(/\s+/g, '') : ''}.png`} />
                     <div className='user-match-history-text'>
                         <p className='user-champion-name'>{champ.name}</p>
                         <p className='user-champion-kda'>{kills}/{deaths}/{assists}</p>
