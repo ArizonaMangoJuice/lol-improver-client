@@ -144,7 +144,7 @@ export const fetchMatch = (matchId, matchListObj) => dispatch => {
         })
         .then( response => {
             dispatch(addMatch({...response, champion, timestamp}));
-            dispatch(sortMatches());
+            // dispatch(sortMatches());
         })
         .catch(err => dispatch(matchesError(err.message)))
 }

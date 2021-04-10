@@ -30,16 +30,24 @@ const UserMatchHistory = ({ match }) => {
     }, [match.champion])
 
     // move to own useEffect file
-    const [player, setPlayer] = useState({participants: []});
+    const [player, setPlayer] = useState();
 
+    // this might need to be put in its own function
     useEffect(() => {
-        const player = match && match.participants ? match.participants.filter( player => player.championId.toString() === match.champion.toString())[0] : undefined;
+
+        if(match.participants && match.teams){
+            console.log(match)
+            const playerObj = match.participants.filter( player => player.championId.toString() === match.champion.toString())[0];
+            // const outcome = match.teams.filter(team => team.teamId === player.teamId);
+            // playerObj.outcome = outcome[0].win;
+            setPlayer(playerObj);
+        }
+        // const playerObj = match && match.participants ? match.participants.filter( player => player.championId.toString() === match.champion.toString())[0] : undefined;
         // console.log('player id', player.teamId, player)
-        const outcome = match.teams.filter(team => team.teamId === player.teamId)[0].win;
+        // const outcome = match.teams.filter(team => team.teamId === player.teamId)[0].win;
         // console.log('this is the outcome', match.teams, outcome);
-        player.outcome = outcome;
-        setPlayer(player);
-    }, [match])
+        
+    }, [match.participants, match.teams])
     
 
     let kills = 0;
