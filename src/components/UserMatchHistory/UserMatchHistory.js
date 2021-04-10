@@ -1,68 +1,24 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import UserProfileImage from '../UserProfileImage';
 import './UserMatchHistory.css';
-import lolImproverUrl from '../../config';
-
+import useGetPlayer from '../../hooks/useGetPlayer';
+import useGetMatchImage from '../../hooks/useGetMatchImage';
+import createMatchDate from '../../utils/createMatchDate';
 
 const UserMatchHistory = ({ match }) => {
-    const [champ, setChamp] = useState({});
-    // move to own function
-    // const time = parseInt(match.timestamp);
-    const readableTime = new Date(parseInt(match.timestamp, 10));
-    // readableTime.setUTCSeconds(time * 1000);
-    const dd = String(readableTime.getDate()).padStart(2, '0');
-    const mm = String(readableTime.getMonth() + 1).padStart(2, '0'); //January is 0!
-    const yyyy = readableTime.getFullYear();
-
-    const gameDate = `${mm}/${dd}/${yyyy}`;
-
-    // move this to own hook file to grab matchImages
-    // useCallback for this
-    useEffect(() => {
-        const test = async () => {
-            let response = await fetch(`${lolImproverUrl}/api/static/${match.champion}`);
-            response = await response.json();
-            setChamp(response[0]);
-        }
-        // console.log('it should onlyu run once')
-        test();
-
-    }, [match.champion])
-
-    // move to own useEffect file
-    const [player, setPlayer] = useState();
-
-    // this might need to be put in its own function
-    useEffect(() => {
-
-        if(match.participants && match.teams){
-            // console.log(match)
-            const playerObj = match.participants.filter( player => player.championId.toString() === match.champion.toString())[0];
-            // console.log('this is the length',  Array.isArray(match.teams), match.teams.length);
-            const outcome = match.teams.filter(team => team.teamId === playerObj.teamId)[0].win;
-            // console.log('this is the outcome', outcome);
-            playerObj.outcome = outcome;
-            setPlayer(playerObj);
-        }
-        // const playerObj = match && match.participants ? match.participants.filter( player => player.championId.toString() === match.champion.toString())[0] : undefined;
-        // console.log('player id', player.teamId, player)
-        // const outcome = match.teams.filter(team => team.teamId === player.teamId)[0].win;
-        // console.log('this is the outcome', match.teams, outcome);
-        
-    }, [match.participants, match.teams])
-    
+    const champ = useGetMatchImage(match);
+    const player = useGetPlayer(match);
+    const gameDate = createMatchDate(match);
 
     let kills = 0;
     let deaths = 0;
     let assists = 0;
     let win;
-    
-    if(player && player.stats) kills = player.stats.kills;
-    if(player && player.stats) deaths = player.stats.deaths;
-    if(player && player.stats) assists = player.stats.assists;
-    if(player && player.outcome) player.outcome === 'Fail' ? win = false :  win = true;
 
-    // console.log('this is the champion info', player)
+    if (player && player.stats) kills = player.stats.kills;
+    if (player && player.stats) deaths = player.stats.deaths;
+    if (player && player.stats) assists = player.stats.assists;
+    if (player && player.outcome) player.outcome === 'Fail' ? win = false : win = true;
 
     return (
         <div className='dashboard-user-match-history'>
@@ -70,8 +26,8 @@ const UserMatchHistory = ({ match }) => {
                 <p className='user-match-time'>{gameDate}</p>
                 <div className={`outcome ${win ? 'win' : ''}`}></div>
                 <div className='user-match-history-right-side'>
-                    <UserProfileImage 
-                        divStyles='user-match-history-img-container' imgStyles='user-match-history-img' 
+                    <UserProfileImage
+                        divStyles='user-match-history-img-container' imgStyles='user-match-history-img'
                         src={`http://ddragon.leagueoflegends.com/cdn/11.7.1/img/champion/${champ && champ.name ? champ.name.replace(/\s+/g, '') : ''}.png`} />
                     <div className='user-match-history-text'>
                         <p className='user-champion-name'>{champ.name}</p>
