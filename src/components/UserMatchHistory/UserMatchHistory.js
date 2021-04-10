@@ -24,7 +24,7 @@ const UserMatchHistory = ({ match }) => {
             response = await response.json();
             setChamp(response[0]);
         }
-        console.log('it should onlyu run once')
+        // console.log('it should onlyu run once')
         test();
 
     }, [match.champion])
@@ -36,10 +36,12 @@ const UserMatchHistory = ({ match }) => {
     useEffect(() => {
 
         if(match.participants && match.teams){
-            console.log(match)
+            // console.log(match)
             const playerObj = match.participants.filter( player => player.championId.toString() === match.champion.toString())[0];
-            // const outcome = match.teams.filter(team => team.teamId === player.teamId);
-            // playerObj.outcome = outcome[0].win;
+            // console.log('this is the length',  Array.isArray(match.teams), match.teams.length);
+            const outcome = match.teams.filter(team => team.teamId === playerObj.teamId)[0].win;
+            // console.log('this is the outcome', outcome);
+            playerObj.outcome = outcome;
             setPlayer(playerObj);
         }
         // const playerObj = match && match.participants ? match.participants.filter( player => player.championId.toString() === match.champion.toString())[0] : undefined;
