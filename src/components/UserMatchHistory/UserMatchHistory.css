@@ -42,6 +42,10 @@
     border-radius: 1vh;
 }
 
+.win{
+    background-color: #28a745;
+}
+
 .user-match-history-right-side{
     display: flex;
     flex-basis: 40%;
