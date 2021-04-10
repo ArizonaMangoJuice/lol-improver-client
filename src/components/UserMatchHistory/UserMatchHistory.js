@@ -30,7 +30,7 @@ const UserMatchHistory = ({ match }) => {
     }, [match.champion])
 
     // move to own useEffect file
-    const [player, setPlayer] = useState({});
+    const [player, setPlayer] = useState({participants: []});
 
     useEffect(() => {
         const player = match && match.participants ? match.participants.filter( player => player.championId.toString() === match.champion.toString())[0] : undefined;
