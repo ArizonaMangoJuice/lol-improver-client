@@ -14,6 +14,8 @@ import EditNote from '../EditNote';
 import { useWindowsWidth } from '../../hooks/useWindowsWidth';
 import { fetchMatch } from '../../actions/playerInfo';
 import SimpleLoader from '../SimpleLoader';
+import PlayerSearchInput from '../PlayerSearch';
+
 
 // I will use a masonry package but will look at source code to make my own.
 // i need to account for the margins and padding so flex basis wont freak out
@@ -70,7 +72,7 @@ export const Dashboard = ({ authToken, notes, deleteNote, matchList, matches, ..
                 {props.noteIsClicked ? <EditNote /> : undefined}
                 <div className='dashboard-left-side'>
                     <DashboardCreateNote />
-                    <DashBoardSearchBar />
+                    {/* <DashBoardSearchBar /> */}
                     {props.openCreateNote
                         ? <CreateNote /> : null}
                     <div className='notes-container left-container-width notes-flex-container'>
@@ -79,8 +81,10 @@ export const Dashboard = ({ authToken, notes, deleteNote, matchList, matches, ..
                         </Masonry>
                     </div>
                 </div>
+                
                 <div className='dashboard-right-side'>
                     <h2 className='dashboard-match-history-title'>Match History</h2>
+                    <PlayerSearchInput />
                     {matchesComponent}
                 </div>
             </div>

@@ -1,2 +1,2 @@
-import PlayerSearch from './playerSearch';
-export default PlayerSearch;
+import playerSearchInput from './playerSearch';
+export default playerSearchInput;

@@ -20,7 +20,8 @@ const formPlayerSearch = (e, dispatch, playerSearch) => {
 
 const DashBoardSearchBar = ({ dispatch, playerSearch, accountInfo, ...props }) => {
     useEffect(() => {
-        if(accountInfo) dispatch(fetchMatchlist(accountInfo.accountId));
+        if(accountInfo) dispatch(fetchMatchlist(accountInfo[0].accountId));
+        console.log(accountInfo[0].accountId);
     }, [accountInfo])
 
     return (
@@ -33,8 +34,8 @@ const DashBoardSearchBar = ({ dispatch, playerSearch, accountInfo, ...props }) =
             </button>
             <form onSubmit={(e) => formPlayerSearch(e, dispatch, playerSearch)} className='left-container-search-input'>
                 <FontAwesomeIcon icon={faSearch} className='search-icon' />
-                <input onChange={(e) => dispatch(updatePlayerSearch(e.target.value))} type='text' placeholder='Search Player' className='left-container-search-input-text' />
-                <button >Find Player</button>
+                {/* <input onChange={(e) => dispatch(updatePlayerSearch(e.target.value))} type='text' placeholder='Search Player' className='left-container-search-input-text' /> */}
+                {/* <button >Find Player</button> */}
             </form>
             <div className='left-container-search-people'>
                 <button className='add-button'><FontAwesomeIcon icon={faPlus} className='default-button-size' /></button>
