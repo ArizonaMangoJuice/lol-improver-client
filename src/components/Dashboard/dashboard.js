@@ -13,6 +13,7 @@ import CreateNote from '../CreateNote';
 import EditNote from '../EditNote';
 import { useWindowsWidth } from '../../hooks/useWindowsWidth';
 import { fetchMatch } from '../../actions/playerInfo';
+import SimpleLoader from '../SimpleLoader';
 
 // I will use a masonry package but will look at source code to make my own.
 // i need to account for the margins and padding so flex basis wont freak out
@@ -28,7 +29,8 @@ const mapStateToProps = state => ({
     noteIsClicked: state.notesReducer.openUpdateNote,
     deleteNote: state.notesReducer.deleteNote,
     matchList: state.playerReducer.matchList,
-    matches: state.playerReducer.matches
+    matches: state.playerReducer.matches,
+    matchLoading: state.playerReducer.matchLoading
 });
 
 export const Dashboard = ({ authToken, notes, deleteNote, matchList, matches, ...props }) => {
@@ -59,7 +61,7 @@ export const Dashboard = ({ authToken, notes, deleteNote, matchList, matches, ..
 
     matchesComponent = matches && matches.length > 0
         ? matches.map(match => (<UserMatchHistory key={match.gameId} match={match} />))
-        : undefined
+        : props.matchLoading ? <SimpleLoader /> : null;
     // will add masonry package but will read source code to create my own
     return (
         <main className='main-content'>

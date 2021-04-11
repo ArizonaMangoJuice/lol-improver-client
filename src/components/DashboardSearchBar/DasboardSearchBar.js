@@ -14,9 +14,8 @@ const mapStateToProps = state => ({
 
 const formPlayerSearch = (e, dispatch, playerSearch) => {
     e.preventDefault();
-    const urlString = encodeURI(playerSearch.toLowerCase());
+    const urlString = encodeURI(playerSearch.toLowerCase().trim());
     dispatch(findPlayer(urlString));
-    console.log('hello');
 }
 
 const DashBoardSearchBar = ({ dispatch, playerSearch, accountInfo, ...props }) => {

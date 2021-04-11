@@ -5,6 +5,27 @@ export const sortMatches = () => ({
     type: SORT_MATCHES
 });
 
+export const MATCH_LOADING = 'MATCH_LOADING';
+export const matchLoading = () => ({
+    type: MATCH_LOADING
+});
+
+export const STOP_MATCH_LOADING = 'STOP_MATCH_LOADING';
+export const stopMatchLoading = () => ({
+    type: STOP_MATCH_LOADING
+});
+
+export const PLAYER_ERROR = 'PLAYER_ERROR';
+export const playerError = (error) => ({
+    type: PLAYER_ERROR,
+    error
+});
+
+export const CLEAR_PLAYER_ERROR = 'CLEAR_PLAYER_ERROR';
+export const clearPlayerError = () => ({
+    type: CLEAR_PLAYER_ERROR
+});
+
 export const ADD_MATCH = 'ADD_MATCH';
 export const addMatch = match => ({
     type: ADD_MATCH,
@@ -102,28 +123,26 @@ export const fetchItemDetails = (key) => dispatch => {
 
 //convert these to asyncs they are easier to read and work with
 export const findPlayer = name => dispatch => {
-    return fetch(`${lolImproverUrl}/api/players/${name}`)
+    dispatch(clearPlayerError());
+
+    fetch(`${lolImproverUrl}/api/players/${name}`)
         .then(response => {
             if(!response.ok) throw new Error('Player Not Found');
-             return response.json();
+            return response.json();
         })
         .then(response => dispatch(searchPlayer(response)))
-        // .then(response => {
-        //     // console.log(response);
-        //     let matches = response.matchDetails.map(match => JSON.parse(match))
-
-        //     dispatch(searchPlayer(response.playerInfo));
-        //     dispatch(fetchMatches(matches))
-    
-        // })
-        .catch(err => dispatch(matchesError(err.message)))
+        .catch(err => {
+            console.log(err)
+            dispatch(playerError(err.message))
+        })
 };
 
 
 export const fetchMatchlist = accountId => dispatch => {
     dispatch(clearMatches());
-    return fetch(`${lolImproverUrl}/api/players/matches/${accountId}`)
+    fetch(`${lolImproverUrl}/api/players/matches/${accountId}`)
         .then(response => {
+            console.log('this is the response ', response)
             if(!response.ok) throw new Error('Account Id not found');
             return response.json();
         })
@@ -136,14 +155,18 @@ export const fetchMatchlist = accountId => dispatch => {
 
 export const fetchMatch = (matchId, matchListObj) => dispatch => {
     const {champion, timestamp} = matchListObj;
+    
+    dispatch(matchLoading());
 
-    return fetch(`${lolImproverUrl}/api/players/match/${matchId}`)
+    fetch(`${lolImproverUrl}/api/players/match/${matchId}`)
         .then(response => {
             if(!response.ok) throw new Error('Match not found');
             return response.json();
         })
         .then( response => {
+            dispatch(stopMatchLoading());
             dispatch(addMatch({...response, champion, timestamp}));
+    
             // dispatch(sortMatches());
         })
         .catch(err => dispatch(matchesError(err.message)))
