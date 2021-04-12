@@ -127,21 +127,23 @@ export const findPlayer = name => dispatch => {
 
     fetch(`${lolImproverUrl}/api/players/${name}`)
         .then(response => {
-            // console.log('this is the response', response)
+            // console.log('this is the response', JSON.stringify(response))
             const playerNotFound = {message: 'Player Not Found'};
             if(response.status === 404) throw playerNotFound;
             return response.json();
         })
         .then(response => dispatch(searchPlayer(response)))
         .catch(err => {
-            console.log(err)
-            dispatch(playerError(err.message))
+
+            if(err && err.message) dispatch(playerError(err.message))
         })
 };
 
 
 export const fetchMatchlist = accountId => dispatch => {
     dispatch(clearMatches());
+    dispatch(matchLoading());
+
     fetch(`${lolImproverUrl}/api/players/matches/${accountId}`)
         .then(response => {
             console.log('this is the response ', response)
@@ -158,7 +160,6 @@ export const fetchMatchlist = accountId => dispatch => {
 export const fetchMatch = (matchId, matchListObj) => dispatch => {
     const {champion, timestamp} = matchListObj;
     
-    dispatch(matchLoading());
 
     fetch(`${lolImproverUrl}/api/players/match/${matchId}`)
         .then(response => {
