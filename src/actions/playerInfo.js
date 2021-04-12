@@ -128,7 +128,8 @@ export const findPlayer = name => dispatch => {
     fetch(`${lolImproverUrl}/api/players/${name}`)
         .then(response => {
             // console.log('this is the response', response)
-            if(response.status == 404) throw {message: 'Player Not Found'};
+            const playerNotFound = {message: 'Player Not Found'};
+            if(response.status === 404) throw playerNotFound;
             return response.json();
         })
         .then(response => dispatch(searchPlayer(response)))

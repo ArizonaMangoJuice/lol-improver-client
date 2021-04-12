@@ -72,7 +72,7 @@ export const Dashboard = ({ authToken, notes, deleteNote, matchList, matches, ..
                 {props.noteIsClicked ? <EditNote /> : undefined}
                 <div className='dashboard-left-side'>
                     <DashboardCreateNote />
-                    {/* <DashBoardSearchBar /> */}
+                    <DashBoardSearchBar />
                     {props.openCreateNote
                         ? <CreateNote /> : null}
                     <div className='notes-container left-container-width notes-flex-container'>

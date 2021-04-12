@@ -1,14 +1,14 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import UserProfileImage from '../UserProfileImage';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faFilter, faSearch, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { connect } from 'react-redux';
-import { fetchMatchlist, findPlayer, updatePlayerSearch } from '../../actions/playerInfo';
+import { findPlayer } from '../../actions/playerInfo';
 
 const userLink = 'https://avatars.githubusercontent.com/u/21373845?s=460&u=06623bc214c716a3ba9b90f0beea147d7b9cf6e1&v=4';
 
 const mapStateToProps = state => ({
-    playerSearch: state.playerReducer.playerSearch,
+    // playerSearch: state.playerReducer.playerSearch,
     accountInfo: state.playerReducer.accountInfo
 });
 
@@ -19,10 +19,10 @@ const formPlayerSearch = (e, dispatch, playerSearch) => {
 }
 
 const DashBoardSearchBar = ({ dispatch, playerSearch, accountInfo, ...props }) => {
-    useEffect(() => {
-        if(accountInfo) dispatch(fetchMatchlist(accountInfo[0].accountId));
-        console.log(accountInfo[0].accountId);
-    }, [accountInfo])
+    // useEffect(() => {
+    //     if(accountInfo) dispatch(fetchMatchlist(accountInfo[0].accountId));
+    //     console.log(accountInfo[0].accountId);
+    // }, [accountInfo])
 
     return (
         <div className='left-container-width main-bg left-container-search-bar'>

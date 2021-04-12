@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { fetchMatchlist, findPlayer, playerError, updatePlayerSearch } from '../../actions/playerInfo';
+import { fetchMatchlist, findPlayer, updatePlayerSearch } from '../../actions/playerInfo';
 
 const mapStateToProps = state => ({
     playerSearch: state.playerReducer.playerSearch,
