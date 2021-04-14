@@ -51,45 +51,17 @@ const UserMatchHistory = ({ match }) => {
 
     let result = await Promise.all(firstTeamInfo);
     console.log('THIS IS THE RESULTING ARRAY', result)
-    result = result.map((matchDetails) =>
-    (
-     <PlayerMatchCard matchDetails={matchDetails} />
+    result = result.map((matchDetails) => (
+      <PlayerMatchCard
+        key={`${matchDetails.pIdentity[0].player.summonerName} 
+              ${matchDetails.champion[0].id} ${matchDetails.pIdentity[0].participantId}
+              ${matchDetails.pIdentity[0].accountId}
+              `}
+        matchDetails={matchDetails} />
     ))
-
     return result;
   }
 
-  //   useEffect(() => {
-  //     let mounted = true;
-  //     if (mounted && teamOne && teamOne[0]) {
-  //       console.log(teamOne[0].pId);
-  //     }
-  //     // if (match && teamOne)
-  //     //   teamOne.map(({ pId, ...player }) => (
-  //     //     <section>
-  //     //       <div className="user-match-history-right-side">
-  //     //         {/* <UserProfileImage
-  //     //                   divStyles='user-match-history-img-container' imgStyles='user-match-history-img'
-  //     //                   src={`http://ddragon.leagueoflegends.com/cdn/11.7.1/img/champion/${champ && champ.name ? champ.name.replace(/\s+/g, '') : ''}.png`} /> */}
-  //     //         <div className="user-match-history-text">
-  //     //           <p className="user-champion-name">{pId[0].player.summonerName}</p>
-  //     //           {/* <p className='user-champion-kda'>{kills}/{deaths}/{assists}</p> */}
-  //     //         </div>
-  //     //       </div>
-  //     //     </section>
-  //     //   ));
-  //     return () => {
-  //       mounted = false;
-  //     };
-  //   }, [teamOne, match]);
-
-  // useEffect(() => {
-  //     if(match){
-  //         const {participants} = match;
-  //         let team = participants.filter(player => player.teamId === 100);
-  //         console.log(team, participants);
-  //     }
-  // }, [match])
 
   return (
     <div className="dashboard-user-match-history">

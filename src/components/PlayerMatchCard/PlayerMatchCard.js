@@ -3,6 +3,7 @@ import UserProfileImage from '../UserProfileImage';
 
 export const PlayerMatchCard = ({matchDetails}) => {
     const {champion, pIdentity, ...player} = matchDetails;
+    // console.log(champion,pIdentity,player, "THIS IS THE PROPS OF THE PLAYER MATCH CARD")
     return (
         <section key={`${champion} + ${pIdentity[0].player.summonerName}`}>
             <div className="user-match-history-right-side">
