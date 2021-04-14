@@ -21,13 +21,13 @@ export const PlayerMatchCard = ({matchDetails}) => {
                 </section>
                 <UserSummonerSpells player={player} />
                 <section className='user-items'>
-                    <img className='item' src={`http://ddragon.leagueoflegends.com/cdn/11.8.1/img/item/${player.stats.item0}.png`} />
-                    <img className='item' src={`http://ddragon.leagueoflegends.com/cdn/11.8.1/img/item/${player.stats.item1}.png`} />
-                    <img className='item' src={`http://ddragon.leagueoflegends.com/cdn/11.8.1/img/item/${player.stats.item2}.png`} />
-                    <img className='item' src={`http://ddragon.leagueoflegends.com/cdn/11.8.1/img/item/${player.stats.item3}.png`} />
-                    <img className='item' src={`http://ddragon.leagueoflegends.com/cdn/11.8.1/img/item/${player.stats.item4}.png`} />
-                    <img className='item' src={`http://ddragon.leagueoflegends.com/cdn/11.8.1/img/item/${player.stats.item6}.png`} />
-                    <img className='item' src={`http://ddragon.leagueoflegends.com/cdn/11.8.1/img/item/${player.stats.item6}.png`} />
+                    <img alt={`item of ${player.stats.item0}`} className='item' src={`http://ddragon.leagueoflegends.com/cdn/11.8.1/img/item/${player.stats.item0}.png`} />
+                    <img alt={`item of ${player.stats.item1}`} className='item' src={`http://ddragon.leagueoflegends.com/cdn/11.8.1/img/item/${player.stats.item1}.png`} />
+                    <img alt={`item of ${player.stats.item2}`} className='item' src={`http://ddragon.leagueoflegends.com/cdn/11.8.1/img/item/${player.stats.item2}.png`} />
+                    <img alt={`item of ${player.stats.item3}`} className='item' src={`http://ddragon.leagueoflegends.com/cdn/11.8.1/img/item/${player.stats.item3}.png`} />
+                    <img alt={`item of ${player.stats.item4}`} className='item' src={`http://ddragon.leagueoflegends.com/cdn/11.8.1/img/item/${player.stats.item4}.png`} />
+                    <img alt={`item of ${player.stats.item5}`} className='item' src={`http://ddragon.leagueoflegends.com/cdn/11.8.1/img/item/${player.stats.item6}.png`} />
+                    <img alt={`item of ${player.stats.item6}`} className='item' src={`http://ddragon.leagueoflegends.com/cdn/11.8.1/img/item/${player.stats.item6}.png`} />
                 </section>
             </div>
         </section>
