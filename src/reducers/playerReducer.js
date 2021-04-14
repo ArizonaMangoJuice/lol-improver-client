@@ -19,7 +19,7 @@ import {
 
 const initialState = {
     matches: [],
-    matchLoading: false,
+    // matchLoading: false,
     accountInfo: null,
     matchList: [],
     playerChampInfo: [],
