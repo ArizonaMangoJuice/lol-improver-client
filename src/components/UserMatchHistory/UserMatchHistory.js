@@ -6,6 +6,7 @@ import useGetMatchImage from "../../hooks/useGetMatchImage";
 import createMatchDate from "../../utils/createMatchDate";
 import { useGetTeam } from "../../hooks/useGetTeam";
 import lolImproverUrl from '../../config';
+import PlayerMatchCard from "../PlayerMatchCard";
 
 const UserMatchHistory = ({ match }) => {
   const champ = useGetMatchImage(match);
@@ -50,40 +51,13 @@ const UserMatchHistory = ({ match }) => {
 
     let result = await Promise.all(firstTeamInfo);
     console.log('THIS IS THE RESULTING ARRAY', result)
-    result = result.map(({ champion, pIdentity, ...player }) =>
+    result = result.map((matchDetails) =>
     (
-      <section key={`${champion} + ${pIdentity[0].player.summonerName}`}>
-        <div className="user-match-history-right-side">
-          <UserProfileImage
-            divStyles='user-match-history-img-container' imgStyles='user-match-history-img'
-            src={`http://ddragon.leagueoflegends.com/cdn/11.7.1/img/champion/${champion && champion[0] && champion[0].name ? champion[0].image.full.replace(/\s+/g, '') : ''}`} />
-          <div className="user-match-history-text">
-            <p className="user-champion-name">
-              {pIdentity[0].player.summonerName}
-            </p>
-            <p className='user-champion-kda'>{player.stats.kills}/{player.stats.deaths}/{player.stats.assists}</p>
-          </div>
-        </div>
-      </section>
+     <PlayerMatchCard matchDetails={matchDetails} />
     ))
 
     return result;
   }
-  // (
-  //   <section>
-  //     <div className="user-match-history-right-side">
-  //       {/* <UserProfileImage
-  //                         divStyles='user-match-history-img-container' imgStyles='user-match-history-img'
-  //                         src={`http://ddragon.leagueoflegends.com/cdn/11.7.1/img/champion/${champ && champ.name ? champ.name.replace(/\s+/g, '') : ''}.png`} /> */}
-  //       <div className="user-match-history-text">
-  //         <p className="user-champion-name">
-  //           {pIdentity[0].player.summonerName}
-  //         </p>
-  //         {/* <p className='user-champion-kda'>{kills}/{deaths}/{assists}</p> */}
-  //       </div>
-  //     </div>
-  //   </section>
-  // )
 
   //   useEffect(() => {
   //     let mounted = true;
