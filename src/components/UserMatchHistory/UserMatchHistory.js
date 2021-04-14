@@ -38,7 +38,7 @@ const UserMatchHistory = ({ match }) => {
     }
   }, [teamOne]);
 
-  console.log('THIS IS THE FIRST TEAM', firstTeam)
+  // console.log('THIS IS THE FIRST TEAM', firstTeam)
 
 
   // move to own function and refactor a bit 
@@ -50,7 +50,7 @@ const UserMatchHistory = ({ match }) => {
     });
 
     let result = await Promise.all(firstTeamInfo);
-    console.log('THIS IS THE RESULTING ARRAY', result)
+    // console.log('THIS IS THE RESULTING ARRAY', result)
     result = result.map((matchDetails) => (
       <PlayerMatchCard
         key={`${matchDetails.pIdentity[0].player.summonerName} 
