@@ -12,18 +12,19 @@ export const UserSummonerSpells = ({ player }) => {
             const summonerSpell2 = await fetchSummonerSpellInfo2.json();
             // console.log('HEY IM THE FIRST SPELL', summonerSpell1[0]);
             // console.log(summonerSpell1, summonerSpell2);
-            setSummonerSpells(() => [summonerSpell1[0],summonerSpell2[0]]);
+            setSummonerSpells(() => [summonerSpell1[0], summonerSpell2[0]]);
         }
 
         fetchSummonerSpells(player);
     }, [player])
 
-    console.log(summonerSpells, "THESE ARE THE SUMMONER SPELLS FROM THE SERVER");
-    
+    // move url to own file and call it here
     return (
         <section className='user-spells'>
-            <img className='summoner-spell' src={`https://ddragon.leagueoflegends.com/cdn/11.8.1/img/spell/${summonerSpells.length > 0 ? summonerSpells[0].image.full : ''}`}/>
-            <img className='summoner-spell' src={`https://ddragon.leagueoflegends.com/cdn/11.8.1/img/spell/${summonerSpells.length > 0 ? summonerSpells[1].image.full : ''}`}/>
+            <img alt={summonerSpells.length > 0 ? summonerSpells[0].tooltip : 'text loading'} className='summoner-spell'
+                src={`https://ddragon.leagueoflegends.com/cdn/11.8.1/img/spell/${summonerSpells.length > 0 ? summonerSpells[0].image.full : ''}`} />
+            <img alt={summonerSpells.length > 0 ? summonerSpells[1].tooltip : 'text loading'} className='summoner-spell'
+                src={`https://ddragon.leagueoflegends.com/cdn/11.8.1/img/spell/${summonerSpells.length > 0 ? summonerSpells[1].image.full : ''}`} />
         </section>
     )
 };
