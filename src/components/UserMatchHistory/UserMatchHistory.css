@@ -1,6 +1,6 @@
 .dashboard-user-match-history{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     /* flex-basis: 90%; */
     /* height: 5vh; */
     justify-content: center;
