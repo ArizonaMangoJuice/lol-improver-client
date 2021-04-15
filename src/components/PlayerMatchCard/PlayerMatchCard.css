@@ -34,3 +34,11 @@
     width: 4vh;
     margin: .3vh;
 }
+
+.enemy-team{
+    background-color: #ff6347;
+}
+
+.friendly{
+    /* background-color: #47ffbf; */
+}
