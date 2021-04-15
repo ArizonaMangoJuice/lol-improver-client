@@ -2,6 +2,7 @@
     background-color: rgba(139,73,255, .6);
     color: white;
     border-radius: 2vh;
+    margin: 16px 0;
 }
 
 .player-match-card {
