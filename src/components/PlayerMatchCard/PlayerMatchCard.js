@@ -1,4 +1,5 @@
 import React from 'react';
+import UserItems from '../UserItems';
 import UserProfileImage from '../UserProfileImage';
 import UserSummonerSpells from '../UserSummonerSpells';
 import './PlayerMatchCard.css';
@@ -21,44 +22,7 @@ export const PlayerMatchCard = ({ matchDetails }) => {
                     <p className='user-champion-kda'>{player.stats.kills}/{player.stats.deaths}/{player.stats.assists}</p>
                 </section>
                 <UserSummonerSpells player={player} />
-                {/* refactor this so you dont have to do one by one */}
-                <section className='user-items'>
-                    {
-                        player.stats.item0 !== 0
-                            ? <img alt={`item of ${player.stats.item0}`} className='item' src={`http://ddragon.leagueoflegends.com/cdn/11.8.1/img/item/${player.stats.item0}.png`} />
-                            : null
-                    }
-                    {
-                        player.stats.item1 !== 0
-                            ? <img alt={`item of ${player.stats.item1}`} className='item' src={`http://ddragon.leagueoflegends.com/cdn/11.8.1/img/item/${player.stats.item1}.png`} />
-                            : null
-                    }
-                    {
-                        player.stats.item2 !== 0
-                            ? <img alt={`item of ${player.stats.item2}`} className='item' src={`http://ddragon.leagueoflegends.com/cdn/11.8.1/img/item/${player.stats.item2}.png`} />
-                            : null
-                    }
-                    {
-                        player.stats.item3 !== 0
-                            ? <img alt={`item of ${player.stats.item3}`} className='item' src={`http://ddragon.leagueoflegends.com/cdn/11.8.1/img/item/${player.stats.item3}.png`} />
-                            : null
-                    }
-                    {
-                        player.stats.item4 !== 0
-                            ? <img alt={`item of ${player.stats.item4}`} className='item' src={`http://ddragon.leagueoflegends.com/cdn/11.8.1/img/item/${player.stats.item4}.png`} />
-                            : null
-                    }
-                    {
-                        player.stats.item5 !== 0
-                            ? <img alt={`item of ${player.stats.item5}`} className='item' src={`http://ddragon.leagueoflegends.com/cdn/11.8.1/img/item/${player.stats.item5}.png`} />
-                            : null
-                    }
-                    {
-                        player.stats.item6 !== 0
-                            ? <img alt={`item of ${player.stats.item6}`} className='item' src={`http://ddragon.leagueoflegends.com/cdn/11.8.1/img/item/${player.stats.item6}.png`} />
-                            : null
-                    }
-                </section>
+                <UserItems stats={player.stats}/>
             </div>
         </section>
     )
