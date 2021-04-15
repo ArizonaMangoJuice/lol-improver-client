@@ -13,8 +13,10 @@ const UserMatchHistory = ({ match }) => {
   const player = useGetPlayer(match);
   const gameDate = createMatchDate(match);
   const teamOne = useGetTeam(match, 100);
-  // const teamTwo = useGetTeam(match, 200);
+  const teamTwo = useGetTeam(match, 200);
   const [firstTeam, setFirstTeam] = useState([]);
+  const [secondTeam, setSecondTeam] = useState([]);
+
   let kills = 0;
   let deaths = 0;
   let assists = 0;
@@ -31,19 +33,29 @@ const UserMatchHistory = ({ match }) => {
   useEffect(() => {
     if (teamOne.length !== 0) {
       let test = async () => {
-        const players = await otherPlayersCard();
+        const players = await otherPlayersCard(teamOne);
         setFirstTeam(() => players);
       }
       test();
     }
   }, [teamOne]);
 
+  useEffect(() => {
+    if (teamTwo.length !== 0) {
+      let test = async () => {
+        const players = await otherPlayersCard(teamTwo);
+        setSecondTeam(() => players);
+      }
+      test();
+    }
+  }, [teamTwo]);
+
   // console.log('THIS IS THE FIRST TEAM', firstTeam)
 
 
   // move to own function and refactor a bit 
-  async function otherPlayersCard() {
-    const firstTeamInfo = await teamOne.map(async (player) => {
+  async function otherPlayersCard(team) {
+    const firstTeamInfo = await team.map(async (player) => {
       let champion = await fetch(`${lolImproverUrl}/api/static/${player.championId}`);
       champion = await champion.json();
       return { ...player, champion };
@@ -84,6 +96,7 @@ const UserMatchHistory = ({ match }) => {
         </div>
       </div>
       <section className="match-more">{firstTeam}</section>
+      <section className="match-more">{secondTeam}</section>
     </div>
   );
 };
