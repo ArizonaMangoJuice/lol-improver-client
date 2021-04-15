@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import lolImproverUrl from '../../config';
+import SimpleLoader from '../SimpleLoader';
 
 export const UserSummonerSpells = ({ player }) => {
     // move this to own hook components should not worry about logic
@@ -19,12 +20,25 @@ export const UserSummonerSpells = ({ player }) => {
     }, [player])
 
     // move url to own file and call it here
+    // refactor to make it easier to read and add some animation
     return (
         <section className='user-spells'>
-            <img alt={summonerSpells.length > 0 ? summonerSpells[0].tooltip : 'text loading'} className='summoner-spell'
-                src={`https://ddragon.leagueoflegends.com/cdn/11.8.1/img/spell/${summonerSpells.length > 0 ? summonerSpells[0].image.full : ''}`} />
-            <img alt={summonerSpells.length > 0 ? summonerSpells[1].tooltip : 'text loading'} className='summoner-spell'
-                src={`https://ddragon.leagueoflegends.com/cdn/11.8.1/img/spell/${summonerSpells.length > 0 ? summonerSpells[1].image.full : ''}`} />
+            {
+                summonerSpells.length > 0
+                    ? (
+                        <img alt={summonerSpells.length > 0 ? summonerSpells[0].tooltip : 'text loading'} className='summoner-spell'
+                            src={`https://ddragon.leagueoflegends.com/cdn/11.8.1/img/spell/${summonerSpells.length > 0 ? summonerSpells[0].image.full : ''}`} />
+                    )
+                    : <SimpleLoader />
+            }
+            {
+                summonerSpells.length > 0
+                    ? (
+                        <img alt={summonerSpells.length > 0 ? summonerSpells[1].tooltip : 'text loading'} className='summoner-spell'
+                            src={`https://ddragon.leagueoflegends.com/cdn/11.8.1/img/spell/${summonerSpells.length > 0 ? summonerSpells[1].image.full : ''}`} />
+                    )
+                    : <SimpleLoader />
+            }
         </section>
     )
 };
