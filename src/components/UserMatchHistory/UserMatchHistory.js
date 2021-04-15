@@ -15,7 +15,7 @@ const UserMatchHistory = ({ match }) => {
   const teamTwo = useGetTeam(match, 200);
   const [firstTeam, setFirstTeam] = useState([]);
   const [secondTeam, setSecondTeam] = useState([]);
-
+  const [clicked , setClicked] = useState(false);
   //move to own useEffect hook file
   useEffect(() => {
     if (teamOne.length !== 0) {
@@ -38,8 +38,8 @@ const UserMatchHistory = ({ match }) => {
   }, [teamTwo]);
 
   return (
-    <div className="dashboard-user-match-history">
-      <div tabIndex="1" className="user-match">
+    <div className="dashboard-user-match-history" onClick={() => setClicked((clicked) => setClicked(!clicked))}>
+      <div tabIndex="0" className="user-match">
         <p className="user-match-time">{gameDate}</p>
         <div className={`outcome ${player && player.outcome !== "Fail" ? "win" : ""}`}></div>
         <div className="user-match-history-right-side">
@@ -57,8 +57,10 @@ const UserMatchHistory = ({ match }) => {
           </div>
         </div>
       </div>
-      <section className="match-more">{firstTeam}</section>
-      <section className="match-more">{secondTeam}</section>
+      <section className={`more-matches-container ${clicked && 'show-matches'}`}>
+        <section className="match-more">{firstTeam}</section>
+        <section className="match-more">{secondTeam}</section>
+      </section>
     </div>
   );
 };
