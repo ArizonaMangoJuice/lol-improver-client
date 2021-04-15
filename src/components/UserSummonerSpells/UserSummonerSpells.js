@@ -24,18 +24,18 @@ export const UserSummonerSpells = ({ player }) => {
     return (
         <section className='user-spells'>
             {
-                summonerSpells.length > 0
+                summonerSpells && summonerSpells[0]
                     ? (
-                        <img alt={summonerSpells.length > 0 ? summonerSpells[0].tooltip : 'text loading'} className='summoner-spell'
-                            src={`https://ddragon.leagueoflegends.com/cdn/11.8.1/img/spell/${summonerSpells.length > 0 ? summonerSpells[0].image.full : ''}`} />
+                        <img alt={summonerSpells && summonerSpells[0] && summonerSpells[0].tooltip} className='summoner-spell'
+                            src={`https://ddragon.leagueoflegends.com/cdn/11.8.1/img/spell/${summonerSpells && summonerSpells[0] && summonerSpells[0].image.full}`} />
                     )
                     : <SimpleLoader />
             }
             {
-                summonerSpells.length > 0
+                summonerSpells && summonerSpells[1]
                     ? (
-                        <img alt={summonerSpells.length > 0 ? summonerSpells[1].tooltip : 'text loading'} className='summoner-spell'
-                            src={`https://ddragon.leagueoflegends.com/cdn/11.8.1/img/spell/${summonerSpells.length > 0 ? summonerSpells[1].image.full : ''}`} />
+                        <img alt={summonerSpells && summonerSpells[1] && summonerSpells[1].tooltip} className='summoner-spell'
+                            src={`https://ddragon.leagueoflegends.com/cdn/11.8.1/img/spell/${summonerSpells && summonerSpells[1] && summonerSpells[1].image.full}`} />
                     )
                     : <SimpleLoader />
             }
