@@ -6,7 +6,6 @@ import './PlayerMatchCard.css';
 
 export const PlayerMatchCard = ({ matchDetails }) => {
     const { champion, pIdentity, ...player } = matchDetails;
-    console.log('this is the match details', matchDetails)
     return (
         <section className='player-match-card-container' key={`${champion} + ${pIdentity[0].player.summonerName}`}>
             <div className="player-match-card">
@@ -22,12 +21,10 @@ export const PlayerMatchCard = ({ matchDetails }) => {
                     <p className='user-champion-kda'>{player.stats.kills}/{player.stats.deaths}/{player.stats.assists}</p>
                 </section>
                 <UserSummonerSpells player={player} />
-                <UserItems stats={player.stats}/>
+                <UserItems stats={player.stats} />
             </div>
         </section>
     )
 }
 
 export default PlayerMatchCard;
-// champion && champion[0] && champion[0].name ?
-// : ''
