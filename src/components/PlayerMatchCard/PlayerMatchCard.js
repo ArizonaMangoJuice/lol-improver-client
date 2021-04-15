@@ -1,16 +1,17 @@
 import React from 'react';
 import UserProfileImage from '../UserProfileImage';
 import UserSummonerSpells from '../UserSummonerSpells';
+import './PlayerMatchCard.css';
 
-export const PlayerMatchCard = ({matchDetails}) => {
-    const {champion, pIdentity, ...player} = matchDetails;
+export const PlayerMatchCard = ({ matchDetails }) => {
+    const { champion, pIdentity, ...player } = matchDetails;
     return (
-        <section key={`${champion} + ${pIdentity[0].player.summonerName}`}>
-            <div className="user-match-history-right-side">
+        <section className='player-match-card-container' key={`${champion} + ${pIdentity[0].player.summonerName}`}>
+            <div className="player-match-card">
                 <UserProfileImage
-                    divStyles='user-match-history-img-container' imgStyles='user-match-history-img' 
+                    divStyles='user-match-history-img-container' imgStyles='user-match-history-img'
                     altText={champion[0].blurb}
-                    src={`http://ddragon.leagueoflegends.com/cdn/11.7.1/img/champion/${champion[0].image.full.replace(/\s+/g, '') }`} />
+                    src={`http://ddragon.leagueoflegends.com/cdn/11.7.1/img/champion/${champion[0].image.full.replace(/\s+/g, '')}`} />
                 <section className="user-match-history-text">
                     <p className="user-champion-name">
                         {pIdentity[0].player.summonerName}
@@ -34,5 +35,5 @@ export const PlayerMatchCard = ({matchDetails}) => {
 }
 
 export default PlayerMatchCard;
-// champion && champion[0] && champion[0].name ? 
+// champion && champion[0] && champion[0].name ?
 // : ''
