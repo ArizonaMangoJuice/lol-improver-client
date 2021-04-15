@@ -9,7 +9,7 @@
 .user-match{
     display: flex;
     justify-content: space-evenly;
-    flex-basis: 90%;
+    /* flex-basis: 90%; */
     box-sizing: border-box;
     padding: 2vh;
     background-color: rgba(139,73,255,1);
@@ -21,8 +21,8 @@
 }
 
 .user-match:hover{
-    transform: scale(1.1);
-    filter: drop-shadow(0 0 1.5vh rgba(54, 52, 52, 0.7));
+    transform: scale(1.01);
+    filter: drop-shadow(0 0 .3vh rgba(54, 52, 52, 0.7));
 }
 
 .user-match-time{
@@ -88,4 +88,33 @@
 
 .user-champ-image{
 
+}
+
+.more-matches-container{
+    transition: .2s;
+    overflow: hidden;
+    width: 0;
+    height: 0;
+}
+
+/* .user-match:focus ~ .more-matches-container {
+    transition: 0.2s;
+    width: initial;
+    height: initial;
+} */
+
+.show-matches {
+    transition: 0.2s;
+    width: 100%;
+    height: 400px;
+    overflow: scroll;
+}
+
+.show-matches::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */
+    background: transparent;  /* Optional: just make scrollbar invisible */
+}
+/* Optional: show position indicator in red */
+.show-matches::-webkit-scrollbar-thumb {
+    background: #FF0000;
 }
