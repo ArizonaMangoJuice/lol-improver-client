@@ -5,9 +5,9 @@ import UserSummonerSpells from '../UserSummonerSpells';
 import './PlayerMatchCard.css';
 
 export const PlayerMatchCard = ({ matchDetails }) => {
-    const { champion, pIdentity, ...player } = matchDetails;
+    const { champion, pIdentity, teamId, ...player } = matchDetails;
     return (
-        <section className='player-match-card-container' key={`${champion} + ${pIdentity[0].player.summonerName}`}>
+        <section className={`player-match-card-container ${teamId === 200 ? 'enemy-team' : 'friendly'}`} key={`${champion} + ${pIdentity[0].player.summonerName}`}>
             <div className="player-match-card">
                 <UserProfileImage
                     divStyles='user-match-history-img-container' imgStyles='user-match-history-img'
