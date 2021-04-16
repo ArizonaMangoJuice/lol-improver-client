@@ -93,7 +93,7 @@
 .more-matches-container{
     transition: .2s;
     overflow: hidden;
-    width: 0;
+    /* width: 0; */
     height: 0;
 }
 

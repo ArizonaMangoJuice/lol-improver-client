@@ -38,7 +38,9 @@ const UserMatchHistory = ({ match }) => {
   }, [teamTwo]);
 
   return (
-    <div className="dashboard-user-match-history" onClick={() => setClicked((clicked) => setClicked(!clicked))}>
+    <div className="dashboard-user-match-history" 
+      onFocus={() => setClicked((clicked) => setClicked(!clicked))}
+      onClick={() => setClicked((clicked) => setClicked(!clicked))}>
       <div tabIndex="0" className="user-match">
         <p className="user-match-time">{gameDate}</p>
         <div className={`outcome ${player && player.outcome !== "Fail" ? "win" : ""}`}></div>
