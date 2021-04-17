@@ -16,6 +16,7 @@ const UserMatchHistory = ({ match }) => {
   const [firstTeam, setFirstTeam] = useState([]);
   const [secondTeam, setSecondTeam] = useState([]);
   const [clicked, setClicked] = useState(false);
+
   //move to own useEffect hook file
   useEffect(() => {
     if (teamOne.length !== 0) {
@@ -38,7 +39,7 @@ const UserMatchHistory = ({ match }) => {
   }, [teamTwo]);
 
   return (
-    <div className="dashboard-user-match-history">
+    <section className="dashboard-user-match-history">
       <button
         className="user-match"
         onClick={() => setClicked((clicked) => setClicked(!clicked))}
@@ -74,7 +75,7 @@ const UserMatchHistory = ({ match }) => {
         <section className="match-more">{firstTeam}</section>
         <section className="match-more">{secondTeam}</section>
       </section>
-    </div>
+    </section>
   );
 };
 
