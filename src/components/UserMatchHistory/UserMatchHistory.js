@@ -5,7 +5,7 @@ import useGetPlayer from "../../hooks/useGetPlayer";
 import useGetMatchImage from "../../hooks/useGetMatchImage";
 import createMatchDate from "../../utils/createMatchDate";
 import { useGetTeam } from "../../hooks/useGetTeam";
-import otherPlayersCard from '../../utils/otherPlayersCard';
+import otherPlayersCard from "../../utils/otherPlayersCard";
 
 const UserMatchHistory = ({ match }) => {
   const champ = useGetMatchImage(match);
@@ -15,14 +15,14 @@ const UserMatchHistory = ({ match }) => {
   const teamTwo = useGetTeam(match, 200);
   const [firstTeam, setFirstTeam] = useState([]);
   const [secondTeam, setSecondTeam] = useState([]);
-  const [clicked , setClicked] = useState(false);
+  const [clicked, setClicked] = useState(false);
   //move to own useEffect hook file
   useEffect(() => {
     if (teamOne.length !== 0) {
       let test = async () => {
         const players = await otherPlayersCard(teamOne);
         setFirstTeam(() => players);
-      }
+      };
       test();
     }
   }, [teamOne]);
@@ -32,34 +32,45 @@ const UserMatchHistory = ({ match }) => {
       let test = async () => {
         const players = await otherPlayersCard(teamTwo);
         setSecondTeam(() => players);
-      }
+      };
       test();
     }
   }, [teamTwo]);
 
   return (
-    <div className="dashboard-user-match-history" 
-      onFocus={() => setClicked((clicked) => setClicked(!clicked))}
-      onClick={() => setClicked((clicked) => setClicked(!clicked))}>
-      <div tabIndex="0" className="user-match">
+    <div className="dashboard-user-match-history">
+      <button
+        className="user-match"
+        onClick={() => setClicked((clicked) => setClicked(!clicked))}
+      >
         <p className="user-match-time">{gameDate}</p>
-        <div className={`outcome ${player && player.outcome !== "Fail" ? "win" : ""}`}></div>
+        <div
+          className={`outcome ${
+            player && player.outcome !== "Fail" ? "win" : ""
+          }`}
+        ></div>
         <div className="user-match-history-right-side">
           <UserProfileImage
             divStyles="user-match-history-img-container"
             imgStyles="user-match-history-img"
-            src={`http://ddragon.leagueoflegends.com/cdn/11.7.1/img/champion/${champ && champ.name ? champ.name.replace(/\s+/g, "") : ""
-              }.png`}
+            src={`http://ddragon.leagueoflegends.com/cdn/11.7.1/img/champion/${
+              champ && champ.name ? champ.name.replace(/\s+/g, "") : ""
+            }.png`}
           />
           <div className="user-match-history-text">
             <p className="user-champion-name">{champ.name}</p>
             <p className="user-champion-kda">
-              {player && player.stats && player.stats.kills}/{player && player.stats && player.stats.deaths}/{player && player.stats && player.stats.assists}
+              {player && player.stats && player.stats.kills}/
+              {player && player.stats && player.stats.deaths}/
+              {player && player.stats && player.stats.assists}
             </p>
           </div>
         </div>
-      </div>
-      <section className={`more-matches-container ${clicked && 'show-matches'}`}>
+      </button>
+      <section
+        tabIndex="0"
+        className={`more-matches-container ${clicked && "show-matches"}`}
+      >
         <section className="match-more">{firstTeam}</section>
         <section className="match-more">{secondTeam}</section>
       </section>
